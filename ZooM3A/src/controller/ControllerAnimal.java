@@ -6,7 +6,7 @@ package controller;
 
 /**
  *
- * @author ALEJO Y BRYAN 
+ * @author GRUPITO
  */
 public class ControllerAnimal {
 
