@@ -26,20 +26,92 @@ public class RegistroAlimento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtnombrealimento = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtareacaracteristicasalimentos = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        comboanimales = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        txtcantidad = new javax.swing.JTextField();
+        combocantidad = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        botonsi = new javax.swing.JRadioButton();
+        botonno = new javax.swing.JRadioButton();
+        fechaelaboracion = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        fechacaducidad = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setText("REGISTRO DE ALIMENTO");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setText("NOMBRE: ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 58, -1, -1));
+        getContentPane().add(txtnombrealimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 55, 206, -1));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("CARACTERISTICAS: ");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 89, -1, -1));
+
+        txtareacaracteristicasalimentos.setColumns(20);
+        txtareacaracteristicasalimentos.setRows(5);
+        jScrollPane1.setViewportView(txtareacaracteristicasalimentos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 89, 236, 138));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("PARA EL ANIMAL:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 261, -1, -1));
+
+        getContentPane().add(comboanimales, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 258, 253, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setText("CANTIDAD:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 301, -1, -1));
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 298, 83, -1));
+
+        combocantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tonelada\t(t)", "Kilogramo\t(kg)", "Gramo\t(g)", "Milligramo\t(mg)", "Microgramo\t(µ)", "Nanogramo(ng)", "Picogramo\t(pg)" }));
+        getContentPane().add(combocantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 298, 122, -1));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("¿EL ALIMENTO ES PROCESADO?");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 301, -1, -1));
+
+        buttonGroup1.add(botonsi);
+        botonsi.setText("SI");
+        getContentPane().add(botonsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 338, -1, -1));
+
+        buttonGroup1.add(botonno);
+        botonno.setText("NO");
+        getContentPane().add(botonno, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 338, -1, -1));
+        getContentPane().add(fechaelaboracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 381, 160, -1));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("FECHA DE ELABORACION");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 301, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("FECHA DE CADUCIDAD");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 301, -1, -1));
+        getContentPane().add(fechacaducidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 421, 160, -1));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jButton1.setText("AGREGAR");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 471, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -47,5 +119,25 @@ public class RegistroAlimento extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton botonno;
+    private javax.swing.JRadioButton botonsi;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> comboanimales;
+    private javax.swing.JComboBox<String> combocantidad;
+    private com.toedter.calendar.JDateChooser fechacaducidad;
+    private com.toedter.calendar.JDateChooser fechaelaboracion;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtareacaracteristicasalimentos;
+    private javax.swing.JTextField txtcantidad;
+    private javax.swing.JTextField txtnombrealimento;
     // End of variables declaration//GEN-END:variables
 }
