@@ -4,8 +4,10 @@
  */
 package controller;
 
+import java.text.SimpleDateFormat;
 import view.PantallaPrincipal;
 import view.RegistrarPersona;
+import model.modelPersona;
 
 /**
  *
@@ -14,14 +16,20 @@ import view.RegistrarPersona;
 public class ControllerPersona {
 
     PantallaPrincipal pp = new PantallaPrincipal();
+    private modelPersona modelo;
+    private RegistrarPersona vista;
+    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
-    public ControllerPersona() {
-
-        pp.setVisible(true);
+    public ControllerPersona(modelPersona modelo, RegistrarPersona vista) {
+        this.modelo = modelo;
+        this.vista = vista;
+        vista.setVisible(true);
     }
 
-    public void iniciarcontroles() {
-        pp.getMeItAgregarPersona().addActionListener(l -> abrirregistropersona());
+
+
+    public void inicialControl() {
+//        pp.getMeItAgregarPersona().addActionListener(l -> abrirregistropersona());
     }
 
     public void abrirregistropersona() {
