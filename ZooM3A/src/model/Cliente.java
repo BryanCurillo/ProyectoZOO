@@ -4,32 +4,52 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author ALEJO
  */
 public class Cliente extends Persona {
 
-    private int id_cli;
+    private int id;
+    private String direccion;
+    private String cedula;
+    
 
     public Cliente() {
     }
 
-    public Cliente(int id_cli) {
-        this.id_cli = id_cli;
+    public Cliente(int id, String direccion, String cedula) {
+        this.id = id;
+        this.direccion = direccion;
+        this.cedula = cedula;
     }
 
-    public Cliente(int id_cli, String cedula, String nombre, String apellido, String telefono, String correo, String genero) {
-        super(cedula, nombre, apellido, telefono, correo, genero);
-        this.id_cli = id_cli;
+    public int getId() {
+        return id;
     }
 
-    public int getId_cli() {
-        return id_cli;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setId_cli(int id_cli) {
-        this.id_cli = id_cli;
+    public String getDireccion() {
+        return direccion;
     }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+
 
 }

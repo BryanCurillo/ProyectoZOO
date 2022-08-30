@@ -8,45 +8,21 @@ package model;
  *
  * @author ALEJO
  */
-public class Habitat extends Zoologo {
+public class Habitat {
 
     private int id_habitat;
-    private int capacidad_especies;
+    private int capacidad;
     private String tipo;
-    private int bloque;
+    private int idZoologo;
 
     public Habitat() {
     }
 
-    public Habitat(int id_habitat, int capacidad_especies, String tipo, int bloque) {
+    public Habitat(int id_habitat, int capacidad, String tipo, int idZoologo) {
         this.id_habitat = id_habitat;
-        this.capacidad_especies = capacidad_especies;
+        this.capacidad = capacidad;
         this.tipo = tipo;
-        this.bloque = bloque;
-    }
-
-    public Habitat(int id_habitat, int capacidad_especies, String tipo, int bloque, String espacioacargo) {
-        super(espacioacargo);
-        this.id_habitat = id_habitat;
-        this.capacidad_especies = capacidad_especies;
-        this.tipo = tipo;
-        this.bloque = bloque;
-    }
-
-    public Habitat(int id_habitat, int capacidad_especies, String tipo, int bloque, String espacioacargo, String usuario, String contraseña) {
-        super(espacioacargo, usuario, contraseña);
-        this.id_habitat = id_habitat;
-        this.capacidad_especies = capacidad_especies;
-        this.tipo = tipo;
-        this.bloque = bloque;
-    }
-
-    public Habitat(int id_habitat, int capacidad_especies, String tipo, int bloque, String espacioacargo, String usuario, String contraseña, String cedula, String nombre, String apellido, String telefono, String correo, String genero) {
-        super(espacioacargo, usuario, contraseña, cedula, nombre, apellido, telefono, correo, genero);
-        this.id_habitat = id_habitat;
-        this.capacidad_especies = capacidad_especies;
-        this.tipo = tipo;
-        this.bloque = bloque;
+        this.idZoologo = idZoologo;
     }
 
     public int getId_habitat() {
@@ -57,12 +33,12 @@ public class Habitat extends Zoologo {
         this.id_habitat = id_habitat;
     }
 
-    public int getCapacidad_especies() {
-        return capacidad_especies;
+    public int getCapacidad() {
+        return capacidad;
     }
 
-    public void setCapacidad_especies(int capacidad_especies) {
-        this.capacidad_especies = capacidad_especies;
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
     }
 
     public String getTipo() {
@@ -73,12 +49,13 @@ public class Habitat extends Zoologo {
         this.tipo = tipo;
     }
 
-    public int getBloque() {
-        return bloque;
+    public int getIdZoologo() {
+        return idZoologo;
     }
 
-    public void setBloque(int bloque) {
-        this.bloque = bloque;
+    public void setIdZoologo(int idZoologo) {
+        this.idZoologo = idZoologo;
     }
+
 
 }

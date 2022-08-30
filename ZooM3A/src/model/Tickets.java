@@ -27,22 +27,6 @@ public class Tickets extends Cliente {
         this.generacion = generacion;
     }
 
-    public Tickets(int N_ticket, double precio, Date fecha_compra, boolean generacion, int id_cli) {
-        super(id_cli);
-        this.N_ticket = N_ticket;
-        this.precio = precio;
-        this.fecha_compra = fecha_compra;
-        this.generacion = generacion;
-    }
-
-    public Tickets(int N_ticket, double precio, Date fecha_compra, boolean generacion, int id_cli, String cedula, String nombre, String apellido, String telefono, String correo, String genero) {
-        super(id_cli, cedula, nombre, apellido, telefono, correo, genero);
-        this.N_ticket = N_ticket;
-        this.precio = precio;
-        this.fecha_compra = fecha_compra;
-        this.generacion = generacion;
-    }
-
     public int getN_ticket() {
         return N_ticket;
     }
@@ -74,5 +58,7 @@ public class Tickets extends Cliente {
     public void setGeneracion(boolean generacion) {
         this.generacion = generacion;
     }
+
+
 
 }

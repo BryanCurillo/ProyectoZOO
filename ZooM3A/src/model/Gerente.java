@@ -8,25 +8,27 @@ package model;
  *
  * @author ALEJO
  */
-public class Gerente extends Personal {
-
+public class Gerente extends Empleado {
+    
+    private int id;
     private String titulo;
+    private int idEmpleado;
 
     public Gerente() {
     }
 
-    public Gerente(String titulo) {
+    public Gerente(int id, String titulo, int idEmpleado) {
+        this.id = id;
         this.titulo = titulo;
+        this.idEmpleado = idEmpleado;
     }
 
-    public Gerente(String titulo, String usuario, String contraseña) {
-        super(usuario, contraseña);
-        this.titulo = titulo;
+    public int getId() {
+        return id;
     }
 
-    public Gerente(String titulo, String usuario, String contraseña, String cedula, String nombre, String apellido, String telefono, String correo, String genero) {
-        super(usuario, contraseña, cedula, nombre, apellido, telefono, correo, genero);
-        this.titulo = titulo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -35,6 +37,14 @@ public class Gerente extends Personal {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
 }

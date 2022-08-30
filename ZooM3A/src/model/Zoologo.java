@@ -8,33 +8,44 @@ package model;
  *
  * @author ALEJO
  */
-public class Zoologo extends Personal {
+public class Zoologo extends Empleado {
 
-    private String espacioacargo;
+    private int id;
+    private String rama;
+    private int idEmpleado;
 
     public Zoologo() {
     }
 
-    public Zoologo(String espacioacargo) {
-        this.espacioacargo = espacioacargo;
+    public Zoologo(int id, String rama, int idEmpleado) {
+        this.id = id;
+        this.rama = rama;
+        this.idEmpleado = idEmpleado;
     }
 
-    public Zoologo(String espacioacargo, String usuario, String contraseña) {
-        super(usuario, contraseña);
-        this.espacioacargo = espacioacargo;
+    public int getId() {
+        return id;
     }
 
-    public Zoologo(String espacioacargo, String usuario, String contraseña, String cedula, String nombre, String apellido, String telefono, String correo, String genero) {
-        super(usuario, contraseña, cedula, nombre, apellido, telefono, correo, genero);
-        this.espacioacargo = espacioacargo;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getEspacioacargo() {
-        return espacioacargo;
+    public String getRama() {
+        return rama;
     }
 
-    public void setEspacioacargo(String espacioacargo) {
-        this.espacioacargo = espacioacargo;
+    public void setRama(String rama) {
+        this.rama = rama;
     }
 
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+   
 }
