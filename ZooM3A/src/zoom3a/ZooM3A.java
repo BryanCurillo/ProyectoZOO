@@ -4,7 +4,9 @@
  */
 package zoom3a;
 
-import controller.ControllerPersona;
+import controller.controllerPantallaprincipal;
+import model.modelPersona;
+import view.PantallaPrincipal;
 
 /**
  *
@@ -17,7 +19,9 @@ public class ZooM3A {
      */
     public static void main(String[] args) {
 
-        ControllerPersona cp = new ControllerPersona();
+        PantallaPrincipal vista = new PantallaPrincipal();
+        controllerPantallaprincipal controller = new controllerPantallaprincipal(vista);
+        controller.iniciaControl();
 
     }
 
