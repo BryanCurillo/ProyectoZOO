@@ -18,7 +18,6 @@ public class ControllerPersona {
     public ControllerPersona() {
 
         pp.setVisible(true);
-        iniciarcontroles();
     }
 
     public void iniciarcontroles() {
