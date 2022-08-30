@@ -18,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class ClaseConexion {
 
-    String cadenaConexion = "jdbc:postgresql://localhost:5432/ZOO_BD";
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/ZOO";
     String pgUsuario = "postgres";
-    String pgContra = "123";
+    String pgContra = "Bryan.2002";
     Connection con;
 
     public ClaseConexion() {
@@ -65,6 +65,38 @@ public class ClaseConexion {
         }
         return correcto;
     }//final de accion
+
+    public String getCadenaConexion() {
+        return cadenaConexion;
+    }
+
+    public void setCadenaConexion(String cadenaConexion) {
+        this.cadenaConexion = cadenaConexion;
+    }
+
+    public String getPgUsuario() {
+        return pgUsuario;
+    }
+
+    public void setPgUsuario(String pgUsuario) {
+        this.pgUsuario = pgUsuario;
+    }
+
+    public String getPgContra() {
+        return pgContra;
+    }
+
+    public void setPgContra(String pgContra) {
+        this.pgContra = pgContra;
+    }
+
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
 
 }//final de clase
 
