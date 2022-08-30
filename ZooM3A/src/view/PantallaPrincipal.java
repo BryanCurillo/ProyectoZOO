@@ -5,6 +5,7 @@
 package view;
 
 
+import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -32,13 +33,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jDPprincipal = new javax.swing.JDesktopPane();
         barramenus = new javax.swing.JMenuBar();
-        menupersona = new javax.swing.JMenu();
-        MeItAgregarPersona = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        agregarpersona = new javax.swing.JMenu();
+        jMIagregarPersona = new javax.swing.JMenuItem();
+        jMIeliminarpersona = new javax.swing.JMenuItem();
+        modificarpersona = new javax.swing.JMenuItem();
+        listarpersona = new javax.swing.JMenuItem();
         menuanimales = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -52,36 +53,38 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 634, Short.MAX_VALUE)
+        jDPprincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        javax.swing.GroupLayout jDPprincipalLayout = new javax.swing.GroupLayout(jDPprincipal);
+        jDPprincipal.setLayout(jDPprincipalLayout);
+        jDPprincipalLayout.setHorizontalGroup(
+            jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 628, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+        jDPprincipalLayout.setVerticalGroup(
+            jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 382, Short.MAX_VALUE)
         );
 
-        menupersona.setText("PERSONAL");
+        agregarpersona.setText("PERSONAL");
 
-        MeItAgregarPersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        MeItAgregarPersona.setText("AGREGAR PERSONAL");
-        menupersona.add(MeItAgregarPersona);
+        jMIagregarPersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIagregarPersona.setText("AGREGAR PERSONAL");
+        agregarpersona.add(jMIagregarPersona);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("ELIMINAR PERSONA");
-        menupersona.add(jMenuItem2);
+        jMIeliminarpersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIeliminarpersona.setText("ELIMINAR PERSONA");
+        agregarpersona.add(jMIeliminarpersona);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("MODIFICAR PERSONA");
-        menupersona.add(jMenuItem3);
+        modificarpersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        modificarpersona.setText("MODIFICAR PERSONA");
+        agregarpersona.add(modificarpersona);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem7.setText("VISUALIZAR REGISTRO DEL PERSONAL");
-        menupersona.add(jMenuItem7);
+        listarpersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        listarpersona.setText("VISUALIZAR REGISTRO DEL PERSONAL");
+        agregarpersona.add(listarpersona);
 
-        barramenus.add(menupersona);
+        barramenus.add(agregarpersona);
 
         menuanimales.setText("ANIMALES");
 
@@ -129,11 +132,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDPprincipal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDPprincipal)
         );
 
         pack();
@@ -141,154 +144,44 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */
-    public JMenuItem getMeItAgregarPersona() {
-        return MeItAgregarPersona;
-    }
-
-    public void setMeItAgregarPersona(JMenuItem MeItAgregarPersona) {
-        this.MeItAgregarPersona = MeItAgregarPersona;
-    }
-
-    public JMenuBar getBarramenus() {
-        return barramenus;
-    }
-
-    public void setBarramenus(JMenuBar barramenus) {
-        this.barramenus = barramenus;
-    }
-
-    public JMenuItem getjMenuItem10() {
-        return jMenuItem10;
-    }
-
-    public void setjMenuItem10(JMenuItem jMenuItem10) {
-        this.jMenuItem10 = jMenuItem10;
-    }
-
-    public JMenuItem getjMenuItem11() {
-        return jMenuItem11;
-    }
-
-    public void setjMenuItem11(JMenuItem jMenuItem11) {
-        this.jMenuItem11 = jMenuItem11;
-    }
-
-    public JMenuItem getjMenuItem12() {
-        return jMenuItem12;
-    }
-
-    public void setjMenuItem12(JMenuItem jMenuItem12) {
-        this.jMenuItem12 = jMenuItem12;
-    }
-
-    public JMenuItem getjMenuItem2() {
-        return jMenuItem2;
-    }
-
-    public void setjMenuItem2(JMenuItem jMenuItem2) {
-        this.jMenuItem2 = jMenuItem2;
-    }
-
-    public JMenuItem getjMenuItem3() {
-        return jMenuItem3;
-    }
-
-    public void setjMenuItem3(JMenuItem jMenuItem3) {
-        this.jMenuItem3 = jMenuItem3;
-    }
-
-    public JMenuItem getjMenuItem4() {
-        return jMenuItem4;
-    }
-
-    public void setjMenuItem4(JMenuItem jMenuItem4) {
-        this.jMenuItem4 = jMenuItem4;
-    }
-
-    public JMenuItem getjMenuItem5() {
-        return jMenuItem5;
-    }
-
-    public void setjMenuItem5(JMenuItem jMenuItem5) {
-        this.jMenuItem5 = jMenuItem5;
-    }
-
-    public JMenuItem getjMenuItem6() {
-        return jMenuItem6;
-    }
-
-    public void setjMenuItem6(JMenuItem jMenuItem6) {
-        this.jMenuItem6 = jMenuItem6;
-    }
-
-    public JMenuItem getjMenuItem7() {
-        return jMenuItem7;
-    }
-
-    public void setjMenuItem7(JMenuItem jMenuItem7) {
-        this.jMenuItem7 = jMenuItem7;
-    }
-
-    public JMenuItem getjMenuItem8() {
-        return jMenuItem8;
-    }
-
-    public void setjMenuItem8(JMenuItem jMenuItem8) {
-        this.jMenuItem8 = jMenuItem8;
-    }
-
-    public JMenuItem getjMenuItem9() {
-        return jMenuItem9;
-    }
-
-    public void setjMenuItem9(JMenuItem jMenuItem9) {
-        this.jMenuItem9 = jMenuItem9;
-    }
-
-    public JMenu getMenualimento() {
-        return menualimento;
-    }
-
-    public void setMenualimento(JMenu menualimento) {
-        this.menualimento = menualimento;
-    }
-
-    public JMenu getMenuanimales() {
-        return menuanimales;
-    }
-
-    public void setMenuanimales(JMenu menuanimales) {
-        this.menuanimales = menuanimales;
-    }
-
-    public JMenu getMenupersona() {
-        return menupersona;
-    }
-
-    public void setMenupersona(JMenu menupersona) {
-        this.menupersona = menupersona;
-    }
-
-   
+   */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MeItAgregarPersona;
+    private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane jDPprincipal;
+    private javax.swing.JMenuItem jMIagregarPersona;
+    private javax.swing.JMenuItem jMIeliminarpersona;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem listarpersona;
     private javax.swing.JMenu menualimento;
     private javax.swing.JMenu menuanimales;
-    private javax.swing.JMenu menupersona;
+    private javax.swing.JMenuItem modificarpersona;
     // End of variables declaration//GEN-END:variables
+
+    public JMenuItem getjMIagregarPersona() {
+        return jMIagregarPersona;
+    }
+
+    public void setjMIagregarPersona(JMenuItem jMIagregarPersona) {
+        this.jMIagregarPersona = jMIagregarPersona;
+    }
+
+    public JDesktopPane getjDPprincipal() {
+        return jDPprincipal;
+    }
+
+    public void setjDPprincipal(JDesktopPane jDPprincipal) {
+        this.jDPprincipal = jDPprincipal;
+    }
+
+
+
 }

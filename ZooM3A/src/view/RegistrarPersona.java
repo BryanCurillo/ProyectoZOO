@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author ALEJO
  */
-public class RegistrarPersona extends javax.swing.JFrame {
+public class RegistrarPersona extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RegistrarPersona
@@ -39,7 +39,7 @@ public class RegistrarPersona extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         lblfoto = new javax.swing.JLabel();
-        botonagregarfoto = new javax.swing.JButton();
+        btagregarfoto = new javax.swing.JButton();
         txttelefono = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
@@ -55,7 +55,6 @@ public class RegistrarPersona extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtapellido = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        btregistrarse = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -64,9 +63,10 @@ public class RegistrarPersona extends javax.swing.JFrame {
         txtconfirmacontra = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        btcancelar = new javax.swing.JButton();
         comborol = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
+        btregistrar = new javax.swing.JButton();
+        btcancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +75,7 @@ public class RegistrarPersona extends javax.swing.JFrame {
 
         lblfoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        botonagregarfoto.setText("AGREGAR FOTO");
+        btagregarfoto.setText("AGREGAR FOTO");
 
         txttelefono.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txttelefono.setToolTipText("INGRESE LA CONTRASEÑA");
@@ -124,12 +124,6 @@ public class RegistrarPersona extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("TELEFONO:");
 
-        btregistrarse.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btregistrarse.setText("REGISTRARSE ");
-        btregistrarse.setBorder(new javax.swing.border.MatteBorder(null));
-        btregistrarse.setContentAreaFilled(false);
-        btregistrarse.setFocusPainted(false);
-
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("USUARIO:");
 
@@ -146,16 +140,16 @@ public class RegistrarPersona extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel4.setText("REGISTRO DE USUARIO");
 
-        btcancelar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btcancelar.setText("CANCELAR");
-        btcancelar.setBorder(new javax.swing.border.MatteBorder(null));
-        btcancelar.setContentAreaFilled(false);
-        btcancelar.setFocusPainted(false);
-
         comborol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setText("ROL:");
+
+        btregistrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btregistrar.setText("REGISTRARSE");
+
+        btcancelar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btcancelar.setText("CANCELAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,7 +190,7 @@ public class RegistrarPersona extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonagregarfoto)
+                                .addComponent(btagregarfoto)
                                 .addGap(55, 55, 55))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,10 +208,6 @@ public class RegistrarPersona extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtconfirmacontra))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                         .addGap(95, 95, 95)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel11)
@@ -227,12 +217,19 @@ public class RegistrarPersona extends javax.swing.JFrame {
                                             .addComponent(txtcontra)
                                             .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(108, 108, 108)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btcancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtconfirmacontra))))
                             .addComponent(jLabel4))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(btregistrar)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btcancelar)
+                .addGap(243, 243, 243))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +266,7 @@ public class RegistrarPersona extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblfoto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonagregarfoto)))
+                        .addComponent(btagregarfoto)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel14)
@@ -277,7 +274,7 @@ public class RegistrarPersona extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(comborol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
@@ -294,10 +291,10 @@ public class RegistrarPersona extends javax.swing.JFrame {
                     .addComponent(txtconfirmacontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
                 .addGap(18, 18, 18)
-                .addComponent(btregistrarse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btregistrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btcancelar)
-                .addGap(23, 23, 23))
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -320,11 +317,11 @@ public class RegistrarPersona extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bggenero;
-    private javax.swing.JButton botonagregarfoto;
+    private javax.swing.JButton btagregarfoto;
     private javax.swing.JButton btcancelar;
     private javax.swing.JRadioButton btfemenino;
     private javax.swing.JRadioButton btmasculino;
-    private javax.swing.JButton btregistrarse;
+    private javax.swing.JButton btregistrar;
     private com.toedter.calendar.JDateChooser calendarFechanacimiento;
     private javax.swing.JComboBox<String> comborol;
     private javax.swing.JLabel jLabel10;
@@ -354,11 +351,11 @@ public class RegistrarPersona extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public JButton getBotonagregarfoto() {
-        return botonagregarfoto;
+        return btagregarfoto;
     }
 
     public void setBotonagregarfoto(JButton botonagregarfoto) {
-        this.botonagregarfoto = botonagregarfoto;
+        this.btagregarfoto = botonagregarfoto;
     }
 
     public JButton getBtcancelar() {
@@ -383,14 +380,6 @@ public class RegistrarPersona extends javax.swing.JFrame {
 
     public void setBtmasculino(JRadioButton btmasculino) {
         this.btmasculino = btmasculino;
-    }
-
-    public JButton getBtregistrarse() {
-        return btregistrarse;
-    }
-
-    public void setBtregistrarse(JButton btregistrarse) {
-        this.btregistrarse = btregistrarse;
     }
 
     public JDateChooser getCalendarFechanacimiento() {
@@ -487,6 +476,22 @@ public class RegistrarPersona extends javax.swing.JFrame {
 
     public void setBggenero(ButtonGroup bggenero) {
         this.bggenero = bggenero;
+    }
+
+    public JButton getBtagregarfoto() {
+        return btagregarfoto;
+    }
+
+    public void setBtagregarfoto(JButton btagregarfoto) {
+        this.btagregarfoto = btagregarfoto;
+    }
+
+    public JButton getBtregistrar() {
+        return btregistrar;
+    }
+
+    public void setBtregistrar(JButton btregistrar) {
+        this.btregistrar = btregistrar;
     }
 
 
