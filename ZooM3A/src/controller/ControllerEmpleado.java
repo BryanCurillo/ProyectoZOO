@@ -22,6 +22,9 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import model.modelCuidador;
+import model.modelGerente;
+import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
 
@@ -140,10 +143,21 @@ public class ControllerEmpleado {
                     int opc = vista.getComborol().getSelectedIndex();
                     switch (opc) {
                         case 1:
-                            vista.getjPgerente().setVisible(true);
+                            //Gerente
+                            String titulo = vista.getTxtTitulo().getText();
+                            modelGerente gerente = new modelGerente();
+                            gerente.setIdEmpleado(empleado.obtenerCodigo(cedulaemp));
+                            gerente.setTitulo(titulo);
+                            gerente.setGerente();
+                            JOptionPane.showMessageDialog(vista, "Gerente agregado/a correctamente");
                             break;
                         case 2:
-//                            vista.getjPzsecretaria().setVisible(true);
+                            int experiencia = (int) vista.getjSexperiencia().getValue();
+                            modelSecretaria secretaria = new modelSecretaria();
+                            secretaria.setIdEmpleado(empleado.obtenerCodigo(cedulaemp));
+                            secretaria.setExperiencia(experiencia);
+                            secretaria.setGerente();
+                            JOptionPane.showMessageDialog(vista, "Secretaria agregado/a correctamente");
                             break;
                         case 3:
                             //Zoologo
@@ -152,10 +166,15 @@ public class ControllerEmpleado {
                             zoologo.setIdEmpleadoZoo(empleado.obtenerCodigo(cedulaemp));
                             zoologo.setRama(rama);
                             zoologo.setZoologo();
-                            JOptionPane.showMessageDialog(vista, "Persona agregada correctamente");
+                            JOptionPane.showMessageDialog(vista, "Zoologo agregado/a correctamente");
                             break;
                         case 4:
-
+                            String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
+                            modelCuidador cuidador = new modelCuidador();
+                            cuidador.setIdEmpleado(empleado.obtenerCodigo(cedulaemp));
+                            cuidador.setTipoSangre(tipoSangre);
+                            cuidador.seCuidador();
+                            JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");                           
                             break;
                     }
 

@@ -5,12 +5,18 @@
 package validaciones;
 
 import javax.swing.JOptionPane;
+import model.modelEmpleado;
+import model.modelLogin;
+import view.viewLogin;
 
 /**
  *
  * @author ALEJO
  */
 public class validaciones {
+
+    private modelLogin modeloL;
+    private viewLogin vista;
 
     public boolean Validarcedula(String cedula) {
         boolean validado = false;
@@ -117,4 +123,18 @@ public class validaciones {
         return cantidadcorrecta;
     }//final de validarnumeros
 
+    public boolean validarLogin() {
+        boolean ban=false;
+        if (modeloL.comprobarUsuario(vista.getTxtusuarioingreso().getText())) {
+            if (modeloL.comprobarLogin(vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText())) {
+                ban=true;
+            }else{
+            JOptionPane.showMessageDialog(null, "Contraseñá incorrecta");
+        }
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+        }
+
+        return ban;
+    }
 }//final de clase

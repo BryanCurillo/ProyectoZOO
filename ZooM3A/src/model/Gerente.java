@@ -10,25 +10,25 @@ package model;
  */
 public class Gerente extends Empleado {
     
-    private int id;
+    private int idGerente;
     private String titulo;
     private int idEmpleado;
 
     public Gerente() {
     }
 
-    public Gerente(int id, String titulo, int idEmpleado) {
-        this.id = id;
+    public Gerente(int idGerente, String titulo, int idEmpleado) {
+        this.idGerente = idGerente;
         this.titulo = titulo;
         this.idEmpleado = idEmpleado;
     }
 
-    public int getId() {
-        return id;
+    public int getIdGerente() {
+        return idGerente;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdGerente(int idGerente) {
+        this.idGerente = idGerente;
     }
 
     public String getTitulo() {

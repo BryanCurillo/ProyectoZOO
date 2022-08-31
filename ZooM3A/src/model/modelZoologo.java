@@ -19,8 +19,7 @@ public class modelZoologo extends Zoologo {
         super(id, rama, idEmpleado);
     }
 
-    public boolean setZoologo() {
-        System.out.println(getRama()+"---"+getIdEmpleadoZoo());
+    public boolean setZoologo() {        
         String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado)"
                 + "values('" + getRama() + "','" +getIdEmpleadoZoo()+ "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT

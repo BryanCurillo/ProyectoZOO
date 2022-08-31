@@ -77,7 +77,7 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         jSexperiencia = new javax.swing.JSpinner();
         jPgerente = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        txttitulo = new javax.swing.JPasswordField();
+        txtTitulo = new javax.swing.JTextField();
         jPzoologo = new javax.swing.JPanel();
         comborama = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
@@ -201,7 +201,7 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPcuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 115, 270, 30));
+        jPanel2.add(jPcuidador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 270, 30));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("AÑOS DE EXPERIENCIA:");
@@ -232,7 +232,9 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setText("TITULO:");
 
-        txttitulo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtTitulo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtTitulo.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtTitulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPgerenteLayout = new javax.swing.GroupLayout(jPgerente);
         jPgerente.setLayout(jPgerenteLayout);
@@ -242,8 +244,8 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPgerenteLayout.setVerticalGroup(
             jPgerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +253,7 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPgerenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(txttitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -425,10 +427,6 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
                     .addComponent(jLabel16))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,12 +438,15 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(txtconfirmacontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btregistrar)
-                            .addComponent(btcancelar))
-                        .addGap(20, 20, 20))))
+                            .addComponent(txtconfirmacontra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btregistrar)
+                    .addComponent(btcancelar))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -492,6 +493,7 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner jSexperiencia;
     private javax.swing.JLabel lblfoto;
+    private javax.swing.JTextField txtTitulo;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JPasswordField txtconfirmacontra;
@@ -499,7 +501,6 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtcorreo;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
-    private javax.swing.JPasswordField txttitulo;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 
@@ -703,15 +704,12 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         this.jSexperiencia = jSexperiencia;
     }
 
-    public JPasswordField getTxttitulo() {
-        return txttitulo;
+    public JTextField getTxtTitulo() {
+        return txtTitulo;
     }
 
-    public void setTxttitulo(JPasswordField txttitulo) {
-        this.txttitulo = txttitulo;
+    public void setTxtTitulo(JTextField txtTitulo) {
+        this.txtTitulo = txtTitulo;
     }
-
-
-
 
 }
