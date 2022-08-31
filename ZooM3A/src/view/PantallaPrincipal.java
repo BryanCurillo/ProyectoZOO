@@ -59,11 +59,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jDPprincipal.setLayout(jDPprincipalLayout);
         jDPprincipalLayout.setHorizontalGroup(
             jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 628, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         jDPprincipalLayout.setVerticalGroup(
             jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 416, Short.MAX_VALUE)
         );
 
         agregarpersona.setText("PERSONAL");

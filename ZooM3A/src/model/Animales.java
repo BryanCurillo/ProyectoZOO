@@ -10,7 +10,7 @@ package model;
  */
 public class Animales extends Alimento {
 
-    private String nombrealimento;
+    private String nombreanimal;
     private String genero;
     private String especie;
     private double peso;
@@ -20,8 +20,8 @@ public class Animales extends Alimento {
     public Animales() {
     }
 
-    public Animales(String nombrealimento, String genero, String especie, double peso, String dieta, int edad) {
-        this.nombrealimento = nombrealimento;
+    public Animales(String nombreanimal, String genero, String especie, double peso, String dieta, int edad) {
+        this.nombreanimal = nombreanimal;
         this.genero = genero;
         this.especie = especie;
         this.peso = peso;
@@ -29,9 +29,9 @@ public class Animales extends Alimento {
         this.edad = edad;
     }
 
-    public Animales(String nombrealimento, String genero, String especie, double peso, String dieta, int edad, String nombre, String tipo, String descripcion, int N_comida_diaria) {
+    public Animales(String nombreanimal, String genero, String especie, double peso, String dieta, int edad, String nombre, String tipo, String descripcion, int N_comida_diaria) {
         super(nombre, tipo, descripcion, N_comida_diaria);
-        this.nombrealimento = nombrealimento;
+        this.nombreanimal = nombreanimal;
         this.genero = genero;
         this.especie = especie;
         this.peso = peso;
@@ -39,12 +39,12 @@ public class Animales extends Alimento {
         this.edad = edad;
     }
 
-    public String getNombrealimento() {
-        return nombrealimento;
+    public String getNombreanimal() {
+        return nombreanimal;
     }
 
-    public void setNombrealimento(String nombrealimento) {
-        this.nombrealimento = nombrealimento;
+    public void setNombreanimal(String nombreanimal) {
+        this.nombreanimal = nombreanimal;
     }
 
     public String getGenero() {
