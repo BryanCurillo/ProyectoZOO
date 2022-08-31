@@ -28,7 +28,6 @@ public class RegistroAnimal extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtnombreanimal = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtnombreanimal1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -45,6 +44,9 @@ public class RegistroAnimal extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
+        jSpinner2 = new javax.swing.JSpinner();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,8 +57,7 @@ public class RegistroAnimal extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("ID:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 58, -1, -1));
-        getContentPane().add(txtnombreanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 55, 206, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("NOMBRE: ");
@@ -64,8 +65,8 @@ public class RegistroAnimal extends javax.swing.JFrame {
         getContentPane().add(txtnombreanimal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 83, 206, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel10.setText("GENERO:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 125, -1, -1));
+        jLabel10.setText("ESPECIE:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
 
         bthembra.setText("HEMBRA");
         getContentPane().add(bthembra, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 123, -1, -1));
@@ -107,6 +108,14 @@ public class RegistroAnimal extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton2.setText("ACEPTAR");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+        getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 70, -1));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("GENERO:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 125, -1, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mamíferos", "Aves", "Reptiles", "Ranas y sapos", "Peces", "Ciempiés y milpiés", "Arañas y alacranes", "Insectos", "Cangrejos y camarones", "Estrellas y erizos", "Caracoles, almejas y pulpos", "Lombrices y gusanos marinos", "Rotíferos", "Gusanos planos", "Medusas y corales", "Esponjas" }));
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 100, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,9 +132,11 @@ public class RegistroAnimal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -133,7 +144,7 @@ public class RegistroAnimal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField txtnombreanimal;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField txtnombreanimal1;
     // End of variables declaration//GEN-END:variables
 }
