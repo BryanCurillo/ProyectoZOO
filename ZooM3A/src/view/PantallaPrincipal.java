@@ -52,7 +52,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jDPprincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -60,11 +59,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jDPprincipal.setLayout(jDPprincipalLayout);
         jDPprincipalLayout.setHorizontalGroup(
             jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 661, Short.MAX_VALUE)
         );
         jDPprincipalLayout.setVerticalGroup(
             jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 416, Short.MAX_VALUE)
+            .addGap(0, 433, Short.MAX_VALUE)
         );
 
         agregarpersona.setText("PERSONAL");
@@ -182,6 +181,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     public void setjDPprincipal(JDesktopPane jDPprincipal) {
         this.jDPprincipal = jDPprincipal;
+    }
+
+    public JMenuItem getjMIeliminarpersona() {
+        return jMIeliminarpersona;
+    }
+
+    public void setjMIeliminarpersona(JMenuItem jMIeliminarpersona) {
+        this.jMIeliminarpersona = jMIeliminarpersona;
     }
 
 

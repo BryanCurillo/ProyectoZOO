@@ -17,12 +17,12 @@ import javax.swing.JTextField;
  *
  * @author ALEJO
  */
-public class RegistrarPersona extends javax.swing.JInternalFrame {
+public class RegistrarEmpleado extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RegistrarPersona
      */
-    public RegistrarPersona() {
+    public RegistrarEmpleado() {
         initComponents();
     }
 
@@ -68,7 +68,7 @@ public class RegistrarPersona extends javax.swing.JInternalFrame {
         btregistrar = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("REGISTRO DE PERSONAL");
@@ -140,7 +140,7 @@ public class RegistrarPersona extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel4.setText("REGISTRO DE USUARIO");
 
-        comborol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comborol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar rol" }));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setText("ROL:");
