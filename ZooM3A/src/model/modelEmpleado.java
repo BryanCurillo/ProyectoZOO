@@ -83,10 +83,10 @@ public class modelEmpleado extends Empleado {
     public int obtenerCodigo(String cedula) {
         int codigo = 0;
         String sql = "select emp_id from empleado where emp_cedula = '" + cedula + "'";
-       ResultSet rs = mpgc.consulta(sql);
+        ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
-                codigo=rs.getInt(1);
+                codigo = rs.getInt(1);
                 System.out.println(codigo);
             }
         } catch (SQLException e) {
@@ -99,4 +99,6 @@ public class modelEmpleado extends Empleado {
         }
         return codigo;
     }
+
+    
 }

@@ -4,6 +4,8 @@
  */
 package validaciones;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
 import model.modelLogin;
@@ -18,121 +20,139 @@ public class validaciones {
     private modelLogin modeloL;
     private viewLogin vista;
 
-    public boolean Validarcedula(String cedula) {
-        boolean validado = false;
+    public boolean validarCedula(String cedula) {
+        boolean val = false;
+        //Divide la cadena en los 10 numeros
+        //Integer.parseInt sirve para transformar una cadena a entero. 
+        //subString es un metodo de string(Desde, hasta)
+        if (cedula.matches("\\d{10}")) {
+            int d1 = Integer.parseInt(cedula.substring(0, 1));
+            int d2 = Integer.parseInt(cedula.substring(1, 2));
+            int d3 = Integer.parseInt(cedula.substring(2, 3));
+            int d4 = Integer.parseInt(cedula.substring(3, 4));
+            int d5 = Integer.parseInt(cedula.substring(4, 5));
+            int d6 = Integer.parseInt(cedula.substring(5, 6));
+            int d7 = Integer.parseInt(cedula.substring(6, 7));
+            int d8 = Integer.parseInt(cedula.substring(7, 8));
+            int d9 = Integer.parseInt(cedula.substring(8, 9));
+            int d10 = Integer.parseInt(cedula.substring(9));
 
-        if (cedula.matches("[0-9]*") == true) {
-
-            int sumaimpares;
-            int sumapares;
-            int sumatotal;
-
-            String digito1 = cedula.substring(0, 1);
-            String digito2 = cedula.substring(1, 2);
-            String digito3 = cedula.substring(2, 3);
-            String digito4 = cedula.substring(3, 4);
-            String digito5 = cedula.substring(4, 5);
-            String digito6 = cedula.substring(5, 6);
-            String digito7 = cedula.substring(6, 7);
-            String digito8 = cedula.substring(7, 8);
-            String digito9 = cedula.substring(8, 9);
-            String digito10 = cedula.substring(9, 10);
-
-            int d1 = Integer.parseInt(digito1);
-            int d2 = Integer.parseInt(digito2);
-            int d3 = Integer.parseInt(digito3);
-            int d4 = Integer.parseInt(digito4);
-            int d5 = Integer.parseInt(digito5);
-            int d6 = Integer.parseInt(digito6);
-            int d7 = Integer.parseInt(digito7);
-            int d8 = Integer.parseInt(digito8);
-            int d9 = Integer.parseInt(digito9);
-            int d10 = Integer.parseInt(digito10);
-
+            //Multiplica todas la posciones impares * 2 y las posiciones pares se multiplica 1
             d1 = d1 * 2;
             if (d1 > 9) {
                 d1 = d1 - 9;
             }
+
             d3 = d3 * 2;
             if (d3 > 9) {
                 d3 = d3 - 9;
             }
+
             d5 = d5 * 2;
             if (d5 > 9) {
                 d5 = d5 - 9;
-
             }
+
             d7 = d7 * 2;
             if (d7 > 9) {
                 d7 = d7 - 9;
             }
+
             d9 = d9 * 2;
             if (d9 > 9) {
                 d9 = d9 - 9;
             }
-            sumaimpares = d1 + d3 + d5 + d7 + d9;
-            sumapares = d2 + d4 + d6 + d8 + d10;
-            sumatotal = sumapares + sumaimpares;
-            int modd = sumatotal % 10;
-            if (modd == 0 && cedula.length() == 10) {//metodo length
-                // modd=1;
-                //int verificar=10-modd;
-                //System.out.println("Cedula  valida");
-                validado = true;
 
-                return validado;
-            } else {
-                // System.out.println("Cedula Invalida");
-                validado = false;
+            // SUMA TODOS LOS  NUMEROS PARES E IMPARES
+            int sumpar = d2 + d4 + d6 + d8;
+            int sumimp = d1 + d3 + d5 + d7 + d9;
+            int total = sumpar + sumimp;
 
-                return validado;
+            //DIVIDO MI DECENA SUPERIRO PARA 10 Y SI EL RESULTADO ES DIFERENTE DE 0 SUMA 1
+            double decenasuperior = total;
+            while (decenasuperior % 10 != 0) {
+                decenasuperior = decenasuperior + 1;
             }
+
+            if ((decenasuperior - total) == d10) {
+                val = true;
+            }
+        }
+
+        return val;
+    }
+
+//    public boolean validar_nombre_apellido(String aux) {
+//        return aux.matches("^[a-zA-Z]{3,20}");
+//    }
+    public boolean validarCorreo(String mail) {
+        boolean val = false;
+        // Patrón para validar el email
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{1,30})$");
+
+        // El email a validar
+        Matcher mather = pattern.matcher(mail);
+        val = mather.find();
+
+        return val;
+    }
+
+    public boolean validarDireccion(String direccion) {
+        direccion = direccion.trim();//trim()
+        boolean validar = direccion.matches("([\\w\\s]+\\-*+\\#*+\\.*)*");
+        return validar;
+    }
+
+    public boolean validarNombApeEspacios(String cadena) {
+        cadena = cadena.trim();//trim()
+        boolean validar = cadena.matches("[A-Za-z\\s]*");
+        return validar;
+    }
+
+    public boolean validarTelefono(String telefono) {
+        boolean validar = false;
+        if (telefono.matches("[0-9]{10}")) {
+            validar = true;
+        }
+        return validar;
+    }
+
+    public boolean validarContrasena(String clave) {
+        boolean validar = false;
+//        String expreg="(\"^[A-Z]{1}[\\\\d]{3}[a-z]{2}[^A-ZA-Z0-9]{1}$\")";
+        String expreg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%.!%-_^*&+=()])(?=\\S+$).{5,20}$";//MINIMO 1 mayus y 1 minus , 1 caract especial, minimo 8 y max 20
+        //min 1 letra mayus | min 1 letra minus | min 1 caract especial | min 1 numero | minimo 5 caracteres max 20
+        validar = clave.matches(expreg);
+        return validar;
+    }
+
+    public boolean validarUsuario(String usuario) {
+        boolean validar = usuario.matches("^[a-zA-Z]{3,}[\\d]*$");
+
+        return validar;
+    }
+
+    public boolean validarLogin(String usuario, String contrasena) {
+        boolean ban = false;
+        modelLogin miLogin = new modelLogin();
+        System.out.println(usuario + "xD");
+        if (usuario.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el usuario");
         } else {
+            if (miLogin.comprobarUsuario(usuario)) {
+                if (contrasena.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Ingrese la contraseñá");
+                } else {
+                    if (miLogin.comprobarLogin(usuario, contrasena)) {
+                        ban = true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Contraseñá incorrecta");
+                    }
+                }
 
-            // System.out.println("Cedula Invalida");
-        }
-
-        return validado;
-
-    }//final de validacion de cedula
-
-    public boolean validarpalabras(String auxpalabra) {
-        boolean correcto = false;
-        if (auxpalabra.isBlank()) {
-            JOptionPane.showMessageDialog(null, "EL CAMPO ESTA VACIO");
-        }
-        if (auxpalabra.matches("[a-zA-Z_ ]+")) {
-            correcto = true;
-        } else {
-            JOptionPane.showMessageDialog(null, "NO ESTA PERMITIDO EN ESTE CAMPO");
-        }
-        return correcto;
-    }//final de validarpalabras
-
-    public boolean validarnumeros(String auxnumeros) {
-        boolean cantidadcorrecta = false;
-        if (auxnumeros.isBlank()) {
-            JOptionPane.showMessageDialog(null, "EL CAMPO ESTA VACIO");
-        }
-        if (auxnumeros.matches("[0-9]+")) {
-            cantidadcorrecta = true;
-        } else {
-            JOptionPane.showMessageDialog(null, "NO ESTA PERMITIDO EN ESTE CAMPO");
-        }
-
-        return cantidadcorrecta;
-    }//final de validarnumeros
-
-    public boolean validarLogin() {
-        boolean ban=false;
-        if (modeloL.comprobarUsuario(vista.getTxtusuarioingreso().getText())) {
-            if (modeloL.comprobarLogin(vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText())) {
-                ban=true;
-            }else{
-            JOptionPane.showMessageDialog(null, "Contraseñá incorrecta");
-        }
-        }else{
-            JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario incorrecto");
+            }
         }
 
         return ban;

@@ -78,6 +78,7 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarUsuario(String usuario) {
+        System.out.println(usuario+"xxxx");
         String sql = "select count(*) from empleado where emp_usuario='" + usuario + "'";
         ResultSet rs = mpgc.consulta(sql);
         boolean ban = false;

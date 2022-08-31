@@ -27,6 +27,7 @@ import model.modelGerente;
 import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
+import validaciones.validaciones;
 
 /**
  *
@@ -276,5 +277,64 @@ public class ControllerEmpleado {
                 break;
         }
     }
+    
+    
+//    public boolean validar() {
+//        boolean ban = false;
+//        validaciones mivalidacion = new validaciones();
+//        //DNI
+//        if (!vista.getTxtDNI().getText().isEmpty()) {
+//            if (mivalidacion.validar_ced(vista.getTxtDNI().getText())) {
+//                ban = true;
+//            } else {
+//                JOptionPane.showMessageDialog(vista, "Cedula invalida");
+//                ban = false;
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(vista, "Ingrese la cedula");
+//        }
+//        //DIRECCION
+//        if (!vista.getTxtDireccion().getText().isEmpty()) {
+//            if (mivalidacion.validarDireccion(vista.getTxtDireccion().getText())) {
+//                ban = true;
+//            } else {
+//                JOptionPane.showMessageDialog(vista, "Direccion invalida");
+//                ban = false;
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(vista, "Ingrese la cedula");
+//        }
+//        //NOMBRE
+//        if (mivalidacion.validarNombApeEspacios(vista.getTxtNombre1().getText())) {
+//            ban = true;
+//        } else {
+//            JOptionPane.showMessageDialog(vista, "Nombre invalido");
+//            ban = false;
+//        }
+//        //APELLIDO
+//        if (mivalidacion.validarNombApeEspacios(vista.getTxtApellido1().getText())) {
+//            ban = true;
+//        } else {
+//            JOptionPane.showMessageDialog(vista, "Apellido invalido");
+//            ban = false;
+//        }
+//        //TELEFONO
+//        if (mivalidacion.validarTelefono(vista.getTxtTelefono().getText())) {
+//            ban = true;
+//        } else {
+//            JOptionPane.showMessageDialog(vista, "Telefono invalido");
+//            ban = false;
+//        }
+//        if (vista.getjCbCanton().getSelectedIndex() != 0) {
+//            ban = true;
+//        } else {
+//            if (vista.getjCbProvincia().getSelectedIndex() == 0) {
+//                JOptionPane.showMessageDialog(vista, "Selecione una provincia");
+//            }
+//            JOptionPane.showMessageDialog(vista, "Selecione un canton");
+//            ban = false;
+//        }
+//        return ban;
+//    }
 
 }
