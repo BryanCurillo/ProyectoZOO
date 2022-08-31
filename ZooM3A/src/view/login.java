@@ -4,6 +4,13 @@
  */
 package view;
 
+import javax.accessibility.AccessibleContext;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ALEJO
@@ -87,6 +94,80 @@ public class login extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
+    public JButton getBtiniciarsesion() {
+        return btiniciarsesion;
+    }
+
+    public void setBtiniciarsesion(JButton btiniciarsesion) {
+        this.btiniciarsesion = btiniciarsesion;
+    }
+
+    public JButton getBtregistrarse() {
+        return btregistrarse;
+    }
+
+    public void setBtregistrarse(JButton btregistrarse) {
+        this.btregistrarse = btregistrarse;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPasswordField getTxtcontraingreso() {
+        return txtcontraingreso;
+    }
+
+    public void setTxtcontraingreso(JPasswordField txtcontraingreso) {
+        this.txtcontraingreso = txtcontraingreso;
+    }
+
+    public JTextField getTxtusuarioingreso() {
+        return txtusuarioingreso;
+    }
+
+    public void setTxtusuarioingreso(JTextField txtusuarioingreso) {
+        this.txtusuarioingreso = txtusuarioingreso;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btiniciarsesion;
     private javax.swing.JButton btregistrarse;
