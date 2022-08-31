@@ -22,6 +22,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import model.modelZoologo;
 import model.rol;
 
 /**
@@ -31,19 +32,22 @@ import model.rol;
 public class ControllerEmpleado {
 
     PantallaPrincipal pp = new PantallaPrincipal();
-    private modelEmpleado modelo;
+    private modelEmpleado modeloE;
+    private modelPersona modeloP;
     private RegistrarEmpleado vista;
     private JFileChooser jfc;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
     public ControllerEmpleado(modelEmpleado modelo, RegistrarEmpleado vista) {
-        this.modelo = modelo;
+        this.modeloE = modelo;
         this.vista = vista;
+        desactivarDatosRol();
         vista.setVisible(true);
     }
 
     public void inicialControl() {
         cargarComboRol();
+        vista.getComborol().addActionListener(l -> activarDatosRol());
         vista.getBtagregarfoto().addActionListener(l -> examinarFoto());
         vista.getBtregistrar().addActionListener(l -> crearEditarPersona());
     }
@@ -68,7 +72,7 @@ public class ControllerEmpleado {
     }
 
     public void cargarComboRol() {
-        List<rol> listaRol = modelo.getroles();
+        List<rol> listaRol = modeloE.getroles();
         listaRol.stream().forEach(r -> {
             vista.getComborol().addItem(r.getNombre());
         });
@@ -86,11 +90,11 @@ public class ControllerEmpleado {
                         apellido = vista.getTxtapellido().getText();
                 Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
 
-                modelEmpleado empleado = new modelEmpleado();
-                empleado.setCedula(cedula);
-                empleado.setNombre(nombre);
-                empleado.setApellido(apellido);
-                empleado.setFechaRegistro(fechaRegistro);
+                modelPersona persona = new modelPersona();
+                persona.setCedula(cedula);
+                persona.setNombre(nombre);
+                persona.setApellido(apellido);
+                persona.setFechaRegistro(fechaRegistro);
 
                 //Empleado
                 String telefono = vista.getTxttelefono().getText(),
@@ -112,7 +116,7 @@ public class ControllerEmpleado {
                         JOptionPane.showMessageDialog(vista, "Elija un sexo");
                     }
                 }
-
+                modelEmpleado empleado = new modelEmpleado();
                 empleado.setTelefono(telefono);
                 empleado.setFechanacimiento(fechanacimiento);
                 empleado.setGenero(genero);
@@ -132,8 +136,29 @@ public class ControllerEmpleado {
                 }
                 //...........
 //                if (persona.setPersona()) {//Grabamos
-                if (empleado.setPersona() && empleado.setFotoEmpleado()) {//Grabamos
-                    JOptionPane.showMessageDialog(vista, "Persona agregada correctamente");
+                if (persona.setPersona() && empleado.setFotoEmpleado()) {//Grabamos
+                    int opc = vista.getComborol().getSelectedIndex();
+                    switch (opc) {
+                        case 1:
+                            vista.getjPgerente().setVisible(true);
+                            break;
+                        case 2:
+//                            vista.getjPzsecretaria().setVisible(true);
+                            break;
+                        case 3:
+                            //Zoologo
+                            String rama = vista.getComborama().getSelectedItem().toString();
+                            modelZoologo zoologo = new modelZoologo();
+                            zoologo.setIdEmpleadoZoo(empleado.obtenerCodigo(cedulaemp));
+                            zoologo.setRama(rama);
+                            zoologo.setZoologo();
+                            JOptionPane.showMessageDialog(vista, "Persona agregada correctamente");
+                            break;
+                        case 4:
+
+                            break;
+                    }
+
                     vista.setVisible(false);
                 } else {
                     JOptionPane.showMessageDialog(vista, "No se pudo agregar a la persona");
@@ -204,6 +229,32 @@ public class ControllerEmpleado {
 //                    }
 //                }
 //            }
+        }
+    }
+
+    public void desactivarDatosRol() {
+        vista.getjPcuidador().setVisible(false);
+        vista.getjPgerente().setVisible(false);
+        vista.getjPzoologo().setVisible(false);
+        vista.getjPzsecretaria().setVisible(false);
+    }
+
+    public void activarDatosRol() {
+        desactivarDatosRol();
+        int opc = vista.getComborol().getSelectedIndex();
+        switch (opc) {
+            case 1:
+                vista.getjPgerente().setVisible(true);
+                break;
+            case 2:
+                vista.getjPzsecretaria().setVisible(true);
+                break;
+            case 3:
+                vista.getjPzoologo().setVisible(true);
+                break;
+            case 4:
+                vista.getjPcuidador().setVisible(true);
+                break;
         }
     }
 
