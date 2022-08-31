@@ -30,12 +30,11 @@ public class modelEmpleado extends Empleado {
         super(id, telefono, fechanacimiento, rol, usuario, contraseña, cedula, genero, foto, imageFile, tamano);
     }
 
-    public boolean setPersona() {
-        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro)"
-                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "');";
-        return mpgc.accion(sql);//EJECUTAMOS EN INSERT
-    }
-
+//    public boolean setPersona() {
+//        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro)"
+//                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "');";
+//        return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+//    }
     public boolean setFotoEmpleado() {
         String sql;
         sql = "INSERT INTO empleado(emp_telefono, emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula)";
@@ -79,5 +78,25 @@ public class modelEmpleado extends Empleado {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaRoles;
+    }
+
+    public int obtenerCodigo(String cedula) {
+        int codigo = 0;
+        String sql = "select emp_id from empleado where emp_cedula = '" + cedula + "'";
+       ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                codigo=rs.getInt(1);
+                System.out.println(codigo);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return codigo;
     }
 }

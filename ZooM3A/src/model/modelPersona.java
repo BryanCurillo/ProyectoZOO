@@ -22,7 +22,7 @@ public class modelPersona extends Persona {
     }
 
     public boolean setPersona() {
-        String sql = "INSERT INTO persona (cedula,nombre,apellido,fecharegistro)"
+        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro)"
                 + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }

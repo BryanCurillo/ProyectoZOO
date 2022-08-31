@@ -10,25 +10,25 @@ package model;
  */
 public class Zoologo extends Empleado {
 
-    private int id;
+    private int idZoo;
     private String rama;
-    private int idEmpleado;
+    private int idEmpleadoZoo;
 
     public Zoologo() {
     }
 
-    public Zoologo(int id, String rama, int idEmpleado) {
-        this.id = id;
+    public Zoologo(int idZoo, String rama, int idEmpleadoZoo) {
+        this.idZoo = idZoo;
         this.rama = rama;
-        this.idEmpleado = idEmpleado;
+        this.idEmpleadoZoo = idEmpleadoZoo;
     }
 
-    public int getId() {
-        return id;
+    public int getIdZoo() {
+        return idZoo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdZoo(int idZoo) {
+        this.idZoo = idZoo;
     }
 
     public String getRama() {
@@ -39,13 +39,14 @@ public class Zoologo extends Empleado {
         this.rama = rama;
     }
 
-    public int getIdEmpleado() {
-        return idEmpleado;
+    public int getIdEmpleadoZoo() {
+        return idEmpleadoZoo;
     }
 
-    public void setIdEmpleado(int idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setIdEmpleadoZoo(int idEmpleadoZoo) {
+        this.idEmpleadoZoo = idEmpleadoZoo;
     }
+
 
    
 }
