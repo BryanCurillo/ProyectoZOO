@@ -120,14 +120,14 @@ public class validaciones {
     public boolean validarContrasena(String clave) {
         boolean validar = false;
 //        String expreg="(\"^[A-Z]{1}[\\\\d]{3}[a-z]{2}[^A-ZA-Z0-9]{1}$\")";
-        String expreg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%.!%-_^*&+=()])(?=\\S+$).{5,20}$";//MINIMO 1 mayus y 1 minus , 1 caract especial, minimo 8 y max 20
+        String expreg = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%.!%-_^*&+=()])(?=\\S+$).{5,10}$";//MINIMO 1 mayus y 1 minus , 1 caract especial, minimo 8 y max 20
         //min 1 letra mayus | min 1 letra minus | min 1 caract especial | min 1 numero | minimo 5 caracteres max 20
         validar = clave.matches(expreg);
         return validar;
     }
 
     public boolean validarUsuario(String usuario) {
-        boolean validar = usuario.matches("^[a-zA-Z]{3,}[\\d]*$");
+        boolean validar = usuario.matches("^[a-zA-Z]{3,10}[\\d]*$");
 
         return validar;
     }

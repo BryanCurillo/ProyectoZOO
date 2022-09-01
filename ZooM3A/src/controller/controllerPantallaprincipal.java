@@ -28,31 +28,31 @@ public class controllerPantallaprincipal {
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
     }
 
-    public void registroEmpleado() {
-        //Instancio las clases del modelo y la vista
-        model.modelEmpleado modeloEmpleado = new modelEmpleado();
-        viewRegistrarEmpleado vistaRegistroPersona = new viewRegistrarEmpleado();
-        //Agragar vista personas al desktop pane
-        vista.setSize(vistaRegistroPersona.getSize().width + 5, vistaRegistroPersona.getSize().height + 5);
-        vista.getjDPprincipal().setSize(vistaRegistroPersona.getSize().width, vistaRegistroPersona.getSize().height);
-        vista.getjDPprincipal().add(vistaRegistroPersona);
-        ControllerEmpleado controladorCrudPersonas = new ControllerEmpleado(modeloEmpleado, vistaRegistroPersona);
-        controladorCrudPersonas.inicialControl();
-    }
-
 //    public void registroEmpleado() {
 //        //Instancio las clases del modelo y la vista
-//        modelEmpleado modeloEmpleado = new modelEmpleado();
-//        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
-//
+//        model.modelEmpleado modeloEmpleado = new modelEmpleado();
+//        viewRegistrarEmpleado vistaRegistroPersona = new viewRegistrarEmpleado();
 //        //Agragar vista personas al desktop pane
-////        vista.setSize(vistaRegistroEmpleado.getSize().width+15, vistaRegistroEmpleado.getSize().height+60);
-////        vista.getjDPprincipal().setSize(vistaRegistroEmpleado.getSize().width, vistaRegistroEmpleado.getSize().height);
-//        vistaRegistroEmpleado.setName("Registro");
-//        vista.getjDPprincipal().add(vistaRegistroEmpleado);
-//
-//        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado);
-//        controladorEmpleado.inicialControl();
-//
+//        vista.setSize(vistaRegistroPersona.getSize().width + 5, vistaRegistroPersona.getSize().height + 5);
+//        vista.getjDPprincipal().setSize(vistaRegistroPersona.getSize().width, vistaRegistroPersona.getSize().height);
+//        vista.getjDPprincipal().add(vistaRegistroPersona);
+//        ControllerEmpleado controladorCrudPersonas = new ControllerEmpleado(modeloEmpleado, vistaRegistroPersona);
+//        controladorCrudPersonas.inicialControl();
 //    }
+
+    public void registroEmpleado() {
+        //Instancio las clases del modelo y la vista
+        modelEmpleado modeloEmpleado = new modelEmpleado();
+        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
+
+        //Agragar vista personas al desktop pane
+//        vista.setSize(vistaRegistroEmpleado.getSize().width+15, vistaRegistroEmpleado.getSize().height+60);
+//        vista.getjDPprincipal().setSize(vistaRegistroEmpleado.getSize().width, vistaRegistroEmpleado.getSize().height);
+        vistaRegistroEmpleado.setName("Registro");
+        vista.getjDPprincipal().add(vistaRegistroEmpleado);
+
+        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado);
+        controladorEmpleado.inicialControl();
+
+    }
 }
