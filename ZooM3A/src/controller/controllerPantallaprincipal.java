@@ -4,41 +4,55 @@
  */
 package controller;
 
-import java.time.LocalDate;
 import model.modelEmpleado;
 import model.modelPersona;
-import view.PantallaPrincipal;
-import view.RegistrarEmpleado;
+import view.viewPantallaPrincipal;
+import view.viewRegistrarEmpleado;
+
 /**
  *
  * @author Bryan
  */
 public class controllerPantallaprincipal {
-    private view.PantallaPrincipal vista;
 
-    public controllerPantallaprincipal(PantallaPrincipal vista) {
+    private viewPantallaPrincipal vista;
+
+    public controllerPantallaprincipal(viewPantallaPrincipal vista) {
         this.vista = vista;
-        vista.setVisible(true);
-    }
-    
-    public void iniciaControl() {
         vista.setLocationRelativeTo(null);
-        vista.getjMIagregarPersona().addActionListener(l->registroEmpleado());
-    }
-        public void registroEmpleado() {
-        //Instancio las clases del modelo y la vista
-        model.modelEmpleado modeloAgregarEmpleado = new modelEmpleado();
-        RegistrarEmpleado vistaRegistroPersona = new RegistrarEmpleado();
-        //Agragar vista personas al desktop pane
-//        System.out.println( vista.getSize().width+"  "+ vista.getSize().height);
-        vista.setSize(vistaRegistroPersona.getSize().width+15, vistaRegistroPersona.getSize().height+60);
-        
-        vista.getjDPprincipal().setSize(vistaRegistroPersona.getSize().width, vistaRegistroPersona.getSize().height);
-        vistaRegistroPersona.setName("Registro");
-        vista.getjDPprincipal().add(vistaRegistroPersona);
-        
-        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloAgregarEmpleado, vistaRegistroPersona);
-        controladorEmpleado.inicialControl();
+        vista.setVisible(true);
+//        System.out.println("iniciado");
     }
 
+    public void iniciaControl() {
+        vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
+    }
+
+    public void registroEmpleado() {
+        //Instancio las clases del modelo y la vista
+        model.modelEmpleado modeloEmpleado = new modelEmpleado();
+        viewRegistrarEmpleado vistaRegistroPersona = new viewRegistrarEmpleado();
+        //Agragar vista personas al desktop pane
+        vista.setSize(vistaRegistroPersona.getSize().width + 5, vistaRegistroPersona.getSize().height + 5);
+        vista.getjDPprincipal().setSize(vistaRegistroPersona.getSize().width, vistaRegistroPersona.getSize().height);
+        vista.getjDPprincipal().add(vistaRegistroPersona);
+        ControllerEmpleado controladorCrudPersonas = new ControllerEmpleado(modeloEmpleado, vistaRegistroPersona);
+        controladorCrudPersonas.inicialControl();
+    }
+
+//    public void registroEmpleado() {
+//        //Instancio las clases del modelo y la vista
+//        modelEmpleado modeloEmpleado = new modelEmpleado();
+//        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
+//
+//        //Agragar vista personas al desktop pane
+////        vista.setSize(vistaRegistroEmpleado.getSize().width+15, vistaRegistroEmpleado.getSize().height+60);
+////        vista.getjDPprincipal().setSize(vistaRegistroEmpleado.getSize().width, vistaRegistroEmpleado.getSize().height);
+//        vistaRegistroEmpleado.setName("Registro");
+//        vista.getjDPprincipal().add(vistaRegistroEmpleado);
+//
+//        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado);
+//        controladorEmpleado.inicialControl();
+//
+//    }
 }

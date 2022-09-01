@@ -53,19 +53,21 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarLogin(String usuario, String contrasena) {
-        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "'";
-        ResultSet rs = mpgc.consulta(sql);
         boolean ban = false;
         int count = 0;
+        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "'";
+        ResultSet rs = mpgc.consulta(sql);
+
         try {
+
             while (rs.next()) {
-                while (rs.next()) {
-                    count = rs.getInt(1);
-                }
-                if (count != 0) {
-                    ban = true;
-                }
+                count = rs.getInt(1);
+                System.out.println(rs.getInt(1));
             }
+            if (count != 0) {
+                ban = true;
+            }
+
         } catch (SQLException e) {
             Logger.getLogger(modelLogin.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -78,7 +80,6 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarUsuario(String usuario) {
-        System.out.println(usuario+"xxxx");
         String sql = "select count(*) from empleado where emp_usuario='" + usuario + "'";
         ResultSet rs = mpgc.consulta(sql);
         boolean ban = false;

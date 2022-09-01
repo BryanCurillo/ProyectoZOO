@@ -8,12 +8,12 @@ package view;
  *
  * @author Bryan
  */
-public class VistaCliente extends javax.swing.JPanel {
+public class viewCrudCliente extends javax.swing.JPanel {
 
     /**
      * Creates new form VistaCliente
      */
-    public VistaCliente() {
+    public viewCrudCliente() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package view;
  *
  * @author ALEJO
  */
-public class RegistroHabitad extends javax.swing.JPanel {
+public class viewRegistroHabitad extends javax.swing.JPanel {
 
     /**
      * Creates new form RegistroHabitad
      */
-    public RegistroHabitad() {
+    public viewRegistroHabitad() {
         initComponents();
     }
 

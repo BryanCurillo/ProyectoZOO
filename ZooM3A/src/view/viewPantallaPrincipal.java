@@ -15,12 +15,12 @@ import javax.swing.JMenuItem;
  *
  * @author ALEJO
  */
-public class PantallaPrincipal extends javax.swing.JFrame {
+public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form pantallaprincipal
      */
-    public PantallaPrincipal() {
+    public viewPantallaPrincipal() {
         initComponents();
     }
 

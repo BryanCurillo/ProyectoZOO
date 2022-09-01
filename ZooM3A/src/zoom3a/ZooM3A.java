@@ -4,10 +4,10 @@
  */
 package zoom3a;
 
-import controller.controllerPantallaprincipal;
 import controller.controllerLogin;
+import controller.controllerPantallaprincipal;
 import model.modelLogin;
-import view.PantallaPrincipal;
+import view.viewPantallaPrincipal;
 import view.viewLogin;
 
 /**
@@ -21,11 +21,11 @@ public class ZooM3A {
      */
     public static void main(String[] args) {
 
-        PantallaPrincipal vista = new PantallaPrincipal();
+//        viewPantallaPrincipal vista = new viewPantallaPrincipal();
 //        controllerPantallaprincipal controller = new controllerPantallaprincipal(vista);
-        modelLogin modeloL = new modelLogin();
 //        controller.iniciaControl();
 
+        modelLogin modeloL = new modelLogin();
         viewLogin vistaL = new viewLogin();
         controllerLogin controllerL = new controllerLogin(modeloL, vistaL);
         controllerL.inicialControl();           

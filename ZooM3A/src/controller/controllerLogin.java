@@ -6,8 +6,7 @@ package controller;
 
 import model.modelEmpleado;
 import model.modelLogin;
-import validaciones.validaciones;
-import view.PantallaPrincipal;
+import view.viewPantallaPrincipal;
 import view.viewLogin;
 
 /**
@@ -16,11 +15,11 @@ import view.viewLogin;
  */
 public class controllerLogin {
 
-    PantallaPrincipal pp = new PantallaPrincipal();
+    viewPantallaPrincipal pp = new viewPantallaPrincipal();
     private modelEmpleado modeloE;
     private modelLogin modeloL;
     private viewLogin vista;
-    private PantallaPrincipal vistaP;
+//    private viewPantallaPrincipal vistaP;
     validaciones mivalidacion = new validaciones();
 
     public controllerLogin(modelLogin modeloL, viewLogin vista) {
@@ -29,16 +28,16 @@ public class controllerLogin {
         vista.setVisible(true);
     }
 
-
-
     public void inicialControl() {
-        vista.getBtiniciarsesion().addActionListener(l->abrirPrincipal());
+        vista.getBtiniciarsesion().addActionListener(l -> abrirPrincipal());
     }
 
     public void abrirPrincipal() {
-//        System.out.println(vista.getTxtusuarioingreso().getText());
+//        viewPantallaPrincipal vistaP = new viewPantallaPrincipal();
         if (mivalidacion.validarLogin(vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText())) {
-            vistaP.setVisible(true);
+            viewPantallaPrincipal vistap = new viewPantallaPrincipal();
+            controllerPantallaprincipal controller = new controllerPantallaprincipal(vistap);
+            controller.iniciaControl();
             vista.dispose();
         }
     }

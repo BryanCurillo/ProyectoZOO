@@ -8,12 +8,12 @@ package view;
  *
  * @author ALEJO
  */
-public class RegistroAlimento extends javax.swing.JFrame {
+public class viewRegistroAlimento extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistroAlimento
      */
-    public RegistroAlimento() {
+    public viewRegistroAlimento() {
         initComponents();
     }
 

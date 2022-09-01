@@ -15,8 +15,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
-import view.PantallaPrincipal;
-import view.RegistrarEmpleado;
+import view.viewPantallaPrincipal;
+import view.viewRegistrarEmpleado;
 import model.modelPersona;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
@@ -27,7 +27,6 @@ import model.modelGerente;
 import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
-import validaciones.validaciones;
 
 /**
  *
@@ -35,14 +34,14 @@ import validaciones.validaciones;
  */
 public class ControllerEmpleado {
 
-    PantallaPrincipal pp = new PantallaPrincipal();
+    viewPantallaPrincipal pp = new viewPantallaPrincipal();
     private modelEmpleado modeloE;
     private modelPersona modeloP;
-    private RegistrarEmpleado vista;
+    private viewRegistrarEmpleado vista;
     private JFileChooser jfc;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
-    public ControllerEmpleado(modelEmpleado modelo, RegistrarEmpleado vista) {
+    public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
         desactivarDatosRol();
@@ -175,7 +174,7 @@ public class ControllerEmpleado {
                             cuidador.setIdEmpleado(empleado.obtenerCodigo(cedulaemp));
                             cuidador.setTipoSangre(tipoSangre);
                             cuidador.seCuidador();
-                            JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");                           
+                            JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");
                             break;
                     }
 
@@ -277,14 +276,13 @@ public class ControllerEmpleado {
                 break;
         }
     }
-    
-    
+
 //    public boolean validar() {
 //        boolean ban = false;
 //        validaciones mivalidacion = new validaciones();
 //        //DNI
-//        if (!vista.getTxtDNI().getText().isEmpty()) {
-//            if (mivalidacion.validar_ced(vista.getTxtDNI().getText())) {
+//        if (!vista.getTxtcedula().getText().isEmpty()) {
+//            if (mivalidacion.validarCedula(vista.getTxtcedula().getText())) {
 //                ban = true;
 //            } else {
 //                JOptionPane.showMessageDialog(vista, "Cedula invalida");
@@ -336,5 +334,4 @@ public class ControllerEmpleado {
 //        }
 //        return ban;
 //    }
-
 }

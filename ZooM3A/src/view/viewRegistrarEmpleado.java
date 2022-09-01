@@ -19,12 +19,12 @@ import javax.swing.JTextField;
  *
  * @author ALEJO
  */
-public class RegistrarEmpleado extends javax.swing.JInternalFrame {
+public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RegistrarPersona
      */
-    public RegistrarEmpleado() {
+    public viewRegistrarEmpleado() {
         initComponents();
     }
 
@@ -504,12 +504,20 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBotonagregarfoto() {
+    public ButtonGroup getBggenero() {
+        return bggenero;
+    }
+
+    public void setBggenero(ButtonGroup bggenero) {
+        this.bggenero = bggenero;
+    }
+
+    public JButton getBtagregarfoto() {
         return btagregarfoto;
     }
 
-    public void setBotonagregarfoto(JButton botonagregarfoto) {
-        this.btagregarfoto = botonagregarfoto;
+    public void setBtagregarfoto(JButton btagregarfoto) {
+        this.btagregarfoto = btagregarfoto;
     }
 
     public JButton getBtcancelar() {
@@ -536,12 +544,28 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         this.btmasculino = btmasculino;
     }
 
+    public JButton getBtregistrar() {
+        return btregistrar;
+    }
+
+    public void setBtregistrar(JButton btregistrar) {
+        this.btregistrar = btregistrar;
+    }
+
     public JDateChooser getCalendarFechanacimiento() {
         return calendarFechanacimiento;
     }
 
     public void setCalendarFechanacimiento(JDateChooser calendarFechanacimiento) {
         this.calendarFechanacimiento = calendarFechanacimiento;
+    }
+
+    public JComboBox<String> getComborama() {
+        return comborama;
+    }
+
+    public void setComborama(JComboBox<String> comborama) {
+        this.comborama = comborama;
     }
 
     public JComboBox<String> getComborol() {
@@ -552,12 +576,76 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         this.comborol = comborol;
     }
 
+    public JComboBox<String> getCombosangre() {
+        return combosangre;
+    }
+
+    public void setCombosangre(JComboBox<String> combosangre) {
+        this.combosangre = combosangre;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPcuidador() {
+        return jPcuidador;
+    }
+
+    public void setjPcuidador(JPanel jPcuidador) {
+        this.jPcuidador = jPcuidador;
+    }
+
+    public JPanel getjPgerente() {
+        return jPgerente;
+    }
+
+    public void setjPgerente(JPanel jPgerente) {
+        this.jPgerente = jPgerente;
+    }
+
+    public JPanel getjPzoologo() {
+        return jPzoologo;
+    }
+
+    public void setjPzoologo(JPanel jPzoologo) {
+        this.jPzoologo = jPzoologo;
+    }
+
+    public JPanel getjPzsecretaria() {
+        return jPzsecretaria;
+    }
+
+    public void setjPzsecretaria(JPanel jPzsecretaria) {
+        this.jPzsecretaria = jPzsecretaria;
+    }
+
+    public JSpinner getjSexperiencia() {
+        return jSexperiencia;
+    }
+
+    public void setjSexperiencia(JSpinner jSexperiencia) {
+        this.jSexperiencia = jSexperiencia;
+    }
+
     public JLabel getLblfoto() {
         return lblfoto;
     }
 
     public void setLblfoto(JLabel lblfoto) {
         this.lblfoto = lblfoto;
+    }
+
+    public JTextField getTxtTitulo() {
+        return txtTitulo;
+    }
+
+    public void setTxtTitulo(JTextField txtTitulo) {
+        this.txtTitulo = txtTitulo;
     }
 
     public JTextField getTxtapellido() {
@@ -624,92 +712,6 @@ public class RegistrarEmpleado extends javax.swing.JInternalFrame {
         this.txtusuario = txtusuario;
     }
 
-    public ButtonGroup getBggenero() {
-        return bggenero;
-    }
-
-    public void setBggenero(ButtonGroup bggenero) {
-        this.bggenero = bggenero;
-    }
-
-    public JButton getBtagregarfoto() {
-        return btagregarfoto;
-    }
-
-    public void setBtagregarfoto(JButton btagregarfoto) {
-        this.btagregarfoto = btagregarfoto;
-    }
-
-    public JButton getBtregistrar() {
-        return btregistrar;
-    }
-
-    public void setBtregistrar(JButton btregistrar) {
-        this.btregistrar = btregistrar;
-    }
-
-    public JComboBox<String> getComborama() {
-        return comborama;
-    }
-
-    public void setComborama(JComboBox<String> comborama) {
-        this.comborama = comborama;
-    }
-
-    public JComboBox<String> getCombosangre() {
-        return combosangre;
-    }
-
-    public void setCombosangre(JComboBox<String> combosangre) {
-        this.combosangre = combosangre;
-    }
-
-    public JPanel getjPcuidador() {
-        return jPcuidador;
-    }
-
-    public void setjPcuidador(JPanel jPcuidador) {
-        this.jPcuidador = jPcuidador;
-    }
-
-    public JPanel getjPgerente() {
-        return jPgerente;
-    }
-
-    public void setjPgerente(JPanel jPgerente) {
-        this.jPgerente = jPgerente;
-    }
-
-    public JPanel getjPzoologo() {
-        return jPzoologo;
-    }
-
-    public void setjPzoologo(JPanel jPzoologo) {
-        this.jPzoologo = jPzoologo;
-    }
-
-    public JPanel getjPzsecretaria() {
-        return jPzsecretaria;
-    }
-
-    public void setjPzsecretaria(JPanel jPzsecretaria) {
-        this.jPzsecretaria = jPzsecretaria;
-    }
-
-    public JSpinner getjSexperiencia() {
-        return jSexperiencia;
-    }
-
-    public void setjSexperiencia(JSpinner jSexperiencia) {
-        this.jSexperiencia = jSexperiencia;
-    }
-
-    public JTextField getTxtTitulo() {
-        return txtTitulo;
-    }
-
-    public void setTxtTitulo(JTextField txtTitulo) {
-        this.txtTitulo = txtTitulo;
-    }
+    
 
 }

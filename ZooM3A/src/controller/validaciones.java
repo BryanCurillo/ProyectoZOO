@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package validaciones;
+package controller;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -133,9 +133,10 @@ public class validaciones {
     }
 
     public boolean validarLogin(String usuario, String contrasena) {
+//        System.out.println(usuario);
+//        System.out.println(contrasena);
         boolean ban = false;
         modelLogin miLogin = new modelLogin();
-        System.out.println(usuario + "xD");
         if (usuario.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese el usuario");
         } else {
@@ -144,6 +145,7 @@ public class validaciones {
                     JOptionPane.showMessageDialog(null, "Ingrese la contraseñá");
                 } else {
                     if (miLogin.comprobarLogin(usuario, contrasena)) {
+                        System.out.println("holi");
                         ban = true;
                     } else {
                         JOptionPane.showMessageDialog(null, "Contraseñá incorrecta");
