@@ -262,76 +262,129 @@ public class ControllerEmpleado {
         desactivarDatosRol();
         int opc = vista.getComborol().getSelectedIndex();
         switch (opc) {
-            case 1:
+            case 1 ->
                 vista.getjPgerente().setVisible(true);
-                break;
-            case 2:
+            case 2 ->
                 vista.getjPzsecretaria().setVisible(true);
-                break;
-            case 3:
+            case 3 ->
                 vista.getjPzoologo().setVisible(true);
-                break;
-            case 4:
+            case 4 ->
                 vista.getjPcuidador().setVisible(true);
-                break;
         }
     }
 
-//    public boolean validar() {
-//        boolean ban = false;
-//        validaciones mivalidacion = new validaciones();
-//        //DNI
-//        if (!vista.getTxtcedula().getText().isEmpty()) {
-//            if (mivalidacion.validarCedula(vista.getTxtcedula().getText())) {
-//                ban = true;
-//            } else {
-//                JOptionPane.showMessageDialog(vista, "Cedula invalida");
-//                ban = false;
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(vista, "Ingrese la cedula");
-//        }
-//        //DIRECCION
-//        if (!vista.getTxtDireccion().getText().isEmpty()) {
-//            if (mivalidacion.validarDireccion(vista.getTxtDireccion().getText())) {
-//                ban = true;
-//            } else {
-//                JOptionPane.showMessageDialog(vista, "Direccion invalida");
-//                ban = false;
-//            }
-//        } else {
-//            JOptionPane.showMessageDialog(vista, "Ingrese la cedula");
-//        }
-//        //NOMBRE
-//        if (mivalidacion.validarNombApeEspacios(vista.getTxtNombre1().getText())) {
-//            ban = true;
-//        } else {
-//            JOptionPane.showMessageDialog(vista, "Nombre invalido");
-//            ban = false;
-//        }
-//        //APELLIDO
-//        if (mivalidacion.validarNombApeEspacios(vista.getTxtApellido1().getText())) {
-//            ban = true;
-//        } else {
-//            JOptionPane.showMessageDialog(vista, "Apellido invalido");
-//            ban = false;
-//        }
-//        //TELEFONO
-//        if (mivalidacion.validarTelefono(vista.getTxtTelefono().getText())) {
-//            ban = true;
-//        } else {
-//            JOptionPane.showMessageDialog(vista, "Telefono invalido");
-//            ban = false;
-//        }
-//        if (vista.getjCbCanton().getSelectedIndex() != 0) {
-//            ban = true;
-//        } else {
-//            if (vista.getjCbProvincia().getSelectedIndex() == 0) {
-//                JOptionPane.showMessageDialog(vista, "Selecione una provincia");
-//            }
-//            JOptionPane.showMessageDialog(vista, "Selecione un canton");
-//            ban = false;
-//        }
-//        return ban;
-//    }
+    public boolean validar() {
+        boolean ban = false;
+        validaciones mivalidacion = new validaciones();
+        //DNI
+        if (!vista.getTxtcedula().getText().isEmpty()) {
+            if (mivalidacion.validarCedula(vista.getTxtcedula().getText())) {
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(vista, "Cedula invalida");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Ingrese la cedula");
+        }
+        //NOMBRE
+        if (!vista.getTxtnombre().getText().isEmpty()) {
+            if (mivalidacion.validarNombApeEspacios(vista.getTxtnombre().getText())) {
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(vista, "Nombre invalida");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Ingrese el nombre");
+        }
+        //APELLIDO
+        if (!vista.getTxtapellido().getText().isEmpty()) {
+            if (mivalidacion.validarNombApeEspacios(vista.getTxtapellido().getText())) {
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(vista, "Nombre invalida");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Ingrese el nombre");
+        }
+        //TELEFONO
+        if (!vista.getTxttelefono().getText().isEmpty()) {
+            if (mivalidacion.validarTelefono(vista.getTxttelefono().getText())) {
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(vista, "Telefono invalido");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Ingrese el numero de telefono");
+        }
+        //CORREO
+        if (!vista.getTxtcorreo().getText().isEmpty()) {
+            if (mivalidacion.validarTelefono(vista.getTxtcorreo().getText())) {
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(vista, "Correo invalido");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vista, "Ingrese un correo electronico");
+        }
+        //GENERO
+        if (vista.getBtmasculino().isSelected() || vista.getBtfemenino().isSelected()) {
+            ban = true;
+        } else {
+            ban = false;
+        }
+        //FECHANACIMIENTO
+        //ROL
+        //USUARIO
+        //CONTRASEÑA
+        //DATOS ROL
+        int opc = vista.getComborol().getSelectedIndex();
+        switch (opc) {
+            case 1:
+                //TITULO
+                if (!vista.getTxtTitulo().getText().isEmpty()) {
+                    if (mivalidacion.validarNombApeEspacios(vista.getTxtcedula().getText())) {
+                        ban = true;
+                    } else {
+                        JOptionPane.showMessageDialog(vista, "titulo invalida");
+                        ban = false;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(vista, "Ingrese el titulo");
+                }
+                break;
+            case 2:
+                //EXPERIENCIA
+                if ((Integer) vista.getjSexperiencia().getValue() == 0) {
+                    JOptionPane.showMessageDialog(vista, "Ingrese los años de experiencia");
+                    ban = false;
+                } else {
+                    ban = true;
+                }
+                break;
+            case 3:
+                //RAMA
+                if (vista.getComborama().getSelectedIndex() == 0) {
+                    JOptionPane.showMessageDialog(vista, "Seleccione la rama");
+                    ban = false;
+                } else {
+                    ban = true;
+                }
+                break;
+            case 4:
+                //TIPOSANGRE
+                if (vista.getCombosangre().getSelectedIndex() == 0) {
+                    JOptionPane.showMessageDialog(vista, "Seleccione la rama");
+                    ban = false;
+                } else {
+                    ban = true;
+                }
+                break;
+        }
+        return ban;
+    }
 }
