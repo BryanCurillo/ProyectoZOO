@@ -52,7 +52,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jDPprincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jDPprincipal.setEnabled(false);

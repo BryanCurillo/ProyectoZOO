@@ -32,26 +32,26 @@ import model.modelGerente;
 import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
+
 /**
  *
  * @author ALEJO
  */
 public class ControllerEmpleado {
 
-    viewPantallaPrincipal pp = new viewPantallaPrincipal();
+//    viewPantallaPrincipal pp = new viewPantallaPrincipal();
     private modelEmpleado modeloE;
     private modelPersona modeloP;
     private viewRegistrarEmpleado vista;
     private viewVistaEmpleados vistaE;
     private JFileChooser jfc;
-    int i=0;
+    int i = 0;
     DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
     public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
-        
         cargarComboRol();
         desactivarDatosRol();
         vista.setVisible(true);
@@ -66,13 +66,15 @@ public class ControllerEmpleado {
         vistaE.setVisible(true);
     }
 
-
-
     public void inicialControl() {
-
         vista.getComborol().addActionListener(l -> activarDatosRol());
         vista.getBtagregarfoto().addActionListener(l -> examinarFoto());
         vista.getBtregistrar().addActionListener(l -> crearEditarPersona());
+    }
+
+    public void inicialControl2() {
+        vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
+        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
     }
 
     public void examinarFoto() {
@@ -108,7 +110,7 @@ public class ControllerEmpleado {
         estructuraTabla.setRowCount(0);
         List<Empleado> listaE;
 //        if (opc == 1) {
-            listaE = modeloE.getempleado();
+        listaE = modeloE.getempleado();
 //        } 
 //        else {
 ////            String busqueda = vista.getTxt_buscar().getText().toLowerCase().trim();
@@ -116,7 +118,7 @@ public class ControllerEmpleado {
 //        }
 
 //        Holder<Integer> i = new Holder<>(0);
-        i=0;
+        i = 0;
         listaE.stream().sorted((x, y)
                 -> x.getCedula().compareToIgnoreCase(y.getCedula())).forEach(emp -> {
             estructuraTabla.addRow(new Object[8]);
@@ -130,8 +132,8 @@ public class ControllerEmpleado {
             vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 7);
             vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 8);
             vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 9);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 10);            
-            
+            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 10);
+
             Image foto = emp.getFoto();
             if (foto != null) {
                 foto = foto.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
@@ -318,6 +320,59 @@ public class ControllerEmpleado {
         }
     }
 
+    public void eliminarEmpleado() {
+        modelEmpleado empleado = new modelEmpleado();
+        int fila = vistaE.getjTblEmpleado().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione el empleado a eliminar");
+        } else {
+            int response = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de eliminar al empleado?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                String cedula = vistaE.getjTblEmpleado().getValueAt(fila, 1).toString();
+                int codigo = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
+                String opc = vistaE.getjTblEmpleado().getValueAt(fila, 7).toString();
+                switch (opc) {
+                    case "Gerente":
+                        //Gerente
+                        if (empleado.deleteGerente(codigo, cedula)) {//Grabamos
+                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            cargarDatos(1);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                        }
+                        break;
+                    case "Secretaria":
+                        //Secretaria
+                        if (empleado.deletesecretaria(codigo, cedula)) {//Grabamos
+                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            cargarDatos(1);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                        }
+                        break;
+                    case "Zoologo":
+                        //Zoologo
+                        if (empleado.deleteZoologo(codigo, cedula)) {//Grabamos
+                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            cargarDatos(1);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                        }
+                        break;
+                    case "Cuidador":
+                        //Cuidador
+                        if (empleado.deletecuidador(codigo, cedula)) {//Grabamos
+                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            cargarDatos(1);
+                        } else {
+                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
     public void desactivarDatosRol() {
         vista.getjPcuidador().setVisible(false);
         vista.getjPgerente().setVisible(false);
@@ -444,7 +499,7 @@ public class ControllerEmpleado {
             case 1:
                 //TITULO
                 if (!vista.getTxtTitulo().getText().isEmpty()) {
-                    if (!mivalidacion.validarNombApeEspacios(vista.getTxtcedula().getText())) {
+                    if (!mivalidacion.validarNombApeEspacios(vista.getTxtTitulo().getText())) {
                         JOptionPane.showMessageDialog(vista, "titulo invalida");
                         ban = false;
                     }

@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -21,7 +21,8 @@ public class validaciones {
     private viewLogin vista;
 
     public boolean validarCedula(String cedula) {
-        boolean val = false;
+//        boolean val = false;
+        boolean val = true;
         //Divide la cadena en los 10 numeros
         //Integer.parseInt sirve para transformar una cadena a entero. 
         //subString es un metodo de string(Desde, hasta)

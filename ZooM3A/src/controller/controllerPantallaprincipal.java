@@ -59,7 +59,7 @@ public class controllerPantallaprincipal {
         //redimencionar
         vista.setSize(vistaEmpleado.getSize());
         ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaEmpleado);
-        controladorEmpleado.inicialControl();
+        controladorEmpleado.inicialControl2();
     }
 
 }

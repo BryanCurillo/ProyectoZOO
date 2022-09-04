@@ -45,6 +45,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jTextField1 = new javax.swing.JTextField();
         jCbFiltro = new javax.swing.JComboBox<>();
         jBtnBuscar = new javax.swing.JButton();
+        jBtnActualizar = new javax.swing.JButton();
 
         setBorder(null);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -104,6 +105,12 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jBtnBuscar.setText("BUSCAR");
         jToolBar1.add(jBtnBuscar);
 
+        jBtnActualizar.setText("ACTUALIZAR");
+        jBtnActualizar.setFocusable(false);
+        jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnActualizar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,6 +146,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnActualizar;
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnElimina;
     private javax.swing.JButton jBtnImprimir;
@@ -212,4 +220,13 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         this.jbtnAgregar = jbtnAgregar;
     }
 
+    public JButton getjBtnActualizar() {
+        return jBtnActualizar;
+    }
+
+    public void setjBtnActualizar(JButton jBtnActualizar) {
+        this.jBtnActualizar = jBtnActualizar;
+    }
+
+    
 }

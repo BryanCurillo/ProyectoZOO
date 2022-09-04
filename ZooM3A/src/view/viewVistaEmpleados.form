@@ -227,6 +227,14 @@
             <Property name="text" type="java.lang.String" value="BUSCAR"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="jBtnActualizar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -21,7 +21,7 @@ public class modelCuidador extends Cuidador {
 
     public boolean seCuidador() {
         String sql = "INSERT INTO cuidador (cui_tiposangre, cui_idempleado)"
-                + "values(" + getTipoSangre() + ",'" + getIdEmpleado() + "');";
+                + "values('" + getTipoSangre() + "'," + getIdEmpleado() + ");";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 

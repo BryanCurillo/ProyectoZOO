@@ -372,9 +372,11 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
                                                 .addComponent(btregistrar)
                                                 .addGap(55, 55, 55)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btcancelar)
-                                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 26, Short.MAX_VALUE)))
+                                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(btcancelar)))))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -447,7 +449,7 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btregistrar)
                     .addComponent(btcancelar))
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
 
         pack();

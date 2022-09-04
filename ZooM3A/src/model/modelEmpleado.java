@@ -93,7 +93,7 @@ public class modelEmpleado extends Empleado {
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
-                codigo = rs.getInt(1);                
+                codigo = rs.getInt(1);
             }
         } catch (SQLException e) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
@@ -105,15 +105,15 @@ public class modelEmpleado extends Empleado {
         }
         return codigo;
     }
-    
-        public String obtenerRol(int codigo) {
+
+    public String obtenerRol(int codigo) {
         String rol = "";
-        String sql = "select rol_nombre from rol where rol_id="+codigo;
+        String sql = "select rol_nombre from rol where rol_id=" + codigo;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
-                rol = rs.getString(1);  
-                System.out.println("="+rol);
+                rol = rs.getString(1);
+                System.out.println("=" + rol);
             }
         } catch (SQLException e) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
@@ -180,4 +180,23 @@ public class modelEmpleado extends Empleado {
         return listaEmpleado;
     }
 
+    public boolean deleteZoologo(int codigo, String cedula) {
+        String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deleteGerente(int codigo, String cedula) {
+        String sql = "SELECT eliminargerente(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deletesecretaria(int codigo, String cedula) {
+        String sql = "SELECT eliminarsecretaria(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deletecuidador(int codigo, String cedula) {
+        String sql = "SELECT eliminarcuidador(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
 }
