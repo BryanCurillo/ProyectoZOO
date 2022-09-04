@@ -19,7 +19,7 @@ public class modelSecretaria extends Secretaria {
         super(idSecretaria, experiencia, idEmpleado);
     }    
 
-    public boolean setGerente() {
+    public boolean setSecretaria() {
         String sql = "INSERT INTO secretaria (sec_experiencia, sec_idempleado)"
                 + "values(" + getExperiencia() + ",'" + getIdEmpleado() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT

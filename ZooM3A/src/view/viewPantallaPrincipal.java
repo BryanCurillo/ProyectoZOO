@@ -39,7 +39,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMIagregarPersona = new javax.swing.JMenuItem();
         jMIeliminarpersona = new javax.swing.JMenuItem();
         modificarpersona = new javax.swing.JMenuItem();
-        listarpersona = new javax.swing.JMenuItem();
+        jMIvistaEmpleado = new javax.swing.JMenuItem();
         menuanimales = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -52,8 +52,10 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jDPprincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jDPprincipal.setEnabled(false);
 
         javax.swing.GroupLayout jDPprincipalLayout = new javax.swing.GroupLayout(jDPprincipal);
         jDPprincipal.setLayout(jDPprincipalLayout);
@@ -80,9 +82,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         modificarpersona.setText("MODIFICAR PERSONA");
         agregarpersona.add(modificarpersona);
 
-        listarpersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        listarpersona.setText("VISUALIZAR REGISTRO DEL PERSONAL");
-        agregarpersona.add(listarpersona);
+        jMIvistaEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIvistaEmpleado.setText("VISUALIZAR REGISTRO DEL PERSONAL");
+        agregarpersona.add(jMIvistaEmpleado);
 
         barramenus.add(agregarpersona);
 
@@ -153,6 +155,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JMenuItem jMIagregarPersona;
     private javax.swing.JMenuItem jMIeliminarpersona;
+    private javax.swing.JMenuItem jMIvistaEmpleado;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
@@ -161,7 +164,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JMenuItem listarpersona;
     private javax.swing.JMenu menualimento;
     private javax.swing.JMenu menuanimales;
     private javax.swing.JMenuItem modificarpersona;
@@ -189,6 +191,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setjMIeliminarpersona(JMenuItem jMIeliminarpersona) {
         this.jMIeliminarpersona = jMIeliminarpersona;
+    }
+
+    public JMenuItem getjMIvistaEmpleado() {
+        return jMIvistaEmpleado;
+    }
+
+    public void setjMIvistaEmpleado(JMenuItem jMIvistaEmpleado) {
+        this.jMIvistaEmpleado = jMIvistaEmpleado;
     }
 
 

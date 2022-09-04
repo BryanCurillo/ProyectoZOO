@@ -5,7 +5,9 @@
 package model;
 
 import java.awt.Image;
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -14,6 +16,11 @@ import java.util.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
+import java.util.Iterator;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReadParam;
+import javax.imageio.ImageReader;
+import javax.imageio.stream.ImageInputStream;
 
 /**
  *
@@ -86,8 +93,7 @@ public class modelEmpleado extends Empleado {
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
-                codigo = rs.getInt(1);
-                System.out.println(codigo);
+                codigo = rs.getInt(1);                
             }
         } catch (SQLException e) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
@@ -99,6 +105,79 @@ public class modelEmpleado extends Empleado {
         }
         return codigo;
     }
-
     
+        public String obtenerRol(int codigo) {
+        String rol = "";
+        String sql = "select rol_nombre from rol where rol_id="+codigo;
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                rol = rs.getString(1);  
+                System.out.println("="+rol);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rol;
+    }
+
+    private Image getImagen(byte[] bytes) throws IOException {
+        ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        Iterator it = ImageIO.getImageReadersByFormatName("jpeg");
+        ImageReader imageReader = (ImageReader) it.next();
+        Object source = bais;
+        ImageInputStream fis = ImageIO.createImageInputStream(source);
+        imageReader.setInput(fis, true);
+        ImageReadParam param = imageReader.getDefaultReadParam();
+        param.setSourceSubsampling(1, 1, 0, 0);
+        return imageReader.read(0, param);
+    }
+
+    public List<Empleado> getempleado() {
+        List<Empleado> listaEmpleado = new ArrayList<>();
+
+        String sql = "select * from persona join empleado on(per_cedula=emp_cedula)";
+        ResultSet rs = mpgc.consulta(sql);
+        byte[] bytea;
+        try {
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setCedula(rs.getString(1));
+                empleado.setNombre(rs.getString(2));
+                empleado.setApellido(rs.getString(3));
+                empleado.setFechaRegistro(rs.getDate(4));
+                empleado.setIdEmp(rs.getInt(5));
+                empleado.setTelefono(rs.getString(6));
+                bytea = rs.getBytes(7);
+                if (bytea != null) {
+                    empleado.setFoto(getImagen(bytea));
+                }
+                empleado.setFechanacimiento(rs.getDate(8));
+                empleado.setRol(rs.getInt(9));
+                empleado.setGenero(rs.getString(10));
+                empleado.setUsuario(rs.getString(11));
+                empleado.setContraseña(rs.getString(12));
+                empleado.setCedulaEmp(rs.getString(13));
+
+                listaEmpleado.add(empleado);
+
+            }
+        } catch (IOException | SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaEmpleado;
+    }
+
 }

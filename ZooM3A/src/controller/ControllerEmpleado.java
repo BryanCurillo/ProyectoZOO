@@ -16,18 +16,22 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
 import view.viewPantallaPrincipal;
+import view.viewVistaEmpleados;
 import view.viewRegistrarEmpleado;
 import model.modelPersona;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import model.Empleado;
 import model.modelCuidador;
 import model.modelGerente;
 import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
-
 /**
  *
  * @author ALEJO
@@ -38,18 +42,34 @@ public class ControllerEmpleado {
     private modelEmpleado modeloE;
     private modelPersona modeloP;
     private viewRegistrarEmpleado vista;
+    private viewVistaEmpleados vistaE;
     private JFileChooser jfc;
+    int i=0;
+    DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
     public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
+        
+        cargarComboRol();
         desactivarDatosRol();
         vista.setVisible(true);
     }
 
+    public ControllerEmpleado(modelEmpleado modeloE, viewRegistrarEmpleado vista, viewVistaEmpleados vistaE) {
+        this.modeloE = modeloE;
+        this.vista = vista;
+        this.vistaE = vistaE;
+//        desactivarDatosRol();
+        cargarDatos(1);
+        vistaE.setVisible(true);
+    }
+
+
+
     public void inicialControl() {
-        cargarComboRol();
+
         vista.getComborol().addActionListener(l -> activarDatosRol());
         vista.getBtagregarfoto().addActionListener(l -> examinarFoto());
         vista.getBtregistrar().addActionListener(l -> crearEditarPersona());
@@ -78,6 +98,52 @@ public class ControllerEmpleado {
         List<rol> listaRol = modeloE.getroles();
         listaRol.stream().forEach(r -> {
             vista.getComborol().addItem(r.getNombre());
+        });
+    }
+
+    public void cargarDatos(int opc) {
+        vistaE.getjTblEmpleado().setDefaultRenderer(Object.class, new imageTable());
+        vistaE.getjTblEmpleado().setRowHeight(60);
+        estructuraTabla = (DefaultTableModel) vistaE.getjTblEmpleado().getModel();
+        estructuraTabla.setRowCount(0);
+        List<Empleado> listaE;
+//        if (opc == 1) {
+            listaE = modeloE.getempleado();
+//        } 
+//        else {
+////            String busqueda = vista.getTxt_buscar().getText().toLowerCase().trim();
+////            listaE = modelo.busquedaIncrementalPersona(busqueda);
+//        }
+
+//        Holder<Integer> i = new Holder<>(0);
+        i=0;
+        listaE.stream().sorted((x, y)
+                -> x.getCedula().compareToIgnoreCase(y.getCedula())).forEach(emp -> {
+            estructuraTabla.addRow(new Object[8]);
+            vistaE.getjTblEmpleado().setValueAt(emp.getIdEmp(), i, 0);
+            vistaE.getjTblEmpleado().setValueAt(emp.getCedula(), i, 1);
+            vistaE.getjTblEmpleado().setValueAt(emp.getNombre(), i, 2);
+            vistaE.getjTblEmpleado().setValueAt(emp.getApellido(), i, 3);
+            vistaE.getjTblEmpleado().setValueAt(emp.getTelefono(), i, 4);
+            vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
+            vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 6);
+            vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 7);
+            vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 8);
+            vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 9);
+            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 10);            
+            
+            Image foto = emp.getFoto();
+            if (foto != null) {
+                foto = foto.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+                ImageIcon icono = new ImageIcon(foto);
+
+                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+                dtcr.setIcon(icono);
+                vistaE.getjTblEmpleado().setValueAt(new JLabel(icono), i, 11);
+            } else {
+                vistaE.getjTblEmpleado().setValueAt(null, i, 8);
+            }
+            i++;
         });
     }
 
@@ -156,7 +222,7 @@ public class ControllerEmpleado {
                                 modelSecretaria secretaria = new modelSecretaria();
                                 secretaria.setIdEmpleado(empleado.obtenerCodigo(cedulaemp));
                                 secretaria.setExperiencia(experiencia);
-                                secretaria.setGerente();
+                                secretaria.setSecretaria();
                                 JOptionPane.showMessageDialog(vista, "Secretaria agregado/a correctamente");
                                 break;
                             case 3:
@@ -409,7 +475,7 @@ public class ControllerEmpleado {
                 }
                 break;
         }
-        System.out.println("BAN="+ban);
+        System.out.println("BAN=" + ban);
         return ban;
     }
 

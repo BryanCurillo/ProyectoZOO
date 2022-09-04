@@ -14,13 +14,13 @@ import java.util.Date;
  */
 public class Empleado extends Persona {
 
-    private int id;
+    private int idEmp;
     private String telefono;
     private Date fechanacimiento;
     private int rol;
     private String usuario;
     private String contraseña;
-    private String cedula;
+    private String cedulaEmp;
     private String genero;
     //foto
     private Image foto;
@@ -32,13 +32,13 @@ public class Empleado extends Persona {
     }
 
     public Empleado(int id, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedula, String genero, Image foto, FileInputStream imageFile, int tamano) {
-        this.id = id;
+        this.idEmp = id;
         this.telefono = telefono;
         this.fechanacimiento = fechanacimiento;
         this.rol = rol;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.cedula = cedula;
+        this.cedulaEmp = cedula;
         this.genero = genero;
         this.foto = foto;
         this.imageFile = imageFile;
@@ -61,12 +61,12 @@ public class Empleado extends Persona {
         this.fechanacimiento = fechanacimiento;
     }
 
-    public int getId() {
-        return id;
+    public int getIdEmp() {
+        return idEmp;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEmp(int idEmp) {
+        this.idEmp = idEmp;
     }
 
     public String getTelefono() {
@@ -101,12 +101,12 @@ public class Empleado extends Persona {
         this.contraseña = contraseña;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getCedulaEmp() {
+        return cedulaEmp;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setCedulaEmp(String cedulaEmp) {
+        this.cedulaEmp = cedulaEmp;
     }
 
     public Image getFoto() {
