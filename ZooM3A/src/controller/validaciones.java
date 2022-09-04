@@ -7,7 +7,6 @@ package controller;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-import model.modelEmpleado;
 import model.modelLogin;
 import view.viewLogin;
 

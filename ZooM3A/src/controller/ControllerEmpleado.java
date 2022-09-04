@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
-import view.viewPantallaPrincipal;
 import view.viewVistaEmpleados;
 import view.viewRegistrarEmpleado;
 import model.modelPersona;
@@ -32,6 +31,7 @@ import model.modelGerente;
 import model.modelSecretaria;
 import model.modelZoologo;
 import model.rol;
+import view.viewPantallaPrincipal;
 
 /**
  *
@@ -39,7 +39,8 @@ import model.rol;
  */
 public class ControllerEmpleado {
 
-//    viewPantallaPrincipal pp = new viewPantallaPrincipal();
+    private viewPantallaPrincipal vistaP;
+    private controllerPantallaprincipal controllerpp;
     private modelEmpleado modeloE;
     private modelPersona modeloP;
     private viewRegistrarEmpleado vista;
@@ -52,7 +53,10 @@ public class ControllerEmpleado {
     public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
+//        System.out.println(vista.getComborol().getItemCount());
         cargarComboRol();
+//        System.out.println(vista.getComborol().getItemCount());
+
         desactivarDatosRol();
         vista.setVisible(true);
     }
@@ -70,11 +74,15 @@ public class ControllerEmpleado {
         vista.getComborol().addActionListener(l -> activarDatosRol());
         vista.getBtagregarfoto().addActionListener(l -> examinarFoto());
         vista.getBtregistrar().addActionListener(l -> crearEditarPersona());
+        vista.getBtcancelar().addActionListener(l -> vista.dispose());
     }
 
     public void inicialControl2() {
         vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
         vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+//        vistaE.getjBtnModificar().addActionListener(l -> llenarDatos());
+        vistaE.getJbtnAgregar().addActionListener(l -> abrirDialoogo(1));
+        vistaE.getjBtnModificar().addActionListener(l -> abrirDialoogo(2));
     }
 
     public void examinarFoto() {
@@ -97,6 +105,7 @@ public class ControllerEmpleado {
     }
 
     public void cargarComboRol() {
+//        vista.getComborol().removeAllItems();
         List<rol> listaRol = modeloE.getroles();
         listaRol.stream().forEach(r -> {
             vista.getComborol().addItem(r.getNombre());
@@ -128,11 +137,12 @@ public class ControllerEmpleado {
             vistaE.getjTblEmpleado().setValueAt(emp.getApellido(), i, 3);
             vistaE.getjTblEmpleado().setValueAt(emp.getTelefono(), i, 4);
             vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
-            vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 6);
-            vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 7);
-            vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 8);
-            vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 9);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 10);
+            vistaE.getjTblEmpleado().setValueAt(emp.getCorreo(), i, 6);
+            vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 7);
+            vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 8);
+            vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 9);
+            vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 10);
+            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 11);
 
             Image foto = emp.getFoto();
             if (foto != null) {
@@ -141,16 +151,42 @@ public class ControllerEmpleado {
 
                 DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
                 dtcr.setIcon(icono);
-                vistaE.getjTblEmpleado().setValueAt(new JLabel(icono), i, 11);
+                vistaE.getjTblEmpleado().setValueAt(new JLabel(icono), i, 12);
             } else {
-                vistaE.getjTblEmpleado().setValueAt(null, i, 8);
+                vistaE.getjTblEmpleado().setValueAt(null, i, 12);
             }
             i++;
         });
     }
 
+    public void abrirDialoogo(int op) {
+        controllerPantallaprincipal pp = new controllerPantallaprincipal();
+        vista.getLblfoto().setIcon(null);
+//        pp.getjDPprincipal().removeAll();
+        String titulo;
+        cargarComboRol();
+        vistaE.dispose();
+        if (op == 1) {
+            titulo = "Crear";
+            vista.setName("Registro");
+            desactivarDatosRol();
+            vista.setVisible(true);
+            this.inicialControl();
+        } else {
+            titulo = "Editar";
+            if (llenarDatos()) {
+                vista.setName("Editar");
+                desactivarDatosRol();
+                vista.setVisible(true);
+                this.inicialControl();
+            }
+        }
+        activarDatosRol();
+    }
+
     private void crearEditarPersona() {
         if (vista.getName().equals("Registro")) {
+
             //INSERT
             if (validar()) {
                 int response = JOptionPane.showConfirmDialog(vista, "¿Agregar persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -158,13 +194,15 @@ public class ControllerEmpleado {
                     //DatosPersona
                     String cedula = vista.getTxtcedula().getText(),
                             nombre = vista.getTxtnombre().getText(),
-                            apellido = vista.getTxtapellido().getText();
+                            apellido = vista.getTxtapellido().getText(),
+                            correo = vista.getTxtcorreo().getText();
                     Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
 
                     modelPersona persona = new modelPersona();
                     persona.setCedula(cedula);
                     persona.setNombre(nombre);
                     persona.setApellido(apellido);
+                    persona.setCorreo(correo);
                     persona.setFechaRegistro(fechaRegistro);
 
                     //Empleado
@@ -254,69 +292,8 @@ public class ControllerEmpleado {
             }
         } else {
             //UPDATE
-//            String idPersona = vista.getTxtIdPersona().getText(),
-//                    nombres = vista.getTxtNombres().getText(),
-//                    apellidos = vista.getTxtApellidos().getText(),
-//                    telefono = vista.getTxtTelefono().getText(),
-//                    sexo = null;
-//            if (vista.getRbMasculino().isSelected()) {
-//                sexo = "Masculino";
-//            } else {
-//                if (vista.getRbFemenino().isSelected()) {
-//                    sexo = "Femenino";
-//                } else {
-//                    JOptionPane.showMessageDialog(vista, "Elija un sexo");
-//                }
-//            }
-//            double sueldo = Double.parseDouble(vista.getTxtSueldo().getText());
-//            int cupo = Integer.parseInt(vista.getSpCupo().getValue().toString());
-//
-//            Date date = vista.getCldFechaNacimiento().getDate(); //ic es la interfaz, jDate el JDatechooser
-//            long d = date.getTime(); //guardamos en un long el tiempo
-//            java.sql.Date fecha = new java.sql.Date(d);// parseamos al formato del sql  
-//
-//            model_persona persona = new model_persona();
-//            persona.setIdPersona(idPersona);
-//            persona.setNombres(nombres);
-//            persona.setApellidos(apellidos);
-//            persona.setFechanacimiento(fecha);
-//            persona.setTelefono(telefono);
-//            persona.setSexo(sexo);
-//            persona.setSueldo(sueldo);
-//            persona.setCupo(cupo);
-//            int opcUp = 1;
-////            if (jfc.getSelectedFile() != null) {
-//            try {
-//                FileInputStream img = new FileInputStream(jfc.getSelectedFile());
-//                int largo = (int) jfc.getSelectedFile().length();
-//                persona.setImageFile(img);
-//                persona.setTamano(largo);
-//            } catch (IOException ex) {
-//                Logger.getLogger(controller_persona.class.getName()).log(Level.SEVERE, null, ex);
-//            } catch (NullPointerException e) {
-//                opcUp = 0;
-//                System.out.println("no hay foto" + opcUp);
-//            }
-////            }
-//
-//            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea actualizar a la persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//            if (response == JOptionPane.YES_OPTION) {
-//                if (opcUp == 1 && persona.updateFotoPersona()) {//Actualizamos
-//                    JOptionPane.showMessageDialog(vista, "Persona actualizada correctamente");
-//                    vista.getDlgCrud().setVisible(false);
-//                    cargarDatos(1);
-//                    System.out.println("SI FOTO");
-//                } else {
-//                    System.out.println("NO FOTO" + opcUp);
-//                    if (persona.updatePersona()) {//Actualizamos
-//                        JOptionPane.showMessageDialog(vista, "Persona actualizada correctamente");
-//                        vista.getDlgCrud().setVisible(false);
-//                        cargarDatos(1);
-//                    } else {
-//                        JOptionPane.showMessageDialog(vista, "No se pudo actualizada a la persona");
-//                    }
-//                }
-//            }
+//            limpiarCampos();
+//            vista.dispose();
         }
     }
 
@@ -371,6 +348,91 @@ public class ControllerEmpleado {
                 }
             }
         }
+    }
+
+    public boolean llenarDatos() {
+        int fila = vistaE.getjTblEmpleado().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
+            return false;
+        } else {
+
+            int id = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
+            List<Empleado> listap = modeloE.getempleado();
+            listap.stream().forEach(emp -> {
+                if (id == emp.getIdEmp()) {
+                    vista.getTxtcedula().setText(emp.getCedula());
+                    vista.getTxtnombre().setText(emp.getNombre());
+                    vista.getTxtapellido().setText(emp.getApellido());
+                    vista.getTxttelefono().setText(emp.getTelefono());
+                    vista.getTxtcorreo().setText(emp.getCorreo());
+                    if (emp.getGenero().equalsIgnoreCase("Masculino")) {
+                        vista.getBtmasculino().setSelected(true);
+                    }
+                    if (emp.getGenero().equalsIgnoreCase("Femenino")) {
+                        vista.getBtfemenino().setSelected(true);
+                    }
+                    vista.getCalendarFechanacimiento().setDate(emp.getFechanacimiento());
+                    vista.getTxtusuario().setText(emp.getUsuario());
+                    vista.getTxtcontra().setText(emp.getContraseña());
+                    vista.getTxtconfirmacontra().setText(emp.getContraseña());
+                    Image foto = emp.getFoto();
+                    if (foto != null) {
+                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
+                        ImageIcon icono = new ImageIcon(foto);
+                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+                        dtcr.setIcon(icono);
+                        vista.getLblfoto().setIcon(icono);
+                    } else {
+                        vista.getLblfoto().setIcon(null);
+                    }
+
+                    String opc = vistaE.getjTblEmpleado().getValueAt(fila, 8).toString();
+//                    System.out.println(opc + "lllllll");
+                    switch (opc) {
+                        case "Gerente":
+                            //Gerente
+                            modelGerente me = new modelGerente();
+                            vista.getComborol().setSelectedIndex(1);
+                            vista.getTxtTitulo().setText(me.obtenerDatosRol(id));
+                            break;
+                        case "Secretaria":
+                            //Secretaria
+                            vista.getComborol().setSelectedIndex(2);
+                            modelSecretaria ms = new modelSecretaria();
+                            vista.getjSexperiencia().setValue(ms.obtenerDatosRol(id));
+                            break;
+                        case "Zoologo":
+                            //Zoologo
+                            System.out.println("soy zoologo");
+                            vista.getComborol().setSelectedIndex(3);
+                            
+                            System.out.println("q="+vista.getComborol().getItemAt(3));
+                            modelZoologo mz = new modelZoologo();
+                            for (int j = 0; j < vista.getComborama().getItemCount(); j++) {
+                                if (vista.getComborama().getItemAt(j).equalsIgnoreCase(mz.obtenerDatosRol(id))) {
+                                    vista.getComborama().setSelectedIndex(j);
+                                }
+                            }
+                            break;
+                        case "Cuidador":
+                            //Cuidador
+                            vista.getComborol().setSelectedIndex(4);
+                            modelCuidador mc = new modelCuidador();
+                            for (int j = 0; j < vista.getCombosangre().getItemCount(); j++) {
+                                if (vista.getCombosangre().getItemAt(j).equalsIgnoreCase(mc.obtenerDatosRol(id))) {
+                                    vista.getCombosangre().setSelectedIndex(j);
+//                                    vista.getCombosangre().setSelectedItem(mc.obtenerDatosRol(id));
+                                }
+                            }
+                            break;
+                    }
+                }
+
+            });
+            return true;
+        }
+        
     }
 
     public void desactivarDatosRol() {
@@ -530,7 +592,6 @@ public class ControllerEmpleado {
                 }
                 break;
         }
-        System.out.println("BAN=" + ban);
         return ban;
     }
 

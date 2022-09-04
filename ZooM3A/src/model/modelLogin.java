@@ -61,8 +61,7 @@ public class modelLogin extends Empleado {
         try {
 
             while (rs.next()) {
-                count = rs.getInt(1);
-                System.out.println(rs.getInt(1));
+                count = rs.getInt(1);                
             }
             if (count != 0) {
                 ban = true;

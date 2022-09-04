@@ -14,17 +14,20 @@ public class Persona {
     private String cedula;
     private String nombre;
     private String apellido;
+    private String correo;
     private Date fechaRegistro;
 
     public Persona() {
     }
 
-    public Persona(String cedula, String nombre, String apellido, Date fechaRegistro) {
+    public Persona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.correo = correo;
         this.fechaRegistro = fechaRegistro;
     }
+
 
     public String getCedula() {
         return cedula;
@@ -56,6 +59,14 @@ public class Persona {
 
     public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
 }

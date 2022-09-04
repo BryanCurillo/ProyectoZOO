@@ -113,7 +113,6 @@ public class modelEmpleado extends Empleado {
         try {
             while (rs.next()) {
                 rol = rs.getString(1);
-                System.out.println("=" + rol);
             }
         } catch (SQLException e) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
@@ -151,18 +150,19 @@ public class modelEmpleado extends Empleado {
                 empleado.setNombre(rs.getString(2));
                 empleado.setApellido(rs.getString(3));
                 empleado.setFechaRegistro(rs.getDate(4));
-                empleado.setIdEmp(rs.getInt(5));
-                empleado.setTelefono(rs.getString(6));
-                bytea = rs.getBytes(7);
+                empleado.setCorreo(rs.getString(5));
+                empleado.setIdEmp(rs.getInt(6));
+                empleado.setTelefono(rs.getString(7));
+                bytea = rs.getBytes(8);
                 if (bytea != null) {
                     empleado.setFoto(getImagen(bytea));
                 }
-                empleado.setFechanacimiento(rs.getDate(8));
-                empleado.setRol(rs.getInt(9));
-                empleado.setGenero(rs.getString(10));
-                empleado.setUsuario(rs.getString(11));
-                empleado.setContraseña(rs.getString(12));
-                empleado.setCedulaEmp(rs.getString(13));
+                empleado.setFechanacimiento(rs.getDate(9));
+                empleado.setRol(rs.getInt(10));
+                empleado.setGenero(rs.getString(11));
+                empleado.setUsuario(rs.getString(12));
+                empleado.setContraseña(rs.getString(13));
+                empleado.setCedulaEmp(rs.getString(14));
 
                 listaEmpleado.add(empleado);
 
@@ -198,5 +198,47 @@ public class modelEmpleado extends Empleado {
     public boolean deletecuidador(int codigo, String cedula) {
         String sql = "SELECT eliminarcuidador(" + codigo + " , '" + cedula + "')";
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public List<Empleado> getempleadoRellenar(String cedula) {
+        List<Empleado> listaEmpleado = new ArrayList<>();
+
+        String sql = "select * from persona join empleado on(per_cedula=emp_cedula) where emp_cedula='" + cedula + "'";
+        ResultSet rs = mpgc.consulta(sql);
+        byte[] bytea;
+        try {
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setCedula(rs.getString(1));
+                empleado.setNombre(rs.getString(2));
+                empleado.setApellido(rs.getString(3));
+                empleado.setFechaRegistro(rs.getDate(4));
+                empleado.setIdEmp(rs.getInt(5));
+                empleado.setTelefono(rs.getString(6));
+                bytea = rs.getBytes(7);
+                if (bytea != null) {
+                    empleado.setFoto(getImagen(bytea));
+                }
+                empleado.setFechanacimiento(rs.getDate(8));
+                empleado.setRol(rs.getInt(9));
+                empleado.setGenero(rs.getString(10));
+                empleado.setUsuario(rs.getString(11));
+                empleado.setContraseña(rs.getString(12));
+                empleado.setCedulaEmp(rs.getString(13));
+
+                listaEmpleado.add(empleado);
+
+            }
+        } catch (IOException | SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaEmpleado;
     }
 }

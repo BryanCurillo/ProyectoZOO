@@ -4,6 +4,11 @@
  */
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Bryan
@@ -19,9 +24,28 @@ public class modelZoologo extends Zoologo {
         super(id, rama, idEmpleado);
     }
 
-    public boolean setZoologo() {        
+    public boolean setZoologo() {
         String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado)"
-                + "values('" + getRama() + "','" +getIdEmpleadoZoo()+ "');";
+                + "values('" + getRama() + "','" + getIdEmpleadoZoo() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public String obtenerDatosRol(int codigo) {
+        String DatoRol = "";
+        String sql = "select zol_rama from zoologo where zol_idempleado=" + codigo;
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                DatoRol = rs.getString(1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return DatoRol;
     }
 }

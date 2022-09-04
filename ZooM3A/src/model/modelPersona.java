@@ -17,13 +17,13 @@ public class modelPersona extends Persona {
     public modelPersona() {
     }
 
-    public modelPersona(String cedula, String nombre, String apellido, Date fechaRegistro) {
-        super(cedula, nombre, apellido, fechaRegistro);
+    public modelPersona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro) {
+        super(cedula, nombre, apellido, correo, fechaRegistro);
     }
 
     public boolean setPersona() {
-        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro)"
-                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "');";
+        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo)"
+                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','" + getCorreo() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 }

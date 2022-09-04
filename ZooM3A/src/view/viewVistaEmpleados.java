@@ -55,17 +55,17 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
         jTblEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Cedula", "Nombre", "Apellido", "Telefono", "Fecha de Nacimiento", "Genero", "Rol", "Usuario", "Contraseñá", "Fecha de Registro", "Foto"
+                "Id", "Cedula", "Nombre", "Apellido", "Telefono", "Fecha de Nacimiento", "Correo", "Genero", "Rol", "Usuario", "Contraseñá", "Fecha de Registro", "Foto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -73,6 +73,10 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(jTblEmpleado);
+        if (jTblEmpleado.getColumnModel().getColumnCount() > 0) {
+            jTblEmpleado.getColumnModel().getColumn(5).setResizable(false);
+            jTblEmpleado.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

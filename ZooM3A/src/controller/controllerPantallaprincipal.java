@@ -18,11 +18,15 @@ public class controllerPantallaprincipal {
 
     private viewPantallaPrincipal vista;
 
+    public controllerPantallaprincipal() {
+    }
+
     public controllerPantallaprincipal(viewPantallaPrincipal vista) {
         this.vista = vista;
         vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
 //        System.out.println("iniciado");
+        vista.setVisible(true);
+
     }
 
     public void iniciaControl() {
@@ -62,4 +66,7 @@ public class controllerPantallaprincipal {
         controladorEmpleado.inicialControl2();
     }
 
+    public void limpiarJD(){
+        vista.getjDPprincipal().removeAll();
+    }
 }
