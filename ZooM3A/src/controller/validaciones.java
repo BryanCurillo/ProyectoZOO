@@ -145,7 +145,6 @@ public class validaciones {
                     JOptionPane.showMessageDialog(null, "Ingrese la contraseñá");
                 } else {
                     if (miLogin.comprobarLogin(usuario, contrasena)) {
-                        System.out.println("holi");
                         ban = true;
                     } else {
                         JOptionPane.showMessageDialog(null, "Contraseñá incorrecta");

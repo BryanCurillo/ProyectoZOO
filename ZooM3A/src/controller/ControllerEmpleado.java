@@ -73,7 +73,7 @@ public class ControllerEmpleado {
     public void inicialControl() {
         vista.getComborol().addActionListener(l -> activarDatosRol());
         vista.getBtagregarfoto().addActionListener(l -> examinarFoto());
-        vista.getBtregistrar().addActionListener(l -> crearEditarPersona());
+        vista.getBtregistrar().addActionListener(l -> abrirDialoogo(1));
         vista.getBtcancelar().addActionListener(l -> vista.dispose());
     }
 
@@ -165,10 +165,10 @@ public class ControllerEmpleado {
 //        pp.getjDPprincipal().removeAll();
         String titulo;
         cargarComboRol();
-        vistaE.dispose();
         if (op == 1) {
             titulo = "Crear";
             vista.setName("Registro");
+            System.out.println(vista.getName());
             desactivarDatosRol();
             vista.setVisible(true);
             this.inicialControl();
@@ -176,6 +176,7 @@ public class ControllerEmpleado {
             titulo = "Editar";
             if (llenarDatos()) {
                 vista.setName("Editar");
+                System.out.println(vista.getName());
                 desactivarDatosRol();
                 vista.setVisible(true);
                 this.inicialControl();
@@ -185,18 +186,36 @@ public class ControllerEmpleado {
     }
 
     private void crearEditarPersona() {
+        //DatosPersona
+        String cedula = vista.getTxtcedula().getText(),
+                nombre = vista.getTxtnombre().getText(),
+                apellido = vista.getTxtapellido().getText(),
+                correo = vista.getTxtcorreo().getText();
+        Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
+
+        //Empleado
+        String telefono = vista.getTxttelefono().getText(),
+                usuario = vista.getTxtusuario().getText(),
+                contrasena = vista.getTxtcontra().getText(),
+                cedulaemp = vista.getTxtcedula().getText(),
+                genero = null;
+        int rol = vista.getComborol().getSelectedIndex();
+        Date date = vista.getCalendarFechanacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
+        long d = date.getTime(); //guardamos en un long el tiempo
+        java.sql.Date fechanacimiento = new java.sql.Date(d);// parseamos al formato del sql  
+        
         if (vista.getName().equals("Registro")) {
 
             //INSERT
             if (validar()) {
                 int response = JOptionPane.showConfirmDialog(vista, "¿Agregar persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
-                    //DatosPersona
-                    String cedula = vista.getTxtcedula().getText(),
-                            nombre = vista.getTxtnombre().getText(),
-                            apellido = vista.getTxtapellido().getText(),
-                            correo = vista.getTxtcorreo().getText();
-                    Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
+//                    //DatosPersona
+//                    String cedula = vista.getTxtcedula().getText(),
+//                            nombre = vista.getTxtnombre().getText(),
+//                            apellido = vista.getTxtapellido().getText(),
+//                            correo = vista.getTxtcorreo().getText();
+//                    Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
 
                     modelPersona persona = new modelPersona();
                     persona.setCedula(cedula);
@@ -205,17 +224,16 @@ public class ControllerEmpleado {
                     persona.setCorreo(correo);
                     persona.setFechaRegistro(fechaRegistro);
 
-                    //Empleado
-                    String telefono = vista.getTxttelefono().getText(),
-                            usuario = vista.getTxtusuario().getText(),
-                            contrasena = vista.getTxtcontra().getText(),
-                            cedulaemp = vista.getTxtcedula().getText(),
-                            genero = null;
-                    int rol = vista.getComborol().getSelectedIndex();
-                    Date date = vista.getCalendarFechanacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
-                    long d = date.getTime(); //guardamos en un long el tiempo
-                    java.sql.Date fechanacimiento = new java.sql.Date(d);// parseamos al formato del sql  
-
+//                    //Empleado
+//                    String telefono = vista.getTxttelefono().getText(),
+//                            usuario = vista.getTxtusuario().getText(),
+//                            contrasena = vista.getTxtcontra().getText(),
+//                            cedulaemp = vista.getTxtcedula().getText(),
+//                            genero = null;
+//                    int rol = vista.getComborol().getSelectedIndex();
+//                    Date date = vista.getCalendarFechanacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
+//                    long d = date.getTime(); //guardamos en un long el tiempo
+//                    java.sql.Date fechanacimiento = new java.sql.Date(d);// parseamos al formato del sql  
                     if (vista.getBtmasculino().isSelected()) {
                         genero = "Masculino";
                     } else {
@@ -307,7 +325,7 @@ public class ControllerEmpleado {
             if (response == JOptionPane.YES_OPTION) {
                 String cedula = vistaE.getjTblEmpleado().getValueAt(fila, 1).toString();
                 int codigo = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
-                String opc = vistaE.getjTblEmpleado().getValueAt(fila, 7).toString();
+                String opc = vistaE.getjTblEmpleado().getValueAt(fila, 8).toString();
                 switch (opc) {
                     case "Gerente":
                         //Gerente
@@ -404,10 +422,8 @@ public class ControllerEmpleado {
                             break;
                         case "Zoologo":
                             //Zoologo
-                            System.out.println("soy zoologo");
                             vista.getComborol().setSelectedIndex(3);
-                            
-                            System.out.println("q="+vista.getComborol().getItemAt(3));
+
                             modelZoologo mz = new modelZoologo();
                             for (int j = 0; j < vista.getComborama().getItemCount(); j++) {
                                 if (vista.getComborama().getItemAt(j).equalsIgnoreCase(mz.obtenerDatosRol(id))) {
@@ -430,9 +446,11 @@ public class ControllerEmpleado {
                 }
 
             });
+            vistaE.dispose();
+
             return true;
         }
-        
+
     }
 
     public void desactivarDatosRol() {

@@ -181,6 +181,7 @@ public class modelEmpleado extends Empleado {
     }
 
     public boolean deleteZoologo(int codigo, String cedula) {
+        
         String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
