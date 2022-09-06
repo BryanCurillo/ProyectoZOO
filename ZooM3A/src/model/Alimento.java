@@ -10,19 +10,37 @@ package model;
  */
 public class Alimento {
 
+    private int idalimento;
+    private double precio;
     private String nombre;
-    private String tipo;
-    private String descripcion;
-    private int N_comida_diaria;
+    private int idgerente;
+    private int idproveedor;
 
     public Alimento() {
     }
 
-    public Alimento(String nombre, String tipo, String descripcion, int N_comida_diaria) {
+    public Alimento(int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
+        this.idalimento = idalimento;
+        this.precio = precio;
         this.nombre = nombre;
-        this.tipo = tipo;
-        this.descripcion = descripcion;
-        this.N_comida_diaria = N_comida_diaria;
+        this.idgerente = idgerente;
+        this.idproveedor = idproveedor;
+    }
+
+    public int getIdalimento() {
+        return idalimento;
+    }
+
+    public void setIdalimento(int idalimento) {
+        this.idalimento = idalimento;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -33,28 +51,20 @@ public class Alimento {
         this.nombre = nombre;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getIdgerente() {
+        return idgerente;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setIdgerente(int idgerente) {
+        this.idgerente = idgerente;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public int getIdproveedor() {
+        return idproveedor;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getN_comida_diaria() {
-        return N_comida_diaria;
-    }
-
-    public void setN_comida_diaria(int N_comida_diaria) {
-        this.N_comida_diaria = N_comida_diaria;
+    public void setIdproveedor(int idproveedor) {
+        this.idproveedor = idproveedor;
     }
 
 }

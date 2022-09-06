@@ -46,8 +46,8 @@ public class Animales extends Alimento {
         this.tamano = tamano;
     }
 
-    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano, String nombre, String tipo, String descripcion, int N_comida_diaria) {
-        super(nombre, tipo, descripcion, N_comida_diaria);
+    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
+        super(idalimento, precio, nombre, idgerente, idproveedor);
         this.idanimal = idanimal;
         this.nombreanimal = nombreanimal;
         this.genero = genero;
