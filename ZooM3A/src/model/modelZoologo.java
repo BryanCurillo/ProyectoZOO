@@ -53,7 +53,6 @@ public class modelZoologo extends Zoologo {
     }
 
     public boolean updateZoologo(String cedula) {
-        System.out.println("rama="+getCedula());
         String sql;
         sql = "UPDATE zoologo SET zol_rama='"+getRama()+"'"
                 + "WHERE zol_idempleado=" + me.obtenerIdEmp(cedula);
