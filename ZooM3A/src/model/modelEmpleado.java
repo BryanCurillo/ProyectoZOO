@@ -87,7 +87,7 @@ public class modelEmpleado extends Empleado {
         return listaRoles;
     }
 
-    public int obtenerCodigo(String cedula) {
+    public int obtenerIdEmp(String cedula) {
         int codigo = 0;
         String sql = "select emp_id from empleado where emp_cedula = '" + cedula + "'";
         ResultSet rs = mpgc.consulta(sql);
@@ -123,6 +123,38 @@ public class modelEmpleado extends Empleado {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rol;
+    }
+
+
+    public boolean updateEmpleado() {
+        String sql;
+        sql = "UPDATE empleado SET emp_telefono='"+getTelefono()+"', emp_fechanacimiento='"+getFechanacimiento()+"', "
+                + "emp_rol="+getRol()+", emp_genero='"+getGenero()+"', emp_usuario='"+getUsuario()+"', emp_contraseña='"+getContraseña()+"' "
+                + "WHERE emp_cedula='" + getCedula() + "'";
+        return mpgc.accion(sql);
+    }
+
+    public boolean updateFotoEmpleado() {
+        String sql;
+        sql = "UPDATE empleado SET emp_telefono=?, emp_foto=?, emp_fechanacimiento=?, "
+                + "emp_rol=?, emp_genero=?, emp_usuario=?, emp_contraseña=? "
+                + "WHERE emp_cedula='" + getCedula() + "'";
+//        sql += "VALUES(?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setString(1, getTelefono());
+            ps.setBinaryStream(2, getImageFile());
+            ps.setDate(3, (java.sql.Date) getFechanacimiento());
+            ps.setInt(4, getRol());
+            ps.setString(5, getGenero());
+            ps.setString(6, getUsuario());
+            ps.setString(7, getContraseña());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 
     private Image getImagen(byte[] bytes) throws IOException {
@@ -181,7 +213,7 @@ public class modelEmpleado extends Empleado {
     }
 
     public boolean deleteZoologo(int codigo, String cedula) {
-        
+
         String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
@@ -201,6 +233,19 @@ public class modelEmpleado extends Empleado {
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
 
+//    public boolean updateZoologo(int codigo, String cedula,
+//            String rama,
+//            String telefono, Date fecha, int rol, String genero,
+//            String usuario, String contraseña,
+//            String nombre, String apellido, String correo) {
+//
+//        String sql = "SELECT updatezoologo(" + codigo + " , '" + cedula + " , '"
+//                + rama + " , '"
+//                + telefono + " , '" + fecha + " , '" + rol + " , '" + genero
+//                + " , '" + usuario + " , '" + contraseña
+//                + " , '" + nombre + " , '" + apellido + " , '" + correo + "')";
+//        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+//    }
     public List<Empleado> getempleadoRellenar(String cedula) {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
