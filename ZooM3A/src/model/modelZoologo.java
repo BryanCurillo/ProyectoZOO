@@ -4,10 +4,12 @@
  */
 package model;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.stream.ImageInputStream;
 
 /**
  *
@@ -16,6 +18,7 @@ import java.util.logging.Logger;
 public class modelZoologo extends Zoologo {
 
     modelPGconexion mpgc = new modelPGconexion();
+    modelEmpleado me = new modelEmpleado();
 
     public modelZoologo() {
     }
@@ -47,5 +50,13 @@ public class modelZoologo extends Zoologo {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
         return DatoRol;
+    }
+
+    public boolean updateZoologo(String cedula) {
+        System.out.println("rama="+getCedula());
+        String sql;
+        sql = "UPDATE zoologo SET zol_rama='"+getRama()+"'"
+                + "WHERE zol_idempleado=" + me.obtenerIdEmp(cedula);
+        return mpgc.accion(sql);
     }
 }
