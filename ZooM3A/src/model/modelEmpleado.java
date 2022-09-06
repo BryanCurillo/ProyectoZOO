@@ -37,11 +37,12 @@ public class modelEmpleado extends Empleado {
         super(id, telefono, fechanacimiento, rol, usuario, contraseña, cedula, genero, foto, imageFile, tamano);
     }
 
-//    public boolean setPersona() {
-//        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro)"
-//                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "');";
-//        return mpgc.accion(sql);//EJECUTAMOS EN INSERT
-//    }
+    public boolean setEmpleado() {
+        String sql = "INSERT INTO empleado(emp_telefono,emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula)\n" +
+                        "VALUES ('"+getTelefono()+"','"+getFechanacimiento()+"', '"+getRol()+"', '"+getGenero()+"', '"+getUsuario()+"', '"+getContraseña()+"', '"+getCedula()+"')";
+        return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
     public boolean setFotoEmpleado() {
         String sql;
         sql = "INSERT INTO empleado(emp_telefono, emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula)";
@@ -125,11 +126,10 @@ public class modelEmpleado extends Empleado {
         return rol;
     }
 
-
     public boolean updateEmpleado() {
         String sql;
-        sql = "UPDATE empleado SET emp_telefono='"+getTelefono()+"', emp_fechanacimiento='"+getFechanacimiento()+"', "
-                + "emp_rol="+getRol()+", emp_genero='"+getGenero()+"', emp_usuario='"+getUsuario()+"', emp_contraseña='"+getContraseña()+"' "
+        sql = "UPDATE empleado SET emp_telefono='" + getTelefono() + "', emp_fechanacimiento='" + getFechanacimiento() + "', "
+                + "emp_rol=" + getRol() + ", emp_genero='" + getGenero() + "', emp_usuario='" + getUsuario() + "', emp_contraseña='" + getContraseña() + "' "
                 + "WHERE emp_cedula='" + getCedula() + "'";
         return mpgc.accion(sql);
     }
@@ -233,58 +233,45 @@ public class modelEmpleado extends Empleado {
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
 
-//    public boolean updateZoologo(int codigo, String cedula,
-//            String rama,
-//            String telefono, Date fecha, int rol, String genero,
-//            String usuario, String contraseña,
-//            String nombre, String apellido, String correo) {
+//    public List<Empleado> getempleadoRellenar(String cedula) {
+//        List<Empleado> listaEmpleado = new ArrayList<>();
 //
-//        String sql = "SELECT updatezoologo(" + codigo + " , '" + cedula + " , '"
-//                + rama + " , '"
-//                + telefono + " , '" + fecha + " , '" + rol + " , '" + genero
-//                + " , '" + usuario + " , '" + contraseña
-//                + " , '" + nombre + " , '" + apellido + " , '" + correo + "')";
-//        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+//        String sql = "select * from persona join empleado on(per_cedula=emp_cedula) where emp_cedula='" + cedula + "'";
+//        ResultSet rs = mpgc.consulta(sql);
+//        byte[] bytea;
+//        try {
+//            while (rs.next()) {
+//                Empleado empleado = new Empleado();
+//                empleado.setCedula(rs.getString(1));
+//                empleado.setNombre(rs.getString(2));
+//                empleado.setApellido(rs.getString(3));
+//                empleado.setFechaRegistro(rs.getDate(4));
+//                empleado.setIdEmp(rs.getInt(5));
+//                empleado.setTelefono(rs.getString(6));
+//                bytea = rs.getBytes(7);
+//                if (bytea != null) {
+//                    empleado.setFoto(getImagen(bytea));
+//                }
+//                empleado.setFechanacimiento(rs.getDate(8));
+//                empleado.setRol(rs.getInt(9));
+//                empleado.setGenero(rs.getString(10));
+//                empleado.setUsuario(rs.getString(11));
+//                empleado.setContraseña(rs.getString(12));
+//                empleado.setCedulaEmp(rs.getString(13));
+//
+//                listaEmpleado.add(empleado);
+//
+//            }
+//        } catch (IOException | SQLException e) {
+//            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//
+//        try {
+//            rs.close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return listaEmpleado;
 //    }
-    public List<Empleado> getempleadoRellenar(String cedula) {
-        List<Empleado> listaEmpleado = new ArrayList<>();
-
-        String sql = "select * from persona join empleado on(per_cedula=emp_cedula) where emp_cedula='" + cedula + "'";
-        ResultSet rs = mpgc.consulta(sql);
-        byte[] bytea;
-        try {
-            while (rs.next()) {
-                Empleado empleado = new Empleado();
-                empleado.setCedula(rs.getString(1));
-                empleado.setNombre(rs.getString(2));
-                empleado.setApellido(rs.getString(3));
-                empleado.setFechaRegistro(rs.getDate(4));
-                empleado.setIdEmp(rs.getInt(5));
-                empleado.setTelefono(rs.getString(6));
-                bytea = rs.getBytes(7);
-                if (bytea != null) {
-                    empleado.setFoto(getImagen(bytea));
-                }
-                empleado.setFechanacimiento(rs.getDate(8));
-                empleado.setRol(rs.getInt(9));
-                empleado.setGenero(rs.getString(10));
-                empleado.setUsuario(rs.getString(11));
-                empleado.setContraseña(rs.getString(12));
-                empleado.setCedulaEmp(rs.getString(13));
-
-                listaEmpleado.add(empleado);
-
-            }
-        } catch (IOException | SQLException e) {
-            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
-        }
-
-        try {
-            rs.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return listaEmpleado;
-    }
 }
