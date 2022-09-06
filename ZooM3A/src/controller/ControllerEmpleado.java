@@ -186,6 +186,7 @@ public class ControllerEmpleado {
     }
 
     private void crearEditarPersona() {
+        boolean ban = true;
         int colorAux = vista.getLblfoto().getBackground().hashCode(),
                 colorAux2 = 0;
         if (validar()) {
@@ -229,25 +230,36 @@ public class ControllerEmpleado {
             empleado.setContraseña(contrasena);
             empleado.setCedula(cedulaemp);
             empleado.setRol(rol);
+            try {
+                FileInputStream img = new FileInputStream(jfc.getSelectedFile());
+                int largo = (int) jfc.getSelectedFile().length();
+                empleado.setImageFile(img);
+                empleado.setTamano(largo);
+                colorAux2 = vista.getLblfoto().getBackground().hashCode() + 2;
+
+            } catch (IOException ex) {
+                Logger.getLogger(ControllerEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NullPointerException e) {
+                colorAux2 = vista.getLblfoto().getBackground().hashCode();
+            }
+
             if (vista.getName().equals("Registro")) {
 
                 //INSERT
                 int response = JOptionPane.showConfirmDialog(vista, "¿Agregar persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
-                    try {
-                        FileInputStream img = new FileInputStream(jfc.getSelectedFile());
-                        int largo = (int) jfc.getSelectedFile().length();
-                        empleado.setImageFile(img);
-                        empleado.setTamano(largo);
-                        colorAux2 = vista.getLblfoto().getBackground().hashCode() + 2;
 
-                    } catch (IOException ex) {
-                        Logger.getLogger(ControllerEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (NullPointerException e) {
-                        colorAux2 = vista.getLblfoto().getBackground().hashCode();
+                    if (colorAux != colorAux2) {
+                        if (!persona.setPersona() && !empleado.setFotoEmpleado()) {
+                            ban = false;
+                        }
+                    } else {
+                        if (!persona.setPersona() && !empleado.setEmpleado()) {
+                            ban = false;
+                        }
                     }
 
-                    if (colorAux != colorAux2 && persona.setPersona() && empleado.setFotoEmpleado()) {//Grabamos
+                    if (ban) {
                         int opc = vista.getComborol().getSelectedIndex();
                         switch (opc) {
                             case 1:
@@ -256,16 +268,19 @@ public class ControllerEmpleado {
                                 modelGerente gerente = new modelGerente();
                                 gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
                                 gerente.setTitulo(titulo);
-                                gerente.setGerente();
-                                JOptionPane.showMessageDialog(vista, "Gerente agregado/a correctamente");
+                                if (!gerente.setGerente()) {
+                                    ban = false;
+                                }
                                 break;
                             case 2:
+                                //SECRETARIA
                                 int experiencia = (int) vista.getjSexperiencia().getValue();
                                 modelSecretaria secretaria = new modelSecretaria();
                                 secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
                                 secretaria.setExperiencia(experiencia);
-                                secretaria.setSecretaria();
-                                JOptionPane.showMessageDialog(vista, "Secretaria agregado/a correctamente");
+                                if (!secretaria.setSecretaria()) {
+                                    ban = false;
+                                }
                                 break;
                             case 3:
                                 //Zoologo
@@ -273,94 +288,81 @@ public class ControllerEmpleado {
                                 modelZoologo zoologo = new modelZoologo();
                                 zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
                                 zoologo.setRama(rama);
-                                zoologo.setZoologo();
-                                JOptionPane.showMessageDialog(vista, "Zoologo agregado/a correctamente");
+                                if (!zoologo.setZoologo()) {
+                                    ban = false;
+                                }
                                 break;
                             case 4:
                                 String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
                                 modelCuidador cuidador = new modelCuidador();
                                 cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
                                 cuidador.setTipoSangre(tipoSangre);
-                                cuidador.seCuidador();
-                                JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");
+                                if (!cuidador.setCuidador()) {
+                                    ban = false;
+                                }
                                 break;
                         }
                         limpiarCampos();
                         vista.dispose();
-                    } else {
-                        JOptionPane.showMessageDialog(vista, "No se pudo agregar a la persona");
                     }
                 }
-//            }
             } else {
                 //UPDATE
 
-                try {
-                    FileInputStream img = new FileInputStream(jfc.getSelectedFile());
-                    int largo = (int) jfc.getSelectedFile().length();
-                    empleado.setImageFile(img);
-                    empleado.setTamano(largo);
-                    colorAux2 = vista.getLblfoto().getBackground().hashCode() + 2;
-
-                } catch (IOException ex) {
-                    Logger.getLogger(ControllerEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (NullPointerException e) {
-                    colorAux2 = vista.getLblfoto().getBackground().hashCode();
-                }
                 int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea actualizar a la persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
 //                    if (colorAux != colorAux2) {//Grabamos
-                        int opc = vista.getComborol().getSelectedIndex();
-                        switch (opc) {
-                            case 1:
-                                //Gerente
-                                String titulo = vista.getTxtTitulo().getText();
-                                modelGerente gerente = new modelGerente();
-                                gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                gerente.setTitulo(titulo);
+                    int opc = vista.getComborol().getSelectedIndex();
+                    switch (opc) {
+                        case 1:
+                            //Gerente
+                            String titulo = vista.getTxtTitulo().getText();
+                            modelGerente gerente = new modelGerente();
+                            gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                            gerente.setTitulo(titulo);
 
-                                JOptionPane.showMessageDialog(vista, "Gerente agregado/a correctamente");
-                                break;
-                            case 2:
-                                int experiencia = (int) vista.getjSexperiencia().getValue();
-                                modelSecretaria secretaria = new modelSecretaria();
-                                secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                secretaria.setExperiencia(experiencia);
-                                secretaria.setSecretaria();
-                                JOptionPane.showMessageDialog(vista, "Secretaria agregado/a correctamente");
-                                break;
-                            case 3:
-                                //Zoologo
-                                String rama = vista.getComborama().getSelectedItem().toString();
-                                modelZoologo zoologo = new modelZoologo();
-                                zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
-                                zoologo.setRama(rama);
-                                if (colorAux != colorAux2) {
-                                    if (zoologo.updateZoologo(cedulaemp) && empleado.updateFotoEmpleado() && persona.updatePersona()) {
-                                        JOptionPane.showMessageDialog(vista, "Zoologo actualizado/a correctamente");
-                                    } else {
-                                        JOptionPane.showMessageDialog(vista, "No se pudo actualizar");
-                                    }
+                            JOptionPane.showMessageDialog(vista, "Gerente agregado/a correctamente");
+                            break;
+                        case 2:
+                            int experiencia = (int) vista.getjSexperiencia().getValue();
+                            modelSecretaria secretaria = new modelSecretaria();
+                            secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                            secretaria.setExperiencia(experiencia);
+                            secretaria.setSecretaria();
+                            JOptionPane.showMessageDialog(vista, "Secretaria agregado/a correctamente");
+                            break;
+                        case 3:
+                            //Zoologo
+                            String rama = vista.getComborama().getSelectedItem().toString();
+                            modelZoologo zoologo = new modelZoologo();
+                            zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
+                            zoologo.setRama(rama);
+                            if (colorAux != colorAux2) {
+                                if (zoologo.updateZoologo(cedulaemp) && empleado.updateFotoEmpleado() && persona.updatePersona()) {
+                                    JOptionPane.showMessageDialog(vista, "Zoologo actualizado/a correctamente");
                                 } else {
-                                    if (zoologo.updateZoologo(cedulaemp) && empleado.updateEmpleado() && persona.updatePersona()) {
-                                        JOptionPane.showMessageDialog(vista, "Zoologo actualizado/a correctamente");
-                                    } else {
-                                        JOptionPane.showMessageDialog(vista, "No se pudo actualizar");
-                                    }
+                                    JOptionPane.showMessageDialog(vista, "No se pudo actualizar");
                                 }
+                            } else {
+                                if (zoologo.updateZoologo(cedulaemp) && empleado.updateEmpleado() && persona.updatePersona()) {
+                                    JOptionPane.showMessageDialog(vista, "Zoologo actualizado/a correctamente");
+                                } else {
+                                    JOptionPane.showMessageDialog(vista, "No se pudo actualizar");
+                                }
+                            }
 
-                                break;
-                            case 4:
-                                String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
-                                modelCuidador cuidador = new modelCuidador();
-                                cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                cuidador.setTipoSangre(tipoSangre);
-                                cuidador.seCuidador();
-                                JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");
-                                break;
-                        }
-                        limpiarCampos();
-                        vista.dispose();
+                            break;
+                        case 4:
+                            String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
+                            modelCuidador cuidador = new modelCuidador();
+                            cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                            cuidador.setTipoSangre(tipoSangre);
+                            cuidador.setCuidador();
+                            JOptionPane.showMessageDialog(vista, "Cuidador agregado/a correctamente");
+                            break;
+                    }
+                    limpiarCampos();
+                    vista.dispose();
 //                    }
                 }
             }
