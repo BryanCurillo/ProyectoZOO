@@ -11,7 +11,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author Bryan
+ * @author Bryan2
  */
 public class imageTable extends DefaultTableCellRenderer {
 
