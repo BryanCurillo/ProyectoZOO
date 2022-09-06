@@ -120,4 +120,10 @@ public class ModelAnimal extends Animales {
         return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
 
+    public boolean updateAnimal() {
+        String sql;
+        sql = "UPDATE animal SET ani_iddieta=" + getIddieta() + ", ani_idcuidador=" + getIdcuidador() + " WHERE ani_id=" + getIdanimal() + "";
+        return mpgc.accion(sql);
+    }
+
 }
