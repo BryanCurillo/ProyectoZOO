@@ -26,4 +26,11 @@ public class modelPersona extends Persona {
                 + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','" + getCorreo() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
+
+    public boolean updatePersona() {
+        String sql;
+        sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "'"
+                + "WHERE per_cedula='" + getCedula() + "'";
+        return mpgc.accion(sql);
+    }
 }
