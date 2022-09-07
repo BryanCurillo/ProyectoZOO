@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 public class modelCuidador extends Cuidador {
 
     modelPGconexion mpgc = new modelPGconexion();
+    modelEmpleado me = new modelEmpleado();
 
     public modelCuidador() {
     }
@@ -28,6 +29,13 @@ public class modelCuidador extends Cuidador {
         String sql = "INSERT INTO cuidador (cui_tiposangre, cui_idempleado)"
                 + "values('" + getTipoSangre() + "'," + getIdEmpleado() + ");";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public boolean updateCuidador(String cedula) {
+        String sql;
+        sql = "UPDATE cuidador SET cui_tiposangre='" + getTipoSangre() + "'"
+                + "WHERE cui_idempleado=" + me.obtenerIdEmp(cedula);
+        return mpgc.accion(sql);
     }
 
     public String obtenerDatosRol(int codigo) {
