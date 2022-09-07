@@ -47,6 +47,9 @@ public class viewRegistroAnimal extends javax.swing.JFrame {
         jSpinner2 = new javax.swing.JSpinner();
         jLabel13 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,8 +78,8 @@ public class viewRegistroAnimal extends javax.swing.JFrame {
         getContentPane().add(btmacho, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 123, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel7.setText("DIETA");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+        jLabel7.setText("DESCRIPCION DE LA DIETA");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
         getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 161, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -107,7 +110,7 @@ public class viewRegistroAnimal extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton2.setText("ACEPTAR");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, -1, -1));
         getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 70, -1));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -116,6 +119,16 @@ public class viewRegistroAnimal extends javax.swing.JFrame {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mamíferos", "Aves", "Reptiles", "Ranas y sapos", "Peces", "Ciempiés y milpiés", "Arañas y alacranes", "Insectos", "Cangrejos y camarones", "Estrellas y erizos", "Caracoles, almejas y pulpos", "Lombrices y gusanos marinos", "Rotíferos", "Gusanos planos", "Medusas y corales", "Esponjas" }));
         getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 100, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 350, 130));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel14.setText("DIETA");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,14 +150,17 @@ public class viewRegistroAnimal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtnombreanimal1;
     // End of variables declaration//GEN-END:variables
 }

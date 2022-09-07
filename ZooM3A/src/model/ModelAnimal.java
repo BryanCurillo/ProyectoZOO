@@ -34,8 +34,8 @@ public class ModelAnimal extends Animales {
         super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, foto, imageFile, tamano);
     }
 
-    public ModelAnimal(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano, String nombre, String tipo, String descripcion, int N_comida_diaria) {
-        super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, foto, imageFile, tamano, nombre, tipo, descripcion, N_comida_diaria);
+    public ModelAnimal(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
+        super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, foto, imageFile, tamano, idalimento, precio, nombre, idgerente, idproveedor);
     }
 
     modelPGconexion mpgc = new modelPGconexion();
@@ -112,6 +112,18 @@ public class ModelAnimal extends Animales {
         }
 
         return listaAnimales;
+    }
+
+    public boolean deleteAnimal(int codigoanimal) {
+
+        String sql = "delete from from animal where = " + codigoanimal + ";";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean updateAnimal() {
+        String sql;
+        sql = "UPDATE animal SET ani_iddieta=" + getIddieta() + ", ani_idcuidador=" + getIdcuidador() + " WHERE ani_id=" + getIdanimal() + "";
+        return mpgc.accion(sql);
     }
 
 }
