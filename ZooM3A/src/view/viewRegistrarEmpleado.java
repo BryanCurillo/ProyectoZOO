@@ -207,6 +207,8 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("AÑOS DE EXPERIENCIA:");
 
+        jSexperiencia.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
         javax.swing.GroupLayout jPzsecretariaLayout = new javax.swing.GroupLayout(jPzsecretaria);
         jPzsecretaria.setLayout(jPzsecretariaLayout);
         jPzsecretariaLayout.setHorizontalGroup(
@@ -215,8 +217,8 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
+                .addComponent(jSexperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
         jPzsecretariaLayout.setVerticalGroup(
             jPzsecretariaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
