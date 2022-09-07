@@ -33,6 +33,13 @@ public class modelZoologo extends Zoologo {
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
+    public boolean updateZoologo(String cedula) {
+        String sql;
+        sql = "UPDATE zoologo SET zol_rama='" + getRama() + "'"
+                + "WHERE zol_idempleado=" + me.obtenerIdEmp(cedula);
+        return mpgc.accion(sql);
+    }
+
     public String obtenerDatosRol(int codigo) {
         String DatoRol = "";
         String sql = "select zol_rama from zoologo where zol_idempleado=" + codigo;
@@ -52,10 +59,4 @@ public class modelZoologo extends Zoologo {
         return DatoRol;
     }
 
-    public boolean updateZoologo(String cedula) {
-        String sql;
-        sql = "UPDATE zoologo SET zol_rama='"+getRama()+"'"
-                + "WHERE zol_idempleado=" + me.obtenerIdEmp(cedula);
-        return mpgc.accion(sql);
-    }
 }
