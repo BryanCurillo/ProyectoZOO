@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 public class modelSecretaria extends Secretaria {
 
     modelPGconexion mpgc = new modelPGconexion();
+    modelEmpleado me = new modelEmpleado();
 
     public modelSecretaria() {
     }
@@ -28,6 +29,13 @@ public class modelSecretaria extends Secretaria {
         String sql = "INSERT INTO secretaria (sec_experiencia, sec_idempleado)"
                 + "values(" + getExperiencia() + ",'" + getIdEmpleado() + "');";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public boolean updateSecretaria(String cedula) {
+        String sql;
+        sql = "UPDATE secretaria SET sec_experiencia=" + getExperiencia()
+                + "WHERE sec_idempleado=" + me.obtenerIdEmp(cedula);
+        return mpgc.accion(sql);
     }
 
     public int obtenerDatosRol(int codigo) {
