@@ -4,6 +4,8 @@
  */
 package controller;
 
+import java.awt.Toolkit;
+import javax.swing.JFrame;
 import model.modelEmpleado;
 import model.modelPersona;
 import view.viewPantallaPrincipal;
@@ -24,9 +26,11 @@ public class controllerPantallaprincipal {
     public controllerPantallaprincipal(viewPantallaPrincipal vista) {
         this.vista = vista;
         vista.setLocationRelativeTo(null);
-//        System.out.println("iniciado");
         vista.setVisible(true);
-
+//        vista.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        int alto = Toolkit.getDefaultToolkit().getScreenSize().width;
+//        int ancho = Toolkit.getDefaultToolkit().getScreenSize().height;
+//        vista.getjDPprincipal().setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
     }
 
     public void iniciaControl() {
@@ -43,7 +47,7 @@ public class controllerPantallaprincipal {
         //Agragar vista al desktop pane
         vistaRegistroEmpleado.setName("Registro");
         vista.getjDPprincipal().add(vistaRegistroEmpleado);
-        vista.setSize(vistaRegistroEmpleado.getSize());
+//        vista.setSize(vistaRegistroEmpleado.getSize());
         ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado);
         controladorEmpleado.inicialControl();
     }
@@ -52,21 +56,18 @@ public class controllerPantallaprincipal {
         vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
         viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
-        vistaRegistroEmpleado.setName("Registro");
-        vista.getjDPprincipal().add(vistaRegistroEmpleado);
+//        vistaRegistroEmpleado.setName("Registro");
+//        vista.getjDPprincipal().add(vistaRegistroEmpleado);
+
         modelEmpleado modeloEmpleado = new modelEmpleado();
         viewVistaEmpleados vistaEmpleado = new viewVistaEmpleados();
 
         //Agragar vista al desktop pane        
         vista.getjDPprincipal().add(vistaEmpleado);
         vista.getjDPprincipal().setPreferredSize(vistaEmpleado.getPreferredSize());
-        //redimencionar
-        vista.setSize(vistaEmpleado.getSize());
+
         ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaEmpleado);
         controladorEmpleado.inicialControl2();
     }
 
-    public void limpiarJD(){
-        vista.getjDPprincipal().removeAll();
-    }
 }

@@ -8,7 +8,7 @@ package view;
  *
  * @author ALEJO
  */
-public class viewRegistroHabitad extends javax.swing.JPanel {
+public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form RegistroHabitad

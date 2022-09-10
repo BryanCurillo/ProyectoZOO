@@ -30,6 +30,7 @@ public class controllerLogin {
 
     public void inicialControl() {
         vista.getBtiniciarsesion().addActionListener(l -> abrirPrincipal());
+        vista.getJbtnClose().addActionListener(l->System.exit(0));
     }
 
     public void abrirPrincipal() {

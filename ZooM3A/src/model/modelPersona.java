@@ -4,7 +4,11 @@
  */
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,13 +21,13 @@ public class modelPersona extends Persona {
     public modelPersona() {
     }
 
-    public modelPersona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro) {
-        super(cedula, nombre, apellido, correo, fechaRegistro);
+    public modelPersona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
+        super(cedula, nombre, apellido, correo, fechaRegistro, estadoPer);
     }
 
     public boolean setPersona() {
-        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo)"
-                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','" + getCorreo() + "');";
+        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo,per_estado)"
+                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','"+ getCorreo() + "'," + isEstadoPer() + ")";
         System.out.println("persona");
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
@@ -33,5 +37,29 @@ public class modelPersona extends Persona {
         sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "'"
                 + "WHERE per_cedula='" + getCedula() + "'";
         return mpgc.accion(sql);
+    }
+
+    public boolean comprobarDuplicado(String cedula) {
+        int cant = 0;
+        boolean ban = true;
+
+        String sql = "select count(*) from persona where per_cedula= '" + cedula + "'";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                cant = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            if (cant!=0) {
+                ban=false;
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ban;
     }
 }

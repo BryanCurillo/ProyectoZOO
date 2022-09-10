@@ -42,8 +42,13 @@ public class viewLogin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btregistrarse = new javax.swing.JButton();
         txtcontraingreso = new javax.swing.JPasswordField();
+        jbtnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+        setLocationByPlatform(true);
+        setMaximizedBounds(new java.awt.Rectangle(762, 390, 390, 390));
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -85,6 +90,9 @@ public class viewLogin extends javax.swing.JFrame {
         txtcontraingreso.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
         getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 320, 40));
+
+        jbtnClose.setText("CLOSE");
+        getContentPane().add(jbtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -166,6 +174,14 @@ public class viewLogin extends javax.swing.JFrame {
         this.txtusuarioingreso = txtusuarioingreso;
     }
 
+    public JButton getJbtnClose() {
+        return jbtnClose;
+    }
+
+    public void setJbtnClose(JButton jbtnClose) {
+        this.jbtnClose = jbtnClose;
+    }
+
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -176,6 +192,7 @@ public class viewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jbtnClose;
     private javax.swing.JPasswordField txtcontraingreso;
     private javax.swing.JTextField txtusuarioingreso;
     // End of variables declaration//GEN-END:variables

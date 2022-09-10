@@ -16,18 +16,27 @@ public class Persona {
     private String apellido;
     private String correo;
     private Date fechaRegistro;
+    private boolean estadoPer;
 
     public Persona() {
     }
 
-    public Persona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro) {
+    public Persona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.fechaRegistro = fechaRegistro;
+        this.estadoPer = estadoPer;
     }
 
+    public boolean isEstadoPer() {
+        return estadoPer;
+    }
+
+    public void setEstadoPer(boolean estadoPer) {
+        this.estadoPer = estadoPer;
+    }
 
     public String getCedula() {
         return cedula;

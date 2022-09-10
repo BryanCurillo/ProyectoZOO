@@ -13,15 +13,27 @@ public class Gerente extends Empleado {
     private int idGerente;
     private String titulo;
     private int idEmpleado;
+    private boolean estadoGer;
 
     public Gerente() {
     }
 
-    public Gerente(int idGerente, String titulo, int idEmpleado) {
+    public Gerente(int idGerente, String titulo, int idEmpleado, boolean estadoGer) {
         this.idGerente = idGerente;
         this.titulo = titulo;
         this.idEmpleado = idEmpleado;
+        this.estadoGer = estadoGer;
     }
+
+    public boolean isEstadoGer() {
+        return estadoGer;
+    }
+
+    public void setEstadoGer(boolean estadoGer) {
+        this.estadoGer = estadoGer;
+    }
+
+
 
     public int getIdGerente() {
         return idGerente;

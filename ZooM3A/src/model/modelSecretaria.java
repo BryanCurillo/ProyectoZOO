@@ -21,14 +21,19 @@ public class modelSecretaria extends Secretaria {
     public modelSecretaria() {
     }
 
-    public modelSecretaria(int idSecretaria, int experiencia, int idEmpleado) {
-        super(idSecretaria, experiencia, idEmpleado);
+    public modelSecretaria(int idSecretaria, int experiencia, int idEmpleado, boolean estadoSec) {
+        super(idSecretaria, experiencia, idEmpleado, estadoSec);
     }
 
     public boolean setSecretaria() {
-        String sql = "INSERT INTO secretaria (sec_experiencia, sec_idempleado)"
-                + "values(" + getExperiencia() + ",'" + getIdEmpleado() + "');";
+        String sql = "INSERT INTO secretaria (sec_experiencia, sec_idempleado,sec_estado)"
+                + "values(" + getExperiencia() + "," + getIdEmpleado() + "," + isEstadoSec() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public boolean deleteSecretaria(int codigo) {
+        String sql = "UPDATE secretaria SET sec_estado=false where sec_idempleado=" + codigo;
+        return mpgc.accion(sql);
     }
 
     public boolean updateSecretaria(String cedula) {

@@ -21,13 +21,13 @@ public class modelGerente extends Gerente {
     public modelGerente() {
     }
 
-    public modelGerente(int idGerente, String titulo, int idEmpleado) {
-        super(idGerente, titulo, idEmpleado);
+    public modelGerente(int idGerente, String titulo, int idEmpleado, boolean estadoGer) {
+        super(idGerente, titulo, idEmpleado, estadoGer);
     }
 
     public boolean setGerente() {
-        String sql = "INSERT INTO gerente (ger_titulo, ger_idempleado)"
-                + "values('" + getTitulo() + "','" + getIdEmpleado() + "');";
+        String sql = "INSERT INTO gerente (ger_titulo, ger_idempleado,ger_estado)"
+                + "values('" + getTitulo() + "'," + getIdEmpleado() + "," + isEstadoGer() + ");";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
@@ -35,6 +35,11 @@ public class modelGerente extends Gerente {
         String sql;
         sql = "UPDATE gerente SET ger_titulo='" + getTitulo() + "'"
                 + "WHERE ger_idempleado=" + me.obtenerIdEmp(cedula);
+        return mpgc.accion(sql);
+    }
+
+    public boolean deleteGerente(int codigo) {
+        String sql = "UPDATE gerente SET ger_estado=false where ger_idempleado=" + codigo;
         return mpgc.accion(sql);
     }
 

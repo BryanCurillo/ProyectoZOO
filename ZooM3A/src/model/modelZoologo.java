@@ -23,14 +23,19 @@ public class modelZoologo extends Zoologo {
     public modelZoologo() {
     }
 
-    public modelZoologo(int id, String rama, int idEmpleado) {
-        super(id, rama, idEmpleado);
+    public modelZoologo(int idZoo, String rama, int idEmpleadoZoo, boolean estadoZol) {
+        super(idZoo, rama, idEmpleadoZoo, estadoZol);
     }
 
     public boolean setZoologo() {
-        String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado)"
-                + "values('" + getRama() + "','" + getIdEmpleadoZoo() + "');";
+        String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado,zol_estado)"
+                + "values('" + getRama() + "'," + getIdEmpleadoZoo() + "," + isEstadoEmp() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public boolean deleteZoologo(int codigo) {
+        String sql = "UPDATE zoologo SET zol_estado=false where zol_idempleado=" + codigo;
+        return mpgc.accion(sql);
     }
 
     public boolean updateZoologo(String cedula) {

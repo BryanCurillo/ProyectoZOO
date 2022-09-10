@@ -13,15 +13,27 @@ public class Secretaria {
     private int idSecretaria;
     private int experiencia;
     private int idEmpleado;
+    private boolean estadoSec;
 
     public Secretaria() {
     }
 
-    public Secretaria(int idSecretaria, int experiencia, int idEmpleado) {
+    public Secretaria(int idSecretaria, int experiencia, int idEmpleado, boolean estadoSec) {
         this.idSecretaria = idSecretaria;
         this.experiencia = experiencia;
         this.idEmpleado = idEmpleado;
+        this.estadoSec = estadoSec;
     }
+
+    public boolean isEstadoSec() {
+        return estadoSec;
+    }
+
+    public void setEstadoSec(boolean estadoSec) {
+        this.estadoSec = estadoSec;
+    }
+
+
 
     public int getIdSecretaria() {
         return idSecretaria;

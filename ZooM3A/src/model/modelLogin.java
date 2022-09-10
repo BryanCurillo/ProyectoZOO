@@ -26,8 +26,8 @@ public class modelLogin extends Empleado {
     public modelLogin() {
     }
 
-    public modelLogin(int id, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedula, String genero, Image foto, FileInputStream imageFile, int tamano) {
-        super(id, telefono, fechanacimiento, rol, usuario, contraseña, cedula, genero, foto, imageFile, tamano);
+    public modelLogin(int idEmp, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
+        super(idEmp, telefono, fechanacimiento, rol, usuario, contraseña, cedulaEmp, genero, estadoEmp, foto, imageFile, tamano);
     }
 
     public List<rol> getroles() {
@@ -55,7 +55,7 @@ public class modelLogin extends Empleado {
     public boolean comprobarLogin(String usuario, String contrasena) {
         boolean ban = false;
         int count = 0;
-        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "'";
+        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "' and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
 
         try {
@@ -79,7 +79,7 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarUsuario(String usuario) {
-        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "'";
+        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "'and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         boolean ban = false;
         int count = 0;
@@ -103,7 +103,7 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarContrasena(String contrasena) {
-        String sql = "select count(*) from empleado where  emp_contraseña='" + contrasena + "'";
+        String sql = "select count(*) from empleado where  emp_contraseña='" + contrasena + "'and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         modelEmpleado empleado = new modelEmpleado();
         boolean ban = false;

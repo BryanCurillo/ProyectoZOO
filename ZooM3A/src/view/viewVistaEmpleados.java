@@ -49,6 +49,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
         setBorder(null);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setVisible(true);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("VISTA DE EMPLEADOS");
@@ -122,7 +123,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(260, 260, 260)
                 .addComponent(jLabel3)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +139,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
                 .addGap(45, 45, 45)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

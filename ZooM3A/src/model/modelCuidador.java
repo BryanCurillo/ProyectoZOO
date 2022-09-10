@@ -21,14 +21,19 @@ public class modelCuidador extends Cuidador {
     public modelCuidador() {
     }
 
-    public modelCuidador(int idSecretaria, String experiencia, int idEmpleado) {
-        super(idSecretaria, experiencia, idEmpleado);
+    public modelCuidador(int idSecretaria, String tipoSangre, int idEmpleado, boolean estadoCui) {
+        super(idSecretaria, tipoSangre, idEmpleado, estadoCui);
     }
 
     public boolean setCuidador() {
-        String sql = "INSERT INTO cuidador (cui_tiposangre, cui_idempleado)"
-                + "values('" + getTipoSangre() + "'," + getIdEmpleado() + ");";
+        String sql = "INSERT INTO cuidador (cui_tiposangre, cui_idempleado,cui_estado)"
+                + "values('" + getTipoSangre() + "'," + getIdEmpleado() + "," + isEstadoCui() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
+    public boolean deleteCuidador(int codigo) {
+        String sql = "UPDATE cuidador SET cui_estado=false where cui_idempleado=" + codigo;
+        return mpgc.accion(sql);
     }
 
     public boolean updateCuidador(String cedula) {

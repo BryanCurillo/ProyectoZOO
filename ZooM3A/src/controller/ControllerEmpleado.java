@@ -53,11 +53,10 @@ public class ControllerEmpleado {
     public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
-//        System.out.println(vista.getComborol().getItemCount());
-        cargarComboRol();
-//        System.out.println(vista.getComborol().getItemCount());
-
         desactivarDatosRol();
+        cargarComboRol();
+//        vista.setLo;
+        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
         vista.setVisible(true);
     }
 
@@ -65,8 +64,9 @@ public class ControllerEmpleado {
         this.modeloE = modeloE;
         this.vista = vista;
         this.vistaE = vistaE;
-//        desactivarDatosRol();
+//        desactivarDatosRol();        
         cargarDatos(1);
+        ((javax.swing.plaf.basic.BasicInternalFrameUI) vistaE.getUI()).setNorthPane(null);
         vistaE.setVisible(true);
     }
 
@@ -169,7 +169,7 @@ public class ControllerEmpleado {
         if (op == 1) {
             titulo = "Crear";
             vista.setName("Registro");
-            System.out.println(vista.getName());
+            vista.getBtregistrar().setText("REGISTRAR");
 //            desactivarDatosRol();
 //            vista.setVisible(true);
 //            this.inicialControl();
@@ -178,7 +178,8 @@ public class ControllerEmpleado {
             titulo = "Editar";
             if (llenarDatos()) {
                 vista.setName("Editar");
-                System.out.println(vista.getName());
+                vista.getTxtcedula().setEditable(false);
+                vista.getBtregistrar().setText("ACTUALIZAR");
 //                desactivarDatosRol();
 //                vista.setVisible(true);
 //                this.inicialControl();
@@ -186,6 +187,10 @@ public class ControllerEmpleado {
             }
         }
         activarDatosRol();
+    }
+
+    public void desactivarCampos() {
+        vista.getTxtcedula().setEditable(false);
     }
 
     public void abrirRegistroEmpleado() {
@@ -202,8 +207,10 @@ public class ControllerEmpleado {
 
     private void crearEditarPersona() {
         boolean ban = false;
+        modelPersona modeloP = new modelPersona();
         int colorAux = vista.getLblfoto().getBackground().hashCode(),
                 colorAux2 = 0;
+
         if (validar()) {
             //DatosPersona
             String cedula = vista.getTxtcedula().getText(),
@@ -217,6 +224,7 @@ public class ControllerEmpleado {
             persona.setApellido(apellido);
             persona.setCorreo(correo);
             persona.setFechaRegistro(fechaRegistro);
+            persona.setEstadoPer(true);
             //Empleado
             String telefono = vista.getTxttelefono().getText(),
                     usuario = vista.getTxtusuario().getText(),
@@ -245,6 +253,7 @@ public class ControllerEmpleado {
             empleado.setContraseña(contrasena);
             empleado.setCedula(cedulaemp);
             empleado.setRol(rol);
+            empleado.setEstadoEmp(true);
             try {
                 FileInputStream img = new FileInputStream(jfc.getSelectedFile());
                 int largo = (int) jfc.getSelectedFile().length();
@@ -259,75 +268,26 @@ public class ControllerEmpleado {
             }
 
             if (vista.getName().equals("Registro")) {
+                if (modeloP.comprobarDuplicado(vista.getTxtcedula().getText())) {
+                    //INSERT
+                    int response = JOptionPane.showConfirmDialog(vista, "¿Agregar persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    if (response == JOptionPane.YES_OPTION) {
 
-                //INSERT
-                int response = JOptionPane.showConfirmDialog(vista, "¿Agregar persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-                if (response == JOptionPane.YES_OPTION) {
-
-                    if (colorAux != colorAux2) {
-                        System.out.println("registro1");
-                        if (persona.setPersona() && empleado.setFotoEmpleado()) {
-                            System.out.println("CON FOTO");
-                            ban = true;
+                        if (colorAux != colorAux2) {
+                            System.out.println("registro1");
+                            if (persona.setPersona() && empleado.setFotoEmpleado()) {
+                                System.out.println("CON FOTO");
+                                ban = true;
+                            }
+                        } else {
+                            System.out.println("registro2");
+                            if (persona.setPersona() && empleado.setEmpleado()) {
+                                System.out.println("SIN FOTO");
+                                ban = true;
+                            }
                         }
-                    } else {
-                        System.out.println("registro2");
-                        if (persona.setPersona() && empleado.setEmpleado()) {
-                            System.out.println("SIN FOTO");
-                            ban = true;
-                        }
-                    }
 
-                    if (ban) {
-                        ban = false;
-                        int opc = vista.getComborol().getSelectedIndex();
-                        switch (opc) {
-                            case 1:
-                                //Gerente
-                                String titulo = vista.getTxtTitulo().getText();
-                                modelGerente gerente = new modelGerente();
-                                gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                gerente.setTitulo(titulo);
-                                if (gerente.setGerente()) {
-                                    ban = true;
-//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
-                                }
-
-                                break;
-                            case 2:
-                                //SECRETARIA
-                                int experiencia = (int) vista.getjSexperiencia().getValue();
-                                modelSecretaria secretaria = new modelSecretaria();
-                                secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                secretaria.setExperiencia(experiencia);
-                                if (secretaria.setSecretaria()) {
-                                    ban = true;
-//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
-                                }
-                                break;
-                            case 3:
-                                //Zoologo
-                                String rama = vista.getComborama().getSelectedItem().toString();
-                                modelZoologo zoologo = new modelZoologo();
-                                zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
-                                zoologo.setRama(rama);
-                                if (zoologo.setZoologo()) {
-                                    ban = true;
-//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
-                                }
-                                break;
-                            case 4:
-                                String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
-                                modelCuidador cuidador = new modelCuidador();
-                                cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-                                cuidador.setTipoSangre(tipoSangre);
-                                if (cuidador.setCuidador()) {
-                                    ban = true;
-//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
-                                }
-                                break;
-                        }
-                        if (ban) {
+                        if (ban && registrarRoles(cedulaemp)) {
                             JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
                             limpiarCampos();
                             vista.dispose();
@@ -335,28 +295,29 @@ public class ControllerEmpleado {
                             JOptionPane.showMessageDialog(vista, "No se pudo agregar al empleado");
                         }
 
-//                        abrirVistaEmpleado();
                     }
+                } else {
+                    JOptionPane.showMessageDialog(vista, "La persona ya se encuentra registrada");
                 }
             } else {
                 //UPDATE
                 int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea actualizar a la persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
+
                     if (colorAux != colorAux2) {
                         System.out.println("registro1");
                         if (empleado.updateFotoEmpleado() && persona.updatePersona()) {
-                            System.out.println("CON FOTO");
                             ban = true;
                         }
                     } else {
                         System.out.println("registro2");
                         if (empleado.updateEmpleado() && persona.updatePersona()) {
-                            System.out.println("SIN FOTO");
                             ban = true;
                         }
                     }
-                    if (ban) {
 
+                    if (ban) {
+                        ban = false;
                         int opc = vista.getComborol().getSelectedIndex();
                         switch (opc) {
                             case 1:
@@ -398,6 +359,10 @@ public class ControllerEmpleado {
                                 }
                                 break;
                         }
+                        if (ban) {
+                            eliminarRoles(cedulaemp);
+                            registrarRoles(cedulaemp);
+                        }
                     }
                     if (ban) {
                         JOptionPane.showMessageDialog(vista, "Empleado actualizado/a correctamente");
@@ -409,7 +374,96 @@ public class ControllerEmpleado {
                 }
             }
         }
+    }
 
+    public boolean registrarRoles(String cedulaemp) {
+        modelEmpleado empleado = new modelEmpleado();
+
+        boolean ban = false;
+        int opc = vista.getComborol().getSelectedIndex();
+        switch (opc) {
+            case 1:
+                //Gerente
+                String titulo = vista.getTxtTitulo().getText();
+                modelGerente gerente = new modelGerente();
+                gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                gerente.setTitulo(titulo);
+                gerente.setEstadoGer(true);
+                if (gerente.setGerente()) {
+                    ban = true;
+//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
+                }
+
+                break;
+            case 2:
+                //SECRETARIA
+                int experiencia = (int) vista.getjSexperiencia().getValue();
+                modelSecretaria secretaria = new modelSecretaria();
+                secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                secretaria.setExperiencia(experiencia);
+                secretaria.setEstadoSec(true);
+                if (secretaria.setSecretaria()) {
+                    ban = true;
+//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
+                }
+                break;
+            case 3:
+                //Zoologo
+                String rama = vista.getComborama().getSelectedItem().toString();
+                modelZoologo zoologo = new modelZoologo();
+                zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
+                zoologo.setRama(rama);
+                zoologo.setEstadoZol(true);
+                if (zoologo.setZoologo()) {
+                    ban = true;
+//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
+                }
+                break;
+            case 4:
+                String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
+                modelCuidador cuidador = new modelCuidador();
+                cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
+                cuidador.setTipoSangre(tipoSangre);
+                cuidador.setEstadoCui(true);
+                if (cuidador.setCuidador()) {
+                    ban = true;
+//                                    JOptionPane.showMessageDialog(vista, "Empleado agregado/a correctamente");
+                }
+                break;
+        }
+        return ban;
+    }
+
+    public boolean eliminarRoles(String cedulaemp) {
+        modelEmpleado empleado = new modelEmpleado();
+
+        boolean ban = false;
+//        int opc = vista.getComborol().getSelectedIndex();
+        for (int j = 0; j <= 4; j++) {
+            switch (j) {
+                case 1:
+                    //Gerente
+                    modelGerente gerente = new modelGerente();
+                    gerente.deleteGerente(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 2:
+                    //SECRETARIA
+                    modelSecretaria secretaria = new modelSecretaria();
+                    secretaria.deleteSecretaria(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 3:
+                    //Zoologo
+                    modelZoologo zoologo = new modelZoologo();
+                    zoologo.deleteZoologo(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 4:
+                    modelCuidador cuidador = new modelCuidador();
+                    cuidador.deleteCuidador(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+            }
+        }
+
+        return ban;
     }
 
     public void eliminarEmpleado() {
@@ -551,6 +605,7 @@ public class ControllerEmpleado {
     }
 
     public void desactivarDatosRol() {
+        vista.getjProles().setVisible(false);
         vista.getjPcuidador().setVisible(false);
         vista.getjPgerente().setVisible(false);
         vista.getjPzoologo().setVisible(false);
@@ -559,8 +614,11 @@ public class ControllerEmpleado {
 
     public void activarDatosRol() {
         desactivarDatosRol();
+        vista.getjProles().setVisible(true);
         int opc = vista.getComborol().getSelectedIndex();
         switch (opc) {
+            case 0 ->
+                vista.getjProles().setVisible(false);
             case 1 ->
                 vista.getjPgerente().setVisible(true);
             case 2 ->

@@ -53,19 +53,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jDPprincipal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jDPprincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jDPprincipal.setEnabled(false);
-
-        javax.swing.GroupLayout jDPprincipalLayout = new javax.swing.GroupLayout(jDPprincipal);
-        jDPprincipal.setLayout(jDPprincipalLayout);
-        jDPprincipalLayout.setHorizontalGroup(
-            jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
-        );
-        jDPprincipalLayout.setVerticalGroup(
-            jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
-        );
+        jDPprincipal.setOpaque(false);
 
         agregarpersona.setText("PERSONAL");
 
@@ -133,11 +123,11 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPprincipal)
+            .addComponent(jDPprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPprincipal)
+            .addComponent(jDPprincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();

@@ -22,6 +22,7 @@ public class Empleado extends Persona {
     private String contraseña;
     private String cedulaEmp;
     private String genero;
+    private boolean estadoEmp;
     //foto
     private Image foto;
     //guardar foto
@@ -31,18 +32,27 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
-    public Empleado(int id, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedula, String genero, Image foto, FileInputStream imageFile, int tamano) {
-        this.idEmp = id;
+    public Empleado(int idEmp, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
+        this.idEmp = idEmp;
         this.telefono = telefono;
         this.fechanacimiento = fechanacimiento;
         this.rol = rol;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.cedulaEmp = cedula;
+        this.cedulaEmp = cedulaEmp;
         this.genero = genero;
+        this.estadoEmp = estadoEmp;
         this.foto = foto;
         this.imageFile = imageFile;
         this.tamano = tamano;
+    }
+
+    public boolean isEstadoEmp() {
+        return estadoEmp;
+    }
+
+    public void setEstadoEmp(boolean estadoEmp) {
+        this.estadoEmp = estadoEmp;
     }
 
     public String getGenero() {

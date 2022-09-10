@@ -13,14 +13,25 @@ public class Zoologo extends Empleado {
     private int idZoo;
     private String rama;
     private int idEmpleadoZoo;
+    private boolean estadoZol;
 
     public Zoologo() {
     }
 
-    public Zoologo(int idZoo, String rama, int idEmpleadoZoo) {
+    public Zoologo(int idZoo, String rama, int idEmpleadoZoo, boolean estadoZol) {
         this.idZoo = idZoo;
         this.rama = rama;
         this.idEmpleadoZoo = idEmpleadoZoo;
+        this.estadoZol = estadoZol;
+    }
+
+    
+    public boolean isEstadoZol() {
+        return estadoZol;
+    }
+
+    public void setEstadoZol(boolean estadoZol) {
+        this.estadoZol = estadoZol;
     }
 
     public int getIdZoo() {

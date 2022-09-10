@@ -13,15 +13,27 @@ public class Cuidador {
     private int idSecretaria;
     private String tipoSangre;
     private int idEmpleado;
+    private boolean estadoCui;
 
     public Cuidador() {
     }
 
-    public Cuidador(int idSecretaria, String tipoSangre, int idEmpleado) {
+    public Cuidador(int idSecretaria, String tipoSangre, int idEmpleado, boolean estadoCui) {
         this.idSecretaria = idSecretaria;
         this.tipoSangre = tipoSangre;
         this.idEmpleado = idEmpleado;
+        this.estadoCui = estadoCui;
     }
+
+    public boolean isEstadoCui() {
+        return estadoCui;
+    }
+
+    public void setEstadoCui(boolean estadoCui) {
+        this.estadoCui = estadoCui;
+    }
+
+
 
     public int getIdSecretaria() {
         return idSecretaria;
