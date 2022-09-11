@@ -48,6 +48,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jBtnActualizar = new javax.swing.JButton();
 
         setBorder(null);
+        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
@@ -136,7 +137,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel3)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)

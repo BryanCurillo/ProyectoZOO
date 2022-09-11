@@ -5,6 +5,7 @@
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
       <Border info="null"/>
     </Property>
+    <Property name="closable" type="boolean" value="true"/>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="visible" type="boolean" value="true"/>
   </Properties>
@@ -46,7 +47,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Component id="jToolBar1" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="401" max="32767" attributes="0"/>

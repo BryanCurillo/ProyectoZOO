@@ -37,7 +37,7 @@ import view.viewPantallaPrincipal;
  *
  * @author ALEJO
  */
-public class ControllerEmpleado {
+public class ControllerRegistroEmpleado {
 
     private viewPantallaPrincipal vistaP;
     private controllerPantallaprincipal controllerpp;
@@ -50,24 +50,27 @@ public class ControllerEmpleado {
     DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
-    public ControllerEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
+    public ControllerRegistroEmpleado(modelEmpleado modelo, viewRegistrarEmpleado vista) {
         this.modeloE = modelo;
         this.vista = vista;
         desactivarDatosRol();
         cargarComboRol();
 //        vista.setLo;
-        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
+//        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
+        vista.toFront();
         vista.setVisible(true);
     }
 
-    public ControllerEmpleado(modelEmpleado modeloE, viewRegistrarEmpleado vista, viewVistaEmpleados vistaE) {
+    public ControllerRegistroEmpleado(modelEmpleado modeloE, viewRegistrarEmpleado vista, viewVistaEmpleados vistaE) {
         this.modeloE = modeloE;
-        this.vista = vista;
         this.vistaE = vistaE;
-//        desactivarDatosRol();        
-        cargarDatos(1);
-        ((javax.swing.plaf.basic.BasicInternalFrameUI) vistaE.getUI()).setNorthPane(null);
-        vistaE.setVisible(true);
+        this.vista = vista;
+        desactivarDatosRol();
+        cargarComboRol();
+//        vista.setLo;
+//        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
+        vista.toFront();
+        vista.setVisible(true);
     }
 
     public void inicialControl() {
@@ -77,12 +80,39 @@ public class ControllerEmpleado {
         vista.getBtcancelar().addActionListener(l -> vista.dispose());
     }
 
-    public void inicialControl2() {
-        vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
-//        vistaE.getjBtnModificar().addActionListener(l -> llenarDatos());
-        vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
-        vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
+//    public void inicialControl2() {
+//        vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
+//        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+////        vistaE.getjBtnModificar().addActionListener(l -> llenarDatos());
+//        vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
+//        vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
+//    }
+    public void abrirRegistro(int op) {
+        vista.getLblfoto().setIcon(null);
+        String titulo;
+        cargarComboRol();
+        if (op == 1) {
+            limpiarCampos();
+            titulo = "Crear";
+            vista.setName("Registro");
+            vista.getBtregistrar().setText("REGISTRAR");
+            desactivarDatosRol();
+            vista.setVisible(true);
+            this.inicialControl();
+//            abrirRegistroEmpleado();
+        } else {
+            titulo = "Editar";
+            if (llenarDatos()) {
+                vista.setName("Editar");
+                vista.getTxtcedula().setEditable(false);
+                vista.getBtregistrar().setText("ACTUALIZAR");
+                desactivarDatosRol();
+                vista.setVisible(true);
+                this.inicialControl();
+//                abrirRegistroEmpleado();
+            }
+        }
+        activarDatosRol();
     }
 
     public void examinarFoto() {
@@ -99,7 +129,7 @@ public class ControllerEmpleado {
                 vista.getLblfoto().setIcon(icono);
                 vista.getLblfoto().updateUI();
             } catch (IOException ex) {
-                Logger.getLogger(ControllerEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -112,83 +142,6 @@ public class ControllerEmpleado {
         });
     }
 
-    public void cargarDatos(int opc) {
-        vistaE.getjTblEmpleado().setDefaultRenderer(Object.class, new imageTable());
-        vistaE.getjTblEmpleado().setRowHeight(60);
-        estructuraTabla = (DefaultTableModel) vistaE.getjTblEmpleado().getModel();
-        estructuraTabla.setRowCount(0);
-        List<Empleado> listaE;
-//        if (opc == 1) {
-        listaE = modeloE.getempleado();
-//        } 
-//        else {
-////            String busqueda = vista.getTxt_buscar().getText().toLowerCase().trim();
-////            listaE = modelo.busquedaIncrementalPersona(busqueda);
-//        }
-
-//        Holder<Integer> i = new Holder<>(0);
-        i = 0;
-        listaE.stream().sorted((x, y)
-                -> x.getCedula().compareToIgnoreCase(y.getCedula())).forEach(emp -> {
-            estructuraTabla.addRow(new Object[8]);
-            vistaE.getjTblEmpleado().setValueAt(emp.getIdEmp(), i, 0);
-            vistaE.getjTblEmpleado().setValueAt(emp.getCedula(), i, 1);
-            vistaE.getjTblEmpleado().setValueAt(emp.getNombre(), i, 2);
-            vistaE.getjTblEmpleado().setValueAt(emp.getApellido(), i, 3);
-            vistaE.getjTblEmpleado().setValueAt(emp.getTelefono(), i, 4);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
-            vistaE.getjTblEmpleado().setValueAt(emp.getCorreo(), i, 6);
-            vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 7);
-            vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 8);
-            vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 9);
-            vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 10);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 11);
-
-            Image foto = emp.getFoto();
-            if (foto != null) {
-                foto = foto.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
-                ImageIcon icono = new ImageIcon(foto);
-
-                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-                dtcr.setIcon(icono);
-                vistaE.getjTblEmpleado().setValueAt(new JLabel(icono), i, 12);
-            } else {
-                vistaE.getjTblEmpleado().setValueAt(null, i, 12);
-            }
-            i++;
-        });
-    }
-
-    public void abrirRegistro(int op) {
-        viewPantallaPrincipal pp = new viewPantallaPrincipal();
-        pp.getjDPprincipal().removeAll();
-        vista.getLblfoto().setIcon(null);
-//        pp.getjDPprincipal().removeAll();
-        String titulo;
-        cargarComboRol();
-        if (op == 1) {
-            titulo = "Crear";
-            vista.setName("Registro");
-            vista.getBtregistrar().setText("REGISTRAR");
-//            desactivarDatosRol();
-//            vista.setVisible(true);
-//            this.inicialControl();
-            abrirRegistroEmpleado();
-        } else {
-            titulo = "Editar";
-            if (llenarDatos()) {
-                vista.setName("Editar");
-                vista.getTxtcedula().setEditable(false);
-                vista.getBtregistrar().setText("ACTUALIZAR");
-//                desactivarDatosRol();
-//                vista.setVisible(true);
-//                this.inicialControl();
-                abrirRegistroEmpleado();
-            }
-        }
-        activarDatosRol();
-    }
-
     public void desactivarCampos() {
         vista.getTxtcedula().setEditable(false);
     }
@@ -197,12 +150,6 @@ public class ControllerEmpleado {
         desactivarDatosRol();
         vista.setVisible(true);
         this.inicialControl();
-    }
-
-    public void abrirVistaEmpleado() {
-        vistaE.setVisible(true);
-        this.inicialControl2();
-//        cargarDatos(1);
     }
 
     private void crearEditarPersona() {
@@ -262,7 +209,7 @@ public class ControllerEmpleado {
                 colorAux2 = vista.getLblfoto().getBackground().hashCode() + 2;
 
             } catch (IOException ex) {
-                Logger.getLogger(ControllerEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NullPointerException e) {
                 colorAux2 = vista.getLblfoto().getBackground().hashCode();
             }
@@ -434,91 +381,6 @@ public class ControllerEmpleado {
         return ban;
     }
 
-    public boolean eliminarRoles(String cedulaemp) {
-        modelEmpleado empleado = new modelEmpleado();
-
-        boolean ban = false;
-//        int opc = vista.getComborol().getSelectedIndex();
-        for (int j = 0; j <= 4; j++) {
-            switch (j) {
-                case 1:
-                    //Gerente
-                    modelGerente gerente = new modelGerente();
-                    gerente.deleteGerente(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 2:
-                    //SECRETARIA
-                    modelSecretaria secretaria = new modelSecretaria();
-                    secretaria.deleteSecretaria(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 3:
-                    //Zoologo
-                    modelZoologo zoologo = new modelZoologo();
-                    zoologo.deleteZoologo(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 4:
-                    modelCuidador cuidador = new modelCuidador();
-                    cuidador.deleteCuidador(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-            }
-        }
-
-        return ban;
-    }
-
-    public void eliminarEmpleado() {
-        modelEmpleado empleado = new modelEmpleado();
-        int fila = vistaE.getjTblEmpleado().getSelectedRow();
-        if (fila == -1) {
-            JOptionPane.showMessageDialog(null, "Seleccione el empleado a eliminar");
-        } else {
-            int response = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de eliminar al empleado?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-                String cedula = vistaE.getjTblEmpleado().getValueAt(fila, 1).toString();
-                int codigo = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
-                String opc = vistaE.getjTblEmpleado().getValueAt(fila, 8).toString();
-                switch (opc) {
-                    case "Gerente":
-                        //Gerente
-                        if (empleado.deleteGerente(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
-                            cargarDatos(1);
-                        } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
-                        }
-                        break;
-                    case "Secretaria":
-                        //Secretaria
-                        if (empleado.deletesecretaria(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
-                            cargarDatos(1);
-                        } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
-                        }
-                        break;
-                    case "Zoologo":
-                        //Zoologo
-                        if (empleado.deleteZoologo(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
-                            cargarDatos(1);
-                        } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
-                        }
-                        break;
-                    case "Cuidador":
-                        //Cuidador
-                        if (empleado.deletecuidador(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
-                            cargarDatos(1);
-                        } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
-                        }
-                        break;
-                }
-            }
-        }
-    }
-
     public boolean llenarDatos() {
         int fila = vistaE.getjTblEmpleado().getSelectedRow();
         if (fila == -1) {
@@ -597,7 +459,7 @@ public class ControllerEmpleado {
                 }
 
             });
-            vistaE.dispose();
+//            vistaE.dispose();
 
             return true;
         }
@@ -768,6 +630,38 @@ public class ControllerEmpleado {
         return ban;
     }
 
+    public boolean eliminarRoles(String cedulaemp) {
+        modelEmpleado empleado = new modelEmpleado();
+
+        boolean ban = false;
+//        int opc = vista.getComborol().getSelectedIndex();
+        for (int j = 0; j <= 4; j++) {
+            switch (j) {
+                case 1:
+                    //Gerente
+                    modelGerente gerente = new modelGerente();
+                    gerente.deleteGerente(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 2:
+                    //SECRETARIA
+                    modelSecretaria secretaria = new modelSecretaria();
+                    secretaria.deleteSecretaria(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 3:
+                    //Zoologo
+                    modelZoologo zoologo = new modelZoologo();
+                    zoologo.deleteZoologo(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+                case 4:
+                    modelCuidador cuidador = new modelCuidador();
+                    cuidador.deleteCuidador(empleado.obtenerIdEmp(cedulaemp));
+                    break;
+            }
+        }
+
+        return ban;
+    }
+
     public void limpiarCampos() {
         vista.getTxtcedula().setText("");
         vista.getTxtnombre().setText("");
@@ -790,5 +684,105 @@ public class ControllerEmpleado {
         vista.getjSexperiencia().setValue(0);
 
     }
+//        public void cargarDatos(int opc) {
+//        vistaE.getjTblEmpleado().setDefaultRenderer(Object.class, new imageTable());
+//        vistaE.getjTblEmpleado().setRowHeight(60);
+//        estructuraTabla = (DefaultTableModel) vistaE.getjTblEmpleado().getModel();
+//        estructuraTabla.setRowCount(0);
+//        List<Empleado> listaE;
+////        if (opc == 1) {
+//        listaE = modeloE.getempleado();
+////        } 
+////        else {
+//////            String busqueda = vista.getTxt_buscar().getText().toLowerCase().trim();
+//////            listaE = modelo.busquedaIncrementalPersona(busqueda);
+////        }
+//
+////        Holder<Integer> i = new Holder<>(0);
+//        i = 0;
+//        listaE.stream().sorted((x, y)
+//                -> x.getCedula().compareToIgnoreCase(y.getCedula())).forEach(emp -> {
+//            estructuraTabla.addRow(new Object[8]);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getIdEmp(), i, 0);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getCedula(), i, 1);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getNombre(), i, 2);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getApellido(), i, 3);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getTelefono(), i, 4);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getCorreo(), i, 6);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 7);
+//            vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 8);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 9);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 10);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 11);
+//
+//            Image foto = emp.getFoto();
+//            if (foto != null) {
+//                foto = foto.getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+//                ImageIcon icono = new ImageIcon(foto);
+//
+//                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+//                dtcr.setIcon(icono);
+//                vistaE.getjTblEmpleado().setValueAt(new JLabel(icono), i, 12);
+//            } else {
+//                vistaE.getjTblEmpleado().setValueAt(null, i, 12);
+//            }
+//            i++;
+//        });
+//    }
+//---------------------------------------------------------------
+//    public void eliminarEmpleado() {
+//        modelEmpleado empleado = new modelEmpleado();
+//        int fila = vistaE.getjTblEmpleado().getSelectedRow();
+//        if (fila == -1) {
+//            JOptionPane.showMessageDialog(null, "Seleccione el empleado a eliminar");
+//        } else {
+//            int response = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de eliminar al empleado?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+//            if (response == JOptionPane.YES_OPTION) {
+//                String cedula = vistaE.getjTblEmpleado().getValueAt(fila, 1).toString();
+//                int codigo = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
+//                String opc = vistaE.getjTblEmpleado().getValueAt(fila, 8).toString();
+//                switch (opc) {
+//                    case "Gerente":
+//                        //Gerente
+//                        if (empleado.deleteGerente(codigo, cedula)) {//Grabamos
+//                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+//                            cargarDatos(1);
+//                        } else {
+//                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+//                        }
+//                        break;
+//                    case "Secretaria":
+//                        //Secretaria
+//                        if (empleado.deletesecretaria(codigo, cedula)) {//Grabamos
+//                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+//                            cargarDatos(1);
+//                        } else {
+//                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+//                        }
+//                        break;
+//                    case "Zoologo":
+//                        //Zoologo
+//                        if (empleado.deleteZoologo(codigo, cedula)) {//Grabamos
+//                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+//                            cargarDatos(1);
+//                        } else {
+//                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+//                        }
+//                        break;
+//                    case "Cuidador":
+//                        //Cuidador
+//                        if (empleado.deletecuidador(codigo, cedula)) {//Grabamos
+//                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+//                            cargarDatos(1);
+//                        } else {
+//                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+//                        }
+//                        break;
+//                }
+//            }
+//        }
+//    }
 
+    //-------------------------
 }

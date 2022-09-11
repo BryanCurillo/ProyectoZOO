@@ -39,7 +39,7 @@ public class controllerPantallaprincipal {
     }
 
     public void registroEmpleado() {
-        vista.getjDPprincipal().removeAll();
+//        vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
         modelEmpleado modeloEmpleado = new modelEmpleado();
         viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
@@ -47,15 +47,15 @@ public class controllerPantallaprincipal {
         //Agragar vista al desktop pane
         vistaRegistroEmpleado.setName("Registro");
         vista.getjDPprincipal().add(vistaRegistroEmpleado);
-//        vista.setSize(vistaRegistroEmpleado.getSize());
-        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado);
+
+        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado);
         controladorEmpleado.inicialControl();
     }
 
     public void vistaEmpleado() {
-        vista.getjDPprincipal().removeAll();
+//        vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
-        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
+//        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
 //        vistaRegistroEmpleado.setName("Registro");
 //        vista.getjDPprincipal().add(vistaRegistroEmpleado);
 
@@ -64,10 +64,11 @@ public class controllerPantallaprincipal {
 
         //Agragar vista al desktop pane        
         vista.getjDPprincipal().add(vistaEmpleado);
-        vista.getjDPprincipal().setPreferredSize(vistaEmpleado.getPreferredSize());
 
-        ControllerEmpleado controladorEmpleado = new ControllerEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaEmpleado);
-        controladorEmpleado.inicialControl2();
+//        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado,  vistaEmpleado,vista);
+//        controladorEmpleado.inicialControl2();
+        ControllerVistaEmpleado controllerVistaEmpleado = new ControllerVistaEmpleado(modeloEmpleado, vistaEmpleado, vista);
+        controllerVistaEmpleado.inicialControl();
     }
 
 }
