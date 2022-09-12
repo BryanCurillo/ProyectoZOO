@@ -7,6 +7,8 @@ package controller;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -43,7 +45,7 @@ public class ControllerVistaEmpleado {
     private controllerPantallaprincipal controllerpp;
     private modelEmpleado modeloE;
     private modelPersona modeloP;
-    private viewRegistrarEmpleado vista;
+    private viewRegistrarEmpleado vistaRE;
     private viewVistaEmpleados vistaE;
     int i = 0;
     DefaultTableModel estructuraTabla;
@@ -64,13 +66,14 @@ public class ControllerVistaEmpleado {
         vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
         vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
+        vistaE.getTxtBuscar().addKeyListener(busquedaIncren);
     }
 
     public void abrirRegistro(int op) {
+        modelEmpleado modeloEmpleado = new modelEmpleado();
+        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
 
         if (op == 1) {
-            modelEmpleado modeloEmpleado = new modelEmpleado();
-            viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
 
             //Agragar vista al desktop pane
             vistaRegistroEmpleado.setName("Registro");
@@ -80,8 +83,8 @@ public class ControllerVistaEmpleado {
             controladorEmpleado.abrirRegistro(1);
 
         } else {
-            modelEmpleado modeloEmpleado = new modelEmpleado();
-            viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
+//            modelEmpleado modeloEmpleado = new modelEmpleado();
+//            viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
 
             //Agragar vista al desktop pane
 //            vistaRegistroEmpleado.setName("Registro");
@@ -99,6 +102,21 @@ public class ControllerVistaEmpleado {
             cargarDatos(1);
         }
     }
+    
+    KeyListener busquedaIncren = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            cargarDatos(2);        
+        }
+    };
 
     public void cargarDatos(int opc) {
         vistaE.getjTblEmpleado().setDefaultRenderer(Object.class, new imageTable());
@@ -106,13 +124,13 @@ public class ControllerVistaEmpleado {
         estructuraTabla = (DefaultTableModel) vistaE.getjTblEmpleado().getModel();
         estructuraTabla.setRowCount(0);
         List<Empleado> listaE;
-//        if (opc == 1) {
+        if (opc == 1) {
         listaE = modeloE.getempleado();
-//        } 
-//        else {
-////            String busqueda = vista.getTxt_buscar().getText().toLowerCase().trim();
-////            listaE = modelo.busquedaIncrementalPersona(busqueda);
-//        }
+        } 
+        else {
+            String busqueda = vistaE.getTxtBuscar().getText().toLowerCase().trim();
+            listaE = modeloE.busquedaIncrementalPersona(busqueda);
+        }
 
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
@@ -153,7 +171,7 @@ public class ControllerVistaEmpleado {
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione el empleado a eliminar");
         } else {
-            int response = JOptionPane.showConfirmDialog(vista, "¿Esta seguro de eliminar al empleado?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int response = JOptionPane.showConfirmDialog(vistaRE, "¿Esta seguro de eliminar al empleado?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
                 String cedula = vistaE.getjTblEmpleado().getValueAt(fila, 1).toString();
                 int codigo = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
@@ -162,37 +180,37 @@ public class ControllerVistaEmpleado {
                     case "Gerente":
                         //Gerente
                         if (empleado.deleteGerente(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            JOptionPane.showMessageDialog(vistaRE, "Empleado eliminado correctamente");
                             cargarDatos(1);
                         } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                            JOptionPane.showMessageDialog(vistaRE, "No se pudo eliminar al empleado");
                         }
                         break;
                     case "Secretaria":
                         //Secretaria
                         if (empleado.deletesecretaria(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            JOptionPane.showMessageDialog(vistaRE, "Empleado eliminado correctamente");
                             cargarDatos(1);
                         } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                            JOptionPane.showMessageDialog(vistaRE, "No se pudo eliminar al empleado");
                         }
                         break;
                     case "Zoologo":
                         //Zoologo
                         if (empleado.deleteZoologo(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            JOptionPane.showMessageDialog(vistaRE, "Empleado eliminado correctamente");
                             cargarDatos(1);
                         } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                            JOptionPane.showMessageDialog(vistaRE, "No se pudo eliminar al empleado");
                         }
                         break;
                     case "Cuidador":
                         //Cuidador
                         if (empleado.deletecuidador(codigo, cedula)) {//Grabamos
-                            JOptionPane.showMessageDialog(vista, "Empleado eliminado correctamente");
+                            JOptionPane.showMessageDialog(vistaRE, "Empleado eliminado correctamente");
                             cargarDatos(1);
                         } else {
-                            JOptionPane.showMessageDialog(vista, "No se pudo eliminar al empleado");
+                            JOptionPane.showMessageDialog(vistaRE, "No se pudo eliminar al empleado");
                         }
                         break;
                 }

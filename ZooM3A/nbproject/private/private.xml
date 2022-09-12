@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/controller/ControllerVistaEmpleado.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/view/viewCrudCliente.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/view/viewLogin.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/model/modelEmpleado.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/view/viewVistaEmpleados.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/view/viewRegistrarEmpleado.java</file>
+            <file>file:/C:/ProyectoZOO/ProyectoZoo/ProyectoZoo/ZooM3A/src/controller/controllerPantallaprincipal.java</file>
+        </group>
     </open-files>
 </project-private>

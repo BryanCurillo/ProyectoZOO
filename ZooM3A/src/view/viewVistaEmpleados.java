@@ -7,6 +7,7 @@ package view;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -42,8 +43,8 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jTextField1 = new javax.swing.JTextField();
-        jCbFiltro = new javax.swing.JComboBox<>();
+        txtBuscar = new javax.swing.JTextField();
+        jCbFiltroRol = new javax.swing.JComboBox<>();
         jBtnBuscar = new javax.swing.JButton();
         jBtnActualizar = new javax.swing.JButton();
 
@@ -102,11 +103,16 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
-        jTextField1.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(jTextField1);
+        txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtBuscar);
 
-        jCbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jToolBar1.add(jCbFiltro);
+        jCbFiltroRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar rol", "Gerente", "Secretaria", "Zoologo", "Cuidador" }));
+        jCbFiltroRol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCbFiltroRolActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jCbFiltroRol);
 
         jBtnBuscar.setText("BUSCAR");
         jToolBar1.add(jBtnBuscar);
@@ -147,6 +153,10 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jCbFiltroRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbFiltroRolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCbFiltroRolActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,7 +167,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnElimina;
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JButton jBtnModificar;
-    private javax.swing.JComboBox<String> jCbFiltro;
+    private javax.swing.JComboBox<String> jCbFiltroRol;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
@@ -165,9 +175,9 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JTable jTblEmpleado;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnAgregar;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 
     public JButton getjBtnBuscar() {
@@ -203,11 +213,11 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     }
 
     public JComboBox<String> getjCbFiltro() {
-        return jCbFiltro;
+        return jCbFiltroRol;
     }
 
     public void setjCbFiltro(JComboBox<String> jCbFiltro) {
-        this.jCbFiltro = jCbFiltro;
+        this.jCbFiltroRol = jCbFiltro;
     }
 
     public JTable getjTblEmpleado() {
@@ -232,6 +242,22 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
     public void setjBtnActualizar(JButton jBtnActualizar) {
         this.jBtnActualizar = jBtnActualizar;
+    }
+
+    public JComboBox<String> getjCbFiltroRol() {
+        return jCbFiltroRol;
+    }
+
+    public void setjCbFiltroRol(JComboBox<String> jCbFiltroRol) {
+        this.jCbFiltroRol = jCbFiltroRol;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
     }
 
     

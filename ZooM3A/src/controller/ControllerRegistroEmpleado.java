@@ -80,17 +80,10 @@ public class ControllerRegistroEmpleado {
         vista.getBtcancelar().addActionListener(l -> vista.dispose());
     }
 
-//    public void inicialControl2() {
-//        vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-//        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
-////        vistaE.getjBtnModificar().addActionListener(l -> llenarDatos());
-//        vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
-//        vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
-//    }
     public void abrirRegistro(int op) {
         vista.getLblfoto().setIcon(null);
         String titulo;
-        cargarComboRol();
+//        cargarComboRol();
         if (op == 1) {
             limpiarCampos();
             titulo = "Crear";

@@ -214,6 +214,60 @@ public class modelEmpleado extends Empleado {
         return listaEmpleado;
     }
 
+    public List<Empleado> busquedaIncrementalPersona(String busqueda) {
+        List<Empleado> listaEmpleado = new ArrayList<>();
+
+        String sql = "select * from persona p "
+                + "join empleado e on(p.per_cedula=e.emp_cedula) "
+                + "join rol r on(e.emp_rol=r.rol_id) "
+                + "where e.emp_estado=true "
+                + "and p.per_cedula like '%"+busqueda+"%' "
+                + "or lower(p.per_nombre) like '%"+busqueda+"%' "
+                + "or lower(p.per_apellido) like '%"+busqueda+"%' "
+                + "or e.emp_telefono like '%"+busqueda+"%' "
+                + "or lower(e.emp_usuario) like '%"+busqueda+"%' "
+                + "or lower(r.rol_nombre) like '%"+busqueda+"%' ";
+
+        ResultSet rs = mpgc.consulta(sql);
+        byte[] bytea;
+        try {
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setCedula(rs.getString(1));
+                empleado.setNombre(rs.getString(2));
+                empleado.setApellido(rs.getString(3));
+                empleado.setFechaRegistro(rs.getDate(4));
+                empleado.setCorreo(rs.getString(5));
+                empleado.setEstadoEmp(rs.getBoolean(6));
+                empleado.setIdEmp(rs.getInt(7));
+                empleado.setTelefono(rs.getString(8));
+                bytea = rs.getBytes(9);
+                if (bytea != null) {
+                    empleado.setFoto(getImagen(bytea));
+                }
+                empleado.setFechanacimiento(rs.getDate(10));
+                empleado.setRol(rs.getInt(11));
+                empleado.setGenero(rs.getString(12));
+                empleado.setUsuario(rs.getString(13));
+                empleado.setContraseña(rs.getString(14));
+                empleado.setCedulaEmp(rs.getString(15));
+
+                listaEmpleado.add(empleado);
+
+            }
+        } catch (IOException | SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaEmpleado;
+    }
+
     public boolean deleteZoologo(int codigo, String cedula) {
 
         String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
