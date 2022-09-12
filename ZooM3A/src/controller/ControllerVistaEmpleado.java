@@ -163,6 +163,7 @@ public class ControllerVistaEmpleado {
             }
             i++;
         });
+        
     }
 
     public void eliminarEmpleado() {
