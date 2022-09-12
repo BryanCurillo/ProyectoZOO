@@ -52,7 +52,7 @@ public class viewRegistrarTicket extends javax.swing.JFrame {
         btncancelardieta.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btncancelardieta.setText("CANCELAR");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NIÑOS", "ADULTOS", "ADULTOS MAYORES", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR CATEGORIA", " " }));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("$");
@@ -99,7 +99,7 @@ public class viewRegistrarTicket extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregardieta)
                     .addComponent(btncancelardieta))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();

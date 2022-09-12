@@ -70,7 +70,7 @@
                   <Component id="btnagregardieta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btncancelardieta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -119,11 +119,9 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="NI&#xd1;OS"/>
-            <StringItem index="1" value="ADULTOS"/>
-            <StringItem index="2" value="ADULTOS MAYORES"/>
-            <StringItem index="3" value=" "/>
+          <StringArray count="2">
+            <StringItem index="0" value="SELECCIONAR CATEGORIA"/>
+            <StringItem index="1" value=" "/>
           </StringArray>
         </Property>
       </Properties>
