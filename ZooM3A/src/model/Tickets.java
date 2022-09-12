@@ -12,53 +12,48 @@ import java.util.Date;
  */
 public class Tickets extends Cliente {
 
-    private int N_ticket;
-    private double precio;
-    private Date fecha_compra;
-    private boolean generacion;
+    private int tic_id;
+    private double tic_precio;
+    private String tic_categoria;
 
     public Tickets() {
     }
 
-    public Tickets(int N_ticket, double precio, Date fecha_compra, boolean generacion) {
-        this.N_ticket = N_ticket;
-        this.precio = precio;
-        this.fecha_compra = fecha_compra;
-        this.generacion = generacion;
+    public Tickets(int tic_id, double tic_precio, String tic_categoria) {
+        this.tic_id = tic_id;
+        this.tic_precio = tic_precio;
+        this.tic_categoria = tic_categoria;
     }
 
-    public int getN_ticket() {
-        return N_ticket;
+    public Tickets(int tic_id, double tic_precio, String tic_categoria, int id, String direccion, String cedula) {
+        super(id, direccion, cedula);
+        this.tic_id = tic_id;
+        this.tic_precio = tic_precio;
+        this.tic_categoria = tic_categoria;
     }
 
-    public void setN_ticket(int N_ticket) {
-        this.N_ticket = N_ticket;
+    public int getTic_id() {
+        return tic_id;
     }
 
-    public double getPrecio() {
-        return precio;
+    public void setTic_id(int tic_id) {
+        this.tic_id = tic_id;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public double getTic_precio() {
+        return tic_precio;
     }
 
-    public Date getFecha_compra() {
-        return fecha_compra;
+    public void setTic_precio(double tic_precio) {
+        this.tic_precio = tic_precio;
     }
 
-    public void setFecha_compra(Date fecha_compra) {
-        this.fecha_compra = fecha_compra;
+    public String getTic_categoria() {
+        return tic_categoria;
     }
 
-    public boolean isGeneracion() {
-        return generacion;
+    public void setTic_categoria(String tic_categoria) {
+        this.tic_categoria = tic_categoria;
     }
-
-    public void setGeneracion(boolean generacion) {
-        this.generacion = generacion;
-    }
-
-
 
 }
