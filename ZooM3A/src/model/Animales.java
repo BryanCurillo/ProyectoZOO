@@ -6,6 +6,7 @@ package model;
 
 import java.awt.Image;
 import java.io.FileInputStream;
+import java.util.Date;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Animales extends Alimento {
     private int idcuidador;
     private String dieta;
     private int edad;
+    private Date fecha_nacimiento;
     //foto
     private Image foto;
     //guardar foto
@@ -31,7 +33,7 @@ public class Animales extends Alimento {
     public Animales() {
     }
 
-    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano) {
+    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano) {
         this.idanimal = idanimal;
         this.nombreanimal = nombreanimal;
         this.genero = genero;
@@ -41,12 +43,13 @@ public class Animales extends Alimento {
         this.idcuidador = idcuidador;
         this.dieta = dieta;
         this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.foto = foto;
         this.imageFile = imageFile;
         this.tamano = tamano;
     }
 
-    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
+    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
         super(idalimento, precio, nombre, idgerente, idproveedor);
         this.idanimal = idanimal;
         this.nombreanimal = nombreanimal;
@@ -57,6 +60,7 @@ public class Animales extends Alimento {
         this.idcuidador = idcuidador;
         this.dieta = dieta;
         this.edad = edad;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.foto = foto;
         this.imageFile = imageFile;
         this.tamano = tamano;
@@ -132,6 +136,14 @@ public class Animales extends Alimento {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    public Date getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public Image getFoto() {
