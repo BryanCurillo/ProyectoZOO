@@ -41,16 +41,16 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         txttelefono = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtapellido = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         btregistrar = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
         txtcedula = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtnombre1 = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtapellido1 = new javax.swing.JTextField();
+        txtapellido = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtcorreo = new javax.swing.JTextField();
 
@@ -70,9 +70,9 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("DIRECCION:");
 
-        txtapellido.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtapellido.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtdireccion.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtdireccion.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtdireccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("TELEFONO:");
@@ -98,16 +98,16 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("NOMBRE:");
 
-        txtnombre1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtnombre1.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtnombre1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtnombre.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtnombre.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtnombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel10.setText("APELLIDO:");
 
-        txtapellido1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtapellido1.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtapellido1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtapellido.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtapellido.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel11.setText("CORREO:");
@@ -150,9 +150,9 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
                                             .addGap(1, 1, 1)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtapellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(btregistrar)
@@ -171,11 +171,11 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtnombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtapellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -187,7 +187,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -294,14 +294,6 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         this.txtapellido = txtapellido;
     }
 
-    public JTextField getTxtapellido1() {
-        return txtapellido1;
-    }
-
-    public void setTxtapellido1(JTextField txtapellido1) {
-        this.txtapellido1 = txtapellido1;
-    }
-
     public JTextField getTxtcedula() {
         return txtcedula;
     }
@@ -318,12 +310,20 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         this.txtcorreo = txtcorreo;
     }
 
-    public JTextField getTxtnombre1() {
-        return txtnombre1;
+    public JTextField getTxtdireccion() {
+        return txtdireccion;
     }
 
-    public void setTxtnombre1(JTextField txtnombre1) {
-        this.txtnombre1 = txtnombre1;
+    public void setTxtdireccion(JTextField txtdireccion) {
+        this.txtdireccion = txtdireccion;
+    }
+
+    public JTextField getTxtnombre() {
+        return txtnombre;
+    }
+
+    public void setTxtnombre(JTextField txtnombre) {
+        this.txtnombre = txtnombre;
     }
 
     public JTextField getTxttelefono() {
@@ -350,10 +350,10 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtapellido1;
     private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcorreo;
-    private javax.swing.JTextField txtnombre1;
+    private javax.swing.JTextField txtdireccion;
+    private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 
