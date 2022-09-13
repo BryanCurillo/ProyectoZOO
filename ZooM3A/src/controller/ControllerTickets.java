@@ -16,11 +16,16 @@ import view.viewActualizarTicket;
  */
 public class ControllerTickets extends Tickets {
 
-    private viewActualizarTicket vrt = new viewActualizarTicket();
-    private ModelTickets mt = new ModelTickets();
+    private viewActualizarTicket vrt;
+    private ModelTickets mt;
 
-    public ControllerTickets(viewActualizarTicket vista) {
-        vista.setVisible(true);
+    public ControllerTickets() {
+    }
+
+    public ControllerTickets(viewActualizarTicket vrt, ModelTickets mt) {
+        this.vrt = vrt;
+        this.mt = mt;
+        vrt.setVisible(true);
     }
 
     public void iniciarControl() {
