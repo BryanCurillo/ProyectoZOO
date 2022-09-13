@@ -39,8 +39,6 @@ public class viewLogin extends javax.swing.JFrame {
         txtusuarioingreso = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         btiniciarsesion = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        btregistrarse = new javax.swing.JButton();
         txtcontraingreso = new javax.swing.JPasswordField();
         jbtnClose = new javax.swing.JButton();
 
@@ -74,18 +72,7 @@ public class viewLogin extends javax.swing.JFrame {
         btiniciarsesion.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btiniciarsesion.setText("INICIAR SESION");
         btiniciarsesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 110, 230, -1));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setText("NO TIENES CUENTA AUN?");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, -1, -1));
-
-        btregistrarse.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btregistrarse.setText("REGISTRATE");
-        btregistrarse.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btregistrarse.setBorderPainted(false);
-        btregistrarse.setContentAreaFilled(false);
-        getContentPane().add(btregistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 110, -1));
+        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 230, -1));
 
         txtcontraingreso.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
@@ -108,14 +95,6 @@ public class viewLogin extends javax.swing.JFrame {
 
     public void setBtiniciarsesion(JButton btiniciarsesion) {
         this.btiniciarsesion = btiniciarsesion;
-    }
-
-    public JButton getBtregistrarse() {
-        return btregistrarse;
-    }
-
-    public void setBtregistrarse(JButton btregistrarse) {
-        this.btregistrarse = btregistrarse;
     }
 
     public JLabel getjLabel1() {
@@ -150,12 +129,12 @@ public class viewLogin extends javax.swing.JFrame {
         this.jLabel4 = jLabel4;
     }
 
-    public JLabel getjLabel5() {
-        return jLabel5;
+    public JButton getJbtnClose() {
+        return jbtnClose;
     }
 
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
+    public void setJbtnClose(JButton jbtnClose) {
+        this.jbtnClose = jbtnClose;
     }
 
     public JPasswordField getTxtcontraingreso() {
@@ -170,28 +149,23 @@ public class viewLogin extends javax.swing.JFrame {
         return txtusuarioingreso;
     }
 
+    /**
+     * @param args the command line arguments
+     */
     public void setTxtusuarioingreso(JTextField txtusuarioingreso) {
         this.txtusuarioingreso = txtusuarioingreso;
     }
 
-    public JButton getJbtnClose() {
-        return jbtnClose;
-    }
 
-    public void setJbtnClose(JButton jbtnClose) {
-        this.jbtnClose = jbtnClose;
-    }
 
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btiniciarsesion;
-    private javax.swing.JButton btregistrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton jbtnClose;
     private javax.swing.JPasswordField txtcontraingreso;
     private javax.swing.JTextField txtusuarioingreso;
