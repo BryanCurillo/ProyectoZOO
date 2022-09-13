@@ -7,10 +7,11 @@ package controller;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import model.modelEmpleado;
-import model.modelPersona;
+import model.modelProveedor;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
 import view.viewVistaEmpleados;
+import view.viewRegistrarProveedor;
 
 /**
  *
@@ -36,6 +37,7 @@ public class controllerPantallaprincipal {
     public void iniciaControl() {
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
         vista.getjMIvistaEmpleado().addActionListener(l -> vistaEmpleado());
+        vista.getjMIagregarProveedor().addActionListener(l->registroProveedor());
     }
 
     public void registroEmpleado() {
@@ -69,6 +71,19 @@ public class controllerPantallaprincipal {
 //        controladorEmpleado.inicialControl2();
         ControllerVistaEmpleado controllerVistaEmpleado = new ControllerVistaEmpleado(modeloEmpleado, vistaEmpleado, vista);
         controllerVistaEmpleado.inicialControl();
+    }
+
+    public void registroProveedor() {
+//        vista.getjDPprincipal().removeAll();
+        //Instancio las clases del modelo y la vista
+        modelProveedor mp= new modelProveedor();
+        viewRegistrarProveedor vre = new viewRegistrarProveedor();
+
+        //Agragar vista al desktop pane
+        vre.setName("Registro");
+        vista.getjDPprincipal().add(vre);
+        ControllerRegistroProveedor cemp = new ControllerRegistroProveedor(mp, vre);
+        cemp.inicialControl();
     }
 
 }

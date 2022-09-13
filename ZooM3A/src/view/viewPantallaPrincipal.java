@@ -50,6 +50,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         MIActualizarPrecio = new javax.swing.JMenuItem();
+        jMProveedor = new javax.swing.JMenu();
+        jMIagregarProveedor = new javax.swing.JMenuItem();
+        JMIcrudProveedor = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +138,16 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(jMenu1);
 
+        jMProveedor.setText("Proveedor");
+
+        jMIagregarProveedor.setText("Agregar Proveedor");
+        jMProveedor.add(jMIagregarProveedor);
+
+        JMIcrudProveedor.setText("Visualizar registro de proveedores");
+        jMProveedor.add(JMIcrudProveedor);
+
+        barramenus.add(jMProveedor);
+
         setJMenuBar(barramenus);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,13 +170,16 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JMIcrudProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JMenuItem jMIagregarPersona;
+    private javax.swing.JMenuItem jMIagregarProveedor;
     private javax.swing.JMenuItem jMIeliminarpersona;
     private javax.swing.JMenuItem jMIvistaEmpleado;
+    private javax.swing.JMenu jMProveedor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -336,6 +352,30 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMIActualizarPrecio(JMenuItem MIActualizarPrecio) {
         this.MIActualizarPrecio = MIActualizarPrecio;
+    }
+
+    public JMenuItem getJMIcrudProveedor() {
+        return JMIcrudProveedor;
+    }
+
+    public void setJMIcrudProveedor(JMenuItem JMIcrudProveedor) {
+        this.JMIcrudProveedor = JMIcrudProveedor;
+    }
+
+    public JMenuItem getjMIagregarProveedor() {
+        return jMIagregarProveedor;
+    }
+
+    public void setjMIagregarProveedor(JMenuItem jMIagregarProveedor) {
+        this.jMIagregarProveedor = jMIagregarProveedor;
+    }
+
+    public JMenu getjMProveedor() {
+        return jMProveedor;
+    }
+
+    public void setjMProveedor(JMenu jMProveedor) {
+        this.jMProveedor = jMProveedor;
     }
 
 }
