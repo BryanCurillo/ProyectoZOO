@@ -4,31 +4,16 @@
  */
 package controller;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.Image;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
-import view.viewVistaEmpleados;
 import view.viewRegistrarProveedor;
-import model.modelPersona;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.table.DefaultTableCellRenderer;
+import view.viewVistaProveedor;
 import javax.swing.table.DefaultTableModel;
-import model.Proveedor;
-import model.modelCuidador;
-import model.modelGerente;
 import model.modelProveedor;
-import model.modelSecretaria;
-import model.modelZoologo;
-import view.viewPantallaPrincipal;
+import model.Proveedor;
+import model.modelProveedor;
 
 /**
  *
@@ -40,6 +25,7 @@ public class ControllerRegistroProveedor {
 //    private controllerPantallaprincipal controllerpp;
     private modelProveedor modeloProv;
     private viewRegistrarProveedor vistaProv;
+    private viewVistaProveedor vistaProvTbl;
     int i = 0;
 
     DefaultTableModel estructuraTabla;
@@ -52,6 +38,16 @@ public class ControllerRegistroProveedor {
         this.modeloProv = modeloProv;
         this.vistaProv = vistaProv;
         vistaProv.toFront();
+        vistaProv.getTxtOtraCiudad().setEditable(false);
+        vistaProv.setVisible(true);
+    }
+
+    public ControllerRegistroProveedor(modelProveedor modeloProv, viewRegistrarProveedor vistaProv, viewVistaProveedor vistaProvTbl) {
+        this.modeloProv = modeloProv;
+        this.vistaProv = vistaProv;
+        this.vistaProvTbl = vistaProvTbl;
+        vistaProv.toFront();
+        vistaProv.getTxtOtraCiudad().setEditable(false);
         vistaProv.setVisible(true);
     }
 
@@ -59,9 +55,12 @@ public class ControllerRegistroProveedor {
         vistaProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
         vistaProv.getBtregistrar().addActionListener(l -> crearEditarPersona());
         vistaProv.getBtcancelar().addActionListener(l -> vistaProv.dispose());
+        vistaProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
     }
 
     public void abrirRegistro(int op) {
+        vistaProv.getTxtOtraCiudad().setEditable(false);
+        vistaProv.toFront();
         String titulo;
 //        cargarComboRol();
         if (op == 1) {
@@ -71,23 +70,20 @@ public class ControllerRegistroProveedor {
             vistaProv.getBtregistrar().setText("REGISTRAR");
             vistaProv.setVisible(true);
             this.inicialControl();
-//            abrirRegistroEmpleado();
         } else {
-//            titulo = "Editar";
-//            if (llenarDatos()) {
-//                vista.setName("Editar");
-//                vista.getTxtcedula().setEditable(false);
-//                vista.getBtregistrar().setText("ACTUALIZAR");
-//                desactivarDatosRol();
-//                vista.setVisible(true);
-//                this.inicialControl();
-////                abrirRegistroEmpleado();
-//            }
+            titulo = "Editar";
+            if (llenarDatos()) {
+                vistaProv.setName("Editar");
+                vistaProv.getBtregistrar().setText("ACTUALIZAR");
+                vistaProv.setVisible(true);
+                this.inicialControl();
+            }
         }
     }
 
     public void activarTxtCiudad() {
-        if (vistaProv.getComboCiudad().getSelectedIndex() != vistaProv.getComboCiudad().getMaximumRowCount()) {
+        if (vistaProv.getComboCiudad().getSelectedIndex() != vistaProv.getComboCiudad().getItemCount() - 1) {
+            vistaProv.getTxtOtraCiudad().setText("");
             vistaProv.getTxtOtraCiudad().setEditable(false);
         } else {
             vistaProv.getTxtOtraCiudad().setEditable(true);
@@ -97,11 +93,19 @@ public class ControllerRegistroProveedor {
     private void crearEditarPersona() {
         if (validar()) {
             //Datos proveedor
+            int id= Integer.parseInt(vistaProv.getTxtid_prov().getText());
             String nombre = vistaProv.getTxtnombre().getText(),
                     telefono = vistaProv.getTxttelefono().getText(),
-                    ciudad = vistaProv.getTxtOtraCiudad().getText();
+                    ciudad = "";
+            if (vistaProv.getComboCiudad().getSelectedItem().toString().isEmpty()) {
+                ciudad = vistaProv.getComboCiudad().getSelectedItem().toString();
+            } else {
+                ciudad = vistaProv.getTxtOtraCiudad().getText();
 
+            }
+            
             modelProveedor prov = new modelProveedor();
+            prov.setId_proveedor(id);
             prov.setNombre_pro(nombre);
             prov.setCiudad_pro(ciudad);
             prov.setTelefono(telefono);
@@ -124,164 +128,48 @@ public class ControllerRegistroProveedor {
                     JOptionPane.showMessageDialog(vistaProv, "El proveedor ya se encuentra registrado");
                 }
             } else {
-//                //UPDATE
-//                int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea actualizar a la persona?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//                if (response == JOptionPane.YES_OPTION) {
-//
-//                    if (colorAux != colorAux2) {
-//                        System.out.println("registro1");
-//                        if (empleado.updateFotoEmpleado() && persona.updatePersona()) {
-//                            ban = true;
-//                        }
-//                    } else {
-//                        System.out.println("registro2");
-//                        if (empleado.updateEmpleado() && persona.updatePersona()) {
-//                            ban = true;
-//                        }
-//                    }
-//
-//                    if (ban) {
-//                        ban = false;
-//                        int opc = vista.getComborol().getSelectedIndex();
-//                        switch (opc) {
-//                            case 1:
-//                                //Gerente
-//                                String titulo = vista.getTxtTitulo().getText();
-//                                modelGerente gerente = new modelGerente();
-//                                gerente.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-//                                gerente.setTitulo(titulo);
-//                                if (gerente.updateGerente(cedulaemp)) {
-//                                    ban = true;
-//                                }
-//                                break;
-//                            case 2:
-//                                int experiencia = (int) vista.getjSexperiencia().getValue();
-//                                modelSecretaria secretaria = new modelSecretaria();
-//                                secretaria.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-//                                secretaria.setExperiencia(experiencia);
-//                                if (secretaria.updateSecretaria(cedulaemp)) {
-//                                    ban = true;
-//                                }
-//                                break;
-//                            case 3:
-//                                //Zoologo
-//                                String rama = vista.getComborama().getSelectedItem().toString();
-//                                modelZoologo zoologo = new modelZoologo();
-//                                zoologo.setIdEmpleadoZoo(empleado.obtenerIdEmp(cedulaemp));
-//                                zoologo.setRama(rama);
-//                                if (zoologo.updateZoologo(cedulaemp)) {
-//                                    ban = true;
-//                                }
-//                                break;
-//                            case 4:
-//                                String tipoSangre = vista.getCombosangre().getSelectedItem().toString();
-//                                modelCuidador cuidador = new modelCuidador();
-//                                cuidador.setIdEmpleado(empleado.obtenerIdEmp(cedulaemp));
-//                                cuidador.setTipoSangre(tipoSangre);
-//                                if (cuidador.updateCuidador(cedulaemp)) {
-//                                    ban = true;
-//                                }
-//                                break;
-//                        }
-//                        if (ban) {
-//                            eliminarRoles(cedulaemp);
-//                            registrarRoles(cedulaemp);
-//                        }
-//                    }
-//                    if (ban) {
-//                        JOptionPane.showMessageDialog(vista, "Empleado actualizado/a correctamente");
-//                        limpiarCampos();
-//                        vista.dispose();
-//                    } else {
-//                        JOptionPane.showMessageDialog(vista, "No se pudo actualizar al empleado");
-//                    }
+                //UPDATE
+                int response = JOptionPane.showConfirmDialog(vistaProv, "¿Seguro que desea actualizar al proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    if (prov.updateProveedor()) {//Grabamos
+                        System.out.println("ciudad" + prov.getCiudad_pro());
+                        JOptionPane.showMessageDialog(vistaProv, "Proovedor actualizado correctamente");
+                        vistaProv.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vistaProv, "No se pudo actualizar a la proveedor");
+                    }
+                }
             }
         }
     }
-//    public boolean llenarDatos() {
-//        int fila = vistaE.getjTblEmpleado().getSelectedRow();
-//        if (fila == -1) {
-//            JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
-//            return false;
-//        } else {
-//
-//            int id = Integer.parseInt(vistaE.getjTblEmpleado().getValueAt(fila, 0).toString());
-//            List<Empleado> listap = modeloE.getempleado();
-//            listap.stream().forEach(emp -> {
-//                if (id == emp.getIdEmp()) {
-//                    vista.getTxtcedula().setText(emp.getCedula());
-//                    vista.getTxtnombre().setText(emp.getNombre());
-//                    vista.getTxtapellido().setText(emp.getApellido());
-//                    vista.getTxttelefono().setText(emp.getTelefono());
-//                    vista.getTxtcorreo().setText(emp.getCorreo());
-//                    if (emp.getGenero().equalsIgnoreCase("Masculino")) {
-//                        vista.getBtmasculino().setSelected(true);
-//                    }
-//                    if (emp.getGenero().equalsIgnoreCase("Femenino")) {
-//                        vista.getBtfemenino().setSelected(true);
-//                    }
-//                    vista.getCalendarFechanacimiento().setDate(emp.getFechanacimiento());
-//                    vista.getTxtusuario().setText(emp.getUsuario());
-//                    vista.getTxtcontra().setText(emp.getContraseña());
-//                    vista.getTxtconfirmacontra().setText(emp.getContraseña());
-//                    Image foto = emp.getFoto();
-//                    if (foto != null) {
-//                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
-//                        ImageIcon icono = new ImageIcon(foto);
-//                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-//                        dtcr.setIcon(icono);
-//                        vista.getLblfoto().setIcon(icono);
-//                    } else {
-//                        vista.getLblfoto().setIcon(null);
-//                    }
-//
-//                    String opc = vistaE.getjTblEmpleado().getValueAt(fila, 8).toString();
-////                    System.out.println(opc + "lllllll");
-//                    switch (opc) {
-//                        case "Gerente":
-//                            //Gerente
-//                            modelGerente me = new modelGerente();
-//                            vista.getComborol().setSelectedIndex(1);
-//                            vista.getTxtTitulo().setText(me.obtenerDatosRol(id));
-//                            break;
-//                        case "Secretaria":
-//                            //Secretaria
-//                            vista.getComborol().setSelectedIndex(2);
-//                            modelSecretaria ms = new modelSecretaria();
-//                            vista.getjSexperiencia().setValue(ms.obtenerDatosRol(id));
-//                            break;
-//                        case "Zoologo":
-//                            //Zoologo
-//                            vista.getComborol().setSelectedIndex(3);
-//
-//                            modelZoologo mz = new modelZoologo();
-//                            for (int j = 0; j < vista.getComborama().getItemCount(); j++) {
-//                                if (vista.getComborama().getItemAt(j).equalsIgnoreCase(mz.obtenerDatosRol(id))) {
-//                                    vista.getComborama().setSelectedIndex(j);
-//                                }
-//                            }
-//                            break;
-//                        case "Cuidador":
-//                            //Cuidador
-//                            vista.getComborol().setSelectedIndex(4);
-//                            modelCuidador mc = new modelCuidador();
-//                            for (int j = 0; j < vista.getCombosangre().getItemCount(); j++) {
-//                                if (vista.getCombosangre().getItemAt(j).equalsIgnoreCase(mc.obtenerDatosRol(id))) {
-//                                    vista.getCombosangre().setSelectedIndex(j);
-////                                    vista.getCombosangre().setSelectedItem(mc.obtenerDatosRol(id));
-//                                }
-//                            }
-//                            break;
-//                    }
-//                }
-//
-//            });
-////            vistaE.dispose();
-//
-//            return true;
-//        }
-//
-//    }
+
+    public boolean llenarDatos() {
+        vistaProv.getTxtid_prov().setVisible(false);
+        int fila = vistaProvTbl.getjTblProveedor().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione el proveedor a modificar");
+            return false;
+        } else {
+
+            int id = Integer.parseInt(vistaProvTbl.getjTblProveedor().getValueAt(fila, 0).toString());
+            List<Proveedor> listap = modeloProv.getProveedor();
+            listap.stream().forEach(prov -> {
+                if (id == prov.getId_proveedor()) {
+                    vistaProv.getTxtid_prov().setText(String.valueOf(prov.getId_proveedor()));
+                    vistaProv.getTxtnombre().setText(prov.getNombre_pro());
+                    vistaProv.getTxtOtraCiudad().setText(prov.getCiudad_pro());
+                    vistaProv.getTxttelefono().setText(prov.getTelefono());
+                    vistaProv.getTxttelefono().setText(prov.getTelefono());
+
+                }
+
+            });
+//            vistaE.dispose();
+
+            return true;
+        }
+
+    }
 
     public boolean validar() {
         boolean ban = true;
@@ -310,38 +198,6 @@ public class ControllerRegistroProveedor {
         if (vistaProv.getComboCiudad().getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(vistaProv, "Seleccione una ciudad");
             ban = false;
-        }
-
-        return ban;
-    }
-
-    public boolean eliminarRoles(String cedulaemp) {
-        modelEmpleado empleado = new modelEmpleado();
-
-        boolean ban = false;
-//        int opc = vista.getComborol().getSelectedIndex();
-        for (int j = 0; j <= 4; j++) {
-            switch (j) {
-                case 1:
-                    //Gerente
-                    modelGerente gerente = new modelGerente();
-                    gerente.deleteGerente(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 2:
-                    //SECRETARIA
-                    modelSecretaria secretaria = new modelSecretaria();
-                    secretaria.deleteSecretaria(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 3:
-                    //Zoologo
-                    modelZoologo zoologo = new modelZoologo();
-                    zoologo.deleteZoologo(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-                case 4:
-                    modelCuidador cuidador = new modelCuidador();
-                    cuidador.deleteCuidador(empleado.obtenerIdEmp(cedulaemp));
-                    break;
-            }
         }
 
         return ban;

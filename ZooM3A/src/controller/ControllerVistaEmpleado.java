@@ -4,35 +4,21 @@
  */
 package controller;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
 import view.viewVistaEmpleados;
 import view.viewRegistrarEmpleado;
 import model.modelPersona;
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import model.Empleado;
-import model.modelCuidador;
-import model.modelGerente;
-import model.modelSecretaria;
-import model.modelZoologo;
-import model.rol;
 import view.viewPantallaPrincipal;
 
 /**
@@ -76,7 +62,6 @@ public class ControllerVistaEmpleado {
         if (op == 1) {
 
             //Agragar vista al desktop pane
-            vistaRegistroEmpleado.setName("Registro");
             vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
 
             ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado);
@@ -94,7 +79,6 @@ public class ControllerVistaEmpleado {
             if (fila == -1) {
                 JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
             } else {
-                vistaRegistroEmpleado.setName("Registro");
                 vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
                 controladorEmpleado.abrirRegistro(2);
             }

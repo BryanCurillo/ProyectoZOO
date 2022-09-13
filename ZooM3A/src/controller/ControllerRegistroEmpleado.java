@@ -81,6 +81,7 @@ public class ControllerRegistroEmpleado {
     }
 
     public void abrirRegistro(int op) {
+        vista.toFront();
         vista.getLblfoto().setIcon(null);
         String titulo;
 //        cargarComboRol();

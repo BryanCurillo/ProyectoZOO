@@ -11,6 +11,7 @@ import model.modelProveedor;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
 import view.viewVistaEmpleados;
+import view.viewVistaProveedor;
 import view.viewRegistrarProveedor;
 
 /**
@@ -28,16 +29,13 @@ public class controllerPantallaprincipal {
         this.vista = vista;
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-//        vista.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        int alto = Toolkit.getDefaultToolkit().getScreenSize().width;
-//        int ancho = Toolkit.getDefaultToolkit().getScreenSize().height;
-//        vista.getjDPprincipal().setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
     }
 
     public void iniciaControl() {
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
         vista.getjMIvistaEmpleado().addActionListener(l -> vistaEmpleado());
-        vista.getjMIagregarProveedor().addActionListener(l->registroProveedor());
+        vista.getjMIagregarProveedor().addActionListener(l -> registroProveedor());
+        vista.getJMIvistaProveedor().addActionListener(l->vistaProveedor());
     }
 
     public void registroEmpleado() {
@@ -76,7 +74,7 @@ public class controllerPantallaprincipal {
     public void registroProveedor() {
 //        vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
-        modelProveedor mp= new modelProveedor();
+        modelProveedor mp = new modelProveedor();
         viewRegistrarProveedor vre = new viewRegistrarProveedor();
 
         //Agragar vista al desktop pane
@@ -86,4 +84,16 @@ public class controllerPantallaprincipal {
         cemp.inicialControl();
     }
 
+    public void vistaProveedor() {
+        modelProveedor modeloProv = new modelProveedor();
+        viewVistaProveedor vistaProv = new viewVistaProveedor();
+
+        //Agragar vista al desktop pane        
+        vista.getjDPprincipal().add(vistaProv);
+
+//        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado,  vistaEmpleado,vista);
+//        controladorEmpleado.inicialControl2();
+        ControllerVistaProveedor controllerVistaProv = new ControllerVistaProveedor(vista, vistaProv, modeloProv);
+        controllerVistaProv.inicialControl();
+    }
 }
