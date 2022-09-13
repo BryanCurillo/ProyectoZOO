@@ -206,6 +206,137 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
     /**
      * @param args the command line arguments
      */
+    public ButtonGroup getBggenero() {
+        return bggenero;
+    }
+
+    public void setBggenero(ButtonGroup bggenero) {
+        this.bggenero = bggenero;
+    }
+
+    public JButton getBtcancelar() {
+        return btcancelar;
+    }
+
+    public void setBtcancelar(JButton btcancelar) {
+        this.btcancelar = btcancelar;
+    }
+
+    public JButton getBtregistrar() {
+        return btregistrar;
+    }
+
+    public void setBtregistrar(JButton btregistrar) {
+        this.btregistrar = btregistrar;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JTextField getTxtapellido() {
+        return txtapellido;
+    }
+
+    public void setTxtapellido(JTextField txtapellido) {
+        this.txtapellido = txtapellido;
+    }
+
+    public JTextField getTxtapellido1() {
+        return txtapellido1;
+    }
+
+    public void setTxtapellido1(JTextField txtapellido1) {
+        this.txtapellido1 = txtapellido1;
+    }
+
+    public JTextField getTxtcedula() {
+        return txtcedula;
+    }
+
+    public void setTxtcedula(JTextField txtcedula) {
+        this.txtcedula = txtcedula;
+    }
+
+    public JTextField getTxtcorreo() {
+        return txtcorreo;
+    }
+
+    public void setTxtcorreo(JTextField txtcorreo) {
+        this.txtcorreo = txtcorreo;
+    }
+
+    public JTextField getTxtnombre1() {
+        return txtnombre1;
+    }
+
+    public void setTxtnombre1(JTextField txtnombre1) {
+        this.txtnombre1 = txtnombre1;
+    }
+
+    public JTextField getTxttelefono() {
+        return txttelefono;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public void setTxttelefono(JTextField txttelefono) {
+        this.txttelefono = txttelefono;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bggenero;
@@ -225,6 +356,5 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtnombre1;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
-
 
 }
