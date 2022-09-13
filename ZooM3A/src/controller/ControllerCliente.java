@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import model.ModelCliente;
+import view.viewLogin;
 import view.viewRegistrarCliente;
 import view.viewVistaCliente;
 
@@ -22,6 +23,7 @@ public class ControllerCliente {
     private viewRegistrarCliente vrc;
     private viewVistaCliente vvc;
     private ModelCliente mc;
+    private viewLogin vl;
 
     public ControllerCliente() {
     }
