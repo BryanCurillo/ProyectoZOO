@@ -143,44 +143,52 @@ public class viewVistaCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public JButton getjBtnActualizarAnimal() {
-        return jBtnActualizarCliente;
-    }
-
-    public void setjBtnActualizarAnimal(JButton jBtnActualizarAnimal) {
-        this.jBtnActualizarCliente = jBtnActualizarAnimal;
-    }
-
-    public JButton getjBtnBuscarAnimal() {
-        return jBtnBuscarCliente;
-    }
-
-    public void setjBtnBuscarAnimal(JButton jBtnBuscarAnimal) {
-        this.jBtnBuscarCliente = jBtnBuscarAnimal;
-    }
-
-    public JButton getjBtnEliminarAnimal() {
-        return btnEliminarCliente;
-    }
-
-    public void setjBtnEliminarAnimal(JButton jBtnEliminarAnimal) {
-        this.btnEliminarCliente = jBtnEliminarAnimal;
-    }
-
-    public JButton getjBtnImprimirAnimal() {
-        return jBtnImprimirCliente;
-    }
-
-    public void setjBtnImprimirAnimal(JButton jBtnImprimirAnimal) {
-        this.jBtnImprimirCliente = jBtnImprimirAnimal;
-    }
-
-    public JButton getjBtnModificarAnimal() {
+    public JButton getBtnModificarCliente() {
         return BtnModificarCliente;
     }
 
-    public void setjBtnModificarAnimal(JButton jBtnModificarAnimal) {
-        this.BtnModificarCliente = jBtnModificarAnimal;
+    public void setBtnModificarCliente(JButton BtnModificarCliente) {
+        this.BtnModificarCliente = BtnModificarCliente;
+    }
+
+    public JButton getBtnAgregarCliente() {
+        return btnAgregarCliente;
+    }
+
+    public void setBtnAgregarCliente(JButton btnAgregarCliente) {
+        this.btnAgregarCliente = btnAgregarCliente;
+    }
+
+    public JButton getBtnEliminarCliente() {
+        return btnEliminarCliente;
+    }
+
+    public void setBtnEliminarCliente(JButton btnEliminarCliente) {
+        this.btnEliminarCliente = btnEliminarCliente;
+    }
+
+    public JButton getjBtnActualizarCliente() {
+        return jBtnActualizarCliente;
+    }
+
+    public void setjBtnActualizarCliente(JButton jBtnActualizarCliente) {
+        this.jBtnActualizarCliente = jBtnActualizarCliente;
+    }
+
+    public JButton getjBtnBuscarCliente() {
+        return jBtnBuscarCliente;
+    }
+
+    public void setjBtnBuscarCliente(JButton jBtnBuscarCliente) {
+        this.jBtnBuscarCliente = jBtnBuscarCliente;
+    }
+
+    public JButton getjBtnImprimirCliente() {
+        return jBtnImprimirCliente;
+    }
+
+    public void setjBtnImprimirCliente(JButton jBtnImprimirCliente) {
+        this.jBtnImprimirCliente = jBtnImprimirCliente;
     }
 
     public JComboBox<String> getjCbFiltro() {
@@ -239,12 +247,12 @@ public class viewVistaCliente extends javax.swing.JPanel {
         this.jSeparator4 = jSeparator4;
     }
 
-    public JTable getjTblAnimal() {
+    public JTable getjTblCliente() {
         return jTblCliente;
     }
 
-    public void setjTblAnimal(JTable jTblAnimal) {
-        this.jTblCliente = jTblAnimal;
+    public void setjTblCliente(JTable jTblCliente) {
+        this.jTblCliente = jTblCliente;
     }
 
     public JTextField getjTextField1() {
@@ -263,14 +271,6 @@ public class viewVistaCliente extends javax.swing.JPanel {
         this.jToolBar1 = jToolBar1;
     }
 
-    public JButton getJbtnAgregarAnimal() {
-        return btnAgregarCliente;
-    }
-
-    public void setJbtnAgregarAnimal(JButton jbtnAgregarAnimal) {
-        this.btnAgregarCliente = jbtnAgregarAnimal;
-    }
-
     public ComponentUI getUi() {
         return ui;
     }
@@ -286,7 +286,7 @@ public class viewVistaCliente extends javax.swing.JPanel {
     public void setListenerList(EventListenerList listenerList) {
         this.listenerList = listenerList;
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnModificarCliente;
     private javax.swing.JButton btnAgregarCliente;
