@@ -19,6 +19,10 @@ public class ControllerTickets extends Tickets {
     private viewActualizarTicket vrt = new viewActualizarTicket();
     private ModelTickets mt = new ModelTickets();
 
+    public ControllerTickets(viewActualizarTicket vista) {
+        vista.setVisible(true);
+    }
+
     public void iniciarControl() {
         vrt.getBtncancelarticket().addActionListener(l -> vrt.dispose());
         vrt.getBtnactualizarticket().addActionListener(l -> ActualizarTicket());
@@ -39,7 +43,9 @@ public class ControllerTickets extends Tickets {
     public void limpiarCampos() {
         vrt.getCombocategoria().setSelectedItem(1);
         vrt.getTxtprecio().setText("");
-    };
+    }
+
+    ;
     
         public void cargarComboCategoria() {
 //        vista.getComborol().removeAllItems();
