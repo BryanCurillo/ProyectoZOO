@@ -38,16 +38,25 @@ public class modelProveedor extends Proveedor {
     }
 
     public boolean setProveedor() {
-        String sql = "INSERT INTO proveedor(pro_ciudad, pro_nombre, pro_telefono)"
-                + "VALUES ('" + getCiudad_pro() + "','" + getNombre_pro() + "', '" + getTelefono() + "')";
+        String sql = "INSERT INTO proveedor(pro_ciudad, pro_nombre, pro_telefono,pro_estado)"
+                + "VALUES ('" + getCiudad_pro() + "','" + getNombre_pro() + "', '" + getTelefono() + "'," + isEstadoProv() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateProveedor() {
+        System.out.println("sql="+getId_proveedor());
         String sql;
         sql = "UPDATE proveedor SET pro_ciudad='" + getCiudad_pro() + "', pro_nombre='" + getNombre_pro() + "', "
                 + "pro_telefono='" + getTelefono() + "', pro_estado=" + isEstadoProv()
-                + "WHERE pro_id=" + getId_proveedor();
+                + " WHERE pro_id=" + getId_proveedor();
+        return mpgc.accion(sql);
+    }
+
+    public boolean deleteProveedor(int id) {
+        String sql;
+        sql = "UPDATE proveedor SET pro_estado=false "
+                + "WHERE pro_id=" + id;
+        System.out.println(sql);
         return mpgc.accion(sql);
     }
 
@@ -109,11 +118,11 @@ public class modelProveedor extends Proveedor {
         return listaProveedores;
     }
 
-    public boolean comprobarDuplicado(String nombre, String ciudad ) {
+    public boolean comprobarDuplicado(String nombre, String ciudad) {
         int cant = 0;
         boolean ban = true;
 
-        String sql = "	select count(*) from proveedor where pro_nombre='"+nombre+"' and pro_ciudad='"+ciudad+"'";
+        String sql = "	select count(*) from proveedor where pro_nombre='" + nombre + "' and pro_ciudad='" + ciudad + "'";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
