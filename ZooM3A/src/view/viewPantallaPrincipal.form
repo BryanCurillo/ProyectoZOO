@@ -143,7 +143,7 @@
                 <Property name="text" type="java.lang.String" value="Agregar Proveedor"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="JMIcrudProveedor">
+            <MenuItem class="javax.swing.JMenuItem" name="JMIvistaProveedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar registro de proveedores"/>
               </Properties>

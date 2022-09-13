@@ -52,7 +52,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MIActualizarPrecio = new javax.swing.JMenuItem();
         jMProveedor = new javax.swing.JMenu();
         jMIagregarProveedor = new javax.swing.JMenuItem();
-        JMIcrudProveedor = new javax.swing.JMenuItem();
+        JMIvistaProveedor = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,8 +143,8 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMIagregarProveedor.setText("Agregar Proveedor");
         jMProveedor.add(jMIagregarProveedor);
 
-        JMIcrudProveedor.setText("Visualizar registro de proveedores");
-        jMProveedor.add(JMIcrudProveedor);
+        JMIvistaProveedor.setText("Visualizar registro de proveedores");
+        jMProveedor.add(JMIvistaProveedor);
 
         barramenus.add(jMProveedor);
 
@@ -170,7 +170,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem JMIcrudProveedor;
+    private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
@@ -194,36 +194,20 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem modificarpersona;
     // End of variables declaration//GEN-END:variables
 
-    public JMenuItem getjMIagregarPersona() {
-        return jMIagregarPersona;
+    public JMenuItem getJMIvistaProveedor() {
+        return JMIvistaProveedor;
     }
 
-    public void setjMIagregarPersona(JMenuItem jMIagregarPersona) {
-        this.jMIagregarPersona = jMIagregarPersona;
+    public void setJMIvistaProveedor(JMenuItem JMIvistaProveedor) {
+        this.JMIvistaProveedor = JMIvistaProveedor;
     }
 
-    public JDesktopPane getjDPprincipal() {
-        return jDPprincipal;
+    public JMenuItem getMIActualizarPrecio() {
+        return MIActualizarPrecio;
     }
 
-    public void setjDPprincipal(JDesktopPane jDPprincipal) {
-        this.jDPprincipal = jDPprincipal;
-    }
-
-    public JMenuItem getjMIeliminarpersona() {
-        return jMIeliminarpersona;
-    }
-
-    public void setjMIeliminarpersona(JMenuItem jMIeliminarpersona) {
-        this.jMIeliminarpersona = jMIeliminarpersona;
-    }
-
-    public JMenuItem getjMIvistaEmpleado() {
-        return jMIvistaEmpleado;
-    }
-
-    public void setjMIvistaEmpleado(JMenuItem jMIvistaEmpleado) {
-        this.jMIvistaEmpleado = jMIvistaEmpleado;
+    public void setMIActualizarPrecio(JMenuItem MIActualizarPrecio) {
+        this.MIActualizarPrecio = MIActualizarPrecio;
     }
 
     public JMenu getAgregarpersona() {
@@ -242,84 +226,52 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.barramenus = barramenus;
     }
 
-    public JMenu getjMenu1() {
-        return jMenu1;
+    public JDesktopPane getjDPprincipal() {
+        return jDPprincipal;
     }
 
-    public void setjMenu1(JMenu jMenu1) {
-        this.jMenu1 = jMenu1;
+    public void setjDPprincipal(JDesktopPane jDPprincipal) {
+        this.jDPprincipal = jDPprincipal;
     }
 
-    public JMenuItem getjMenuItem1() {
-        return MIActualizarPrecio;
+    public JMenuItem getjMIagregarPersona() {
+        return jMIagregarPersona;
     }
 
-    public void setjMenuItem1(JMenuItem jMenuItem1) {
-        this.MIActualizarPrecio = jMenuItem1;
+    public void setjMIagregarPersona(JMenuItem jMIagregarPersona) {
+        this.jMIagregarPersona = jMIagregarPersona;
     }
 
-    public JMenuItem getjMenuItem10() {
-        return jMenuItem10;
+    public JMenuItem getjMIagregarProveedor() {
+        return jMIagregarProveedor;
     }
 
-    public void setjMenuItem10(JMenuItem jMenuItem10) {
-        this.jMenuItem10 = jMenuItem10;
+    public void setjMIagregarProveedor(JMenuItem jMIagregarProveedor) {
+        this.jMIagregarProveedor = jMIagregarProveedor;
     }
 
-    public JMenuItem getjMenuItem11() {
-        return jMenuItem11;
+    public JMenuItem getjMIeliminarpersona() {
+        return jMIeliminarpersona;
     }
 
-    public void setjMenuItem11(JMenuItem jMenuItem11) {
-        this.jMenuItem11 = jMenuItem11;
+    public void setjMIeliminarpersona(JMenuItem jMIeliminarpersona) {
+        this.jMIeliminarpersona = jMIeliminarpersona;
     }
 
-    public JMenuItem getjMenuItem12() {
-        return jMenuItem12;
+    public JMenuItem getjMIvistaEmpleado() {
+        return jMIvistaEmpleado;
     }
 
-    public void setjMenuItem12(JMenuItem jMenuItem12) {
-        this.jMenuItem12 = jMenuItem12;
+    public void setjMIvistaEmpleado(JMenuItem jMIvistaEmpleado) {
+        this.jMIvistaEmpleado = jMIvistaEmpleado;
     }
 
-    public JMenuItem getjMenuItem4() {
-        return jMenuItem4;
+    public JMenu getjMProveedor() {
+        return jMProveedor;
     }
 
-    public void setjMenuItem4(JMenuItem jMenuItem4) {
-        this.jMenuItem4 = jMenuItem4;
-    }
-
-    public JMenuItem getjMenuItem5() {
-        return jMenuItem5;
-    }
-
-    public void setjMenuItem5(JMenuItem jMenuItem5) {
-        this.jMenuItem5 = jMenuItem5;
-    }
-
-    public JMenuItem getjMenuItem6() {
-        return jMenuItem6;
-    }
-
-    public void setjMenuItem6(JMenuItem jMenuItem6) {
-        this.jMenuItem6 = jMenuItem6;
-    }
-
-    public JMenuItem getjMenuItem8() {
-        return jMenuItem8;
-    }
-
-    public void setjMenuItem8(JMenuItem jMenuItem8) {
-        this.jMenuItem8 = jMenuItem8;
-    }
-
-    public JMenuItem getjMenuItem9() {
-        return jMenuItem9;
-    }
-
-    public void setjMenuItem9(JMenuItem jMenuItem9) {
-        this.jMenuItem9 = jMenuItem9;
+    public void setjMProveedor(JMenu jMProveedor) {
+        this.jMProveedor = jMProveedor;
     }
 
     public JMenu getMenualimento() {
@@ -344,38 +296,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setModificarpersona(JMenuItem modificarpersona) {
         this.modificarpersona = modificarpersona;
-    }
-
-    public JMenuItem getMIActualizarPrecio() {
-        return MIActualizarPrecio;
-    }
-
-    public void setMIActualizarPrecio(JMenuItem MIActualizarPrecio) {
-        this.MIActualizarPrecio = MIActualizarPrecio;
-    }
-
-    public JMenuItem getJMIcrudProveedor() {
-        return JMIcrudProveedor;
-    }
-
-    public void setJMIcrudProveedor(JMenuItem JMIcrudProveedor) {
-        this.JMIcrudProveedor = JMIcrudProveedor;
-    }
-
-    public JMenuItem getjMIagregarProveedor() {
-        return jMIagregarProveedor;
-    }
-
-    public void setjMIagregarProveedor(JMenuItem jMIagregarProveedor) {
-        this.jMIagregarProveedor = jMIagregarProveedor;
-    }
-
-    public JMenu getjMProveedor() {
-        return jMProveedor;
-    }
-
-    public void setjMProveedor(JMenu jMProveedor) {
-        this.jMProveedor = jMProveedor;
     }
 
 }

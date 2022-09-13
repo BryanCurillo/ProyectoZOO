@@ -7,6 +7,7 @@ package view;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -42,6 +43,7 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
         comboCiudad = new javax.swing.JComboBox<>();
         btregistrar = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
+        txtid_prov = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         setClosable(true);
@@ -94,7 +96,9 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
                         .addGap(54, 54, 54)
                         .addComponent(jLabel6)
                         .addGap(6, 6, 6)
-                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(txtid_prov, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel8)
@@ -124,7 +128,9 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel6))
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtid_prov, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -164,6 +170,7 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField txtOtraCiudad;
+    private javax.swing.JLabel txtid_prov;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
@@ -222,6 +229,14 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
 
     public void setTxttelefono(JTextField txttelefono) {
         this.txttelefono = txttelefono;
+    }
+
+    public JLabel getTxtid_prov() {
+        return txtid_prov;
+    }
+
+    public void setTxtid_prov(JLabel txtid_prov) {
+        this.txtid_prov = txtid_prov;
     }
 
 

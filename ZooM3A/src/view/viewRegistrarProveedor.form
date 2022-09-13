@@ -45,6 +45,8 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="txtnombre" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="txtid_prov" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
@@ -82,7 +84,10 @@
                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="txtnombre" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtnombre" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="txtid_prov" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -320,6 +325,8 @@
         </Property>
         <Property name="text" type="java.lang.String" value="CANCELAR"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtid_prov">
     </Component>
   </SubComponents>
 </Form>
