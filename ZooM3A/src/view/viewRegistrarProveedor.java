@@ -43,9 +43,9 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtapellido = new javax.swing.JTextField();
+        txtOtraCiudad = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        comborol = new javax.swing.JComboBox<>();
+        comboCiudad = new javax.swing.JComboBox<>();
         btregistrar = new javax.swing.JButton();
         btcancelar = new javax.swing.JButton();
 
@@ -72,14 +72,14 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("CIUDAD:");
 
-        txtapellido.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        txtapellido.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtOtraCiudad.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtOtraCiudad.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtOtraCiudad.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("TELEFONO:");
 
-        comborol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar ciudad", "ALAUSI", "AMBATO", "ARENILLAS", "ATACAMES", "ATAHUALPA", "AZOGUES", "BABAHOYO", "BAÑOSDEAGUASANTA", "BIBLIAN", "BOLIVAR", "CAÑAR", "CATAMAYO", "CAYAMBE", "CEVALLOS", "CHAGUARPAMBA", "CHAMBO", "CHILLANES", "CHIMBO", "CHINCHIPE", "CHONE", "CHORDELEG", "COTACACHI", "CUENCA", "CUMANDA", "CUYABENO", "DAULE", "DELEG", "DURAN", "ELCARMEN", "EL GUABO", "EL OYALFARO", "EL PAN", "EL  TAMBO", "ELTRIUNFO", "ESMERALDAS", "ESPEJO", "GIRON", "GONZALOPIZARRO", "GUACHAPALA", "GUALACEO", "GUALAQUIZA", "GUARANDA", "GUAYAQUIL", "HUAQUILLAS", "IBARRA", "JIPIJAPA", "JUNIN", "LA CONCORDIA", "LAGO AGRIO", "LA LIBERTAD", "LATACUNGA", "LA TRONCAL", "LOJA", "MACARA", "MACHALA", "MANTA", "MILAGRO", "MONTECRISTI", "MONTUFAR", "MORONA", "NABON", "NARANJAL", "OÑA", "ORELLANA", "OTAVALO", "PASAJE", "PASTAZA", "PATATE", "PAUTE", "PEDERNALES", "PICHINCHA", "PIÑAS", "PLAYAS", "PORTOVELO", "PUCARA", "PUERTOLOPEZ", "QUEVEDO", "QUITO", "RIOBAMBA", "RIOVERDE", "ROCAFUERTE", "RUMIÑAHUI", "SALCEDO", "SALINAS", "SAMBORONDON", "SAN CRISTOBAL", "SAN FERNANDO", "SAN LORENZO", "SAN MIGUEL", "SANTA ANA", "SANTA ELENA", "SANTA ISABEL", "SANTIAGO", "SANTO DOMINGO", "SARAGURO", "SIGSIG", "SIMON BOLIVAR", "SUCUA", "SUCUMBIOS", "TENA", "TULCAN", "VALENCIA", "VENTANAS", "VINCES", "ZAMORA", "ZARUMA", "OTRO..." }));
+        comboCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar ciudad", "ALAUSI", "AMBATO", "ARENILLAS", "ATACAMES", "ATAHUALPA", "AZOGUES", "BABAHOYO", "BAÑOSDEAGUASANTA", "BIBLIAN", "BOLIVAR", "CAÑAR", "CATAMAYO", "CAYAMBE", "CEVALLOS", "CHAGUARPAMBA", "CHAMBO", "CHILLANES", "CHIMBO", "CHINCHIPE", "CHONE", "CHORDELEG", "COTACACHI", "CUENCA", "CUMANDA", "CUYABENO", "DAULE", "DELEG", "DURAN", "ELCARMEN", "EL GUABO", "EL OYALFARO", "EL PAN", "EL  TAMBO", "ELTRIUNFO", "ESMERALDAS", "ESPEJO", "GIRON", "GONZALOPIZARRO", "GUACHAPALA", "GUALACEO", "GUALAQUIZA", "GUARANDA", "GUAYAQUIL", "HUAQUILLAS", "IBARRA", "JIPIJAPA", "JUNIN", "LA CONCORDIA", "LAGO AGRIO", "LA LIBERTAD", "LATACUNGA", "LA TRONCAL", "LOJA", "MACARA", "MACHALA", "MANTA", "MILAGRO", "MONTECRISTI", "MONTUFAR", "MORONA", "NABON", "NARANJAL", "OÑA", "ORELLANA", "OTAVALO", "PASAJE", "PASTAZA", "PATATE", "PAUTE", "PEDERNALES", "PICHINCHA", "PIÑAS", "PLAYAS", "PORTOVELO", "PUCARA", "PUERTOLOPEZ", "QUEVEDO", "QUITO", "RIOBAMBA", "RIOVERDE", "ROCAFUERTE", "RUMIÑAHUI", "SALCEDO", "SALINAS", "SAMBORONDON", "SAN CRISTOBAL", "SAN FERNANDO", "SAN LORENZO", "SAN MIGUEL", "SANTA ANA", "SANTA ELENA", "SANTA ISABEL", "SANTIAGO", "SANTO DOMINGO", "SARAGURO", "SIGSIG", "SIMON BOLIVAR", "SUCUA", "SUCUMBIOS", "TENA", "TULCAN", "VALENCIA", "VENTANAS", "VINCES", "ZAMORA", "ZARUMA", "OTRO..." }));
 
         btregistrar.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btregistrar.setText("REGISTRARSE");
@@ -110,9 +110,9 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
                         .addGap(60, 60, 60)
                         .addComponent(jLabel7)
                         .addGap(6, 6, 6)
-                        .addComponent(comborol, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtOtraCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(btregistrar)
@@ -142,10 +142,10 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel7))
-                    .addComponent(comborol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtOtraCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btregistrar)
@@ -164,15 +164,71 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.ButtonGroup bggenero;
     private javax.swing.JButton btcancelar;
     private javax.swing.JButton btregistrar;
-    private javax.swing.JComboBox<String> comborol;
+    private javax.swing.JComboBox<String> comboCiudad;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txtapellido;
+    private javax.swing.JTextField txtOtraCiudad;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
+
+    public ButtonGroup getBggenero() {
+        return bggenero;
+    }
+
+    public void setBggenero(ButtonGroup bggenero) {
+        this.bggenero = bggenero;
+    }
+
+    public JButton getBtcancelar() {
+        return btcancelar;
+    }
+
+    public void setBtcancelar(JButton btcancelar) {
+        this.btcancelar = btcancelar;
+    }
+
+    public JButton getBtregistrar() {
+        return btregistrar;
+    }
+
+    public void setBtregistrar(JButton btregistrar) {
+        this.btregistrar = btregistrar;
+    }
+
+    public JComboBox<String> getComboCiudad() {
+        return comboCiudad;
+    }
+
+    public void setComboCiudad(JComboBox<String> comboCiudad) {
+        this.comboCiudad = comboCiudad;
+    }
+
+    public JTextField getTxtOtraCiudad() {
+        return txtOtraCiudad;
+    }
+
+    public void setTxtOtraCiudad(JTextField txtOtraCiudad) {
+        this.txtOtraCiudad = txtOtraCiudad;
+    }
+
+    public JTextField getTxtnombre() {
+        return txtnombre;
+    }
+
+    public void setTxtnombre(JTextField txtnombre) {
+        this.txtnombre = txtnombre;
+    }
+
+    public JTextField getTxttelefono() {
+        return txttelefono;
+    }
+
+    public void setTxttelefono(JTextField txttelefono) {
+        this.txttelefono = txttelefono;
+    }
 
 
 }
