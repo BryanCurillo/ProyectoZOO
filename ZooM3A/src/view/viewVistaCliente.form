@@ -61,7 +61,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTblAnimal">
+        <Component class="javax.swing.JTable" name="jTblCliente">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="8" rowCount="4">
@@ -93,7 +93,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jbtnAgregarAnimal">
+        <Component class="javax.swing.JButton" name="btnAgregarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREGAR"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -102,14 +102,14 @@
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnModificarAnimal">
+        <Component class="javax.swing.JButton" name="BtnModificarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="MODIFICAR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator2">
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnEliminarAnimal">
+        <Component class="javax.swing.JButton" name="btnEliminarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="ELIMINAR"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -118,7 +118,7 @@
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator3">
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnImprimirAnimal">
+        <Component class="javax.swing.JButton" name="jBtnImprimirCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="IMPRIMIR REPORTE"/>
           </Properties>
@@ -145,12 +145,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnBuscarAnimal">
+        <Component class="javax.swing.JButton" name="jBtnBuscarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUSCAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnActualizarAnimal">
+        <Component class="javax.swing.JButton" name="jBtnActualizarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
             <Property name="focusable" type="boolean" value="false"/>
