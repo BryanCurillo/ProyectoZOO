@@ -57,7 +57,7 @@ public class ModelCliente extends Cliente {
         return mpgc.accion(sql);
     }
 
-    public boolean deleteAnimal(String cedula) {
+    public boolean deleteCliente(String cedula) {
 
         String sql = "DELETE FROM public.cliente\n"
                 + "	WHERE cli_cedula = " + cedula + ";";
