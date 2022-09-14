@@ -135,7 +135,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMProveedor">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Proveedor"/>
+            <Property name="text" type="java.lang.String" value="PROVEEDOR"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMIagregarProveedor">
@@ -146,6 +146,26 @@
             <MenuItem class="javax.swing.JMenuItem" name="JMIvistaProveedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar registro de proveedores"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMProveedor1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CLIENTE"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIagregarCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Cliente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMIagregarClienteActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="JMIvistaCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Visualizar Clientes"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -212,7 +232,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="170" y="0" width="1000" height="-1"/>
+              <AbsoluteConstraints x="170" y="0" width="1000" height="630"/>
             </Constraint>
           </Constraints>
 
@@ -224,7 +244,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="621" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -237,7 +257,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="-1" height="625"/>
+              <AbsoluteConstraints x="0" y="0" width="-1" height="630"/>
             </Constraint>
           </Constraints>
 

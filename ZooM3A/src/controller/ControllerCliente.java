@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import model.ModelCliente;
+import model.modelPersona;
 import view.viewLogin;
 import view.viewRegistrarCliente;
 import view.viewVistaCliente;
@@ -28,9 +29,11 @@ public class ControllerCliente {
     public ControllerCliente() {
     }
 
-    public ControllerCliente(viewRegistrarCliente vrc, viewVistaCliente vvc) {
+    public ControllerCliente(viewRegistrarCliente vrc, ModelCliente mc) {
         this.vrc = vrc;
-        this.vvc = vvc;
+        this.mc = mc;
+        vrc.toFront();
+        vrc.setVisible(true);
     }
 
     public void iniciarControl() {
@@ -69,6 +72,16 @@ public class ControllerCliente {
                     telefono = vrc.getTxttelefono().getText(),
                     direccion = vrc.getTxtdireccion().getText();
             Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
+
+            modelPersona persona = new modelPersona();
+            persona.setCedula(cedula);
+            persona.setNombre(nombre);
+            persona.setApellido(apellido);
+            persona.setCorreo(correo);
+            persona.setFechaRegistro(fechaRegistro);
+            persona.setEstadoPer(true);
+            
+            
             ModelCliente cli = new ModelCliente();
             cli.setEstadoPer(true);
             cli.setApellido(apellido);
@@ -82,11 +95,20 @@ public class ControllerCliente {
             if (vrc.getName().equals("Registro")) {
                 int response = JOptionPane.showConfirmDialog(vrc, "¿Agregar cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
-                    JOptionPane.showMessageDialog(vrc, "Cliente agregado/a correctamente");
-                    vrc.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(vrc, "No se pudo agregar al empleado");
+                    if (persona.comprobarDuplicado(cedula)) {
+                        if (persona.setPersona() && cli.setCliente()) {
+                            JOptionPane.showMessageDialog(vrc, "Cliente agregado/a correctamente");
+                            vrc.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(vrc, "No se pudo agregar al cliente");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(vrc, "El cliente ya se encuentra registrado");
+                    }
+                    
                 }
+            }else{
+                
             }
 
         }
@@ -178,7 +200,7 @@ public class ControllerCliente {
         }
         //DIRECCION
         if (!vrc.getTxtdireccion().getText().isEmpty()) {
-            if (!mivalidacion.validarDireccion(vrc.getTxtcorreo().getText())) {
+            if (!mivalidacion.validarDireccion(vrc.getTxtdireccion().getText())) {
                 JOptionPane.showMessageDialog(vrc, "Direccion invalida");
                 ban = false;
             }

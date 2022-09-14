@@ -135,6 +135,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(144, 183, 125));
         jLabel1.setText("jLabel1");
         jLabel1.setOpaque(true);
+        jLabel1.setPreferredSize(new java.awt.Dimension(1000, 550));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 550));
 
         pack();

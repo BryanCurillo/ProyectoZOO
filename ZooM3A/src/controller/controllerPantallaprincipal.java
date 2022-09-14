@@ -8,9 +8,12 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import model.modelEmpleado;
 import model.modelProveedor;
+import model.ModelCliente;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
+import view.viewRegistrarCliente;
 import view.viewVistaEmpleados;
+import view.viewVistaCliente;
 import view.viewVistaProveedor;
 import view.viewRegistrarProveedor;
 
@@ -35,7 +38,9 @@ public class controllerPantallaprincipal {
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
         vista.getjMIvistaEmpleado().addActionListener(l -> vistaEmpleado());
         vista.getjMIagregarProveedor().addActionListener(l -> registroProveedor());
-        vista.getJMIvistaProveedor().addActionListener(l->vistaProveedor());
+        vista.getJMIvistaProveedor().addActionListener(l -> vistaProveedor());
+        vista.getjMIagregarCliente().addActionListener(l -> registroCliente());
+        vista.getJMIvistaCliente().addActionListener(l -> vistaCliente());
     }
 
     public void registroEmpleado() {
@@ -72,7 +77,6 @@ public class controllerPantallaprincipal {
     }
 
     public void registroProveedor() {
-//        vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
         modelProveedor mp = new modelProveedor();
         viewRegistrarProveedor vre = new viewRegistrarProveedor();
@@ -91,9 +95,31 @@ public class controllerPantallaprincipal {
         //Agragar vista al desktop pane        
         vista.getjDPprincipal().add(vistaProv);
 
-//        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado,  vistaEmpleado,vista);
-//        controladorEmpleado.inicialControl2();
         ControllerVistaProveedor controllerVistaProv = new ControllerVistaProveedor(vista, vistaProv, modeloProv);
         controllerVistaProv.inicialControl();
+    }
+
+    public void registroCliente() {
+        //Instancio las clases del modelo y la vista        
+        ModelCliente mc = new ModelCliente();
+        viewRegistrarCliente vRc = new viewRegistrarCliente();
+
+        //Agragar vista al desktop pane
+        vRc.setName("Registro");
+        vista.getjDPprincipal().add(vRc);
+        ControllerCliente ccli = new ControllerCliente(vRc, mc);
+        ccli.iniciarControl();
+    }
+
+    public void vistaCliente() {
+        ModelCliente modeloCli = new ModelCliente();
+        viewVistaCliente vistaCli = new viewVistaCliente();
+
+        //Agragar vista al desktop pane        
+        vista.getjDPprincipal().add(vistaCli);
+        ControllerVistaCliente controllerVCli = new ControllerVistaCliente(vista, vistaCli, modeloCli);
+        controllerVCli.inicialControl();
+        
+        
     }
 }

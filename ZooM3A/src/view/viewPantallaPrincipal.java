@@ -57,6 +57,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMProveedor = new javax.swing.JMenu();
         jMIagregarProveedor = new javax.swing.JMenuItem();
         JMIvistaProveedor = new javax.swing.JMenuItem();
+        jMProveedor1 = new javax.swing.JMenu();
+        jMIagregarCliente = new javax.swing.JMenuItem();
+        JMIvistaCliente = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1150, 0));
@@ -76,10 +79,10 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         );
         jDPprincipalLayout.setVerticalGroup(
             jDPprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGap(0, 626, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jDPprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 1000, -1));
+        jPanel3.add(jDPprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 1000, 630));
 
         jPanel1.setBackground(new java.awt.Color(144, 183, 125));
 
@@ -119,7 +122,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 625));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 630));
 
         agregarpersona.setText("PERSONAL");
 
@@ -188,7 +191,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(jMenu1);
 
-        jMProveedor.setText("Proveedor");
+        jMProveedor.setText("PROVEEDOR");
 
         jMIagregarProveedor.setText("Agregar Proveedor");
         jMProveedor.add(jMIagregarProveedor);
@@ -197,6 +200,21 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMProveedor.add(JMIvistaProveedor);
 
         barramenus.add(jMProveedor);
+
+        jMProveedor1.setText("CLIENTE");
+
+        jMIagregarCliente.setText("Agregar Cliente");
+        jMIagregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIagregarClienteActionPerformed(evt);
+            }
+        });
+        jMProveedor1.add(jMIagregarCliente);
+
+        JMIvistaCliente.setText("Visualizar Clientes");
+        jMProveedor1.add(JMIvistaCliente);
+
+        barramenus.add(jMProveedor1);
 
         setJMenuBar(barramenus);
 
@@ -215,22 +233,29 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMIagregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIagregarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMIagregarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JMIvistaCliente;
     private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDPprincipal;
+    private javax.swing.JMenuItem jMIagregarCliente;
     private javax.swing.JMenuItem jMIagregarPersona;
     private javax.swing.JMenuItem jMIagregarProveedor;
     private javax.swing.JMenuItem jMIeliminarpersona;
     private javax.swing.JMenuItem jMIvistaEmpleado;
     private javax.swing.JMenu jMProveedor;
+    private javax.swing.JMenu jMProveedor1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
@@ -351,5 +376,23 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     public void setModificarpersona(JMenuItem modificarpersona) {
         this.modificarpersona = modificarpersona;
     }
+
+    public JMenuItem getJMIvistaCliente() {
+        return JMIvistaCliente;
+    }
+
+    public void setJMIvistaCliente(JMenuItem JMIvistaCliente) {
+        this.JMIvistaCliente = JMIvistaCliente;
+    }
+
+    public JMenuItem getjMIagregarCliente() {
+        return jMIagregarCliente;
+    }
+
+    public void setjMIagregarCliente(JMenuItem jMIagregarCliente) {
+        this.jMIagregarCliente = jMIagregarCliente;
+    }
+    
+    
 
 }

@@ -49,6 +49,12 @@ public class ModelCliente extends Cliente {
         return listaClientes;
     }
 
+    public boolean setCliente() {
+        String sql = "INSERT INTO cliente(cli_direccion, cli_telefono, cli_cedula)"
+                + "VALUES ('" + getCli_direccion() + "','" + getCli_telefono() + "', '" + getCli_cedula()+ "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN INSERT
+    }
+
     public boolean updateCliente() {
         String sql;
         sql = "UPDATE cliente\n"
