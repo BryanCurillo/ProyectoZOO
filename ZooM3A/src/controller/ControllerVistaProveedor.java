@@ -75,8 +75,8 @@ public class ControllerVistaProveedor {
                 vistaP.getjDPprincipal().add(vistaRegistroProv);
                 controladorProv.abrirRegistro(2);
             }
-            cargarDatos(1);
         }
+        cargarDatos(1);
     }
 
 //    KeyListener busquedaIncren = new KeyListener() {

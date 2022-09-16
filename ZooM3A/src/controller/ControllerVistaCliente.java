@@ -45,13 +45,12 @@ public class ControllerVistaCliente {
         this.modeloCli = modeloCli;
         cargarDatos(1);
         vistaCli.setVisible(true);
-        System.out.println("cargado");
     }
 
     public void inicialControl() {
         vistaCli.getBtnAgregarCliente().addActionListener(l -> abrirRegistro(1));
-//        vistaCli.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
-//        vistaCli.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
+        vistaCli.getBtnModificarCliente().addActionListener(l -> abrirRegistro(2));
+        vistaCli.getBtnEliminarCliente().addActionListener(l -> eliminarCliente());
 //        vistaCli.getjBtnActualizar().addActionListener(l->cargarDatos(1));
     }
 
@@ -64,19 +63,19 @@ public class ControllerVistaCliente {
             //Agragar vista al desktop pane
             vistaP.getjDPprincipal().add(vistaRegistroCli);
 
-            ControllerCliente controladorCli = new ControllerCliente(vistaRegistroCli, modeloCli);
+            ControllerRegistrarCliente controladorCli = new ControllerRegistrarCliente(vistaRegistroCli, modeloCli);
             controladorCli.abrirRegistro(1);
 
         } else {
-//            ControllerCliente controladorCli = new ControllerCliente(modeloCli, vistaRegistroCli, vistaCli);
-//            int fila = vistaCli.getjTblProveedor().getSelectedRow();
-//            if (fila == -1) {
-//                JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
-//            } else {
-//                vistaP.getjDPprincipal().add(vistaRegistroCli);
-//                controladorCli.abrirRegistro(2);
-//            }
-//            cargarDatos(1);
+            ControllerRegistrarCliente controladorCli = new ControllerRegistrarCliente(vistaRegistroCli, vistaCli, modeloCli);
+            int fila = vistaCli.getjTblCliente().getSelectedRow();
+            if (fila == -1) {
+                JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
+            } else {
+                vistaP.getjDPprincipal().add(vistaRegistroCli);
+                controladorCli.abrirRegistro(2);
+            }
+            cargarDatos(1);
         }
     }
 
@@ -125,24 +124,23 @@ public class ControllerVistaCliente {
 
     }
 
-//    public void eliminarEmpleado() {
-//        modelProveedor proveedor = new modelProveedor();
-//        int fila = vistaCli.getjTblProveedor().getSelectedRow();
-//        if (fila == -1) {
-//            JOptionPane.showMessageDialog(null, "Seleccione el proveedor a eliminar");
-//        } else {
-//            int response = JOptionPane.showConfirmDialog(vistaCli, "¿Esta seguro de eliminar al proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//            if (response == JOptionPane.YES_OPTION) {
-//                int id = Integer.parseInt(vistaCli.getjTblProveedor().getValueAt(fila, 0).toString());
-//
-//                if (proveedor.deleteProveedor(id)) {//Grabamos
-//                    System.out.println("id=" + id);
-//                    JOptionPane.showMessageDialog(vistaCli, "Proveedor eliminado correctamente");
-//                    cargarDatos(1);
-//                } else {
-//                    JOptionPane.showMessageDialog(vistaCli, "No se pudo eliminar al Proveedor");
-//                }
-//            }
-//        }
-//    }
+    public void eliminarCliente() {
+        ModelCliente cliente = new ModelCliente();
+        int fila = vistaCli.getjTblCliente().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione el cliente a eliminar");
+        } else {
+            int response = JOptionPane.showConfirmDialog(vistaCli, "¿Esta seguro de eliminar al cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                String cedula = vistaCli.getjTblCliente().getValueAt(fila, 1).toString();
+
+                if (cliente.deleteCliente(cedula)) {//Grabamos
+                    JOptionPane.showMessageDialog(vistaCli, "Proveedor eliminado correctamente");
+                    cargarDatos(1);
+                } else {
+                    JOptionPane.showMessageDialog(vistaCli, "No se pudo eliminar al Proveedor");
+                }
+            }
+        }
+    }
 }

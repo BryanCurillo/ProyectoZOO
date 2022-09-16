@@ -4,11 +4,19 @@
  */
 package view;
 
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ASUS ROG
  */
-public class viewVentaTicket extends javax.swing.JPanel {
+public class viewVentaTicket extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewVentaTicket
@@ -515,6 +523,525 @@ public class viewVentaTicket extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton10() {
+        return jButton10;
+    }
+
+    public void setjButton10(JButton jButton10) {
+        this.jButton10 = jButton10;
+    }
+
+    public JButton getjButton11() {
+        return jButton11;
+    }
+
+    public void setjButton11(JButton jButton11) {
+        this.jButton11 = jButton11;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JButton getjButton6() {
+        return jButton6;
+    }
+
+    public void setjButton6(JButton jButton6) {
+        this.jButton6 = jButton6;
+    }
+
+    public JButton getjButton7() {
+        return jButton7;
+    }
+
+    public void setjButton7(JButton jButton7) {
+        this.jButton7 = jButton7;
+    }
+
+    public JButton getjButton8() {
+        return jButton8;
+    }
+
+    public void setjButton8(JButton jButton8) {
+        this.jButton8 = jButton8;
+    }
+
+    public JButton getjButton9() {
+        return jButton9;
+    }
+
+    public void setjButton9(JButton jButton9) {
+        this.jButton9 = jButton9;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel25() {
+        return jLabel25;
+    }
+
+    public void setjLabel25(JLabel jLabel25) {
+        this.jLabel25 = jLabel25;
+    }
+
+    public JLabel getjLabel29() {
+        return jLabel29;
+    }
+
+    public void setjLabel29(JLabel jLabel29) {
+        this.jLabel29 = jLabel29;
+    }
+
+    public JLabel getjLabel30() {
+        return jLabel30;
+    }
+
+    public void setjLabel30(JLabel jLabel30) {
+        this.jLabel30 = jLabel30;
+    }
+
+    public JLabel getjLabel31() {
+        return jLabel31;
+    }
+
+    public void setjLabel31(JLabel jLabel31) {
+        this.jLabel31 = jLabel31;
+    }
+
+    public JLabel getjLabel32() {
+        return jLabel32;
+    }
+
+    public void setjLabel32(JLabel jLabel32) {
+        this.jLabel32 = jLabel32;
+    }
+
+    public JLabel getjLabel33() {
+        return jLabel33;
+    }
+
+    public void setjLabel33(JLabel jLabel33) {
+        this.jLabel33 = jLabel33;
+    }
+
+    public JLabel getjLabel34() {
+        return jLabel34;
+    }
+
+    public void setjLabel34(JLabel jLabel34) {
+        this.jLabel34 = jLabel34;
+    }
+
+    public JLabel getjLabel35() {
+        return jLabel35;
+    }
+
+    public void setjLabel35(JLabel jLabel35) {
+        this.jLabel35 = jLabel35;
+    }
+
+    public JLabel getjLabel36() {
+        return jLabel36;
+    }
+
+    public void setjLabel36(JLabel jLabel36) {
+        this.jLabel36 = jLabel36;
+    }
+
+    public JLabel getjLabel37() {
+        return jLabel37;
+    }
+
+    public void setjLabel37(JLabel jLabel37) {
+        this.jLabel37 = jLabel37;
+    }
+
+    public JLabel getjLabel38() {
+        return jLabel38;
+    }
+
+    public void setjLabel38(JLabel jLabel38) {
+        this.jLabel38 = jLabel38;
+    }
+
+    public JLabel getjLabel39() {
+        return jLabel39;
+    }
+
+    public void setjLabel39(JLabel jLabel39) {
+        this.jLabel39 = jLabel39;
+    }
+
+    public JLabel getjLabel40() {
+        return jLabel40;
+    }
+
+    public void setjLabel40(JLabel jLabel40) {
+        this.jLabel40 = jLabel40;
+    }
+
+    public JLabel getjLabel41() {
+        return jLabel41;
+    }
+
+    public void setjLabel41(JLabel jLabel41) {
+        this.jLabel41 = jLabel41;
+    }
+
+    public JLabel getjLabel42() {
+        return jLabel42;
+    }
+
+    public void setjLabel42(JLabel jLabel42) {
+        this.jLabel42 = jLabel42;
+    }
+
+    public JLabel getjLabel43() {
+        return jLabel43;
+    }
+
+    public void setjLabel43(JLabel jLabel43) {
+        this.jLabel43 = jLabel43;
+    }
+
+    public JLabel getjLabel44() {
+        return jLabel44;
+    }
+
+    public void setjLabel44(JLabel jLabel44) {
+        this.jLabel44 = jLabel44;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public void setjPanel7(JPanel jPanel7) {
+        this.jPanel7 = jPanel7;
+    }
+
+    public JPanel getjPanel8() {
+        return jPanel8;
+    }
+
+    public void setjPanel8(JPanel jPanel8) {
+        this.jPanel8 = jPanel8;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTextField getjTextField12() {
+        return jTextField12;
+    }
+
+    public void setjTextField12(JTextField jTextField12) {
+        this.jTextField12 = jTextField12;
+    }
+
+    public JTextField getjTextField13() {
+        return jTextField13;
+    }
+
+    public void setjTextField13(JTextField jTextField13) {
+        this.jTextField13 = jTextField13;
+    }
+
+    public JTextField getjTextField14() {
+        return jTextField14;
+    }
+
+    public void setjTextField14(JTextField jTextField14) {
+        this.jTextField14 = jTextField14;
+    }
+
+    public JTextField getjTextField15() {
+        return jTextField15;
+    }
+
+    public void setjTextField15(JTextField jTextField15) {
+        this.jTextField15 = jTextField15;
+    }
+
+    public JTextField getTxtbuscarcliente() {
+        return txtbuscarcliente;
+    }
+
+    public void setTxtbuscarcliente(JTextField txtbuscarcliente) {
+        this.txtbuscarcliente = txtbuscarcliente;
+    }
+
+    public boolean isRootPaneCheckingEnabled() {
+        return rootPaneCheckingEnabled;
+    }
+
+    public void setRootPaneCheckingEnabled(boolean rootPaneCheckingEnabled) {
+        this.rootPaneCheckingEnabled = rootPaneCheckingEnabled;
+    }
+
+    public boolean isClosable() {
+        return closable;
+    }
+
+    public void setClosable(boolean closable) {
+        this.closable = closable;
+    }
+
+    public boolean isIsClosed() {
+        return isClosed;
+    }
+
+    public void setIsClosed(boolean isClosed) {
+        this.isClosed = isClosed;
+    }
+
+    public boolean isMaximizable() {
+        return maximizable;
+    }
+
+    public void setMaximizable(boolean maximizable) {
+        this.maximizable = maximizable;
+    }
+
+    public boolean isIsMaximum() {
+        return isMaximum;
+    }
+
+    public void setIsMaximum(boolean isMaximum) {
+        this.isMaximum = isMaximum;
+    }
+
+    public boolean isIconable() {
+        return iconable;
+    }
+
+    public void setIconable(boolean iconable) {
+        this.iconable = iconable;
+    }
+
+    public boolean isIsIcon() {
+        return isIcon;
+    }
+
+    public void setIsIcon(boolean isIcon) {
+        this.isIcon = isIcon;
+    }
+
+    public boolean isResizable() {
+        return resizable;
+    }
+
+    public void setResizable(boolean resizable) {
+        this.resizable = resizable;
+    }
+
+    public boolean isIsSelected() {
+        return isSelected;
+    }
+
+    public void setIsSelected(boolean isSelected) {
+        this.isSelected = isSelected;
+    }
+
+    public Icon getFrameIcon() {
+        return frameIcon;
+    }
+
+    public void setFrameIcon(Icon frameIcon) {
+        this.frameIcon = frameIcon;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public JDesktopIcon getDesktopIcon() {
+        return desktopIcon;
+    }
+
+    public void setDesktopIcon(JDesktopIcon desktopIcon) {
+        this.desktopIcon = desktopIcon;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -55,7 +55,6 @@ public class ControllerRegistroProveedor {
         vistaProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
         vistaProv.getBtregistrar().addActionListener(l -> crearEditarPersona());
         vistaProv.getBtcancelar().addActionListener(l -> vistaProv.dispose());
-        vistaProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
     }
 
     public void abrirRegistro(int op) {
@@ -93,17 +92,16 @@ public class ControllerRegistroProveedor {
     private void crearEditarPersona() {
         if (validar()) {
             //Datos proveedor
-            int id= Integer.parseInt(vistaProv.getTxtid_prov().getText());
+            int id = Integer.parseInt(vistaProv.getTxtid_prov().getText());
             String nombre = vistaProv.getTxtnombre().getText(),
                     telefono = vistaProv.getTxttelefono().getText(),
                     ciudad = "";
-            if (vistaProv.getComboCiudad().getSelectedItem().toString().isEmpty()) {
-                ciudad = vistaProv.getComboCiudad().getSelectedItem().toString();
-            } else {
+            if (vistaProv.getComboCiudad().getSelectedIndex() == vistaProv.getComboCiudad().getItemCount() - 1) {
                 ciudad = vistaProv.getTxtOtraCiudad().getText();
-
+            } else {
+                ciudad = vistaProv.getComboCiudad().getSelectedItem().toString();
             }
-            
+
             modelProveedor prov = new modelProveedor();
             prov.setId_proveedor(id);
             prov.setNombre_pro(nombre);
@@ -141,6 +139,7 @@ public class ControllerRegistroProveedor {
                 }
             }
         }
+
     }
 
     public boolean llenarDatos() {

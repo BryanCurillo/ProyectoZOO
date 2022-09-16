@@ -1,10 +1,9 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
 
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -12,17 +11,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
-import javax.swing.event.EventListenerList;
-import javax.swing.plaf.ComponentUI;
 
 /**
  *
- * @author ASUS ROG
+ * @author Bryan
  */
-public class viewVistaCliente extends javax.swing.JPanel {
+public class viewVistaCliente extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form viewVistaAnimal
+     * Creates new form viewVistaCliente
      */
     public viewVistaCliente() {
         initComponents();
@@ -53,6 +50,8 @@ public class viewVistaCliente extends javax.swing.JPanel {
         jCbFiltro = new javax.swing.JComboBox<>();
         jBtnBuscarCliente = new javax.swing.JButton();
         jBtnActualizarCliente = new javax.swing.JButton();
+
+        setClosable(true);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("VISTA DE CLIENTES");
@@ -115,15 +114,15 @@ public class viewVistaCliente extends javax.swing.JPanel {
         jBtnActualizarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizarCliente);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(222, 222, 222)
@@ -138,10 +137,32 @@ public class viewVistaCliente extends javax.swing.JPanel {
                 .addGap(48, 48, 48)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnModificarCliente;
+    private javax.swing.JButton btnAgregarCliente;
+    private javax.swing.JButton btnEliminarCliente;
+    private javax.swing.JButton jBtnActualizarCliente;
+    private javax.swing.JButton jBtnBuscarCliente;
+    private javax.swing.JButton jBtnImprimirCliente;
+    private javax.swing.JComboBox<String> jCbFiltro;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JTable jTblCliente;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToolBar jToolBar1;
+    // End of variables declaration//GEN-END:variables
 
     public JButton getBtnModificarCliente() {
         return BtnModificarCliente;
@@ -271,38 +292,7 @@ public class viewVistaCliente extends javax.swing.JPanel {
         this.jToolBar1 = jToolBar1;
     }
 
-    public ComponentUI getUi() {
-        return ui;
-    }
 
-    public void setUi(ComponentUI ui) {
-        this.ui = ui;
-    }
 
-    public EventListenerList getListenerList() {
-        return listenerList;
-    }
 
-    public void setListenerList(EventListenerList listenerList) {
-        this.listenerList = listenerList;
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnModificarCliente;
-    private javax.swing.JButton btnAgregarCliente;
-    private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton jBtnActualizarCliente;
-    private javax.swing.JButton jBtnBuscarCliente;
-    private javax.swing.JButton jBtnImprimirCliente;
-    private javax.swing.JComboBox<String> jCbFiltro;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToolBar.Separator jSeparator1;
-    private javax.swing.JToolBar.Separator jSeparator2;
-    private javax.swing.JToolBar.Separator jSeparator3;
-    private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JTable jTblCliente;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToolBar jToolBar1;
-    // End of variables declaration//GEN-END:variables
 }

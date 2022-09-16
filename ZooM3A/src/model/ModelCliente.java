@@ -51,23 +51,24 @@ public class ModelCliente extends Cliente {
 
     public boolean setCliente() {
         String sql = "INSERT INTO cliente(cli_direccion, cli_telefono, cli_cedula)"
-                + "VALUES ('" + getCli_direccion() + "','" + getCli_telefono() + "', '" + getCli_cedula()+ "')";
+                + "VALUES ('" + getCli_direccion() + "','" + getCli_telefono() + "', '" + getCli_cedula() + "')";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateCliente() {
         String sql;
         sql = "UPDATE cliente\n"
-                + "	SET cli_id=?, cli_direccion=?, cli_telefono=?, cli_cedula=?\n"
-                + "	WHERE cli_cedula = " + getCli_cedula() + ";";
+                + "	SET cli_direccion='" + getCli_direccion() + "', cli_telefono='" + getCli_telefono() + "', cli_cedula='" + getCli_cedula() + "'\n"
+                + "	WHERE cli_cedula = '" + getCli_cedula() + "'";
         return mpgc.accion(sql);
     }
 
     public boolean deleteCliente(String cedula) {
-
-        String sql = "DELETE FROM public.cliente\n"
-                + "	WHERE cli_cedula = " + cedula + ";";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+        String sql;
+        sql = "UPDATE cliente SET cli_estado=false "
+                + "WHERE cli_cedula='"+cedula+"'";
+        System.out.println(sql);
+        return mpgc.accion(sql);
     }
 
 }

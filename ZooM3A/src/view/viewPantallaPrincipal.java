@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -34,7 +35,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jDPprincipal = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnLimpiarDSK = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         barramenus = new javax.swing.JMenuBar();
         agregarpersona = new javax.swing.JMenu();
@@ -86,9 +87,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(144, 183, 125));
 
-        jButton1.setBackground(new java.awt.Color(66, 133, 91));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpieza-de-datos.png"))); // NOI18N
-        jButton1.setToolTipText("Vaciar pantalla");
+        btnLimpiarDSK.setBackground(new java.awt.Color(66, 133, 91));
+        btnLimpiarDSK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpieza-de-datos.png"))); // NOI18N
+        btnLimpiarDSK.setToolTipText("Vaciar pantalla");
 
         jPanel2.setBackground(new java.awt.Color(72, 56, 56));
 
@@ -109,7 +110,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jButton1)
+                .addComponent(btnLimpiarDSK)
                 .addContainerGap(55, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -118,7 +119,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnLimpiarDSK)
                 .addGap(17, 17, 17))
         );
 
@@ -247,7 +248,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MIActualizarPrecio;
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLimpiarDSK;
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JMenuItem jMIagregarCliente;
     private javax.swing.JMenuItem jMIagregarPersona;
@@ -391,6 +392,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setjMIagregarCliente(JMenuItem jMIagregarCliente) {
         this.jMIagregarCliente = jMIagregarCliente;
+    }
+
+    public JButton getBtnLimpiarDSK() {
+        return btnLimpiarDSK;
+    }
+
+    public void setBtnLimpiarDSK(JButton btnLimpiarDSK) {
+        this.btnLimpiarDSK = btnLimpiarDSK;
     }
     
     

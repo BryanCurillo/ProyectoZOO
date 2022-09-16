@@ -15,6 +15,7 @@ import view.viewRegistrarCliente;
 import view.viewVistaEmpleados;
 import view.viewVistaCliente;
 import view.viewVistaProveedor;
+import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
 
 /**
@@ -35,13 +36,17 @@ public class controllerPantallaprincipal {
     }
 
     public void iniciaControl() {
+//        vista.getBtnLimpiarDSK().addActionListener();
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
         vista.getjMIvistaEmpleado().addActionListener(l -> vistaEmpleado());
         vista.getjMIagregarProveedor().addActionListener(l -> registroProveedor());
         vista.getJMIvistaProveedor().addActionListener(l -> vistaProveedor());
         vista.getjMIagregarCliente().addActionListener(l -> registroCliente());
         vista.getJMIvistaCliente().addActionListener(l -> vistaCliente());
+        
     }
+    
+    
 
     public void registroEmpleado() {
 //        vista.getjDPprincipal().removeAll();
@@ -107,19 +112,17 @@ public class controllerPantallaprincipal {
         //Agragar vista al desktop pane
         vRc.setName("Registro");
         vista.getjDPprincipal().add(vRc);
-        ControllerCliente ccli = new ControllerCliente(vRc, mc);
+        ControllerRegistrarCliente ccli = new ControllerRegistrarCliente(vRc, mc);
         ccli.iniciarControl();
     }
 
     public void vistaCliente() {
         ModelCliente modeloCli = new ModelCliente();
         viewVistaCliente vistaCli = new viewVistaCliente();
-
-        //Agragar vista al desktop pane        
+        viewVentaTicket vt = new viewVentaTicket();
+        //Agragar vista al desktop pane                
         vista.getjDPprincipal().add(vistaCli);
         ControllerVistaCliente controllerVCli = new ControllerVistaCliente(vista, vistaCli, modeloCli);
-        controllerVCli.inicialControl();
-        
-        
+        controllerVCli.inicialControl();                
     }
 }

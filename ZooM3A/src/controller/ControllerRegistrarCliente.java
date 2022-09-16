@@ -19,18 +19,26 @@ import view.viewVistaCliente;
  *
  * @author ALEJO
  */
-public class ControllerCliente {
+public class ControllerRegistrarCliente {
 
     private viewRegistrarCliente vrc;
     private viewVistaCliente vvc;
     private ModelCliente mc;
     private viewLogin vl;
 
-    public ControllerCliente() {
+    public ControllerRegistrarCliente() {
     }
 
-    public ControllerCliente(viewRegistrarCliente vrc, ModelCliente mc) {
+    public ControllerRegistrarCliente(viewRegistrarCliente vrc, ModelCliente mc) {
         this.vrc = vrc;
+        this.mc = mc;
+        vrc.toFront();
+        vrc.setVisible(true);
+    }
+
+    public ControllerRegistrarCliente(viewRegistrarCliente vrc, viewVistaCliente vvc, ModelCliente mc) {
+        this.vrc = vrc;
+        this.vvc = vvc;
         this.mc = mc;
         vrc.toFront();
         vrc.setVisible(true);
@@ -52,6 +60,7 @@ public class ControllerCliente {
             this.iniciarControl();
         } else {
             titulo = "Editar";
+            System.out.println(titulo);
             if (llenarDatos()) {
                 vrc.setName("Editar");
                 vrc.getTxtcedula().setEditable(false);
@@ -80,8 +89,7 @@ public class ControllerCliente {
             persona.setCorreo(correo);
             persona.setFechaRegistro(fechaRegistro);
             persona.setEstadoPer(true);
-            
-            
+
             ModelCliente cli = new ModelCliente();
             cli.setEstadoPer(true);
             cli.setApellido(apellido);
@@ -102,13 +110,22 @@ public class ControllerCliente {
                         } else {
                             JOptionPane.showMessageDialog(vrc, "No se pudo agregar al cliente");
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(vrc, "El cliente ya se encuentra registrado");
                     }
-                    
+
                 }
-            }else{
-                
+            } else {
+                //UPDATE
+                int response = JOptionPane.showConfirmDialog(vrc, "¿Seguro que desea actualizar los datos del cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    if (persona.updatePersona() && mc.updateCliente()) {//Grabamos
+                        JOptionPane.showMessageDialog(vrc, "Cliente actualizado correctamente");
+                        vrc.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vrc, "No se pudo actualizar a los datos del cliente");
+                    }
+                }
             }
 
         }
