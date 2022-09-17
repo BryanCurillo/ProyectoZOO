@@ -21,20 +21,20 @@ public class modelPersona extends Persona {
     public modelPersona() {
     }
 
-    public modelPersona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
-        super(cedula, nombre, apellido, correo, fechaRegistro, estadoPer);
+    public modelPersona(String cedula, String nombre, String apellido, String correo, String telefono, Date fechaRegistro, boolean estadoPer) {
+        super(cedula, nombre, apellido, correo, telefono, fechaRegistro, estadoPer);
     }
 
     public boolean setPersona() {
-        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo,per_estado)"
-                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','"+ getCorreo() + "'," + isEstadoPer() + ")";
+        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo,per_telefono,per_estado)"
+                + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','"+ getCorreo() + "','"+  getTelefono() + "'," + isEstadoPer() + ")";
         System.out.println("persona");
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updatePersona() {
         String sql;
-        sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "'"
+        sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "',per_telefono='" + getTelefono() + "'"
                 + "WHERE per_cedula='" + getCedula() + "'";
         return mpgc.accion(sql);
     }

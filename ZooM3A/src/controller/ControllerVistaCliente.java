@@ -118,7 +118,7 @@ public class ControllerVistaCliente {
             vistaCli.getjTblCliente().setValueAt(emp.getApellido(), i, 3);
             vistaCli.getjTblCliente().setValueAt(emp.getCorreo(), i, 4);
             vistaCli.getjTblCliente().setValueAt(emp.getCli_direccion(), i, 5);
-            vistaCli.getjTblCliente().setValueAt(emp.getCli_telefono(), i, 6);
+            vistaCli.getjTblCliente().setValueAt(emp.getTelefono(), i, 6);
             i++;
         });
 

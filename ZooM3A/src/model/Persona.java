@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 import java.util.Date;
 
 /**
@@ -15,19 +16,29 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String correo;
+    private String telefono;
     private Date fechaRegistro;
     private boolean estadoPer;
 
     public Persona() {
     }
 
-    public Persona(String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
+    public Persona(String cedula, String nombre, String apellido, String correo, String telefono, Date fechaRegistro, boolean estadoPer) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
+        this.telefono = telefono;
         this.fechaRegistro = fechaRegistro;
         this.estadoPer = estadoPer;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public boolean isEstadoPer() {

@@ -33,20 +33,20 @@ public class modelEmpleado extends Empleado {
     public modelEmpleado() {
     }
 
-    public modelEmpleado(int idEmp, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
-        super(idEmp, telefono, fechanacimiento, rol, usuario, contraseña, cedulaEmp, genero, estadoEmp, foto, imageFile, tamano);
+    public modelEmpleado(int idEmp, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
+        super(idEmp, fechanacimiento, rol, usuario, contraseña, cedulaEmp, genero, estadoEmp, foto, imageFile, tamano);
     }
 
     public boolean setEmpleado() {
-        String sql = "INSERT INTO empleado(emp_telefono,emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)"
-                + "VALUES ('" + getTelefono() + "','" + getFechanacimiento() + "', '" + getRol() + "', '" + getGenero() + "', '" + getUsuario() + "', '" + getContraseña() + "', '" + getCedula() + "', " + isEstadoEmp() + ")";
+        String sql = "INSERT INTO empleado(emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)"
+                + "VALUES ('" + getFechanacimiento() + "', '" + getRol() + "', '" + getGenero() + "', '" + getUsuario() + "', '" + getContraseña() + "', '" + getCedula() + "', " + isEstadoEmp() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean setFotoEmpleado() {
         String sql;
-        sql = "INSERT INTO empleado(emp_telefono, emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)";
-        sql += "VALUES(?,?,?,?,?,?,?,?)";
+        sql = "INSERT INTO empleado(emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)";
+        sql += "VALUES(?,?,?,?,?,?,?)";
         try {
 
             PreparedStatement ps = mpgc.con.prepareStatement(sql);
@@ -65,6 +65,57 @@ public class modelEmpleado extends Empleado {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
+    }
+
+    public boolean updateEmpleado() {
+        String sql;
+        sql = "UPDATE empleado SET emp_fechanacimiento='" + getFechanacimiento() + "', "
+                + "emp_rol=" + getRol() + ", emp_genero='" + getGenero() + "', emp_usuario='" + getUsuario() + "', emp_contraseña='" + getContraseña() + "' "
+                + "WHERE emp_cedula='" + getCedula() + "'";
+        return mpgc.accion(sql);
+    }
+
+    public boolean updateFotoEmpleado() {
+        String sql;
+        sql = "UPDATE empleado SET emp_foto=?, emp_fechanacimiento=?, "
+                + "emp_rol=?, emp_genero=?, emp_usuario=?, emp_contraseña=? "
+                + "WHERE emp_cedula='" + getCedula() + "'";
+//        sql += "VALUES(?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setBinaryStream(1, getImageFile());
+            ps.setDate(2, (java.sql.Date) getFechanacimiento());
+            ps.setInt(3, getRol());
+            ps.setString(4, getGenero());
+            ps.setString(5, getUsuario());
+            ps.setString(6, getContraseña());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean deleteZoologo(int codigo, String cedula) {
+
+        String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deleteGerente(int codigo, String cedula) {
+        String sql = "SELECT eliminargerente(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deletesecretaria(int codigo, String cedula) {
+        String sql = "SELECT eliminarsecretaria(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
+    }
+
+    public boolean deletecuidador(int codigo, String cedula) {
+        String sql = "SELECT eliminarcuidador(" + codigo + " , '" + cedula + "')";
+        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
 
     public List<rol> getroles() {
@@ -127,37 +178,6 @@ public class modelEmpleado extends Empleado {
         return rol;
     }
 
-    public boolean updateEmpleado() {
-        String sql;
-        sql = "UPDATE empleado SET emp_telefono='" + getTelefono() + "', emp_fechanacimiento='" + getFechanacimiento() + "', "
-                + "emp_rol=" + getRol() + ", emp_genero='" + getGenero() + "', emp_usuario='" + getUsuario() + "', emp_contraseña='" + getContraseña() + "' "
-                + "WHERE emp_cedula='" + getCedula() + "'";
-        return mpgc.accion(sql);
-    }
-
-    public boolean updateFotoEmpleado() {
-        String sql;
-        sql = "UPDATE empleado SET emp_telefono=?, emp_foto=?, emp_fechanacimiento=?, "
-                + "emp_rol=?, emp_genero=?, emp_usuario=?, emp_contraseña=? "
-                + "WHERE emp_cedula='" + getCedula() + "'";
-//        sql += "VALUES(?,?,?,?,?,?,?,?,?)";
-        try {
-            PreparedStatement ps = mpgc.con.prepareStatement(sql);
-            ps.setString(1, getTelefono());
-            ps.setBinaryStream(2, getImageFile());
-            ps.setDate(3, (java.sql.Date) getFechanacimiento());
-            ps.setInt(4, getRol());
-            ps.setString(5, getGenero());
-            ps.setString(6, getUsuario());
-            ps.setString(7, getContraseña());
-            ps.executeUpdate();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
     private Image getImagen(byte[] bytes) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
         Iterator it = ImageIO.getImageReadersByFormatName("jpeg");
@@ -184,9 +204,9 @@ public class modelEmpleado extends Empleado {
                 empleado.setApellido(rs.getString(3));
                 empleado.setFechaRegistro(rs.getDate(4));
                 empleado.setCorreo(rs.getString(5));
-                empleado.setEstadoEmp(rs.getBoolean(6));
-                empleado.setIdEmp(rs.getInt(7));
-                empleado.setTelefono(rs.getString(8));
+                empleado.setTelefono(rs.getString(6));
+                empleado.setEstadoEmp(rs.getBoolean(7));
+                empleado.setIdEmp(rs.getInt(8));
                 bytea = rs.getBytes(9);
                 if (bytea != null) {
                     empleado.setFoto(getImagen(bytea));
@@ -221,12 +241,12 @@ public class modelEmpleado extends Empleado {
                 + "join empleado e on(p.per_cedula=e.emp_cedula) "
                 + "join rol r on(e.emp_rol=r.rol_id) "
                 + "where e.emp_estado=true "
-                + "and p.per_cedula like '%"+busqueda+"%' "
-                + "or lower(p.per_nombre) like '%"+busqueda+"%' "
-                + "or lower(p.per_apellido) like '%"+busqueda+"%' "
-                + "or e.emp_telefono like '%"+busqueda+"%' "
-                + "or lower(e.emp_usuario) like '%"+busqueda+"%' "
-                + "or lower(r.rol_nombre) like '%"+busqueda+"%' ";
+                + "and p.per_cedula like '%" + busqueda + "%' "
+                + "or lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "or lower(p.per_apellido) like '%" + busqueda + "%' "
+                + "or e.emp_telefono like '%" + busqueda + "%' "
+                + "or lower(e.emp_usuario) like '%" + busqueda + "%' "
+                + "or lower(r.rol_nombre) like '%" + busqueda + "%' ";
 
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
@@ -238,9 +258,9 @@ public class modelEmpleado extends Empleado {
                 empleado.setApellido(rs.getString(3));
                 empleado.setFechaRegistro(rs.getDate(4));
                 empleado.setCorreo(rs.getString(5));
-                empleado.setEstadoEmp(rs.getBoolean(6));
-                empleado.setIdEmp(rs.getInt(7));
-                empleado.setTelefono(rs.getString(8));
+                empleado.setTelefono(rs.getString(6));
+                empleado.setEstadoEmp(rs.getBoolean(7));
+                empleado.setIdEmp(rs.getInt(8));
                 bytea = rs.getBytes(9);
                 if (bytea != null) {
                     empleado.setFoto(getImagen(bytea));
@@ -253,7 +273,6 @@ public class modelEmpleado extends Empleado {
                 empleado.setCedulaEmp(rs.getString(15));
 
                 listaEmpleado.add(empleado);
-
             }
         } catch (IOException | SQLException e) {
             Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
@@ -266,26 +285,5 @@ public class modelEmpleado extends Empleado {
         }
 
         return listaEmpleado;
-    }
-
-    public boolean deleteZoologo(int codigo, String cedula) {
-
-        String sql = "SELECT eliminarzoologo(" + codigo + " , '" + cedula + "')";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
-    }
-
-    public boolean deleteGerente(int codigo, String cedula) {
-        String sql = "SELECT eliminargerente(" + codigo + " , '" + cedula + "')";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
-    }
-
-    public boolean deletesecretaria(int codigo, String cedula) {
-        String sql = "SELECT eliminarsecretaria(" + codigo + " , '" + cedula + "')";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
-    }
-
-    public boolean deletecuidador(int codigo, String cedula) {
-        String sql = "SELECT eliminarcuidador(" + codigo + " , '" + cedula + "')";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
     }
 }
