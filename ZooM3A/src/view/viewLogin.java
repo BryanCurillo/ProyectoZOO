@@ -76,7 +76,7 @@ public class viewLogin extends javax.swing.JFrame {
 
         txtcontraingreso.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
-        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 320, 40));
+        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 320, 40));
 
         jbtnClose.setText("CLOSE");
         getContentPane().add(jbtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, -1, 30));
