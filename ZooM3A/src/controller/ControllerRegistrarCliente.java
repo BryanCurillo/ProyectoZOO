@@ -87,17 +87,15 @@ public class ControllerRegistrarCliente {
             persona.setNombre(nombre);
             persona.setApellido(apellido);
             persona.setCorreo(correo);
+            persona.setTelefono(telefono);
             persona.setFechaRegistro(fechaRegistro);
             persona.setEstadoPer(true);
 
             ModelCliente cli = new ModelCliente();
             cli.setEstadoPer(true);
-            cli.setApellido(apellido);
             cli.setCli_cedula(cedula);
             cli.setCli_direccion(direccion);
-            cli.setCli_telefono(telefono);
-            cli.setNombre(nombre);
-            cli.setCorreo(correo);
+            cli.setCli_estado(true);
             cli.setFechaRegistro(fechaRegistro);
 
             if (vrc.getName().equals("Registro")) {
@@ -154,7 +152,7 @@ public class ControllerRegistrarCliente {
                     vrc.getTxtnombre().setText(cli.getNombre());
                     vrc.getTxtapellido().setText(cli.getApellido());
                     vrc.getTxtcorreo().setText(cli.getCorreo());
-                    vrc.getTxttelefono().setText(cli.getCli_telefono());
+                    vrc.getTxttelefono().setText(cli.getTelefono());
                     vrc.getTxtdireccion().setText(cli.getCli_direccion());
                 }
             });
