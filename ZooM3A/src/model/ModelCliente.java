@@ -28,14 +28,15 @@ public class ModelCliente extends Cliente {
                 Cliente c = new Cliente();
                 c.setCli_id(rs.getInt(1));
                 c.setCli_direccion(rs.getString(2));
-                c.setCli_telefono(rs.getString(3));
-                c.setCli_cedula(rs.getString(4));
+                c.setCli_cedula(rs.getString(3));
+                c.setCli_estado(rs.getBoolean(4));
                 c.setCedula(rs.getString(5));
                 c.setNombre(rs.getString(6));
                 c.setApellido(rs.getString(7));
                 c.setFechaRegistro(rs.getDate(8));
                 c.setCorreo(rs.getString(9));
-
+                c.setTelefono(rs.getString(10));
+                
                 listaClientes.add(c);
             }
         } catch (SQLException e) {
@@ -50,15 +51,15 @@ public class ModelCliente extends Cliente {
     }
 
     public boolean setCliente() {
-        String sql = "INSERT INTO cliente(cli_direccion, cli_telefono, cli_cedula)"
-                + "VALUES ('" + getCli_direccion() + "','" + getCli_telefono() + "', '" + getCli_cedula() + "')";
+        String sql = "INSERT INTO cliente(cli_direccion,  cli_cedula)"
+                + "VALUES ('" + getCli_direccion() + "', '" + getCli_cedula() + "')";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateCliente() {
         String sql;
         sql = "UPDATE cliente\n"
-                + "	SET cli_direccion='" + getCli_direccion() + "', cli_telefono='" + getCli_telefono() + "', cli_cedula='" + getCli_cedula() + "'\n"
+                + "	SET cli_direccion='" + getCli_direccion() + "', cli_cedula='" + getCli_cedula() + "'\n"
                 + "	WHERE cli_cedula = '" + getCli_cedula() + "'";
         return mpgc.accion(sql);
     }
@@ -66,7 +67,7 @@ public class ModelCliente extends Cliente {
     public boolean deleteCliente(String cedula) {
         String sql;
         sql = "UPDATE cliente SET cli_estado=false "
-                + "WHERE cli_cedula='"+cedula+"'";
+                + "WHERE cli_cedula='" + cedula + "'";
         System.out.println(sql);
         return mpgc.accion(sql);
     }
