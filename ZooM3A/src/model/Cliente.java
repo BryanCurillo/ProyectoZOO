@@ -14,25 +14,17 @@ public class Cliente extends Persona {
 
     private int cli_id;
     private String cli_direccion;
-    private String cli_telefono;
     private String cli_cedula;
+    private boolean cli_estado;
 
     public Cliente() {
     }
 
-    public Cliente(int cli_id, String cli_direccion, String cli_telefono, String cli_cedula) {
+    public Cliente(int cli_id, String cli_direccion, String cli_cedula, boolean cli_estado) {
         this.cli_id = cli_id;
         this.cli_direccion = cli_direccion;
-        this.cli_telefono = cli_telefono;
         this.cli_cedula = cli_cedula;
-    }
-
-    public Cliente(int cli_id, String cli_direccion, String cli_telefono, String cli_cedula, String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
-        super(cedula, nombre, apellido, correo, fechaRegistro, estadoPer);
-        this.cli_id = cli_id;
-        this.cli_direccion = cli_direccion;
-        this.cli_telefono = cli_telefono;
-        this.cli_cedula = cli_cedula;
+        this.cli_estado = cli_estado;
     }
 
     public int getCli_id() {
@@ -51,20 +43,20 @@ public class Cliente extends Persona {
         this.cli_direccion = cli_direccion;
     }
 
-    public String getCli_telefono() {
-        return cli_telefono;
-    }
-
-    public void setCli_telefono(String cli_telefono) {
-        this.cli_telefono = cli_telefono;
-    }
-
     public String getCli_cedula() {
         return cli_cedula;
     }
 
     public void setCli_cedula(String cli_cedula) {
         this.cli_cedula = cli_cedula;
+    }
+
+    public boolean isCli_estado() {
+        return cli_estado;
+    }
+
+    public void setCli_estado(boolean cli_estado) {
+        this.cli_estado = cli_estado;
     }
 
 }
