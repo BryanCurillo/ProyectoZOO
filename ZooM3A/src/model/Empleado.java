@@ -15,7 +15,6 @@ import java.util.Date;
 public class Empleado extends Persona {
 
     private int idEmp;
-    private String telefono;
     private Date fechanacimiento;
     private int rol;
     private String usuario;
@@ -32,9 +31,8 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
-    public Empleado(int idEmp, String telefono, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
+    public Empleado(int idEmp, Date fechanacimiento, int rol, String usuario, String contraseña, String cedulaEmp, String genero, boolean estadoEmp, Image foto, FileInputStream imageFile, int tamano) {
         this.idEmp = idEmp;
-        this.telefono = telefono;
         this.fechanacimiento = fechanacimiento;
         this.rol = rol;
         this.usuario = usuario;
@@ -77,14 +75,6 @@ public class Empleado extends Persona {
 
     public void setIdEmp(int idEmp) {
         this.idEmp = idEmp;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
     }
 
     public int getRol() {
