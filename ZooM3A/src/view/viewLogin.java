@@ -39,7 +39,14 @@ public class viewLogin extends javax.swing.JFrame {
         txtcontraingreso = new javax.swing.JPasswordField();
         btiniciarsesion = new javax.swing.JButton();
         jbtnClose = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         Fonfo = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -49,36 +56,68 @@ public class viewLogin extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel3.setText("USUARIO");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+        jLabel3.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("  iNGRESA CON TU USUARIO ");
+        jLabel3.setPreferredSize(new java.awt.Dimension(188, 17));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 220, 30));
 
-        txtusuarioingreso.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtusuarioingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
         txtusuarioingreso.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtusuarioingreso.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(txtusuarioingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 190, 20));
+        txtusuarioingreso.setBorder(null);
+        getContentPane().add(txtusuarioingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 310, 30));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel2.setText("CONTRASEÑA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setFont(new java.awt.Font("MS Gothic", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("iNGRESA TU CONTRASEÑA");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 190, 30));
 
-        txtcontraingreso.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtcontraingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
-        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 190, 20));
+        txtcontraingreso.setBorder(null);
+        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 310, 30));
 
-        btiniciarsesion.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btiniciarsesion.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
         btiniciarsesion.setText("INICIAR SESION");
-        btiniciarsesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 140, 20));
+        btiniciarsesion.setBorder(null);
+        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 200, 30));
 
         jbtnClose.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jbtnClose.setText("CLOSE");
-        getContentPane().add(jbtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 70, 20));
+        jbtnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar (1).png"))); // NOI18N
+        getContentPane().add(jbtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(909, 9, 20, 20));
 
-        Fonfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/zoof.gif"))); // NOI18N
-        getContentPane().add(Fonfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
+        jLabel7.setFont(new java.awt.Font("Tempus Sans ITC", 2, 24)); // NOI18N
+        jLabel7.setText("Necesitaba una mano, y ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 260, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tempus Sans ITC", 2, 22)); // NOI18N
+        jLabel8.setText("encontre una pata");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 180, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 310, 310));
+
+        jLabel4.setBackground(new java.awt.Color(144, 183, 125));
+        jLabel4.setOpaque(true);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 5, 370, 450));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 1, 50)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pata (1).png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, 70, 80));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 1, 50)); // NOI18N
+        jLabel6.setText("Zoomania");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, -1, -1));
+
+        Fonfo.setBackground(new java.awt.Color(210, 215, 159));
+        Fonfo.setOpaque(true);
+        getContentPane().add(Fonfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 5, 564, 450));
+
+        jLabel9.setBackground(new java.awt.Color(72, 56, 56));
+        jLabel9.setOpaque(true);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, -7, 943, 467));
 
         pack();
         setLocationRelativeTo(null);
@@ -149,8 +188,15 @@ public class viewLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fonfo;
     private javax.swing.JButton btiniciarsesion;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jbtnClose;
     private javax.swing.JPasswordField txtcontraingreso;
     private javax.swing.JTextField txtusuarioingreso;
