@@ -25,20 +25,6 @@ public class Tickets extends Cliente {
         this.tic_categoria = tic_categoria;
     }
 
-    public Tickets(int tic_id, double tic_precio, String tic_categoria, int cli_id, String cli_direccion, String cli_telefono, String cli_cedula) {
-        super(cli_id, cli_direccion, cli_telefono, cli_cedula);
-        this.tic_id = tic_id;
-        this.tic_precio = tic_precio;
-        this.tic_categoria = tic_categoria;
-    }
-
-    public Tickets(int tic_id, double tic_precio, String tic_categoria, int cli_id, String cli_direccion, String cli_telefono, String cli_cedula, String cedula, String nombre, String apellido, String correo, Date fechaRegistro, boolean estadoPer) {
-        super(cli_id, cli_direccion, cli_telefono, cli_cedula, cedula, nombre, apellido, correo, fechaRegistro, estadoPer);
-        this.tic_id = tic_id;
-        this.tic_precio = tic_precio;
-        this.tic_categoria = tic_categoria;
-    }
-
     public int getTic_id() {
         return tic_id;
     }
