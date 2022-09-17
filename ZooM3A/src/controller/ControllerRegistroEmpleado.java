@@ -157,18 +157,19 @@ public class ControllerRegistroEmpleado {
             String cedula = vista.getTxtcedula().getText(),
                     nombre = vista.getTxtnombre().getText(),
                     apellido = vista.getTxtapellido().getText(),
-                    correo = vista.getTxtcorreo().getText();
+                    correo = vista.getTxtcorreo().getText(),
+                    telefono = vista.getTxttelefono().getText();
             Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
             modelPersona persona = new modelPersona();
             persona.setCedula(cedula);
             persona.setNombre(nombre);
             persona.setApellido(apellido);
             persona.setCorreo(correo);
+            persona.setTelefono(telefono);
             persona.setFechaRegistro(fechaRegistro);
             persona.setEstadoPer(true);
             //Empleado
-            String telefono = vista.getTxttelefono().getText(),
-                    usuario = vista.getTxtusuario().getText(),
+            String  usuario = vista.getTxtusuario().getText(),
                     contrasena = vista.getTxtcontra().getText(),
                     cedulaemp = vista.getTxtcedula().getText(),
                     genero = null;
@@ -187,7 +188,6 @@ public class ControllerRegistroEmpleado {
             }
 
             modelEmpleado empleado = new modelEmpleado();
-            empleado.setTelefono(telefono);
             empleado.setFechanacimiento(fechanacimiento);
             empleado.setGenero(genero);
             empleado.setUsuario(usuario);
