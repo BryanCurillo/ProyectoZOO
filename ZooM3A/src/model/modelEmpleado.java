@@ -244,7 +244,7 @@ public class modelEmpleado extends Empleado {
                 + "and p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "
-                + "or e.emp_telefono like '%" + busqueda + "%' "
+                + "or p.per_telefono like '%" + busqueda + "%' "
                 + "or lower(e.emp_usuario) like '%" + busqueda + "%' "
                 + "or lower(r.rol_nombre) like '%" + busqueda + "%' ";
 
