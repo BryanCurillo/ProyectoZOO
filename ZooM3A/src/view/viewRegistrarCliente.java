@@ -120,11 +120,6 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         btregistrar.setBackground(new java.awt.Color(0, 204, 153));
         btregistrar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btregistrar.setText("REGISTRAR");
-        btregistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btregistrarActionPerformed(evt);
-            }
-        });
         jPanel1.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
 
         btcancelar.setBackground(new java.awt.Color(255, 0, 51));
@@ -158,10 +153,6 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btregistrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btregistrarActionPerformed
 
     /**
      * @param args the command line arguments
