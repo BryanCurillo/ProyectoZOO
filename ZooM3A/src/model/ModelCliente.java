@@ -36,7 +36,7 @@ public class ModelCliente extends Cliente {
                 c.setFechaRegistro(rs.getDate(8));
                 c.setCorreo(rs.getString(9));
                 c.setTelefono(rs.getString(10));
-                
+
                 listaClientes.add(c);
             }
         } catch (SQLException e) {
@@ -51,15 +51,16 @@ public class ModelCliente extends Cliente {
     }
 
     public boolean setCliente() {
-        String sql = "INSERT INTO cliente(cli_direccion,  cli_cedula)"
-                + "VALUES ('" + getCli_direccion() + "', '" + getCli_cedula() + "')";
+        String sql = "INSERT INTO cliente(cli_direccion,  cli_cedula,cli_estado)"
+                + "VALUES ('" + getCli_direccion() + "', '" + getCli_cedula() + "', " + isCli_estado() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateCliente() {
         String sql;
-        sql = "UPDATE cliente\n"
-                + "	SET cli_direccion='" + getCli_direccion() + "', cli_cedula='" + getCli_cedula() + "'\n"
+        System.out.println(getCli_cedula());
+        sql = "UPDATE cliente "
+                + "	SET cli_direccion='" + getCli_direccion() + "', cli_cedula='" + getCli_cedula() + "', cli_estado=" + isCli_estado()
                 + "	WHERE cli_cedula = '" + getCli_cedula() + "'";
         return mpgc.accion(sql);
     }
@@ -72,4 +73,42 @@ public class ModelCliente extends Cliente {
         return mpgc.accion(sql);
     }
 
+    public List<Cliente> busquedaincremental(String busqueda) {
+        List<Cliente> listaClientes = new ArrayList<>();
+        String sql = "select * from cliente c "
+                + "join persona p on(p.per_cedula=c.cli_cedula) "
+                + "where c.cli_estado=true "
+                + "and "
+                + "p.per_cedula like '%" + busqueda + "%' "
+                + "or lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "or lower(p.per_apellido) like '%" + busqueda + "%' "
+                + "or p.per_telefono like '%" + busqueda + "%' "
+                + "or lower(c.cli_direccion) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Cliente c = new Cliente();
+                c.setCli_id(rs.getInt(1));
+                c.setCli_direccion(rs.getString(2));
+                c.setCli_cedula(rs.getString(3));
+                c.setCli_estado(rs.getBoolean(4));
+                c.setCedula(rs.getString(5));
+                c.setNombre(rs.getString(6));
+                c.setApellido(rs.getString(7));
+                c.setFechaRegistro(rs.getDate(8));
+                c.setCorreo(rs.getString(9));
+                c.setTelefono(rs.getString(10));
+
+                listaClientes.add(c);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaClientes;
+    }
 }
