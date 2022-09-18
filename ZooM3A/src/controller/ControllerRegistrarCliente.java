@@ -51,6 +51,7 @@ public class ControllerRegistrarCliente {
 
     public void abrirRegistro(int op) {
         String titulo;
+        vrc.toFront();
         if (op == 1) {
             limpiarCampos();
             titulo = "Crear";
@@ -127,6 +128,9 @@ public class ControllerRegistrarCliente {
             }
 
         }
+        ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
+        controlCli.cargarDatos(1);
+    
     }
 
     public void limpiarCampos() {
