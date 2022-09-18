@@ -56,7 +56,7 @@ public class ControllerVistaCliente {
         vistaCli.getBtnAgregarCliente().addActionListener(l -> abrirRegistro(1));
         vistaCli.getBtnModificarCliente().addActionListener(l -> abrirRegistro(2));
         vistaCli.getBtnEliminarCliente().addActionListener(l -> eliminarCliente());
-//        vistaCli.getjBtnActualizar().addActionListener(l->cargarDatos(1));
+        vistaCli.getTxtbuscar().addKeyListener(busquedaIncren);
     }
 
     public void abrirRegistro(int op) {
@@ -84,20 +84,21 @@ public class ControllerVistaCliente {
         }
     }
 
-//    KeyListener busquedaIncren = new KeyListener() {
-//        @Override
-//        public void keyTyped(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyPressed(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyReleased(KeyEvent e) {
-//            cargarDatos(2);
-//        }
-//    };
+    KeyListener busquedaIncren = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            cargarDatos(2);
+        }
+    };
+
     public void cargarDatos(int opc) {
         vistaCli.getjTblCliente().setDefaultRenderer(Object.class, new imageTable());
         vistaCli.getjTblCliente().setRowHeight(50);
@@ -105,12 +106,12 @@ public class ControllerVistaCliente {
         estructuraTabla.setRowCount(0);
 
         List<Cliente> listaCli;
-//        if (opc == 1) {
-        listaCli = modeloCli.getClientes();
-//        } else {
-//            String busqueda = vistaProv.getTxtBuscar().getText().toLowerCase().trim();
-//            listaProv = modeloE.busquedaIncrementalPersona(busqueda);
-//        }
+        if (opc == 1) {
+            listaCli = modeloCli.getClientes();
+        } else {
+            String busqueda = vistaCli.getTxtbuscar().getText().toLowerCase().trim();
+            listaCli = modeloCli.busquedaincremental(busqueda);
+        }
 
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
@@ -118,7 +119,7 @@ public class ControllerVistaCliente {
                 -> x.getCli_cedula().compareToIgnoreCase(y.getCli_cedula())).forEach(emp -> {
             estructuraTabla.addRow(new Object[4]);
             vistaCli.getjTblCliente().setValueAt(emp.getCli_id(), i, 0);
-            vistaCli.getjTblCliente().setValueAt(emp.getCli_cedula(), i, 1);
+            vistaCli.getjTblCliente().setValueAt(emp.getCedula(), i, 1);
             vistaCli.getjTblCliente().setValueAt(emp.getNombre(), i, 2);
             vistaCli.getjTblCliente().setValueAt(emp.getApellido(), i, 3);
             vistaCli.getjTblCliente().setValueAt(emp.getCorreo(), i, 4);
