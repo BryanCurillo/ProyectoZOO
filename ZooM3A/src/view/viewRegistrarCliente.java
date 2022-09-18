@@ -58,6 +58,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(102, 102, 0));
         setBorder(null);
+        setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlignmentX(0.0F);
         setMinimumSize(new java.awt.Dimension(48, 0));
