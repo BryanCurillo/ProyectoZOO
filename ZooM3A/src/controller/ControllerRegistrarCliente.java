@@ -118,7 +118,7 @@ public class ControllerRegistrarCliente {
                 //UPDATE
                 int response = JOptionPane.showConfirmDialog(vrc, "¿Seguro que desea actualizar los datos del cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
-                    if (persona.updatePersona() && mc.updateCliente()) {//Grabamos
+                    if (persona.updatePersona() && cli.updateCliente()) {//Grabamos
                         JOptionPane.showMessageDialog(vrc, "Cliente actualizado correctamente");
                         vrc.dispose();
                     } else {
