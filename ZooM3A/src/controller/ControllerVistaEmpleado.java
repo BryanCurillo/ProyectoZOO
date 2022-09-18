@@ -47,6 +47,11 @@ public class ControllerVistaEmpleado {
         vistaE.setVisible(true);
     }
 
+    public ControllerVistaEmpleado(modelEmpleado modeloE, viewVistaEmpleados vistaE) {
+        this.modeloE = modeloE;
+        this.vistaE = vistaE;
+    }
+
     public void inicialControl() {
         vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
         vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
@@ -82,7 +87,6 @@ public class ControllerVistaEmpleado {
                 vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
                 controladorEmpleado.abrirRegistro(2);
             }
-            System.out.println("datos cargador");
             cargarDatos(1);
         }
     }
