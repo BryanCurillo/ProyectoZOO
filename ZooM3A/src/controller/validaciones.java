@@ -1,14 +1,19 @@
-    /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import model.modelLogin;
 import view.viewLogin;
+import view.viewRegistrarEmpleado;
 
 /**
  *
@@ -16,8 +21,26 @@ import view.viewLogin;
  */
 public class validaciones {
 
-    private modelLogin modeloL;
-    private viewLogin vista;
+    public boolean validarMayorEdad(Date fechanacim) {
+        boolean ban = false;
+        LocalDate fechaHoy = LocalDate.now();//fecha actual
+
+        Date date = fechanacim;//fecha naciemiento
+
+        Calendar calendar = Calendar.getInstance();//creamos una intancia calendar
+        calendar.setTime(date);//asignamos nuestra fecha
+        int anio = calendar.get(Calendar.YEAR),
+                mes = calendar.get(Calendar.MONTH) + 1,
+                dia = calendar.get(Calendar.DAY_OF_MONTH);
+        LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia); // transformamos a un LocalDate
+
+        Period periodo = Period.between(fechaNacimiento, fechaHoy);// Calculamos la edad
+
+        if (periodo.getYears() >= 18) {
+            ban = true;
+        }
+        return ban;
+    }
 
     public boolean validarCedula(String cedula) {
 //        boolean val = false;
