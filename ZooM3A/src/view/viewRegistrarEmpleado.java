@@ -224,16 +224,16 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
         btregistrar.setBackground(new java.awt.Color(210, 215, 159));
         btregistrar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
-        btregistrar.setText("REGISTRARSE");
+        btregistrar.setText("REGISTRAR");
         btregistrar.setBorder(null);
-        getContentPane().add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, -1, -1));
+        getContentPane().add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 550, -1, -1));
 
         btcancelar.setBackground(new java.awt.Color(210, 215, 159));
         btcancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btcancelar.setText("CANCELAR");
         btcancelar.setBorder(null);
-        getContentPane().add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, -1, -1));
+        getContentPane().add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
         jLabel16.setText("DATOS ACERCA DEL ROL");
