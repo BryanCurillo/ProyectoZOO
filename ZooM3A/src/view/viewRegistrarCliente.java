@@ -54,102 +54,115 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         txtcedula = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        setClosable(true);
+        setBackground(new java.awt.Color(102, 102, 0));
+        setBorder(null);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlignmentX(0.0F);
+        setMinimumSize(new java.awt.Dimension(48, 0));
         setName(""); // NOI18N
+        setOpaque(true);
+        setPreferredSize(new java.awt.Dimension(970, 630));
+        setRequestFocusEnabled(false);
         setVisible(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(210, 215, 159));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel9.setText("NOMBRE:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, 40));
 
-        txtnombre.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtnombre.setBackground(new java.awt.Color(255, 253, 227));
+        txtnombre.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txtnombre.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtnombre.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 200, 22));
+        txtnombre.setBorder(null);
+        jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 240, 30));
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel10.setText("APELLIDO:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, 40));
 
-        txtapellido.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtapellido.setBackground(new java.awt.Color(255, 253, 227));
+        txtapellido.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txtapellido.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtapellido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 200, 22));
+        txtapellido.setBorder(null);
+        jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 240, 30));
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel11.setText("CORREO:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, 40));
 
-        txtcorreo.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtcorreo.setBackground(new java.awt.Color(255, 253, 227));
+        txtcorreo.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txtcorreo.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtcorreo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 200, 22));
+        txtcorreo.setBorder(null);
+        jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 240, 30));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
         jLabel3.setText("REGISTRO DE CLIENTE");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 50, 460, -1));
 
-        txttelefono.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txttelefono.setBackground(new java.awt.Color(255, 253, 227));
+        txttelefono.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txttelefono.setToolTipText("INGRESE LA CONTRASEÑA");
-        txttelefono.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 200, 22));
+        txttelefono.setBorder(null);
+        jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 240, 30));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel7.setText("DIRECCION:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, 40));
 
-        txtdireccion.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtdireccion.setBackground(new java.awt.Color(255, 253, 227));
+        txtdireccion.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txtdireccion.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtdireccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, 200, 22));
+        txtdireccion.setBorder(null);
+        jPanel1.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 240, 30));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel8.setText("TELEFONO:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, 40));
 
-        btregistrar.setBackground(new java.awt.Color(0, 204, 153));
-        btregistrar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btregistrar.setBackground(new java.awt.Color(210, 215, 159));
+        btregistrar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         btregistrar.setText("REGISTRAR");
-        jPanel1.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
+        btregistrar.setBorder(null);
+        jPanel1.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 260, 40));
 
-        btcancelar.setBackground(new java.awt.Color(255, 0, 51));
-        btcancelar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btcancelar.setBackground(new java.awt.Color(210, 215, 159));
+        btcancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btcancelar.setText("CANCELAR");
-        jPanel1.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
+        btcancelar.setBorder(null);
+        jPanel1.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 260, 40));
 
-        txtcedula.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtcedula.setBackground(new java.awt.Color(255, 253, 227));
+        txtcedula.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         txtcedula.setToolTipText("INGRESE LA CONTRASEÑA");
-        txtcedula.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 200, 22));
+        txtcedula.setBorder(null);
+        jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 240, 30));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel5.setText("CEDULA:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registro cliente.GIF"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 680, 560));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/personas (2).png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel4.setText("CLIENTES");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 200, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,6 +310,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
