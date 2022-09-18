@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -153,6 +155,7 @@ public class ControllerRegistroEmpleado {
                 colorAux2 = 0;
 
         if (validar()) {
+
             //DatosPersona
             String cedula = vista.getTxtcedula().getText(),
                     nombre = vista.getTxtnombre().getText(),
@@ -169,7 +172,7 @@ public class ControllerRegistroEmpleado {
             persona.setFechaRegistro(fechaRegistro);
             persona.setEstadoPer(true);
             //Empleado
-            String  usuario = vista.getTxtusuario().getText(),
+            String usuario = vista.getTxtusuario().getText(),
                     contrasena = vista.getTxtcontra().getText(),
                     cedulaemp = vista.getTxtcedula().getText(),
                     genero = null;
@@ -221,7 +224,6 @@ public class ControllerRegistroEmpleado {
                                 ban = true;
                             }
                         } else {
-                            System.out.println("registro2");
                             if (persona.setPersona() && empleado.setEmpleado()) {
                                 System.out.println("SIN FOTO");
                                 ban = true;
@@ -315,6 +317,8 @@ public class ControllerRegistroEmpleado {
                 }
             }
         }
+        ControllerVistaEmpleado controlEmp = new ControllerVistaEmpleado(modeloE, vistaE);
+        controlEmp.cargarDatos(1);
     }
 
     public boolean registrarRoles(String cedulaemp) {
@@ -486,8 +490,30 @@ public class ControllerRegistroEmpleado {
         }
     }
 
+    public void prueba() {
+        LocalDate fechaHoy = LocalDate.now();//fecha actual
+
+        Date date = vista.getCalendarFechanacimiento().getDate();//fecha naciemiento
+
+        Calendar calendar = Calendar.getInstance();//creamos una intancia calendar
+        calendar.setTime(date);//asignamos nuestra fecha
+        int anio = calendar.get(Calendar.YEAR),
+                mes = calendar.get(Calendar.MONTH) + 1,
+                dia = calendar.get(Calendar.DAY_OF_MONTH);
+        LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia); // transformamos a un LocalDate
+
+        Period periodo = Period.between(fechaNacimiento, fechaHoy);// Calculamos la edad
+
+        if (periodo.getYears() < 18) {
+            System.out.println("es menor de edad");
+        } else {
+            System.out.println("LEGAL");
+        }
+    }
+
     public boolean validar() {
         boolean ban = true;
+
         validaciones mivalidacion = new validaciones();
         //DNI
         if (!vista.getTxtcedula().getText().isEmpty()) {
@@ -545,7 +571,12 @@ public class ControllerRegistroEmpleado {
             JOptionPane.showMessageDialog(vista, "Seleccione un genero");
         }
         //FECHANACIMIENTO
-        if (vista.getCalendarFechanacimiento().getDate() == null) {
+        if (vista.getCalendarFechanacimiento().getDate() != null) {
+            if (!mivalidacion.validarMayorEdad(vista.getCalendarFechanacimiento().getDate())) {
+                JOptionPane.showMessageDialog(vista, "No se puede registrar un menor de edad");
+                ban = false;
+            }
+        } else {
             ban = false;
             JOptionPane.showMessageDialog(vista, "Ingrese la fecha de nacimiento");
         }
