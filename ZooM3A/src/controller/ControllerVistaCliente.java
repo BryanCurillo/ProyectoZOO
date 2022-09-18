@@ -39,6 +39,11 @@ public class ControllerVistaCliente {
     public ControllerVistaCliente() {
     }
 
+    public ControllerVistaCliente(viewVistaCliente vistaCli, ModelCliente modeloCli) {
+        this.vistaCli = vistaCli;
+        this.modeloCli = modeloCli;
+    }
+
     public ControllerVistaCliente(viewPantallaPrincipal vistaP, viewVistaCliente vistaCli, ModelCliente modeloCli) {
         this.vistaP = vistaP;
         this.vistaCli = vistaCli;
