@@ -46,10 +46,8 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimirCliente = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jTextField1 = new javax.swing.JTextField();
-        jCbFiltro = new javax.swing.JComboBox<>();
+        txtbuscar = new javax.swing.JTextField();
         jBtnBuscarCliente = new javax.swing.JButton();
-        jBtnActualizarCliente = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -99,20 +97,11 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         jToolBar1.add(jBtnImprimirCliente);
         jToolBar1.add(jSeparator4);
 
-        jTextField1.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(jTextField1);
-
-        jCbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jToolBar1.add(jCbFiltro);
+        txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtbuscar);
 
         jBtnBuscarCliente.setText("BUSCAR");
         jToolBar1.add(jBtnBuscarCliente);
-
-        jBtnActualizarCliente.setText("ACTUALIZAR");
-        jBtnActualizarCliente.setFocusable(false);
-        jBtnActualizarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnActualizarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnActualizarCliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,10 +138,8 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnModificarCliente;
     private javax.swing.JButton btnAgregarCliente;
     private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton jBtnActualizarCliente;
     private javax.swing.JButton jBtnBuscarCliente;
     private javax.swing.JButton jBtnImprimirCliente;
-    private javax.swing.JComboBox<String> jCbFiltro;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
@@ -160,8 +147,8 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JTable jTblCliente;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBtnModificarCliente() {
@@ -188,14 +175,6 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         this.btnEliminarCliente = btnEliminarCliente;
     }
 
-    public JButton getjBtnActualizarCliente() {
-        return jBtnActualizarCliente;
-    }
-
-    public void setjBtnActualizarCliente(JButton jBtnActualizarCliente) {
-        this.jBtnActualizarCliente = jBtnActualizarCliente;
-    }
-
     public JButton getjBtnBuscarCliente() {
         return jBtnBuscarCliente;
     }
@@ -210,14 +189,6 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
 
     public void setjBtnImprimirCliente(JButton jBtnImprimirCliente) {
         this.jBtnImprimirCliente = jBtnImprimirCliente;
-    }
-
-    public JComboBox<String> getjCbFiltro() {
-        return jCbFiltro;
-    }
-
-    public void setjCbFiltro(JComboBox<String> jCbFiltro) {
-        this.jCbFiltro = jCbFiltro;
     }
 
     public JLabel getjLabel3() {
@@ -277,11 +248,11 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return txtbuscar;
     }
 
     public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+        this.txtbuscar = jTextField1;
     }
 
     public JToolBar getjToolBar1() {
@@ -292,7 +263,12 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         this.jToolBar1 = jToolBar1;
     }
 
+    public JTextField getTxtbuscar() {
+        return txtbuscar;
+    }
 
-
+    public void setTxtbuscar(JTextField txtbuscar) {
+        this.txtbuscar = txtbuscar;
+    }
 
 }
