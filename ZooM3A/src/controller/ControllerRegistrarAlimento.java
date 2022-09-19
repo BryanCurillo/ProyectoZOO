@@ -31,7 +31,7 @@ public class ControllerRegistrarAlimento {
     private viewVistaAlimento vistaAli;
     private ModelAlimento modelAlimento;
     private modelProveedor modeloProv;
-
+    boolean banvista = false;
     int i = 0;
     DefaultTableModel estructuraTabla;
 
@@ -45,6 +45,7 @@ public class ControllerRegistrarAlimento {
         this.vistaAli = vistaAli;
         vistaRegAlimento.toFront();
         vistaRegAlimento.setVisible(true);
+        banvista = true;
     }
 
     public ControllerRegistrarAlimento(viewRegistroAlimento vistaRegAlimento, ModelAlimento modelAlimento, modelProveedor modeloProv) {
@@ -53,6 +54,7 @@ public class ControllerRegistrarAlimento {
         this.modeloProv = modeloProv;
         vistaRegAlimento.toFront();
         vistaRegAlimento.setVisible(true);
+        banvista = false;
     }
 
     public void iniciarControl() {
@@ -144,11 +146,11 @@ public class ControllerRegistrarAlimento {
                     }
                 }
             }
-
+            if (banvista) {
+                ControllerVistaAlimento controlAli = new ControllerVistaAlimento(vistaAli, modelAlimento);
+                controlAli.cargarDatos(1);
+            }
         }
-        ControllerVistaAlimento controlAli = new ControllerVistaAlimento(vistaAli, modelAlimento);
-        controlAli.cargarDatos(1);
-
     }
 
     public void limpiarCampos() {
@@ -205,26 +207,18 @@ public class ControllerRegistrarAlimento {
         vistaRegAlimento.getTxtbuscardlg().setText("");
     }
 
-    public DefaultTableModel DatosTabla() {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Id");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Ciudad");
-        modelo.addColumn("Telefono");
-        return modelo;
-    }
-
     public void abrirDlg() {
         vistaRegAlimento.getjDlgProveedor().setLocationRelativeTo(vistaRegAlimento);
         vistaRegAlimento.getjDlgProveedor().setVisible(true);
-        estructuraTabla = DatosTabla();
-        estructuraTabla.setRowCount(0);
         cargarDatosDlg(1);
     }
 
     public void cargarDatosDlg(int opc) {
+
         vistaRegAlimento.getTabladlg().setRowHeight(25);
-        vistaRegAlimento.getTabladlg().setModel(estructuraTabla);
+        estructuraTabla = (DefaultTableModel) vistaRegAlimento.getTabladlg().getModel();
+        estructuraTabla.setRowCount(0);
+
         List<Proveedor> listaProv;
 //        if (opc == 1) {
 //            listaProv = modeloProv.getProveedor();
@@ -233,7 +227,6 @@ public class ControllerRegistrarAlimento {
         listaProv = modeloProv.busquedaIncrementalProveedor(busqueda);
 //        }
 
-//        Holder<Integer> i = new Holder<>(0);
         i = 0;
         listaProv.stream().sorted((x, y)
                 -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(emp -> {
@@ -244,6 +237,7 @@ public class ControllerRegistrarAlimento {
             vistaRegAlimento.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
             i++;
         });
+
     }
 
     public boolean validar() {
@@ -282,3 +276,34 @@ public class ControllerRegistrarAlimento {
     }
 
 }
+//    public DefaultTableModel DatosTabla() {
+//        DefaultTableModel modelo = new DefaultTableModel();
+//        modelo.addColumn("Id");
+//        modelo.addColumn("Nombre");
+//        modelo.addColumn("Ciudad");
+//        modelo.addColumn("Telefono");
+//        return modelo;
+//    }
+//
+
+//        vistaRegAlimento.getTabladlg().setRowHeight(25);
+//        vistaRegAlimento.getTabladlg().setModel(estructuraTabla);
+//        List<Proveedor> listaProv;
+////        if (opc == 1) {
+////            listaProv = modeloProv.getProveedor();
+////        } else {
+//        String busqueda = vistaRegAlimento.getTxtbuscardlg().getText().toLowerCase().trim();
+//        listaProv = modeloProv.busquedaIncrementalProveedor(busqueda);
+////        }
+//
+////        Holder<Integer> i = new Holder<>(0);
+//        i = 0;
+//        listaProv.stream().sorted((x, y)
+//                -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(emp -> {
+//            estructuraTabla.addRow(new Object[listaProv.size()]);
+//            vistaRegAlimento.getTabladlg().setValueAt(emp.getId_proveedor(), i, 0);
+//            vistaRegAlimento.getTabladlg().setValueAt(emp.getNombre_pro(), i, 1);
+//            vistaRegAlimento.getTabladlg().setValueAt(emp.getCiudad_pro(), i, 2);
+//            vistaRegAlimento.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
+//            i++;
+//        });

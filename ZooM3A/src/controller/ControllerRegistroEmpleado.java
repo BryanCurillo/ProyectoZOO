@@ -49,6 +49,7 @@ public class ControllerRegistroEmpleado {
     private viewVistaEmpleados vistaE;
     private JFileChooser jfc;
     int i = 0;
+    boolean banvista=false;
     DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -61,12 +62,14 @@ public class ControllerRegistroEmpleado {
 //        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
         vista.toFront();
         vista.setVisible(true);
+        banvista=false;
     }
 
     public ControllerRegistroEmpleado(modelEmpleado modeloE, viewRegistrarEmpleado vista, viewVistaEmpleados vistaE) {
         this.modeloE = modeloE;
         this.vistaE = vistaE;
         this.vista = vista;
+        banvista=true;
         desactivarDatosRol();
         cargarComboRol();
 //        vista.setLo;
@@ -316,9 +319,13 @@ public class ControllerRegistroEmpleado {
                     }
                 }
             }
+            if (banvista) {
+                ControllerVistaEmpleado controlEmp = new ControllerVistaEmpleado(modeloE, vistaE);
+                controlEmp.cargarDatos(1);
+                System.out.println("hola");
+            }
+
         }
-        ControllerVistaEmpleado controlEmp = new ControllerVistaEmpleado(modeloE, vistaE);
-        controlEmp.cargarDatos(1);
     }
 
     public boolean registrarRoles(String cedulaemp) {

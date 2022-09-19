@@ -27,6 +27,7 @@ public class ControllerRegistroProveedor {
     private viewRegistrarProveedor vistaRegProv;
     private viewVistaProveedor vistaVistaProv;
     int i = 0;
+    boolean banvista = false;
 
     DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
@@ -40,6 +41,7 @@ public class ControllerRegistroProveedor {
         vistaProv.toFront();
         vistaProv.getTxtOtraCiudad().setEditable(false);
         vistaProv.setVisible(true);
+        banvista = false;
     }
 
     public ControllerRegistroProveedor(modelProveedor modeloProv, viewRegistrarProveedor vistaProv, viewVistaProveedor vistaProvTbl) {
@@ -49,6 +51,7 @@ public class ControllerRegistroProveedor {
         vistaProv.toFront();
         vistaProv.getTxtOtraCiudad().setEditable(false);
         vistaProv.setVisible(true);
+        banvista = true;
     }
 
     public void inicialControl() {
@@ -140,8 +143,10 @@ public class ControllerRegistroProveedor {
                     }
                 }
             }
-            ControllerVistaProveedor controlVprov = new ControllerVistaProveedor(modeloProv, vistaVistaProv);
-            controlVprov.cargarDatos(1);
+            if (banvista) {
+                ControllerVistaProveedor controlVprov = new ControllerVistaProveedor(modeloProv, vistaVistaProv);
+                controlVprov.cargarDatos(1);
+            }
         }
     }
 

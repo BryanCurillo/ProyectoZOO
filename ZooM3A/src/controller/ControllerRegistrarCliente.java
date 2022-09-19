@@ -24,8 +24,9 @@ public class ControllerRegistrarCliente {
     private viewRegistrarCliente vrc;
     private viewVistaCliente vvc;
     private ModelCliente mc;
-//    private viewLogin vl;
+    boolean banvista = false;
 
+//    private viewLogin vl;
     public ControllerRegistrarCliente() {
     }
 
@@ -34,6 +35,7 @@ public class ControllerRegistrarCliente {
         this.mc = mc;
         vrc.toFront();
         vrc.setVisible(true);
+        banvista = false;
     }
 
     public ControllerRegistrarCliente(viewRegistrarCliente vrc, viewVistaCliente vvc, ModelCliente mc) {
@@ -42,6 +44,7 @@ public class ControllerRegistrarCliente {
         this.mc = mc;
         vrc.toFront();
         vrc.setVisible(true);
+        banvista = true;
     }
 
     public void iniciarControl() {
@@ -130,7 +133,7 @@ public class ControllerRegistrarCliente {
         }
         ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
         controlCli.cargarDatos(1);
-    
+
     }
 
     public void limpiarCampos() {

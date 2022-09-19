@@ -63,18 +63,19 @@ public class ControllerVistaEmpleado {
     public void abrirRegistro(int op) {
         modelEmpleado modeloEmpleado = new modelEmpleado();
         viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
+        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
 
         if (op == 1) {
 
             //Agragar vista al desktop pane
             vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
 
-            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
+//            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
             controladorEmpleado.abrirRegistro(1);
 
         } else {
             //Agragar vista al desktop pane
-            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
+//            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
             int fila = vistaE.getjTblEmpleado().getSelectedRow();
             if (fila == -1) {
                 JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
@@ -85,7 +86,7 @@ public class ControllerVistaEmpleado {
             cargarDatos(1);
         }
     }
-    
+
     KeyListener busquedaIncren = new KeyListener() {
         @Override
         public void keyTyped(KeyEvent e) {
@@ -97,7 +98,7 @@ public class ControllerVistaEmpleado {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            cargarDatos(2);        
+            cargarDatos(2);
         }
     };
 
@@ -108,9 +109,8 @@ public class ControllerVistaEmpleado {
         estructuraTabla.setRowCount(0);
         List<Empleado> listaE;
         if (opc == 1) {
-        listaE = modeloE.getempleado();
-        } 
-        else {
+            listaE = modeloE.getempleado();
+        } else {
             String busqueda = vistaE.getTxtBuscar().getText().toLowerCase().trim();
             listaE = modeloE.busquedaIncrementalPersona(busqueda);
         }
@@ -146,7 +146,7 @@ public class ControllerVistaEmpleado {
             }
             i++;
         });
-        
+
     }
 
     public void eliminarEmpleado() {
