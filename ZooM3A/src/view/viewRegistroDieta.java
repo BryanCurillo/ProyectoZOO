@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author ALEJO
  */
-public class viewRegistroDieta extends javax.swing.JFrame {
+public class viewRegistroDieta extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewRegistroDieta

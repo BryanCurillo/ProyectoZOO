@@ -17,6 +17,19 @@ public class ControllerDieta extends Dieta {
     private viewRegistroDieta vrd;
     private ModelDieta md;
 
+    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md) {
+        this.vrd = vrd;
+        this.md = md;
+        vrd.toFront();
+        vrd.setVisible(true);
+    }
+
+    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md, int die_id, String die_horario, String die_porcion, int die_idAlimento) {
+        super(die_id, die_horario, die_porcion, die_idAlimento);
+        this.vrd = vrd;
+        this.md = md;
+    }
+
     public final void llenarhoras() {
         for (int i = 0; i < hora.length; i++) {
             vrd.getCombohoradieta().addItem(hora[i]);
@@ -61,5 +74,11 @@ public class ControllerDieta extends Dieta {
         "22:00",
         "22:30",
         "23:00",};
+
+    public void iniciarControles() {
+
+    }
+    
+    
 
 }

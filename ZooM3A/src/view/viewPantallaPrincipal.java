@@ -64,6 +64,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMProveedor1 = new javax.swing.JMenu();
         jMIagregarCliente = new javax.swing.JMenuItem();
         JMIvistaCliente = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMIAgregarDieta = new javax.swing.JMenuItem();
+        jMIVisualizarDietas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1150, 0));
@@ -244,6 +247,16 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(jMProveedor1);
 
+        jMenu2.setText("Dieta");
+
+        jMIAgregarDieta.setText("Agregar Dieta");
+        jMenu2.add(jMIAgregarDieta);
+
+        jMIVisualizarDietas.setText("Visualizar Registro de Dieta");
+        jMenu2.add(jMIVisualizarDietas);
+
+        barramenus.add(jMenu2);
+
         setJMenuBar(barramenus);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -282,6 +295,8 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenuItem jMIAgregarDieta;
+    private javax.swing.JMenuItem jMIVisualizarDietas;
     private javax.swing.JMenuItem jMIagregarAlimento;
     private javax.swing.JMenuItem jMIagregarCliente;
     private javax.swing.JMenuItem jMIagregarPersona;
@@ -291,6 +306,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMProveedor;
     private javax.swing.JMenu jMProveedor1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
@@ -435,6 +451,24 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
     }
+
+    public JMenuItem getjMIAgregarDieta() {
+        return jMIAgregarDieta;
+    }
+
+    public void setjMIAgregarDieta(JMenuItem jMIAgregarDieta) {
+        this.jMIAgregarDieta = jMIAgregarDieta;
+    }
+
+    public JMenuItem getjMIVisualizarDietas() {
+        return jMIVisualizarDietas;
+    }
+
+    public void setjMIVisualizarDietas(JMenuItem jMIVisualizarDietas) {
+        this.jMIVisualizarDietas = jMIVisualizarDietas;
+    }
+    
+    
 
     
 }

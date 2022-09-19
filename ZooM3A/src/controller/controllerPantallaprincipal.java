@@ -10,6 +10,7 @@ import model.modelEmpleado;
 import model.modelProveedor;
 import model.ModelCliente;
 import model.ModelAlimento;
+import model.ModelDieta;
 import model.ModelTickets;
 import view.viewActualizarTicket;
 import view.viewPantallaPrincipal;
@@ -22,6 +23,7 @@ import view.viewVistaProveedor;
 import view.viewVistaAlimento;
 import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
+import view.viewRegistroDieta;
 
 /**
  *
@@ -50,7 +52,8 @@ public class controllerPantallaprincipal {
         vista.getJMIvistaCliente().addActionListener(l -> vistaCliente());
         vista.getjMIagregarAlimento().addActionListener(l -> registroAlimento());
         vista.getjMIcrudAlimento().addActionListener(l -> vistaAlimento());
-        vista.getMIActualizarPrecio().addActionListener(l->vistaActualizarTicket());
+        vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
+        vista.getjMIAgregarDieta().addActionListener(l->vistaRegistrarDieta());
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
@@ -167,6 +170,15 @@ public class controllerPantallaprincipal {
         vista.getjDPprincipal().add(vat);
         ControllerTickets ct = new ControllerTickets(vat, mt);
         ct.iniciarControl();
+
+    }
+
+    public void vistaRegistrarDieta() {
+        ModelDieta md = new ModelDieta();
+        viewRegistroDieta vrd = new viewRegistroDieta();
+
+        vista.getjDPprincipal().add(vrd);
+        ControllerDieta cd = new ControllerDieta(vrd, md);
 
     }
 }
