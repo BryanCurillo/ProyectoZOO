@@ -35,10 +35,6 @@ public class ModelAnimal extends Animales {
         super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, fecha_nacimiento, foto, imageFile, tamano);
     }
 
-    public ModelAnimal(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
-        super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, fecha_nacimiento, foto, imageFile, tamano, idalimento, precio, nombre, idgerente, idproveedor);
-    }
-
     modelPGconexion mpgc = new modelPGconexion();
 
     public boolean setFotoAnimal() {

@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author ALEJO
  */
-public class Animales extends Alimento {
+public class Animales {
 
     private int idanimal;
     private String nombreanimal;
@@ -49,22 +49,7 @@ public class Animales extends Alimento {
         this.tamano = tamano;
     }
 
-    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano, int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
-        super(idalimento, precio, nombre, idgerente, idproveedor);
-        this.idanimal = idanimal;
-        this.nombreanimal = nombreanimal;
-        this.genero = genero;
-        this.especie = especie;
-        this.iddieta = iddieta;
-        this.idhabitad = idhabitad;
-        this.idcuidador = idcuidador;
-        this.dieta = dieta;
-        this.edad = edad;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.foto = foto;
-        this.imageFile = imageFile;
-        this.tamano = tamano;
-    }
+
 
     public int getIdanimal() {
         return idanimal;

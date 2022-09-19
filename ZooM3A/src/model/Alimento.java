@@ -8,23 +8,25 @@ package model;
  *
  * @author ALEJO
  */
-public class Alimento {
+public class Alimento extends Proveedor{
 
     private int idalimento;
-    private double precio;
-    private String nombre;
-    private int idgerente;
+    private double precioAli;
+    private String nombreAli;
+    private String descripcionAli;
     private int idproveedor;
+    private boolean estadoAli;
 
     public Alimento() {
     }
 
-    public Alimento(int idalimento, double precio, String nombre, int idgerente, int idproveedor) {
+    public Alimento(int idalimento, double precioAli, String nombreAli, String descripcionAli, int idproveedor, boolean estadoAli) {
         this.idalimento = idalimento;
-        this.precio = precio;
-        this.nombre = nombre;
-        this.idgerente = idgerente;
+        this.precioAli = precioAli;
+        this.nombreAli = nombreAli;
+        this.descripcionAli = descripcionAli;
         this.idproveedor = idproveedor;
+        this.estadoAli = estadoAli;
     }
 
     public int getIdalimento() {
@@ -35,28 +37,28 @@ public class Alimento {
         this.idalimento = idalimento;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPrecioAli() {
+        return precioAli;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecioAli(double precioAli) {
+        this.precioAli = precioAli;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreAli() {
+        return nombreAli;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreAli(String nombreAli) {
+        this.nombreAli = nombreAli;
     }
 
-    public int getIdgerente() {
-        return idgerente;
+    public String getDescripcionAli() {
+        return descripcionAli;
     }
 
-    public void setIdgerente(int idgerente) {
-        this.idgerente = idgerente;
+    public void setDescripcionAli(String descripcionAli) {
+        this.descripcionAli = descripcionAli;
     }
 
     public int getIdproveedor() {
@@ -67,4 +69,13 @@ public class Alimento {
         this.idproveedor = idproveedor;
     }
 
+    public boolean isEstadoAli() {
+        return estadoAli;
+    }
+
+    public void setEstadoAli(boolean estadoAli) {
+        this.estadoAli = estadoAli;
+    }
+
+   
 }

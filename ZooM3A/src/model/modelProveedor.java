@@ -4,23 +4,12 @@
  */
 package model;
 
-import java.awt.Image;
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Date;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
-import java.util.Iterator;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReadParam;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
 
 /**
  *
@@ -44,7 +33,7 @@ public class modelProveedor extends Proveedor {
     }
 
     public boolean updateProveedor() {
-        System.out.println("sql="+getId_proveedor());
+        System.out.println("sql=" + getId_proveedor());
         String sql;
         sql = "UPDATE proveedor SET pro_ciudad='" + getCiudad_pro() + "', pro_nombre='" + getNombre_pro() + "', "
                 + "pro_telefono='" + getTelefono() + "', pro_estado=" + isEstadoProv()
@@ -87,15 +76,12 @@ public class modelProveedor extends Proveedor {
 
     public List<Proveedor> busquedaIncrementalProveedor(String busqueda) {
         List<Proveedor> listaProveedores = new ArrayList<>();
-
-        String sql = "select * from proveedor"
+        String sql = "select * from proveedor "
                 + "where pro_estado=true "
                 + "and lower(pro_ciudad) like '%" + busqueda + "%' "
                 + "or lower(pro_nombre) like '%" + busqueda + "%' "
-                + "or lower(pro_telefono) like '%" + busqueda + "%' ";
-
+                + "or pro_telefono like '%" + busqueda + "%' ";
         ResultSet rs = mpgc.consulta(sql);
-        byte[] bytea;
         try {
             while (rs.next()) {
                 Proveedor miprov = new Proveedor();
@@ -105,10 +91,34 @@ public class modelProveedor extends Proveedor {
                 miprov.setTelefono(rs.getString(4));
                 miprov.setEstadoProv(rs.getBoolean(5));
                 listaProveedores.add(miprov);
-
             }
         } catch (SQLException e) {
-            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaProveedores;
+    }
+
+    public List<Proveedor> getProveedorXid(int id) {
+        List<Proveedor> listaProveedores = new ArrayList<>();
+        String sql = "SELECT * FROM proveedor where pro_estado=true and pro_id="+id;
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Proveedor miprov = new Proveedor();
+                miprov.setId_proveedor(rs.getInt(1));
+                miprov.setCiudad_pro(rs.getString(2));
+                miprov.setNombre_pro(rs.getString(3));
+                miprov.setTelefono(rs.getString(4));
+                miprov.setEstadoProv(rs.getBoolean(5));
+                listaProveedores.add(miprov);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
         }
         try {
             rs.close();
