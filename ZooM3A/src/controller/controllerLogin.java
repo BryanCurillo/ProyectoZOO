@@ -37,7 +37,7 @@ public class controllerLogin {
 //        viewPantallaPrincipal vistaP = new viewPantallaPrincipal();
         if (mivalidacion.validarLogin(vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText())) {
             viewPantallaPrincipal vistap = new viewPantallaPrincipal();
-            controllerPantallaprincipal controller = new controllerPantallaprincipal(vistap);
+            controllerPantallaprincipal controller = new controllerPantallaprincipal(vistap,vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText());
             controller.iniciaControl();
             vista.dispose();
         }
