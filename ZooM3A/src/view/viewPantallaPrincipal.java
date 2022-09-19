@@ -42,10 +42,11 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jlblrolPP = new javax.swing.JLabel();
+        jlblNombrePP = new javax.swing.JLabel();
+        jlblCedulaPP = new javax.swing.JLabel();
+        jlblFotoPP = new javax.swing.JLabel();
+        jlblCedulaPP1 = new javax.swing.JLabel();
         barramenus = new javax.swing.JMenuBar();
         agregarpersona = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
@@ -89,7 +90,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
             .addGap(0, 626, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jDPprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 970, 630));
+        jPanel3.add(jDPprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 970, 630));
 
         jPanel1.setBackground(new java.awt.Color(144, 183, 125));
 
@@ -100,60 +101,72 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(72, 56, 56));
         jPanel2.setForeground(new java.awt.Color(210, 215, 159));
 
-        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(210, 215, 159));
-        jLabel3.setText("¡BIENVENIDO!");
+        jLabel3.setText("¡ZOOMANIA!");
 
-        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(210, 215, 159));
-        jLabel4.setText("Secretaria");
+        jlblrolPP.setFont(new java.awt.Font("MS Gothic", 1, 22)); // NOI18N
+        jlblrolPP.setForeground(new java.awt.Color(210, 215, 159));
+        jlblrolPP.setText("SECRETARIA");
 
-        jLabel6.setFont(new java.awt.Font("MS Gothic", 1, 10)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(210, 215, 159));
-        jLabel6.setText("Nombre usuario");
+        jlblNombrePP.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        jlblNombrePP.setForeground(new java.awt.Color(210, 215, 159));
+        jlblNombrePP.setText("Nombre usuario");
 
-        jLabel7.setFont(new java.awt.Font("MS Gothic", 1, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(210, 215, 159));
-        jLabel7.setText("Cedula");
+        jlblCedulaPP.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        jlblCedulaPP.setForeground(new java.awt.Color(210, 215, 159));
+        jlblCedulaPP.setText("Cedula");
 
-        jLabel1.setBackground(new java.awt.Color(72, 56, 56));
-        jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-        jLabel1.setOpaque(true);
+        jlblFotoPP.setBackground(new java.awt.Color(72, 56, 56));
+        jlblFotoPP.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        jlblFotoPP.setOpaque(true);
+
+        jlblCedulaPP1.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        jlblCedulaPP1.setForeground(new java.awt.Color(210, 215, 159));
+        jlblCedulaPP1.setText("C.I.");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlblFotoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)
+                        .addComponent(jlblrolPP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel3)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jlblCedulaPP1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jlblCedulaPP, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(52, 52, 52))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jlblrolPP, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jlblNombrePP, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlblCedulaPP, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlblCedulaPP1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jlblFotoPP, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -161,23 +174,21 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnCerrarSesion)))
+                .addGap(45, 45, 45)
+                .addComponent(btnCerrarSesion)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 630));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 630));
 
         agregarpersona.setText("PERSONAL");
 
@@ -290,11 +301,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JDesktopPane jDPprincipal;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuItem jMIAgregarDieta;
     private javax.swing.JMenuItem jMIVisualizarDietas;
     private javax.swing.JMenuItem jMIagregarAlimento;
@@ -312,6 +319,11 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jlblCedulaPP;
+    private javax.swing.JLabel jlblCedulaPP1;
+    private javax.swing.JLabel jlblFotoPP;
+    private javax.swing.JLabel jlblNombrePP;
+    private javax.swing.JLabel jlblrolPP;
     private javax.swing.JMenu menualimento;
     private javax.swing.JMenu menuanimales;
     // End of variables declaration//GEN-END:variables
@@ -370,6 +382,30 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setjDPprincipal(JDesktopPane jDPprincipal) {
         this.jDPprincipal = jDPprincipal;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JMenuItem getjMIAgregarDieta() {
+        return jMIAgregarDieta;
+    }
+
+    public void setjMIAgregarDieta(JMenuItem jMIAgregarDieta) {
+        this.jMIAgregarDieta = jMIAgregarDieta;
+    }
+
+    public JMenuItem getjMIVisualizarDietas() {
+        return jMIVisualizarDietas;
+    }
+
+    public void setjMIVisualizarDietas(JMenuItem jMIVisualizarDietas) {
+        this.jMIVisualizarDietas = jMIVisualizarDietas;
     }
 
     public JMenuItem getjMIagregarAlimento() {
@@ -436,6 +472,94 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMProveedor1 = jMProveedor1;
     }
 
+    public JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    public void setjMenu1(JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    public JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    public void setjMenu2(JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
+    }
+
+    public JMenuItem getjMenuItem5() {
+        return jMenuItem5;
+    }
+
+    public void setjMenuItem5(JMenuItem jMenuItem5) {
+        this.jMenuItem5 = jMenuItem5;
+    }
+
+    public JMenuItem getjMenuItem9() {
+        return jMenuItem9;
+    }
+
+    public void setjMenuItem9(JMenuItem jMenuItem9) {
+        this.jMenuItem9 = jMenuItem9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JLabel getJlblCedulaPP() {
+        return jlblCedulaPP;
+    }
+
+    public void setJlblCedulaPP(JLabel jlblCedulaPP) {
+        this.jlblCedulaPP = jlblCedulaPP;
+    }
+
+    public JLabel getJlblFotoPP() {
+        return jlblFotoPP;
+    }
+
+    public void setJlblFotoPP(JLabel jlblFotoPP) {
+        this.jlblFotoPP = jlblFotoPP;
+    }
+
+    public JLabel getJlblNombrePP() {
+        return jlblNombrePP;
+    }
+
+    public void setJlblNombrePP(JLabel jlblNombrePP) {
+        this.jlblNombrePP = jlblNombrePP;
+    }
+
+    public JLabel getJlblrolPP() {
+        return jlblrolPP;
+    }
+
+    public void setJlblrolPP(JLabel jlblrolPP) {
+        this.jlblrolPP = jlblrolPP;
+    }
+
     public JMenu getMenualimento() {
         return menualimento;
     }
@@ -451,24 +575,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
     }
-
-    public JMenuItem getjMIAgregarDieta() {
-        return jMIAgregarDieta;
-    }
-
-    public void setjMIAgregarDieta(JMenuItem jMIAgregarDieta) {
-        this.jMIAgregarDieta = jMIAgregarDieta;
-    }
-
-    public JMenuItem getjMIVisualizarDietas() {
-        return jMIVisualizarDietas;
-    }
-
-    public void setjMIVisualizarDietas(JMenuItem jMIVisualizarDietas) {
-        this.jMIVisualizarDietas = jMIVisualizarDietas;
-    }
-    
-    
 
     
 }
