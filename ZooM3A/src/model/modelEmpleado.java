@@ -46,19 +46,18 @@ public class modelEmpleado extends Empleado {
     public boolean setFotoEmpleado() {
         String sql;
         sql = "INSERT INTO empleado(emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)";
-        sql += "VALUES(?,?,?,?,?,?,?)";
+        sql += "VALUES(?,?,?,?,?,?,?,?)";
         try {
 
             PreparedStatement ps = mpgc.con.prepareStatement(sql);
-            ps.setString(1, getTelefono());
-            ps.setBinaryStream(2, getImageFile(), getTamano());
-            ps.setDate(3, (java.sql.Date) getFechanacimiento());
-            ps.setInt(4, getRol());
-            ps.setString(5, getGenero());
-            ps.setString(6, getUsuario());
-            ps.setString(7, getContraseña());
-            ps.setString(8, getCedula());
-            ps.setBoolean(9, isEstadoEmp());
+            ps.setBinaryStream(1, getImageFile(), getTamano());
+            ps.setDate(2, (java.sql.Date) getFechanacimiento());
+            ps.setInt(3, getRol());
+            ps.setString(4, getGenero());
+            ps.setString(5, getUsuario());
+            ps.setString(6, getContraseña());
+            ps.setString(7, getCedula());
+            ps.setBoolean(8, isEstadoEmp());
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
