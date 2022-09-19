@@ -4,15 +4,23 @@
  */
 package controller;
 
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import model.Empleado;
 import model.modelEmpleado;
 import model.modelProveedor;
 import model.ModelCliente;
 import model.ModelAlimento;
 import model.ModelDieta;
 import model.ModelTickets;
+import model.modelLogin;
 import view.viewActualizarTicket;
+import view.viewLogin;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
 import view.viewRegistrarCliente;
@@ -32,18 +40,23 @@ import view.viewRegistroDieta;
 public class controllerPantallaprincipal {
 
     private viewPantallaPrincipal vista;
+    private String usuario;
+    private String password;
 
     public controllerPantallaprincipal() {
     }
 
-    public controllerPantallaprincipal(viewPantallaPrincipal vista) {
+    public controllerPantallaprincipal(viewPantallaPrincipal vista, String usuario, String password) {
         this.vista = vista;
+        this.usuario = usuario;
+        this.password = password;
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
+        cargarDatosEmpleado();
     }
 
     public void iniciaControl() {
-//        vista.getBtnLimpiarDSK().addActionListener();
+        vista.getBtnCerrarSesion().addActionListener(l -> cerrarSesion());
         vista.getjMIagregarPersona().addActionListener(l -> registroEmpleado());
         vista.getjMIvistaEmpleado().addActionListener(l -> vistaEmpleado());
         vista.getjMIagregarProveedor().addActionListener(l -> registroProveedor());
@@ -53,7 +66,42 @@ public class controllerPantallaprincipal {
         vista.getjMIagregarAlimento().addActionListener(l -> registroAlimento());
         vista.getjMIcrudAlimento().addActionListener(l -> vistaAlimento());
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
-        vista.getjMIAgregarDieta().addActionListener(l->vistaRegistrarDieta());
+        vista.getjMIAgregarDieta().addActionListener(l -> vistaRegistrarDieta());
+    }
+
+    //CARGAR DATOS
+    public void cargarDatosEmpleado() {
+        modelEmpleado modeloE = new modelEmpleado();
+        List<Empleado> listaE;
+        listaE = modeloE.getempleadoLogin(usuario, password);
+
+        listaE.stream().forEach(emp -> {
+            vista.getJlblNombrePP().setText(emp.getNombre());
+            vista.getJlblrolPP().setText(emp.getApellido());
+            vista.getJlblCedulaPP().setText(emp.getCedula());
+            Image foto = emp.getFoto();
+            if (foto != null) {
+                foto = foto.getScaledInstance(93, 91, Image.SCALE_SMOOTH);
+                ImageIcon icono = new ImageIcon(foto);
+
+                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+                dtcr.setIcon(icono);
+                vista.getJlblFotoPP().setIcon(icono);
+            } else {
+                ImageIcon iconoUsuario = new ImageIcon("imagenes/usuario.png");
+                vista.getJlblFotoPP().setIcon(iconoUsuario);
+            }
+        });
+    }
+
+    //CERRAR SESION
+    public void cerrarSesion() {
+        vista.dispose();
+        modelLogin modeloL = new modelLogin();
+        viewLogin vistaL = new viewLogin();
+        controllerLogin controllerL = new controllerLogin(modeloL, vistaL);
+        controllerL.inicialControl();
+
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
