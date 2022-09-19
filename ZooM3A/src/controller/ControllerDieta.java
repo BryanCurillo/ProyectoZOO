@@ -5,6 +5,7 @@
 package controller;
 
 import model.Dieta;
+import model.ModelDieta;
 import view.viewRegistroDieta;
 
 /**
@@ -13,7 +14,8 @@ import view.viewRegistroDieta;
  */
 public class ControllerDieta extends Dieta {
 
-    private viewRegistroDieta vrd = new viewRegistroDieta();
+    private viewRegistroDieta vrd;
+    private ModelDieta md;
 
     public final void llenarhoras() {
         for (int i = 0; i < hora.length; i++) {
