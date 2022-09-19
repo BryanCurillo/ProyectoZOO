@@ -4,11 +4,15 @@
  */
 package view;
 
+import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JRootPane;
 
 /**
  *
@@ -35,7 +39,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jDPprincipal = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
-        btnLimpiarDSK = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -86,9 +90,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(144, 183, 125));
 
-        btnLimpiarDSK.setBackground(new java.awt.Color(66, 133, 91));
-        btnLimpiarDSK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/limpieza-de-datos.png"))); // NOI18N
-        btnLimpiarDSK.setToolTipText("Vaciar pantalla");
+        btnCerrarSesion.setBackground(new java.awt.Color(66, 133, 91));
+        btnCerrarSesion.setText("CERRARSECION");
+        btnCerrarSesion.setToolTipText("Vaciar pantalla");
 
         jPanel2.setBackground(new java.awt.Color(72, 56, 56));
         jPanel2.setForeground(new java.awt.Color(210, 215, 159));
@@ -155,18 +159,18 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(btnLimpiarDSK, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnCerrarSesion)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 408, Short.MAX_VALUE)
-                .addComponent(btnLimpiarDSK, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
 
@@ -271,7 +275,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MIActualizarPrecio;
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
-    private javax.swing.JButton btnLimpiarDSK;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -295,6 +299,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menualimento;
     private javax.swing.JMenu menuanimales;
     // End of variables declaration//GEN-END:variables
+
+    public JMenuItem getJMIvistaCliente() {
+        return JMIvistaCliente;
+    }
+
+    public void setJMIvistaCliente(JMenuItem JMIvistaCliente) {
+        this.JMIvistaCliente = JMIvistaCliente;
+    }
 
     public JMenuItem getJMIvistaProveedor() {
         return JMIvistaProveedor;
@@ -328,12 +340,36 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.barramenus = barramenus;
     }
 
+    public JButton getBtnCerrarSesion() {
+        return btnCerrarSesion;
+    }
+
+    public void setBtnCerrarSesion(JButton btnCerrarSesion) {
+        this.btnCerrarSesion = btnCerrarSesion;
+    }
+
     public JDesktopPane getjDPprincipal() {
         return jDPprincipal;
     }
 
     public void setjDPprincipal(JDesktopPane jDPprincipal) {
         this.jDPprincipal = jDPprincipal;
+    }
+
+    public JMenuItem getjMIagregarAlimento() {
+        return jMIagregarAlimento;
+    }
+
+    public void setjMIagregarAlimento(JMenuItem jMIagregarAlimento) {
+        this.jMIagregarAlimento = jMIagregarAlimento;
+    }
+
+    public JMenuItem getjMIagregarCliente() {
+        return jMIagregarCliente;
+    }
+
+    public void setjMIagregarCliente(JMenuItem jMIagregarCliente) {
+        this.jMIagregarCliente = jMIagregarCliente;
     }
 
     public JMenuItem getjMIagregarPersona() {
@@ -352,6 +388,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMIagregarProveedor = jMIagregarProveedor;
     }
 
+    public JMenuItem getjMIcrudAlimento() {
+        return jMIcrudAlimento;
+    }
+
+    public void setjMIcrudAlimento(JMenuItem jMIcrudAlimento) {
+        this.jMIcrudAlimento = jMIcrudAlimento;
+    }
+
     public JMenuItem getjMIvistaEmpleado() {
         return jMIvistaEmpleado;
     }
@@ -366,6 +410,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setjMProveedor(JMenu jMProveedor) {
         this.jMProveedor = jMProveedor;
+    }
+
+    public JMenu getjMProveedor1() {
+        return jMProveedor1;
+    }
+
+    public void setjMProveedor1(JMenu jMProveedor1) {
+        this.jMProveedor1 = jMProveedor1;
     }
 
     public JMenu getMenualimento() {
@@ -384,44 +436,5 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.menuanimales = menuanimales;
     }
 
-    public JMenuItem getJMIvistaCliente() {
-        return JMIvistaCliente;
-    }
-
-    public void setJMIvistaCliente(JMenuItem JMIvistaCliente) {
-        this.JMIvistaCliente = JMIvistaCliente;
-    }
-
-    public JMenuItem getjMIagregarCliente() {
-        return jMIagregarCliente;
-    }
-
-    public void setjMIagregarCliente(JMenuItem jMIagregarCliente) {
-        this.jMIagregarCliente = jMIagregarCliente;
-    }
-
-    public JButton getBtnLimpiarDSK() {
-        return btnLimpiarDSK;
-    }
-
-    public void setBtnLimpiarDSK(JButton btnLimpiarDSK) {
-        this.btnLimpiarDSK = btnLimpiarDSK;
-    }
-
-    public JMenuItem getjMIagregarAlimento() {
-        return jMIagregarAlimento;
-    }
-
-    public void setjMIagregarAlimento(JMenuItem jMIagregarAlimento) {
-        this.jMIagregarAlimento = jMIagregarAlimento;
-    }
-
-    public JMenuItem getjMIcrudAlimento() {
-        return jMIcrudAlimento;
-    }
-
-    public void setjMIcrudAlimento(JMenuItem jMIcrudAlimento) {
-        this.jMIcrudAlimento = jMIcrudAlimento;
-    }
-
+    
 }
