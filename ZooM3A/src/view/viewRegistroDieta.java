@@ -92,7 +92,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
 
         DlgAlimento.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, 586, 162));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("HORARIO");
@@ -172,6 +172,8 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         btncancelardieta.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btncancelardieta.setText("CANCELAR");
 
+        combohoradieta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"05:00\"", "\"05:30\"", "\"06:00\"", "\"06:30\"", "\"07:00\"", "\"07:30\"", "\"08:00\"", "\"08:30\"", "\"09:00\"", "\"09:30\"", "\"10:00\"", "\"10:30\"", "\"11:00\"", "        \"11:30\"", "        \"12:00\"", "        \"12:30\"", "        \"13:00\"", "        \"13:30\"", "        \"14:00\"", "        \"14:30\"", "        \"15:00\"", "        \"15:30\"", "        \"16:00\"", "        \"16:30\"", "        \"17:00\"", "        \"17:30\"", "        \"18:00\"", "        \"18:30\"", "        \"19:00\"", "        \"19:30\"", "        \"20:00\"", "        \"20:30\"", "        \"21:00\"", "        \"21:30\"", "        \"22:00\"", "        \"22:30\"", " \"23:00\"" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,11 +184,11 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5)
                                     .addGap(18, 18, 18)
-                                    .addComponent(combohoradieta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(combohoradieta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel7)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
