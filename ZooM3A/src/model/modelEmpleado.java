@@ -189,6 +189,42 @@ public class modelEmpleado extends Empleado {
         return imageReader.read(0, param);
     }
 
+    public List<Empleado> getempleadoLogin(String usuario, String contrasena) {
+        List<Empleado> listaEmpleado = new ArrayList<>();
+
+        String sql = "select (p.per_nombre||' '|| p.per_apellido) as nombre,p.per_cedula, r.rol_nombre, e.emp_foto  "
+                + "  from empleado e join persona p on(e.emp_cedula=p.per_cedula) "
+                + "  join rol r on (r.rol_id=emp_rol) "
+                + "  where e.emp_usuario = '" + usuario + "' and e.emp_contraseña = '" + contrasena + "'";
+        ResultSet rs = mpgc.consulta(sql);
+        byte[] bytea;
+        try {
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setNombre(rs.getString(1));
+                empleado.setCedula(rs.getString(2));
+                empleado.setApellido(rs.getString(3));
+                bytea = rs.getBytes(4);
+                if (bytea != null) {
+                    empleado.setFoto(getImagen(bytea));
+                }
+
+                listaEmpleado.add(empleado);
+
+            }
+        } catch (IOException | SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaEmpleado;
+    }
+
     public List<Empleado> getempleado() {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
