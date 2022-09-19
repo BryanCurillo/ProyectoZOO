@@ -24,7 +24,7 @@ public class ControllerRegistrarCliente {
     private viewRegistrarCliente vrc;
     private viewVistaCliente vvc;
     private ModelCliente mc;
-    private viewLogin vl;
+//    private viewLogin vl;
 
     public ControllerRegistrarCliente() {
     }

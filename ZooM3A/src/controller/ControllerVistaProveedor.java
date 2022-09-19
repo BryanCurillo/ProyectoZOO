@@ -26,11 +26,11 @@ import view.viewRegistrarProveedor;
  */
 public class ControllerVistaProveedor {
 
-    private viewPantallaPrincipal vistaP;
+    private viewPantallaPrincipal vistaPP;
     private viewVistaProveedor vistaProv;
     private controllerPantallaprincipal controllerpp;
-
     private modelProveedor modeloProv;
+
     int i = 0;
 
     DefaultTableModel estructuraTabla;
@@ -39,8 +39,13 @@ public class ControllerVistaProveedor {
     public ControllerVistaProveedor() {
     }
 
+    public ControllerVistaProveedor(modelProveedor modeloProv, viewVistaProveedor vistaProv) {
+        this.modeloProv = modeloProv;
+        this.vistaProv = vistaProv;
+    }
+
     public ControllerVistaProveedor(viewPantallaPrincipal vistaP, viewVistaProveedor vistaProv, modelProveedor modeloProv) {
-        this.vistaP = vistaP;
+        this.vistaPP = vistaP;
         this.vistaProv = vistaProv;
         this.modeloProv = modeloProv;
         cargarDatos(1);
@@ -51,7 +56,8 @@ public class ControllerVistaProveedor {
         vistaProv.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaProv.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaProv.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-        vistaProv.getjBtnActualizar().addActionListener(l->cargarDatos(1));
+        vistaProv.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+        vistaProv.getTxtBuscar().addKeyListener(busquedaIncren);
     }
 
     public void abrirRegistro(int op) {
@@ -61,9 +67,9 @@ public class ControllerVistaProveedor {
         if (op == 1) {
 
             //Agragar vista al desktop pane
-            vistaP.getjDPprincipal().add(vistaRegistroProv);
+            vistaPP.getjDPprincipal().add(vistaRegistroProv);
 
-            ControllerRegistroProveedor controladorProv = new ControllerRegistroProveedor(modeloProv, vistaRegistroProv);
+            ControllerRegistroProveedor controladorProv = new ControllerRegistroProveedor(modeloProv, vistaRegistroProv, vistaProv);
             controladorProv.abrirRegistro(1);
 
         } else {
@@ -72,40 +78,41 @@ public class ControllerVistaProveedor {
             if (fila == -1) {
                 JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
             } else {
-                vistaP.getjDPprincipal().add(vistaRegistroProv);
+                vistaPP.getjDPprincipal().add(vistaRegistroProv);
                 controladorProv.abrirRegistro(2);
             }
         }
         cargarDatos(1);
     }
 
-//    KeyListener busquedaIncren = new KeyListener() {
-//        @Override
-//        public void keyTyped(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyPressed(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyReleased(KeyEvent e) {
-//            cargarDatos(2);
-//        }
-//    };
+    KeyListener busquedaIncren = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            cargarDatos(2);
+        }
+    };
+
     public void cargarDatos(int opc) {
-        vistaProv.getjTblProveedor().setDefaultRenderer(Object.class, new imageTable());
+//        vistaProv.getjTblProveedor().setDefaultRenderer(Object.class, new imageTable());
         vistaProv.getjTblProveedor().setRowHeight(50);
         estructuraTabla = (DefaultTableModel) vistaProv.getjTblProveedor().getModel();
         estructuraTabla.setRowCount(0);
 
         List<Proveedor> listaProv;
-//        if (opc == 1) {
-        listaProv = modeloProv.getProveedor();
-//        } else {
-//            String busqueda = vistaProv.getTxtBuscar().getText().toLowerCase().trim();
-//            listaProv = modeloE.busquedaIncrementalPersona(busqueda);
-//        }
+        if (opc == 1) {
+            listaProv = modeloProv.getProveedor();
+        } else {
+            String busqueda = vistaProv.getTxtBuscar().getText().toLowerCase().trim();
+            listaProv = modeloProv.busquedaIncrementalProveedor(busqueda);
+        }
 
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
@@ -132,7 +139,6 @@ public class ControllerVistaProveedor {
                 int id = Integer.parseInt(vistaProv.getjTblProveedor().getValueAt(fila, 0).toString());
 
                 if (proveedor.deleteProveedor(id)) {//Grabamos
-                    System.out.println("id="+id);
                     JOptionPane.showMessageDialog(vistaProv, "Proveedor eliminado correctamente");
                     cargarDatos(1);
                 } else {

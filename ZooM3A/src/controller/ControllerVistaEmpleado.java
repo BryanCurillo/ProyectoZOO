@@ -69,16 +69,11 @@ public class ControllerVistaEmpleado {
             //Agragar vista al desktop pane
             vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
 
-            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado);
+            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
             controladorEmpleado.abrirRegistro(1);
 
         } else {
-//            modelEmpleado modeloEmpleado = new modelEmpleado();
-//            viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
-
             //Agragar vista al desktop pane
-//            vistaRegistroEmpleado.setName("Registro");
-//            vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
             ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
             int fila = vistaE.getjTblEmpleado().getSelectedRow();
             if (fila == -1) {

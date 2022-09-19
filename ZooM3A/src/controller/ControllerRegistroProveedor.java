@@ -24,8 +24,8 @@ public class ControllerRegistroProveedor {
 //    private viewPantallaPrincipal vistaP;
 //    private controllerPantallaprincipal controllerpp;
     private modelProveedor modeloProv;
-    private viewRegistrarProveedor vistaProv;
-    private viewVistaProveedor vistaProvTbl;
+    private viewRegistrarProveedor vistaRegProv;
+    private viewVistaProveedor vistaVistaProv;
     int i = 0;
 
     DefaultTableModel estructuraTabla;
@@ -36,7 +36,7 @@ public class ControllerRegistroProveedor {
 
     public ControllerRegistroProveedor(modelProveedor modeloProv, viewRegistrarProveedor vistaProv) {
         this.modeloProv = modeloProv;
-        this.vistaProv = vistaProv;
+        this.vistaRegProv = vistaProv;
         vistaProv.toFront();
         vistaProv.getTxtOtraCiudad().setEditable(false);
         vistaProv.setVisible(true);
@@ -44,122 +44,134 @@ public class ControllerRegistroProveedor {
 
     public ControllerRegistroProveedor(modelProveedor modeloProv, viewRegistrarProveedor vistaProv, viewVistaProveedor vistaProvTbl) {
         this.modeloProv = modeloProv;
-        this.vistaProv = vistaProv;
-        this.vistaProvTbl = vistaProvTbl;
+        this.vistaRegProv = vistaProv;
+        this.vistaVistaProv = vistaProvTbl;
         vistaProv.toFront();
         vistaProv.getTxtOtraCiudad().setEditable(false);
         vistaProv.setVisible(true);
     }
 
     public void inicialControl() {
-        vistaProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
-        vistaProv.getBtregistrar().addActionListener(l -> crearEditarPersona());
-        vistaProv.getBtcancelar().addActionListener(l -> vistaProv.dispose());
+        vistaRegProv.getComboCiudad().addActionListener(l -> activarTxtCiudad());
+        vistaRegProv.getBtregistrar().addActionListener(l -> crearEditarPersona());
+        vistaRegProv.getBtcancelar().addActionListener(l -> vistaRegProv.dispose());
     }
 
     public void abrirRegistro(int op) {
-        vistaProv.getTxtOtraCiudad().setEditable(false);
-        vistaProv.toFront();
+        vistaRegProv.getTxtOtraCiudad().setEditable(false);
+        vistaRegProv.toFront();
         String titulo;
 //        cargarComboRol();
         if (op == 1) {
             limpiarCampos();
             titulo = "Crear";
-            vistaProv.setName("Registro");
-            vistaProv.getBtregistrar().setText("REGISTRAR");
-            vistaProv.setVisible(true);
+            vistaRegProv.setName("Registro");
+            vistaRegProv.getBtregistrar().setText("REGISTRAR");
+            vistaRegProv.setVisible(true);
             this.inicialControl();
         } else {
             titulo = "Editar";
             if (llenarDatos()) {
-                vistaProv.setName("Editar");
-                vistaProv.getBtregistrar().setText("ACTUALIZAR");
-                vistaProv.setVisible(true);
+                vistaRegProv.setName("Editar");
+                vistaRegProv.getBtregistrar().setText("ACTUALIZAR");
+                vistaRegProv.setVisible(true);
                 this.inicialControl();
             }
         }
     }
 
     public void activarTxtCiudad() {
-        if (vistaProv.getComboCiudad().getSelectedIndex() != vistaProv.getComboCiudad().getItemCount() - 1) {
-            vistaProv.getTxtOtraCiudad().setText("");
-            vistaProv.getTxtOtraCiudad().setEditable(false);
+        if (vistaRegProv.getComboCiudad().getSelectedIndex() != vistaRegProv.getComboCiudad().getItemCount() - 1) {
+            vistaRegProv.getTxtOtraCiudad().setText("");
+            vistaRegProv.getTxtOtraCiudad().setEditable(false);
         } else {
-            vistaProv.getTxtOtraCiudad().setEditable(true);
+            vistaRegProv.getTxtOtraCiudad().setEditable(true);
         }
     }
 
     private void crearEditarPersona() {
         if (validar()) {
             //Datos proveedor
-            int id = Integer.parseInt(vistaProv.getTxtid_prov().getText());
-            String nombre = vistaProv.getTxtnombre().getText(),
-                    telefono = vistaProv.getTxttelefono().getText(),
+            String nombre = vistaRegProv.getTxtnombre().getText(),
+                    telefono = vistaRegProv.getTxttelefono().getText(),
                     ciudad = "";
-            if (vistaProv.getComboCiudad().getSelectedIndex() == vistaProv.getComboCiudad().getItemCount() - 1) {
-                ciudad = vistaProv.getTxtOtraCiudad().getText();
+            if (vistaRegProv.getComboCiudad().getSelectedIndex() == vistaRegProv.getComboCiudad().getItemCount() - 1) {
+                ciudad = vistaRegProv.getTxtOtraCiudad().getText();
             } else {
-                ciudad = vistaProv.getComboCiudad().getSelectedItem().toString();
+                ciudad = vistaRegProv.getComboCiudad().getSelectedItem().toString();
             }
 
             modelProveedor prov = new modelProveedor();
-            prov.setId_proveedor(id);
+//            prov.setId_proveedor(id);
             prov.setNombre_pro(nombre);
             prov.setCiudad_pro(ciudad);
             prov.setTelefono(telefono);
             prov.setEstadoProv(true);
 
-            if (vistaProv.getName().equals("Registro")) {
+            if (vistaRegProv.getName().equals("Registro")) {
                 if (modeloProv.comprobarDuplicado(nombre, ciudad)) {
                     //INSERT
-                    int response = JOptionPane.showConfirmDialog(vistaProv, "¿Esta seguro que desea agregar un proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    int response = JOptionPane.showConfirmDialog(vistaRegProv, "¿Esta seguro que desea agregar un proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                     if (response == JOptionPane.YES_OPTION) {
                         if (prov.setProveedor()) {//Grabamos
-                            JOptionPane.showMessageDialog(vistaProv, "Proovedor agregado correctamente");
-                            vistaProv.dispose();
+                            JOptionPane.showMessageDialog(vistaRegProv, "Proovedor agregado correctamente");
+                            vistaRegProv.dispose();
 //                            cargarDatos(1);
                         } else {
-                            JOptionPane.showMessageDialog(vistaProv, "No se pudo agregar a la proveedor");
+                            JOptionPane.showMessageDialog(vistaRegProv, "No se pudo agregar a la proveedor");
                         }
                     }
                 } else {
-                    JOptionPane.showMessageDialog(vistaProv, "El proveedor ya se encuentra registrado");
+                    JOptionPane.showMessageDialog(vistaRegProv, "El proveedor ya se encuentra registrado");
                 }
             } else {
                 //UPDATE
-                int response = JOptionPane.showConfirmDialog(vistaProv, "¿Seguro que desea actualizar al proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                int id = Integer.parseInt(vistaRegProv.getTxtid_prov().getText());
+                prov.setId_proveedor(id);
+
+                int response = JOptionPane.showConfirmDialog(vistaRegProv, "¿Seguro que desea actualizar al proveedor?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
                     if (prov.updateProveedor()) {//Grabamos
                         System.out.println("ciudad" + prov.getCiudad_pro());
-                        JOptionPane.showMessageDialog(vistaProv, "Proovedor actualizado correctamente");
-                        vistaProv.dispose();
+                        JOptionPane.showMessageDialog(vistaRegProv, "Proovedor actualizado correctamente");
+                        vistaRegProv.dispose();
                     } else {
-                        JOptionPane.showMessageDialog(vistaProv, "No se pudo actualizar a la proveedor");
+                        JOptionPane.showMessageDialog(vistaRegProv, "No se pudo actualizar a la proveedor");
                     }
                 }
             }
+            ControllerVistaProveedor controlVprov = new ControllerVistaProveedor(modeloProv, vistaVistaProv);
+            controlVprov.cargarDatos(1);
         }
-
     }
 
     public boolean llenarDatos() {
-        vistaProv.getTxtid_prov().setVisible(false);
-        int fila = vistaProvTbl.getjTblProveedor().getSelectedRow();
+        vistaRegProv.getTxtid_prov().setVisible(false);
+        int fila = vistaVistaProv.getjTblProveedor().getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione el proveedor a modificar");
             return false;
         } else {
 
-            int id = Integer.parseInt(vistaProvTbl.getjTblProveedor().getValueAt(fila, 0).toString());
+            int id = Integer.parseInt(vistaVistaProv.getjTblProveedor().getValueAt(fila, 0).toString());
             List<Proveedor> listap = modeloProv.getProveedor();
             listap.stream().forEach(prov -> {
                 if (id == prov.getId_proveedor()) {
-                    vistaProv.getTxtid_prov().setText(String.valueOf(prov.getId_proveedor()));
-                    vistaProv.getTxtnombre().setText(prov.getNombre_pro());
-                    vistaProv.getTxtOtraCiudad().setText(prov.getCiudad_pro());
-                    vistaProv.getTxttelefono().setText(prov.getTelefono());
-                    vistaProv.getTxttelefono().setText(prov.getTelefono());
+                    vistaRegProv.getTxtid_prov().setText(String.valueOf(prov.getId_proveedor()));
+                    vistaRegProv.getTxtnombre().setText(prov.getNombre_pro());
+//                    vistaProv.getTxtOtraCiudad().setText(prov.getCiudad_pro());
+                    vistaRegProv.getTxttelefono().setText(prov.getTelefono());
+                    vistaRegProv.getTxttelefono().setText(prov.getTelefono());
 
+                    for (int j = 0; j < vistaRegProv.getComboCiudad().getItemCount(); j++) {
+                        if (vistaRegProv.getComboCiudad().getItemAt(j).equalsIgnoreCase(prov.getCiudad_pro())) {
+                            vistaRegProv.getComboCiudad().setSelectedIndex(j);
+                        }
+                    }
+                    if (vistaRegProv.getComboCiudad().getSelectedIndex() == 0) {
+                        vistaRegProv.getComboCiudad().setSelectedIndex(vistaRegProv.getComboCiudad().getItemCount() - 1);
+                        vistaRegProv.getTxtOtraCiudad().setText(prov.getCiudad_pro());
+                    }
                 }
 
             });
@@ -174,28 +186,28 @@ public class ControllerRegistroProveedor {
         boolean ban = true;
         validaciones mivalidacion = new validaciones();
         //NOMBRE
-        if (!vistaProv.getTxtnombre().getText().isEmpty()) {
-            if (!mivalidacion.validarNombApeEspacios(vistaProv.getTxtnombre().getText())) {
-                JOptionPane.showMessageDialog(vistaProv, "Nombre invalido");
+        if (!vistaRegProv.getTxtnombre().getText().isEmpty()) {
+            if (!mivalidacion.validarNombApeEspacios(vistaRegProv.getTxtnombre().getText())) {
+                JOptionPane.showMessageDialog(vistaRegProv, "Nombre invalido");
                 ban = false;
             }
         } else {
-            JOptionPane.showMessageDialog(vistaProv, "Ingrese el nombre");
+            JOptionPane.showMessageDialog(vistaRegProv, "Ingrese el nombre");
             ban = false;
         }
         //TELEFONO
-        if (!vistaProv.getTxttelefono().getText().isEmpty()) {
-            if (!mivalidacion.validarTelefono(vistaProv.getTxttelefono().getText())) {
-                JOptionPane.showMessageDialog(vistaProv, "Telefono invalido");
+        if (!vistaRegProv.getTxttelefono().getText().isEmpty()) {
+            if (!mivalidacion.validarTelefono(vistaRegProv.getTxttelefono().getText())) {
+                JOptionPane.showMessageDialog(vistaRegProv, "Telefono invalido");
                 ban = false;
             }
         } else {
-            JOptionPane.showMessageDialog(vistaProv, "Ingrese el numero de telefono");
+            JOptionPane.showMessageDialog(vistaRegProv, "Ingrese el numero de telefono");
             ban = false;
         }
         //COMBO
-        if (vistaProv.getComboCiudad().getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(vistaProv, "Seleccione una ciudad");
+        if (vistaRegProv.getComboCiudad().getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(vistaRegProv, "Seleccione una ciudad");
             ban = false;
         }
 
@@ -203,10 +215,10 @@ public class ControllerRegistroProveedor {
     }
 
     public void limpiarCampos() {
-        vistaProv.getTxtnombre().setText("");
-        vistaProv.getTxttelefono().setText("");
-        vistaProv.getTxtOtraCiudad().setText("");
-        vistaProv.getComboCiudad().setSelectedIndex(0);
+        vistaRegProv.getTxtnombre().setText("");
+        vistaRegProv.getTxttelefono().setText("");
+        vistaRegProv.getTxtOtraCiudad().setText("");
+        vistaRegProv.getComboCiudad().setSelectedIndex(0);
     }
 
 }

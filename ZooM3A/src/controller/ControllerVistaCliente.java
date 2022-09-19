@@ -29,8 +29,8 @@ public class ControllerVistaCliente {
     private viewPantallaPrincipal vistaP;
     private viewVistaCliente vistaCli;
     private controllerPantallaprincipal controllerpp;
-
     private ModelCliente modeloCli;
+    
     int i = 0;
 
     DefaultTableModel estructuraTabla;
@@ -68,7 +68,7 @@ public class ControllerVistaCliente {
             //Agragar vista al desktop pane
             vistaP.getjDPprincipal().add(vistaRegistroCli);
 
-            ControllerRegistrarCliente controladorCli = new ControllerRegistrarCliente(vistaRegistroCli, modeloCli);
+            ControllerRegistrarCliente controladorCli = new ControllerRegistrarCliente(vistaRegistroCli, vistaCli, modeloCli);
             controladorCli.abrirRegistro(1);
 
         } else {
@@ -100,7 +100,7 @@ public class ControllerVistaCliente {
     };
 
     public void cargarDatos(int opc) {
-        vistaCli.getjTblCliente().setDefaultRenderer(Object.class, new imageTable());
+//        vistaCli.getjTblCliente().setDefaultRenderer(Object.class, new imageTable());
         vistaCli.getjTblCliente().setRowHeight(50);
         estructuraTabla = (DefaultTableModel) vistaCli.getjTblCliente().getModel();
         estructuraTabla.setRowCount(0);

@@ -42,6 +42,27 @@ public class validaciones {
         return ban;
     }
 
+    public double validarDouble(String decimal) {
+        double num = 0;
+        decimal = decimal.replaceAll("\\s", "");
+        decimal = decimal.replace(",", ".");
+        if (!decimal.isEmpty()) {
+            if (decimal.matches("([0-9]+\\.*)*{1,}")) {
+                num = Double.parseDouble(decimal);
+                if (num <= 0) {
+                    num = 0;
+                }
+            }
+        }
+        return num;
+    }
+
+    public boolean validarLetNum(String cadena) {
+        boolean validar = cadena.matches("^[a-zA-Z]*[\\d]*$");
+
+        return validar;
+    }
+
     public boolean validarCedula(String cedula) {
 //        boolean val = false;
         boolean val = true;

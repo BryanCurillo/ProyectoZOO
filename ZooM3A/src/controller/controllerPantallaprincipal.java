@@ -9,12 +9,15 @@ import javax.swing.JFrame;
 import model.modelEmpleado;
 import model.modelProveedor;
 import model.ModelCliente;
+import model.ModelAlimento;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
 import view.viewRegistrarCliente;
+import view.viewRegistroAlimento;
 import view.viewVistaEmpleados;
 import view.viewVistaCliente;
 import view.viewVistaProveedor;
+import view.viewVistaAlimento;
 import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
 
@@ -43,11 +46,12 @@ public class controllerPantallaprincipal {
         vista.getJMIvistaProveedor().addActionListener(l -> vistaProveedor());
         vista.getjMIagregarCliente().addActionListener(l -> registroCliente());
         vista.getJMIvistaCliente().addActionListener(l -> vistaCliente());
-        
+        vista.getjMIagregarAlimento().addActionListener(l -> registroAlimento());
+        vista.getjMIcrudAlimento().addActionListener(l->vistaAlimento());
     }
-    
-    
 
+    //////////////////////////////////////////////////////////////////////////////////////
+    //EMPLEADOS
     public void registroEmpleado() {
 //        vista.getjDPprincipal().removeAll();
         //Instancio las clases del modelo y la vista
@@ -81,6 +85,7 @@ public class controllerPantallaprincipal {
         controllerVistaEmpleado.inicialControl();
     }
 
+    //PROVEEDORES
     public void registroProveedor() {
         //Instancio las clases del modelo y la vista
         modelProveedor mp = new modelProveedor();
@@ -104,6 +109,7 @@ public class controllerPantallaprincipal {
         controllerVistaProv.inicialControl();
     }
 
+    //CLIENTES
     public void registroCliente() {
         //Instancio las clases del modelo y la vista        
         ModelCliente mc = new ModelCliente();
@@ -119,10 +125,35 @@ public class controllerPantallaprincipal {
     public void vistaCliente() {
         ModelCliente modeloCli = new ModelCliente();
         viewVistaCliente vistaCli = new viewVistaCliente();
-        viewVentaTicket vt = new viewVentaTicket();
+//        viewVentaTicket vt = new viewVentaTicket();
+
         //Agragar vista al desktop pane                
         vista.getjDPprincipal().add(vistaCli);
         ControllerVistaCliente controllerVCli = new ControllerVistaCliente(vista, vistaCli, modeloCli);
-        controllerVCli.inicialControl();                
+        controllerVCli.inicialControl();
+    }
+
+    //ALIMENTO
+    public void registroAlimento() {
+        //Instancio las clases del modelo y la vista        
+        ModelAlimento modelAli = new ModelAlimento();
+        viewRegistroAlimento vistaRegAli = new viewRegistroAlimento();
+        modelProveedor modeloProv = new modelProveedor();
+
+        //Agragar vista al desktop pane
+        vistaRegAli.setName("Registro");
+        vista.getjDPprincipal().add(vistaRegAli);
+        ControllerRegistrarAlimento controReglAli = new ControllerRegistrarAlimento(vistaRegAli, modelAli, modeloProv);
+        controReglAli.iniciarControl();
+    }
+
+    public void vistaAlimento() {
+        ModelAlimento modeloAli = new ModelAlimento();
+        viewVistaAlimento vistaAli = new viewVistaAlimento();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaAli);
+        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
+        controllerVali.inicialControl();
     }
 }
