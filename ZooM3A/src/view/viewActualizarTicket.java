@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  *
  * @author ALEJO
  */
-public class viewActualizarTicket extends javax.swing.JFrame {
+public class viewActualizarTicket extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewRegistrarTicket

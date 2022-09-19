@@ -25,6 +25,7 @@ public class ControllerTickets extends Tickets {
     public ControllerTickets(viewActualizarTicket vrt, ModelTickets mt) {
         this.vrt = vrt;
         this.mt = mt;
+        vrt.toFront();
         vrt.setVisible(true);
     }
 
