@@ -181,55 +181,55 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         txttelefonoProv.setBackground(new java.awt.Color(255, 253, 227));
         jPanel1.add(txttelefonoProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 270, 30));
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 520, 200));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 520, 200));
 
         txtPrecio.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 78, 278, 30));
+        jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 278, 30));
 
         jLabel7.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel7.setText("PRECIO:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 78, 90, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel5.setText("NOMBRE: ");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 30, 100, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, -1));
 
         txtnombrealimento.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtnombrealimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 20, 278, 30));
+        jPanel2.add(txtnombrealimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 278, 30));
 
         jLabel9.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel9.setText("DESCRIPCIÓN:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 150, 130, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 130, -1));
 
         txtAdescripcion.setBackground(new java.awt.Color(255, 253, 227));
         txtAdescripcion.setColumns(20);
         txtAdescripcion.setRows(5);
         jScrollPane1.setViewportView(txtAdescripcion);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 270, 70));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 270, 70));
 
         jbtnAgregar.setBackground(new java.awt.Color(210, 215, 159));
         jbtnAgregar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         jbtnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         jbtnAgregar.setText("AGREGAR");
         jbtnAgregar.setBorder(null);
-        jPanel2.add(jbtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 490, 166, -1));
+        jPanel2.add(jbtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 166, -1));
 
         jbtnCancelar.setBackground(new java.awt.Color(210, 215, 159));
         jbtnCancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         jbtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         jbtnCancelar.setText("CANCELAR");
         jbtnCancelar.setBorder(null);
-        jPanel2.add(jbtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, -1, -1));
+        jPanel2.add(jbtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, -1));
 
         txtPrecio1.setEditable(false);
         txtPrecio1.setBackground(new java.awt.Color(255, 253, 227));
         txtPrecio1.setText("$");
-        jPanel2.add(txtPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 78, 90, 30));
+        jPanel2.add(txtPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 20, 30));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 40)); // NOI18N
         jLabel3.setText("Datos del Proveedor");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 480, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 191, 410, 50));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 530, 540));
 
