@@ -47,6 +47,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jlblCedulaPP = new javax.swing.JLabel();
         jlblFotoPP = new javax.swing.JLabel();
         jlblCedulaPP1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         barramenus = new javax.swing.JMenuBar();
         agregarpersona = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
@@ -94,9 +95,17 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(144, 183, 125));
 
-        btnCerrarSesion.setBackground(new java.awt.Color(66, 133, 91));
-        btnCerrarSesion.setText("CERRARSECION");
+        btnCerrarSesion.setBackground(new java.awt.Color(117, 156, 98));
+        btnCerrarSesion.setFont(new java.awt.Font("MS Gothic", 0, 24)); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cerrar-sesion (1).png"))); // NOI18N
+        btnCerrarSesion.setText("CERRAR SESION");
         btnCerrarSesion.setToolTipText("Vaciar pantalla");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(72, 56, 56));
         jPanel2.setForeground(new java.awt.Color(210, 215, 159));
@@ -169,83 +178,103 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(btnCerrarSesion)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
-                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 376, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 630));
 
-        agregarpersona.setText("PERSONAL");
+        agregarpersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario.png"))); // NOI18N
+        agregarpersona.setText("Personal");
 
         jMIagregarPersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIagregarPersona.setText("AGREGAR PERSONAL");
+        jMIagregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
+        jMIagregarPersona.setText("Agregar personal");
         agregarpersona.add(jMIagregarPersona);
 
         jMIvistaEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIvistaEmpleado.setText("VISUALIZAR REGISTRO DEL PERSONAL");
+        jMIvistaEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIvistaEmpleado.setText("Visualizar registro");
         agregarpersona.add(jMIvistaEmpleado);
 
         barramenus.add(agregarpersona);
 
-        menualimento.setText("ALIMENTO");
+        menualimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plato.png"))); // NOI18N
+        menualimento.setText("Alimento");
 
         jMIagregarAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIagregarAlimento.setText("AGREGAR ALIMENTO");
+        jMIagregarAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anadiendo.png"))); // NOI18N
+        jMIagregarAlimento.setText("Agregar alimento");
         menualimento.add(jMIagregarAlimento);
 
         jMIcrudAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIcrudAlimento.setText("VISUALIZAR REGISTRO DE ALIMENTOS");
+        jMIcrudAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIcrudAlimento.setText("Visualizar registro");
         menualimento.add(jMIcrudAlimento);
 
         barramenus.add(menualimento);
 
-        menuanimales.setText("ANIMALES");
+        menuanimales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (2).png"))); // NOI18N
+        menuanimales.setText("Animales");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setText("AGREGAR ANIMAL");
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuidado-de-mascotas.png"))); // NOI18N
+        jMenuItem5.setText("Agregar animal");
         menuanimales.add(jMenuItem5);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem9.setText("VISUALIZAR REGISTRO DE ANIMALES");
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMenuItem9.setText("Visualizar registro");
         menuanimales.add(jMenuItem9);
 
         barramenus.add(menuanimales);
 
-        jMenu1.setText("TICKETS");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
+        jMenu1.setText("Tickets");
 
-        MIActualizarPrecio.setText("ACTUALIZAR PRECIO");
+        MIActualizarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
+        MIActualizarPrecio.setText("Actualizar Precio");
         jMenu1.add(MIActualizarPrecio);
 
         barramenus.add(jMenu1);
 
-        jMProveedor.setText("PROVEEDOR");
+        jMProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
+        jMProveedor.setText("Proveedor");
 
-        jMIagregarProveedor.setText("Agregar Proveedor");
+        jMIagregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
+        jMIagregarProveedor.setText("Agregar proveedor");
         jMProveedor.add(jMIagregarProveedor);
 
-        JMIvistaProveedor.setText("Visualizar registro de proveedores");
+        JMIvistaProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        JMIvistaProveedor.setText("´Visualizar registro");
         jMProveedor.add(JMIvistaProveedor);
 
         barramenus.add(jMProveedor);
 
-        jMProveedor1.setText("CLIENTE");
+        jMProveedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
+        jMProveedor1.setText("Cliente");
 
-        jMIagregarCliente.setText("Agregar Cliente");
+        jMIagregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
+        jMIagregarCliente.setText("Agregar cliente");
         jMIagregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMIagregarClienteActionPerformed(evt);
@@ -253,17 +282,21 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         });
         jMProveedor1.add(jMIagregarCliente);
 
-        JMIvistaCliente.setText("Visualizar Clientes");
+        JMIvistaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        JMIvistaCliente.setText("Visualizar registro");
         jMProveedor1.add(JMIvistaCliente);
 
         barramenus.add(jMProveedor1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
         jMenu2.setText("Dieta");
 
-        jMIAgregarDieta.setText("Agregar Dieta");
+        jMIAgregarDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        jMIAgregarDieta.setText("Agregar dieta");
         jMenu2.add(jMIAgregarDieta);
 
-        jMIVisualizarDietas.setText("Visualizar Registro de Dieta");
+        jMIVisualizarDietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIVisualizarDietas.setText("Visualizar registro");
         jMenu2.add(jMIVisualizarDietas);
 
         barramenus.add(jMenu2);
@@ -289,6 +322,10 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMIagregarClienteActionPerformed
 
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +337,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu agregarpersona;
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMIAgregarDieta;
