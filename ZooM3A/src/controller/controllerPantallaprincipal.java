@@ -88,7 +88,7 @@ public class controllerPantallaprincipal {
                 dtcr.setIcon(icono);
                 vista.getJlblFotoPP().setIcon(icono);
             } else {
-                ImageIcon iconoUsuario = new ImageIcon("imagenes/usuario.png");
+                ImageIcon iconoUsuario = new ImageIcon("src\\imagenes\\usuario.png");
                 vista.getJlblFotoPP().setIcon(iconoUsuario);
             }
         });
