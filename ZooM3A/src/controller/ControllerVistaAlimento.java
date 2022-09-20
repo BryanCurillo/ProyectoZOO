@@ -52,7 +52,7 @@ public class ControllerVistaAlimento {
     public void inicialControl() {
         vistaAli.getBtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaAli.getBtnModificar().addActionListener(l -> abrirRegistro(2));
-        vistaAli.getBtnEliminar().addActionListener(l -> eliminarCliente());
+        vistaAli.getBtnEliminar().addActionListener(l -> eliminarAlimento());
         vistaAli.getTxtbuscar().addKeyListener(busquedaIncren);
     }
 
@@ -126,21 +126,21 @@ public class ControllerVistaAlimento {
 
     }
 
-    public void eliminarCliente() {
+    public void eliminarAlimento() {
         ModelAlimento cliente = new ModelAlimento();
         int fila = vistaAli.getjTblAlimento().getSelectedRow();
         if (fila == -1) {
-            JOptionPane.showMessageDialog(null, "Seleccione el cliente a eliminar");
+            JOptionPane.showMessageDialog(null, "Seleccione el alimento a eliminar");
         } else {
-            int response = JOptionPane.showConfirmDialog(vistaAli, "¿Esta seguro de eliminar al cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int response = JOptionPane.showConfirmDialog(vistaAli, "¿Esta seguro de eliminar el alimento?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
                 int id = Integer.parseInt(vistaAli.getjTblAlimento().getValueAt(fila, 0).toString());
 
                 if (cliente.deleteAlimento(id)) {//Grabamos
-                    JOptionPane.showMessageDialog(vistaAli, "Proveedor eliminado correctamente");
+                    JOptionPane.showMessageDialog(vistaAli, "Alimento eliminado correctamente");
                     cargarDatos(1);
                 } else {
-                    JOptionPane.showMessageDialog(vistaAli, "No se pudo eliminar al Proveedor");
+                    JOptionPane.showMessageDialog(vistaAli, "No se pudo eliminar el alimento");
                 }
             }
         }
