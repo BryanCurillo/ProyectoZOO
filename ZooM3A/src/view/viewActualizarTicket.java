@@ -40,65 +40,88 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
         txtprecio = new javax.swing.JTextField();
         btnactualizarticket = new javax.swing.JButton();
         btncancelarticket = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(238, 227, 203));
+        setBorder(null);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(970, 630));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(238, 227, 203));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
         jLabel3.setText("ACTUALIZACIÓN DE TICKETS");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 360, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 580, 50));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel7.setFont(new java.awt.Font("Microsoft Himalaya", 1, 36)); // NOI18N
         jLabel7.setText("CATEGORIA:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 170, -1));
 
+        combocategoria.setBackground(new java.awt.Color(255, 253, 227));
+        combocategoria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         combocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR CATEGORIA", " " }));
-        jPanel1.add(combocategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 183, -1));
+        jPanel1.add(combocategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 290, 40));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 1, 36)); // NOI18N
         jLabel5.setText("PRECIO:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 110, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel6.setFont(new java.awt.Font("Microsoft Himalaya", 1, 36)); // NOI18N
         jLabel6.setText("$");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
-        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 85, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, 50));
 
-        btnactualizarticket.setBackground(new java.awt.Color(0, 204, 153));
-        btnactualizarticket.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtprecio.setBackground(new java.awt.Color(255, 253, 227));
+        txtprecio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 110, 40));
+
+        btnactualizarticket.setBackground(new java.awt.Color(238, 227, 203));
+        btnactualizarticket.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btnactualizarticket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         btnactualizarticket.setText("AGREGAR");
-        jPanel1.add(btnactualizarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
+        btnactualizarticket.setBorder(null);
+        jPanel1.add(btnactualizarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 180, -1));
 
-        btncancelarticket.setBackground(new java.awt.Color(255, 0, 51));
-        btncancelarticket.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btncancelarticket.setBackground(new java.awt.Color(238, 227, 203));
+        btncancelarticket.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btncancelarticket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btncancelarticket.setText("CANCELAR");
-        jPanel1.add(btncancelarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
+        btncancelarticket.setBorder(null);
+        btncancelarticket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelarticketActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btncancelarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 240, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.GIF"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 370));
+        jLabel1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jLabel1.setText("categoria: ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel4.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jLabel4.setText("Cambia el valor de un precio de ticket dependiendo de su");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (1) (2).png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 340, 320));
+
+        jLabel8.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel8.setText("TICKETS");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 170, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btncancelarticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarticketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btncancelarticketActionPerformed
 
     public JButton getBtnactualizarticket() {
         return btnactualizarticket;
@@ -168,11 +191,14 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnactualizarticket;
     private javax.swing.JButton btncancelarticket;
     private javax.swing.JComboBox<String> combocategoria;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables
