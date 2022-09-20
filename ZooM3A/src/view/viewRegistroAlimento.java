@@ -246,7 +246,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
