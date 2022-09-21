@@ -21,7 +21,8 @@ public class ModelAlimento extends Alimento {
 
     public List<Alimento> getAlimento() {
         List<Alimento> listaAlimentos = new ArrayList<>();
-        String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)";
+        String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
+                + "  where ali_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
