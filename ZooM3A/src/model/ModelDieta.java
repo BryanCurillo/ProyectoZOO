@@ -21,7 +21,8 @@ public class ModelDieta extends Dieta {
 
     public List<Dieta> getDieta() {
         List<Dieta> listaDieta = new ArrayList<>();
-        String sql = "select * from dieta;";
+        String sql = "select * from dieta d join alimento a on (d.die_idali=a.ali_id)"
+                + "  where die_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -65,5 +66,34 @@ public class ModelDieta extends Dieta {
                 + "WHERE die_id=" + id;
         System.out.println(sql);
         return mpgc.accion(sql);
+    }
+
+    public List<Dieta> busquedaIncrementalDieta(String busqueda) {
+        List<Dieta> listaDieta = new ArrayList<>();
+        String sql = "select * from dieta "
+                + "where die_estado=true "
+                + "and lower(die_horario) like '%" + busqueda + "%' "
+                + "or lower(die_horario) like '%" + busqueda + "%' "
+                + "or die_id like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Dieta dieta = new Dieta();
+                dieta.setId_proveedor(rs.getInt(1));
+                dieta.setCiudad_pro(rs.getString(2));
+                dieta.setNombre_pro(rs.getString(3));
+                dieta.setTelefono(rs.getString(4));
+                dieta.setEstadoProv(rs.getBoolean(5));
+                listaDieta.add(dieta);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaDieta;
     }
 }
