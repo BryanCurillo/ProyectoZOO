@@ -47,8 +47,8 @@ public class ModelDieta extends Dieta {
     }
 
     public boolean setDieta() {
-        String sql = "INSERT INTO alimento(die_id,  die_horario, die_porcion, die_idalimento)"
-                + "VALUES (" + getDie_id() + ", '" + getDie_horario() + "', '" + getDie_porcion() + "', " + getDie_idAlimento() + ")";
+        String sql = "INSERT INTO dieta(die_horario, die_porcion, die_idalimento,die_estado)"
+                + "VALUES ('" + getDie_horario() + "', " + getDie_porcion() + ", " + getDie_idAlimento() + ","+isDie_estado()+")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
@@ -68,31 +68,31 @@ public class ModelDieta extends Dieta {
         return mpgc.accion(sql);
     }
 
-    public List<Dieta> busquedaIncrementalDieta(String busqueda) {
-        List<Dieta> listaDieta = new ArrayList<>();
-        String sql = "select * from dieta "
-                + "where die_estado=true "
-                + "and lower(die_horario) like '%" + busqueda + "%' "
-                + "or lower(die_horario) like '%" + busqueda + "%' "
-                + "or die_id like '%" + busqueda + "%' ";
-        ResultSet rs = mpgc.consulta(sql);
-        try {
-            while (rs.next()) {
-                Dieta dieta = new Dieta();
-                dieta.setPrecioAli(rs.getDouble(rs.getString(7)));
-                dieta.setNombreAli(rs.getString(8));
-                dieta.setDescripcionAli(rs.getString(9));
-
-                listaDieta.add(dieta);
-            }
-        } catch (SQLException e) {
-            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
-        }
-        try {
-            rs.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listaDieta;
+//    public List<Dieta> busquedaIncrementalDieta(String busqueda) {
+//        List<Dieta> listaDieta = new ArrayList<>();
+//        String sql = "select * from alimento "
+//                + "where ali_estado=true "
+//                + "and lower(die_horario) like '%" + busqueda + "%' "
+//                + "or lower(die_horario) like '%" + busqueda + "%' ";
+////                + "or die_id like '%" + busqueda + "%' ";
+//        ResultSet rs = mpgc.consulta(sql);
+//        try {
+//            while (rs.next()) {
+//                Dieta dieta = new Dieta();
+//                dieta.setPrecioAli(rs.getDouble(rs.getString(7)));
+//                dieta.setNombreAli(rs.getString(8));
+//                dieta.setDescripcionAli(rs.getString(9));
+//
+//                listaDieta.add(dieta);
+//            }
+//        } catch (SQLException e) {
+//            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//        try {
+//            rs.close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        return listaDieta;
     }
-}
+//}

@@ -27,20 +27,20 @@ public class ModelAlimento extends Alimento {
         try {
             while (rs.next()) {
                 Alimento alimento = new Alimento();
-                
+
                 alimento.setIdalimento(rs.getInt(1));
                 alimento.setPrecioAli(rs.getDouble(2));
                 alimento.setNombreAli(rs.getString(3));
                 alimento.setDescripcionAli(rs.getString(4));
                 alimento.setEstadoAli(rs.getBoolean(5));
                 alimento.setIdproveedor(rs.getInt(6));
-                
+
                 alimento.setId_proveedor(7);
                 alimento.setCiudad_pro(rs.getString(8));
                 alimento.setNombre_pro(rs.getString(9));
                 alimento.setTelefono(rs.getString(10));
                 alimento.setEstadoProv(rs.getBoolean(11));
-                
+
                 listaAlimentos.add(alimento);
             }
         } catch (SQLException e) {
@@ -81,11 +81,11 @@ public class ModelAlimento extends Alimento {
         String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
                 + "  where ali_estado=true "
                 + "  and p.pro_telefono like '%" + busqueda + "%' "
-//                + "  or p.pro_id=" + busqueda
+                //                + "  or p.pro_id=" + busqueda
                 + "  or lower(p.pro_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.pro_ciudad) like '%" + busqueda + "%' "
                 + "  or lower(a.ali_descripcion) like '%" + busqueda + "%' "
-//                + "  or a.ali_precio=" + busqueda
+                //                + "  or a.ali_precio=" + busqueda
                 + "  or lower(a.ali_nombre) like '%" + busqueda + "%' ";
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -97,12 +97,43 @@ public class ModelAlimento extends Alimento {
                 alimento.setDescripcionAli(rs.getString(4));
                 alimento.setEstadoAli(rs.getBoolean(5));
                 alimento.setIdproveedor(rs.getInt(6));
-                
+
                 alimento.setId_proveedor(7);
                 alimento.setCiudad_pro(rs.getString(8));
                 alimento.setNombre_pro(rs.getString(9));
                 alimento.setTelefono(rs.getString(10));
                 alimento.setEstadoProv(rs.getBoolean(11));
+
+                listaAlimento.add(alimento);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaAlimento;
+    }
+
+    public List<Alimento> busquedaincrementalDlg(String busqueda) {
+        List<Alimento> listaAlimento = new ArrayList<>();
+        String sql = "select a.ali_id,a.ali_nombre,a.ali_precio,p.pro_nombre,a.ali_descripcion "
+                + "  from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
+                + "  where ali_estado=true "
+                + "  or lower(p.pro_nombre) like '%" + busqueda + "%' "
+                + "  or lower(a.ali_descripcion) like '%" + busqueda + "%' "
+                + "  or lower(a.ali_nombre) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Alimento alimento = new Alimento();
+                alimento.setIdalimento(rs.getInt(1));
+                alimento.setNombreAli(rs.getString(2));
+                alimento.setPrecioAli(rs.getDouble(3));
+                alimento.setNombre_pro(rs.getString(4));
+                alimento.setDescripcionAli(rs.getString(5));
 
                 listaAlimento.add(alimento);
             }
