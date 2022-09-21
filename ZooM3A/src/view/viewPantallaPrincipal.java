@@ -782,5 +782,12 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.menuanimales = menuanimales;
     }
 
-    
+    public JMenuItem getjMIVisualizarPrecios() {
+        return jMenuItem1;
+    }
+
+    public void setjMIVisualizarPrecios(JMenuItem jMIVisualizarPrecios) {
+        this.jMenuItem1 = jMIVisualizarPrecios;
+    }
+
 }

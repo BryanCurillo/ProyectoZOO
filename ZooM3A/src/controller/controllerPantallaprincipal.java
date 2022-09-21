@@ -1,4 +1,4 @@
-    /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -35,6 +35,7 @@ import view.viewVistaAlimento;
 import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
 import view.viewRegistroDieta;
+import view.viewVistaTickets;
 
 /**
  *
@@ -71,6 +72,7 @@ public class controllerPantallaprincipal {
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
         vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
+        vista.getjMIVisualizarPrecios().addActionListener(l -> viewVistaTickets());
     }
 
     //CARGAR DATOS
@@ -262,9 +264,7 @@ public class controllerPantallaprincipal {
 //        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
 //        controllerVali.inicialControl();
 //    }
-    
     ////////
-
     public void vistaActualizarTicket() {
         ModelTickets mt = new ModelTickets();
         viewActualizarTicket vat = new viewActualizarTicket();
@@ -273,6 +273,15 @@ public class controllerPantallaprincipal {
         ControllerTickets ct = new ControllerTickets(vat, mt);
         ct.iniciarControl();
 
+    }
+
+    public void viewVistaTickets() {
+
+        ModelTickets mt = new ModelTickets();
+        viewVistaTickets vvt = new viewVistaTickets();
+
+        vista.getjDPprincipal().add(vvt);
+        ControllerVistaTickets cvt = new ControllerVistaTickets(vvt, mt);
     }
 
 }

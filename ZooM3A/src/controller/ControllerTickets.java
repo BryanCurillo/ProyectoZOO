@@ -6,6 +6,7 @@ package controller;
 
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.ModelTickets;
 import model.Tickets;
 import view.viewActualizarTicket;
@@ -18,6 +19,9 @@ public class ControllerTickets extends Tickets {
 
     private viewActualizarTicket vrt;
     private ModelTickets mt;
+    int i = 0;
+
+    DefaultTableModel estructuraTabla;
 
     public ControllerTickets() {
     }
@@ -25,6 +29,7 @@ public class ControllerTickets extends Tickets {
     public ControllerTickets(viewActualizarTicket vrt, ModelTickets mt) {
         this.vrt = vrt;
         this.mt = mt;
+        cargarComboCategoria();
         vrt.toFront();
         vrt.setVisible(true);
     }

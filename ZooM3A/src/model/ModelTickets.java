@@ -21,14 +21,14 @@ public class ModelTickets extends Tickets {
 
     public List<Tickets> getTickets() {
         List<Tickets> listaTickets = new ArrayList<>();
-        String sql = "select tic_id, tic_precio, tic_categoria from ticket";
+        String sql = "select tic_id, tic_categoria, tic_precio from ticket";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
                 Tickets t = new Tickets();
                 t.setTic_id(rs.getInt(1));
-                t.setTic_precio(2);
-                t.setTic_categoria(rs.getString(3));
+                t.setTic_categoria(rs.getString(2));
+                t.setTic_precio(rs.getInt(3));
                 listaTickets.add(t);
             }
         } catch (SQLException e) {
