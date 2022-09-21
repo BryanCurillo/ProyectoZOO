@@ -6,9 +6,11 @@ package controller;
 
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Alimento;
 import model.Dieta;
 import model.ModelDieta;
+import model.Proveedor;
 import view.viewRegistroDieta;
 
 /**
@@ -19,18 +21,30 @@ public class ControllerDieta extends Dieta {
 
     private viewRegistroDieta vrd;
     private ModelDieta md;
+    int i = 0;
+    DefaultTableModel estructuraTabla;
 
-    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md) {
-        this.vrd = vrd;
-        this.md = md;
-        vrd.toFront();
-        vrd.setVisible(true);
+    public ControllerDieta() {
     }
 
-    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md, int die_id, String die_horario, String die_porcion, int die_idAlimento) {
-        super(die_id, die_horario, die_porcion, die_idAlimento);
+    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla) {
         this.vrd = vrd;
         this.md = md;
+        this.estructuraTabla = estructuraTabla;
+    }
+
+    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla, int die_id, String die_horario, String die_porcion, int die_idAlimento, boolean die_estado) {
+        super(die_id, die_horario, die_porcion, die_idAlimento, die_estado);
+        this.vrd = vrd;
+        this.md = md;
+        this.estructuraTabla = estructuraTabla;
+    }
+
+    public ControllerDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla, int die_id, String die_horario, String die_porcion, int die_idAlimento, boolean die_estado, int idalimento, double precioAli, String nombreAli, String descripcionAli, int idproveedor, boolean estadoAli) {
+        super(die_id, die_horario, die_porcion, die_idAlimento, die_estado, idalimento, precioAli, nombreAli, descripcionAli, idproveedor, estadoAli);
+        this.vrd = vrd;
+        this.md = md;
+        this.estructuraTabla = estructuraTabla;
     }
 
     public void iniciarControles() {
@@ -137,6 +151,36 @@ public class ControllerDieta extends Dieta {
             });
             return true;
         }
+    }
+
+    public void abrirDlg() {
+        vrd.getDlgAlimento().setLocationRelativeTo(vrd);
+        vrd.getDlgAlimento().setVisible(true);
+        cargarDatosDlg(1);
+    }
+
+    public void cargarDatosDlg(int opc) {
+
+        vrd.getTabladlg().setRowHeight(25);
+        estructuraTabla = (DefaultTableModel) vrd.getTabladlg().getModel();
+        estructuraTabla.setRowCount(0);
+
+        List<Dieta> listaDieta;
+
+        String busqueda = vrd.getTxtbuscardlg().getText().toLowerCase().trim();
+        listaDieta = md.busquedaIncrementalDieta(busqueda);
+
+        i = 0;
+        listaDieta.stream().sorted((x, y)
+                -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(emp -> {
+            estructuraTabla.addRow(new Object[listaDieta.size()]);
+            vrd.getTabladlg().setValueAt(emp.getId_proveedor(), i, 0);
+            vrd.getTabladlg().setValueAt(emp.getNombre_pro(), i, 1);
+            vrd.getTabladlg().setValueAt(emp.getCiudad_pro(), i, 2);
+            vrd.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
+            i++;
+        });
+
     }
 
     public void limpiarCampos() {

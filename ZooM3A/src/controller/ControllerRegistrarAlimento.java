@@ -136,7 +136,7 @@ public class ControllerRegistrarAlimento {
                 //UPDATE
                 int id = Integer.parseInt(vistaRegAlimento.getTxtidAli().getText());
                 alimento.setIdalimento(id);
-                int response = JOptionPane.showConfirmDialog(vistaRegAlimento, "¿Seguro que desea actualizar los datos del cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                int response = JOptionPane.showConfirmDialog(vistaRegAlimento, "¿Seguro que desea actualizar los datos del alimento?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if (response == JOptionPane.YES_OPTION) {
                     if (alimento.updateAlimento()) {//Grabamos
                         JOptionPane.showMessageDialog(vistaRegAlimento, "Alimento actualizado correctamente");
