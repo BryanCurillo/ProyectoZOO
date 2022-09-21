@@ -211,7 +211,7 @@ public class ControllerRegistroProveedor {
             ban = false;
         }
         //COMBO
-        if (vistaRegProv.getComboCiudad().getSelectedIndex() == 0) {
+        if (vistaRegProv.getComboCiudad().getSelectedIndex() == 0 && vistaRegProv.getTxtOtraCiudad().getText().isEmpty()) {
             JOptionPane.showMessageDialog(vistaRegProv, "Seleccione una ciudad");
             ban = false;
         }
