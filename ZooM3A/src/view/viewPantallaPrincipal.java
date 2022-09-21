@@ -55,7 +55,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         barramenus = new javax.swing.JMenuBar();
-        agregarpersona = new javax.swing.JMenu();
+        MenuPersonal = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
         jMIvistaEmpleado = new javax.swing.JMenuItem();
         menualimento = new javax.swing.JMenu();
@@ -64,19 +64,19 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         menuanimales = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        MenuTicket = new javax.swing.JMenu();
         MIActualizarPrecio = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMProveedor = new javax.swing.JMenu();
+        MenuProveedor = new javax.swing.JMenu();
         jMIagregarProveedor = new javax.swing.JMenuItem();
         JMIvistaProveedor = new javax.swing.JMenuItem();
-        jMProveedor1 = new javax.swing.JMenu();
+        MenuClientes = new javax.swing.JMenu();
         jMIagregarCliente = new javax.swing.JMenuItem();
         JMIvistaCliente = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        MenuDieta = new javax.swing.JMenu();
         jMIAgregarDieta = new javax.swing.JMenuItem();
         jMIVisualizarDietas = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        MenuHabitad = new javax.swing.JMenu();
         jMIAgregarHabitat = new javax.swing.JMenuItem();
         jMIVisualizarHabitat = new javax.swing.JMenuItem();
 
@@ -262,20 +262,20 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 460));
 
-        agregarpersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario.png"))); // NOI18N
-        agregarpersona.setText("Personal");
+        MenuPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario.png"))); // NOI18N
+        MenuPersonal.setText("Personal");
 
         jMIagregarPersona.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMIagregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
         jMIagregarPersona.setText("Agregar personal");
-        agregarpersona.add(jMIagregarPersona);
+        MenuPersonal.add(jMIagregarPersona);
 
         jMIvistaEmpleado.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMIvistaEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         jMIvistaEmpleado.setText("Visualizar registro");
-        agregarpersona.add(jMIvistaEmpleado);
+        MenuPersonal.add(jMIvistaEmpleado);
 
-        barramenus.add(agregarpersona);
+        barramenus.add(MenuPersonal);
 
         menualimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plato.png"))); // NOI18N
         menualimento.setText("Alimento");
@@ -307,69 +307,69 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(menuanimales);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
-        jMenu1.setText("Tickets");
+        MenuTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
+        MenuTicket.setText("Tickets");
 
         MIActualizarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
         MIActualizarPrecio.setText("Actualizar Precio");
-        jMenu1.add(MIActualizarPrecio);
+        MenuTicket.add(MIActualizarPrecio);
 
         jMenuItem1.setText("Visualizar Precios");
-        jMenu1.add(jMenuItem1);
+        MenuTicket.add(jMenuItem1);
 
-        barramenus.add(jMenu1);
+        barramenus.add(MenuTicket);
 
-        jMProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
-        jMProveedor.setText("Proveedor");
+        MenuProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
+        MenuProveedor.setText("Proveedor");
 
         jMIagregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
         jMIagregarProveedor.setText("Agregar proveedor");
-        jMProveedor.add(jMIagregarProveedor);
+        MenuProveedor.add(jMIagregarProveedor);
 
         JMIvistaProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         JMIvistaProveedor.setText("´Visualizar registro");
-        jMProveedor.add(JMIvistaProveedor);
+        MenuProveedor.add(JMIvistaProveedor);
 
-        barramenus.add(jMProveedor);
+        barramenus.add(MenuProveedor);
 
-        jMProveedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
-        jMProveedor1.setText("Cliente");
+        MenuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
+        MenuClientes.setText("Cliente");
 
         jMIagregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
         jMIagregarCliente.setText("Agregar cliente");
-        jMProveedor1.add(jMIagregarCliente);
+        MenuClientes.add(jMIagregarCliente);
 
         JMIvistaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         JMIvistaCliente.setText("Visualizar registro");
-        jMProveedor1.add(JMIvistaCliente);
+        MenuClientes.add(JMIvistaCliente);
 
-        barramenus.add(jMProveedor1);
+        barramenus.add(MenuClientes);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
-        jMenu2.setText("Dieta");
+        MenuDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        MenuDieta.setText("Dieta");
 
         jMIAgregarDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
         jMIAgregarDieta.setText("Agregar dieta");
-        jMenu2.add(jMIAgregarDieta);
+        MenuDieta.add(jMIAgregarDieta);
 
         jMIVisualizarDietas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         jMIVisualizarDietas.setText("Visualizar registro");
-        jMenu2.add(jMIVisualizarDietas);
+        MenuDieta.add(jMIVisualizarDietas);
 
-        barramenus.add(jMenu2);
+        barramenus.add(MenuDieta);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
-        jMenu3.setText("Habitat");
+        MenuHabitad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        MenuHabitad.setText("Habitat");
 
         jMIAgregarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
         jMIAgregarHabitat.setText("Agregar habitat");
-        jMenu3.add(jMIAgregarHabitat);
+        MenuHabitad.add(jMIAgregarHabitat);
 
         jMIVisualizarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         jMIVisualizarHabitat.setText("Visualizar registro");
-        jMenu3.add(jMIVisualizarHabitat);
+        MenuHabitad.add(jMIVisualizarHabitat);
 
-        barramenus.add(jMenu3);
+        barramenus.add(MenuHabitad);
 
         setJMenuBar(barramenus);
 
@@ -396,7 +396,12 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIvistaCliente;
     private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
-    private javax.swing.JMenu agregarpersona;
+    private javax.swing.JMenu MenuClientes;
+    private javax.swing.JMenu MenuDieta;
+    private javax.swing.JMenu MenuHabitad;
+    private javax.swing.JMenu MenuPersonal;
+    private javax.swing.JMenu MenuProveedor;
+    private javax.swing.JMenu MenuTicket;
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton jButton1;
@@ -418,11 +423,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIagregarProveedor;
     private javax.swing.JMenuItem jMIcrudAlimento;
     private javax.swing.JMenuItem jMIvistaEmpleado;
-    private javax.swing.JMenu jMProveedor;
-    private javax.swing.JMenu jMProveedor1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
@@ -462,12 +462,52 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.MIActualizarPrecio = MIActualizarPrecio;
     }
 
-    public JMenu getAgregarpersona() {
-        return agregarpersona;
+    public JMenu getMenuClientes() {
+        return MenuClientes;
     }
 
-    public void setAgregarpersona(JMenu agregarpersona) {
-        this.agregarpersona = agregarpersona;
+    public void setMenuClientes(JMenu MenuClientes) {
+        this.MenuClientes = MenuClientes;
+    }
+
+    public JMenu getMenuDieta() {
+        return MenuDieta;
+    }
+
+    public void setMenuDieta(JMenu MenuDieta) {
+        this.MenuDieta = MenuDieta;
+    }
+
+    public JMenu getMenuHabitad() {
+        return MenuHabitad;
+    }
+
+    public void setMenuHabitad(JMenu MenuHabitad) {
+        this.MenuHabitad = MenuHabitad;
+    }
+
+    public JMenu getMenuPersonal() {
+        return MenuPersonal;
+    }
+
+    public void setMenuPersonal(JMenu MenuPersonal) {
+        this.MenuPersonal = MenuPersonal;
+    }
+
+    public JMenu getMenuProveedor() {
+        return MenuProveedor;
+    }
+
+    public void setMenuProveedor(JMenu MenuProveedor) {
+        this.MenuProveedor = MenuProveedor;
+    }
+
+    public JMenu getMenuTicket() {
+        return MenuTicket;
+    }
+
+    public void setMenuTicket(JMenu MenuTicket) {
+        this.MenuTicket = MenuTicket;
     }
 
     public JMenuBar getBarramenus() {
@@ -484,6 +524,62 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setBtnCerrarSesion(JButton btnCerrarSesion) {
         this.btnCerrarSesion = btnCerrarSesion;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JButton getjButton3() {
+        return jButton3;
+    }
+
+    public void setjButton3(JButton jButton3) {
+        this.jButton3 = jButton3;
+    }
+
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public void setjButton4(JButton jButton4) {
+        this.jButton4 = jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JButton getjButton6() {
+        return jButton6;
+    }
+
+    public void setjButton6(JButton jButton6) {
+        this.jButton6 = jButton6;
+    }
+
+    public JButton getjButton7() {
+        return jButton7;
+    }
+
+    public void setjButton7(JButton jButton7) {
+        this.jButton7 = jButton7;
     }
 
     public JDesktopPane getjDPprincipal() {
@@ -510,12 +606,28 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMIAgregarDieta = jMIAgregarDieta;
     }
 
+    public JMenuItem getjMIAgregarHabitat() {
+        return jMIAgregarHabitat;
+    }
+
+    public void setjMIAgregarHabitat(JMenuItem jMIAgregarHabitat) {
+        this.jMIAgregarHabitat = jMIAgregarHabitat;
+    }
+
     public JMenuItem getjMIVisualizarDietas() {
         return jMIVisualizarDietas;
     }
 
     public void setjMIVisualizarDietas(JMenuItem jMIVisualizarDietas) {
         this.jMIVisualizarDietas = jMIVisualizarDietas;
+    }
+
+    public JMenuItem getjMIVisualizarHabitat() {
+        return jMIVisualizarHabitat;
+    }
+
+    public void setjMIVisualizarHabitat(JMenuItem jMIVisualizarHabitat) {
+        this.jMIVisualizarHabitat = jMIVisualizarHabitat;
     }
 
     public JMenuItem getjMIagregarAlimento() {
@@ -566,36 +678,12 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMIvistaEmpleado = jMIvistaEmpleado;
     }
 
-    public JMenu getjMProveedor() {
-        return jMProveedor;
+    public JMenuItem getjMenuItem1() {
+        return jMenuItem1;
     }
 
-    public void setjMProveedor(JMenu jMProveedor) {
-        this.jMProveedor = jMProveedor;
-    }
-
-    public JMenu getjMProveedor1() {
-        return jMProveedor1;
-    }
-
-    public void setjMProveedor1(JMenu jMProveedor1) {
-        this.jMProveedor1 = jMProveedor1;
-    }
-
-    public JMenu getjMenu1() {
-        return jMenu1;
-    }
-
-    public void setjMenu1(JMenu jMenu1) {
-        this.jMenu1 = jMenu1;
-    }
-
-    public JMenu getjMenu2() {
-        return jMenu2;
-    }
-
-    public void setjMenu2(JMenu jMenu2) {
-        this.jMenu2 = jMenu2;
+    public void setjMenuItem1(JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
     }
 
     public JMenuItem getjMenuItem5() {
@@ -646,6 +734,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jlblCedulaPP = jlblCedulaPP;
     }
 
+    public JLabel getJlblCedulaPP1() {
+        return jlblCedulaPP1;
+    }
+
+    public void setJlblCedulaPP1(JLabel jlblCedulaPP1) {
+        this.jlblCedulaPP1 = jlblCedulaPP1;
+    }
+
     public JLabel getJlblFotoPP() {
         return jlblFotoPP;
     }
@@ -684,32 +780,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
-    }
-
-    public JMenuItem getjMIAgregarHabitat() {
-        return jMIAgregarHabitat;
-    }
-
-    public void setjMIAgregarHabitat(JMenuItem jMIAgregarHabitat) {
-        this.jMIAgregarHabitat = jMIAgregarHabitat;
-    }
-
-
-
-    public JMenuItem getjMIVisualizarHabitat() {
-        return jMIVisualizarHabitat;
-    }
-
-    public void setjMIVisualizarHabitat(JMenuItem jMIVisualizarHabitat) {
-        this.jMIVisualizarHabitat = jMIVisualizarHabitat;
-    }
-
-    public JLabel getJlblCedulaPP1() {
-        return jlblCedulaPP1;
-    }
-
-    public void setJlblCedulaPP1(JLabel jlblCedulaPP1) {
-        this.jlblCedulaPP1 = jlblCedulaPP1;
     }
 
     
