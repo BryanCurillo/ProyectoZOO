@@ -34,7 +34,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSpiCapacidad = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
@@ -59,10 +58,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         setBorder(null);
         setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        jLabel3.setText("REGISTRO DE HABITAD");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1001, 6, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("CAPACIDAD:");
@@ -157,7 +152,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -248,14 +242,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     public void setjLabel18(JLabel jLabel18) {
         this.jLabel18 = jLabel18;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
     }
 
     public JLabel getjLabel5() {
