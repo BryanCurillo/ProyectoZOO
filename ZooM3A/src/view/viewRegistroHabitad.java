@@ -6,10 +6,12 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -34,6 +36,17 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDlgCuidador = new javax.swing.JDialog();
+        lbltitulo = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabladlg = new javax.swing.JTable();
+        jToolBar1 = new javax.swing.JToolBar();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        jLabel10 = new javax.swing.JLabel();
+        txtbuscardlg = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        btnseleccionardlg = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
         jLabel6 = new javax.swing.JLabel();
         jSpiCapacidad = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
@@ -56,6 +69,69 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jDlgCuidador.setResizable(false);
+        jDlgCuidador.setSize(new java.awt.Dimension(545, 310));
+
+        lbltitulo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lbltitulo.setText("SELECCIÓN DE PROVEEDOR");
+
+        tabladlg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id", "Nombre", "Rama"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tabladlg);
+
+        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar1.setFloatable(false);
+        jToolBar1.add(jSeparator1);
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("BUSCAR:  ");
+        jToolBar1.add(jLabel10);
+        jToolBar1.add(txtbuscardlg);
+        jToolBar1.add(jSeparator2);
+
+        btnseleccionardlg.setText("SELECCIONAR");
+        jToolBar1.add(btnseleccionardlg);
+        jToolBar1.add(jSeparator3);
+
+        javax.swing.GroupLayout jDlgCuidadorLayout = new javax.swing.GroupLayout(jDlgCuidador.getContentPane());
+        jDlgCuidador.getContentPane().setLayout(jDlgCuidadorLayout);
+        jDlgCuidadorLayout.setHorizontalGroup(
+            jDlgCuidadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jDlgCuidadorLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(lbltitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDlgCuidadorLayout.setVerticalGroup(
+            jDlgCuidadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDlgCuidadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbltitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
+        );
 
         setBorder(null);
         setClosable(true);
@@ -127,7 +203,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 470, 141));
 
         jLabel5.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
-        jLabel5.setText("DATOS DE CUIDADOR A CARGO");
+        jLabel5.setText("DATOS DE ZOOLOGO A CARGO");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
@@ -147,10 +223,13 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcancelar;
+    private javax.swing.JButton btnseleccionardlg;
     private javax.swing.JButton btregistrar;
     private javax.swing.JComboBox<String> comboTipoHab;
     private javax.swing.JComboBox<String> comboUbicacion;
+    private javax.swing.JDialog jDlgCuidador;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -162,10 +241,18 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JSpinner jSpiCapacidad;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnSelecZoologo;
+    private javax.swing.JLabel lbltitulo;
+    private javax.swing.JTable tabladlg;
     private javax.swing.JTextField txtOtrobloque;
     private javax.swing.JTextField txtOtrotipo;
+    private javax.swing.JTextField txtbuscardlg;
     private javax.swing.JTextField txtnombreZol;
     private javax.swing.JTextField txtramaZol;
     // End of variables declaration//GEN-END:variables
@@ -344,6 +431,46 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     public void setTxtOtrotipo(JTextField txtOtrotipo) {
         this.txtOtrotipo = txtOtrotipo;
+    }
+
+    public JButton getBtnseleccionardlg() {
+        return btnseleccionardlg;
+    }
+
+    public void setBtnseleccionardlg(JButton btnseleccionardlg) {
+        this.btnseleccionardlg = btnseleccionardlg;
+    }
+
+    public JDialog getjDlgCuidador() {
+        return jDlgCuidador;
+    }
+
+    public void setjDlgCuidador(JDialog jDlgCuidador) {
+        this.jDlgCuidador = jDlgCuidador;
+    }
+
+    public JLabel getLbltitulo() {
+        return lbltitulo;
+    }
+
+    public void setLbltitulo(JLabel lbltitulo) {
+        this.lbltitulo = lbltitulo;
+    }
+
+    public JTable getTabladlg() {
+        return tabladlg;
+    }
+
+    public void setTabladlg(JTable tabladlg) {
+        this.tabladlg = tabladlg;
+    }
+
+    public JTextField getTxtbuscardlg() {
+        return txtbuscardlg;
+    }
+
+    public void setTxtbuscardlg(JTextField txtbuscardlg) {
+        this.txtbuscardlg = txtbuscardlg;
     }
 
 
