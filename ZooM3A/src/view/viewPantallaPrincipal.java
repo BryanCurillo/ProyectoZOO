@@ -66,6 +66,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         MIActualizarPrecio = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMProveedor = new javax.swing.JMenu();
         jMIagregarProveedor = new javax.swing.JMenuItem();
         JMIvistaProveedor = new javax.swing.JMenuItem();
@@ -313,6 +314,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MIActualizarPrecio.setText("Actualizar Precio");
         jMenu1.add(MIActualizarPrecio);
 
+        jMenuItem1.setText("Visualizar Precios");
+        jMenu1.add(jMenuItem1);
+
         barramenus.add(jMenu1);
 
         jMProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
@@ -419,6 +423,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
