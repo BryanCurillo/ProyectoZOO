@@ -37,20 +37,24 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
 
         DlgAlimento = new javax.swing.JDialog();
         lbltitulo = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtbuscardlg = new javax.swing.JTextField();
-        btnbuscardlg = new javax.swing.JButton();
-        btnseleccionardlg = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabladlg = new javax.swing.JTable();
+        jToolBar1 = new javax.swing.JToolBar();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        jLabel9 = new javax.swing.JLabel();
+        txtbuscardlg = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        btnseleccionardlg = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
         noborrarIDALIMENTO = new javax.swing.JTextField();
+        noborrarIDDIETA = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         combohoradieta = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
+        btnSeleccionarAliemento = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -62,37 +66,43 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         btnagregardieta = new javax.swing.JButton();
         btncancelardieta = new javax.swing.JButton();
 
+        DlgAlimento.setSize(new java.awt.Dimension(545, 310));
         DlgAlimento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbltitulo.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         lbltitulo.setText("SELECCIÓN DE ALIMENTO");
-        DlgAlimento.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel8.setText("BUSCAR");
-        DlgAlimento.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-        DlgAlimento.getContentPane().add(txtbuscardlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 49, 293, -1));
-
-        btnbuscardlg.setText("BUSCAR");
-        DlgAlimento.getContentPane().add(btnbuscardlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 49, -1, -1));
-
-        btnseleccionardlg.setText("SELECCIONAR");
-        DlgAlimento.getContentPane().add(btnseleccionardlg, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 49, -1, -1));
+        DlgAlimento.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         tabladlg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3"
+                "Id", "Nombre", "Precio", "Proveedor", "Descripcion"
             }
         ));
         jScrollPane2.setViewportView(tabladlg);
 
-        DlgAlimento.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, 586, 162));
+        DlgAlimento.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 470, 162));
+
+        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar1.setFloatable(false);
+        jToolBar1.add(jSeparator1);
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("BUSCAR:  ");
+        jToolBar1.add(jLabel9);
+        jToolBar1.add(txtbuscardlg);
+        jToolBar1.add(jSeparator2);
+
+        btnseleccionardlg.setText("SELECCIONAR");
+        jToolBar1.add(btnseleccionardlg);
+        jToolBar1.add(jSeparator3);
+
+        DlgAlimento.getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 460, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -102,14 +112,14 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("HORARIO");
 
-        combohoradieta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"05:00\"", "\"05:30\"", "\"06:00\"", "\"06:30\"", "\"07:00\"", "\"07:30\"", "\"08:00\"", "\"08:30\"", "\"09:00\"", "\"09:30\"", "\"10:00\"", "\"10:30\"", "\"11:00\"", "\"11:30\"", "\"12:00\"", "\"12:30\"", "\"13:00\"", "\"13:30\"", "\"14:00\"", "\"14:30\"", "\"15:00\"", "\"15:30\"", "\"16:00\"", "\"16:30\"", "\"17:00\"", "\"17:30\"", "\"18:00\"", "\"18:30\"", "\"19:00\"", "\"19:30\"", "\"20:00\"", "\"20:30\"", "\"21:00\"", "\"21:30\"", "\"22:00\"", "\"22:30\"", "\"23:00\"" }));
+        combohoradieta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un horario", "\"05:00\"", "\"05:30\"", "\"06:00\"", "\"06:30\"", "\"07:00\"", "\"07:30\"", "\"08:00\"", "\"08:30\"", "\"09:00\"", "\"09:30\"", "\"10:00\"", "\"10:30\"", "\"11:00\"", "\"11:30\"", "\"12:00\"", "\"12:30\"", "\"13:00\"", "\"13:30\"", "\"14:00\"", "\"14:30\"", "\"15:00\"", "\"15:30\"", "\"16:00\"", "\"16:30\"", "\"17:00\"", "\"17:30\"", "\"18:00\"", "\"18:30\"", "\"19:00\"", "\"19:30\"", "\"20:00\"", "\"20:30\"", "\"21:00\"", "\"21:30\"", "\"22:00\"", "\"22:30\"", "\"23:00\"" }));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setText("ALIMENTO");
 
-        jButton15.setText("SELECCIONAR");
+        btnSeleccionarAliemento.setText("SELECCIONAR");
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("NOMBRE");
@@ -130,7 +140,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton15))
+                        .addComponent(btnSeleccionarAliemento))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -150,7 +160,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton15)
+                    .addComponent(btnSeleccionarAliemento)
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -201,7 +211,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
                             .addComponent(btnagregardieta)
                             .addGap(18, 18, 18)
                             .addComponent(btncancelardieta))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,7 +245,12 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(241, 241, 241)
                     .addComponent(noborrarIDALIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(265, Short.MAX_VALUE)))
+                    .addContainerGap(287, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(251, 251, 251)
+                    .addComponent(noborrarIDDIETA, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(277, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,6 +262,11 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
                     .addGap(128, 128, 128)
                     .addComponent(noborrarIDALIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(150, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(138, 138, 138)
+                    .addComponent(noborrarIDDIETA, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(140, Short.MAX_VALUE)))
         );
 
         pack();
@@ -268,12 +288,12 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         this.btnagregardieta = btnagregardieta;
     }
 
-    public JButton getBtnbuscardlg() {
-        return btnbuscardlg;
+    public JTextField getNoborrarIDDIETA() {
+        return noborrarIDDIETA;
     }
 
-    public void setBtnbuscardlg(JButton btnbuscardlg) {
-        this.btnbuscardlg = btnbuscardlg;
+    public void setNoborrarIDDIETA(JTextField noborrarIDDIETA) {
+        this.noborrarIDDIETA = noborrarIDDIETA;
     }
 
     public JButton getBtncancelardieta() {
@@ -301,11 +321,11 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
     }
 
     public JButton getjButton15() {
-        return jButton15;
+        return btnSeleccionarAliemento;
     }
 
     public void setjButton15(JButton jButton15) {
-        this.jButton15 = jButton15;
+        this.btnSeleccionarAliemento = jButton15;
     }
 
     public JLabel getjLabel16() {
@@ -344,6 +364,14 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         return jLabel3;
     }
 
+    public JButton getBtnSeleccionarAliemento() {
+        return btnSeleccionarAliemento;
+    }
+
+    public void setBtnSeleccionarAliemento(JButton btnSeleccionarAliemento) {
+        this.btnSeleccionarAliemento = btnSeleccionarAliemento;
+    }
+
     public void setjLabel3(JLabel jLabel3) {
         this.jLabel3 = jLabel3;
     }
@@ -362,14 +390,6 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
 
     public void setjLabel7(JLabel jLabel7) {
         this.jLabel7 = jLabel7;
-    }
-
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
     }
 
     public JPanel getjPanel1() {
@@ -456,12 +476,11 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog DlgAlimento;
+    private javax.swing.JButton btnSeleccionarAliemento;
     private javax.swing.JButton btnagregardieta;
-    private javax.swing.JButton btnbuscardlg;
     private javax.swing.JButton btncancelardieta;
     private javax.swing.JButton btnseleccionardlg;
     private javax.swing.JComboBox<String> combohoradieta;
-    private javax.swing.JButton jButton15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -469,12 +488,17 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JTextField noborrarIDALIMENTO;
+    private javax.swing.JTextField noborrarIDDIETA;
     private javax.swing.JTable tabladlg;
     private javax.swing.JTextField txtbuscardlg;
     private javax.swing.JTextField txtdescripalimento;
