@@ -75,6 +75,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMIAgregarDieta = new javax.swing.JMenuItem();
         jMIVisualizarDietas = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMIAgregarHabitat = new javax.swing.JMenuItem();
+        jMIVisualizarHabitat = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1150, 0));
@@ -351,6 +354,19 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        jMenu3.setText("Habitat");
+
+        jMIAgregarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        jMIAgregarHabitat.setText("Agregar habitat");
+        jMenu3.add(jMIAgregarHabitat);
+
+        jMIVisualizarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIVisualizarHabitat.setText("Visualizar registro");
+        jMenu3.add(jMIVisualizarHabitat);
+
+        barramenus.add(jMenu3);
+
         setJMenuBar(barramenus);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -389,7 +405,9 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMIAgregarDieta;
+    private javax.swing.JMenuItem jMIAgregarHabitat;
     private javax.swing.JMenuItem jMIVisualizarDietas;
+    private javax.swing.JMenuItem jMIVisualizarHabitat;
     private javax.swing.JMenuItem jMIagregarAlimento;
     private javax.swing.JMenuItem jMIagregarCliente;
     private javax.swing.JMenuItem jMIagregarPersona;
@@ -400,6 +418,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMProveedor1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
@@ -660,6 +679,32 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
+    }
+
+    public JMenuItem getjMIAgregarHabitat() {
+        return jMIAgregarHabitat;
+    }
+
+    public void setjMIAgregarHabitat(JMenuItem jMIAgregarHabitat) {
+        this.jMIAgregarHabitat = jMIAgregarHabitat;
+    }
+
+
+
+    public JMenuItem getjMIVisualizarHabitat() {
+        return jMIVisualizarHabitat;
+    }
+
+    public void setjMIVisualizarHabitat(JMenuItem jMIVisualizarHabitat) {
+        this.jMIVisualizarHabitat = jMIVisualizarHabitat;
+    }
+
+    public JLabel getJlblCedulaPP1() {
+        return jlblCedulaPP1;
+    }
+
+    public void setJlblCedulaPP1(JLabel jlblCedulaPP1) {
+        this.jlblCedulaPP1 = jlblCedulaPP1;
     }
 
     
