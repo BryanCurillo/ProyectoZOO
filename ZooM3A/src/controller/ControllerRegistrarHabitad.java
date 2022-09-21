@@ -84,17 +84,35 @@ public class ControllerRegistrarHabitad {
         if (op == 1) {
             limpiarCampos();
             vistaRegHabitad.setName("Registro");
-            vistaRegHabitad.get().setText("REGISTRAR");
+            vistaRegHabitad.getBtregistrar().setText("REGISTRAR");
             vistaRegHabitad.setVisible(true);
             this.iniciarControl();
         } else {
             if (llenarDatos()) {
                 vistaRegHabitad.setName("Editar");
 //                vistaRegAlimento.getTxtcedula().setEditable(false);
-                vistaRegHabitad.getJbtnAgregar().setText("ACTUALIZAR");
+                vistaRegHabitad.getBtregistrar().setText("ACTUALIZAR");
                 vistaRegHabitad.setVisible(true);
                 this.iniciarControl();
             }
+        }
+    }
+
+    public void activarTxtBloque() {
+        if (vistaRegHabitad.getComboUbicacion().getSelectedIndex() != vistaRegHabitad.getComboUbicacion().getItemCount() - 1) {
+            vistaRegHabitad.getTxtOtrobloque().setText("");
+            vistaRegHabitad.getTxtOtrobloque().setEditable(false);
+        } else {
+            vistaRegHabitad.getTxtOtrobloque().setEditable(true);
+        }
+    }
+
+    public void activarTxtTipo() {
+        if (vistaRegHabitad.getComboTipoHab().getSelectedIndex() != vistaRegHabitad.getComboTipoHab().getItemCount() - 1) {
+            vistaRegHabitad.getTxtOtrotipo().setText("");
+            vistaRegHabitad.getTxtOtrotipo().setEditable(false);
+        } else {
+            vistaRegHabitad.getTxtOtrotipo().setEditable(true);
         }
     }
 
@@ -102,19 +120,31 @@ public class ControllerRegistrarHabitad {
         validaciones mivalidacion = new validaciones();
 
         if (validar()) {
-            //ALIMENTO
-            String nombre = vistaRegHabitad.getTxtnombrealimento().getText(),
-                    precio = vistaRegHabitad.getTxtPrecio().getText(),
-                    descripcion = vistaRegHabitad.getTxtAdescripcion().getText();
-            //PROVEEDOR
+            //Habitad
+            String tipo = "",
+                    ubicacion = "";
+            int capacidad = 0,
+                    idZoologo = 0;
+
+            if (vistaRegHabitad.getComboTipoHab().getSelectedIndex() == vistaRegHabitad.getComboTipoHab().getItemCount() - 1) {
+                tipo = vistaRegHabitad.getTxtOtrotipo().getText();
+            } else {
+                tipo = vistaRegHabitad.getComboTipoHab().getSelectedItem().toString();
+            }
+
+            if (vistaRegHabitad.getComboUbicacion().getSelectedIndex() == vistaRegHabitad.getComboUbicacion().getItemCount() - 1) {
+                ubicacion = vistaRegHabitad.getTxtOtrobloque().getText();
+            } else {
+                ubicacion = vistaRegHabitad.getComboUbicacion().getSelectedItem().toString();
+            }
             int fila = vistaRegHabitad.getTabladlg().getSelectedRow();
-            int idProv = Integer.parseInt(vistaRegHabitad.getTxtidPorv().getText());
+            int idHab = Integer.parseInt(vistaRegHabitad.getTxtidZoologoNoborrar().getText());
 
             ModelAlimento alimento = new ModelAlimento();
-            alimento.setNombreAli(nombre);
-            alimento.setPrecioAli(mivalidacion.validarDouble(precio));
-            alimento.setDescripcionAli(descripcion);
-            alimento.setIdproveedor(idProv);
+            alimento.setNombreAli(tipo);
+            alimento.setPrecioAli(mivalidacion.validarDouble(ubicacion));
+            alimento.setDescripcionAli(nombreZol);
+            alimento.setIdproveedor(idHab);
             alimento.setEstadoAli(true);
 
             if (vistaRegHabitad.getName().equals("Registro")) {
