@@ -21,7 +21,7 @@ public class ModelDieta extends Dieta {
 
     public List<Dieta> getDieta() {
         List<Dieta> listaDieta = new ArrayList<>();
-        String sql = "select * from dieta d join alimento a on (d.die_idali=a.ali_id)"
+        String sql = "select * from dieta d join alimento a on (d.idalimento=a.ali_id)"
                 + "  where die_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -79,11 +79,10 @@ public class ModelDieta extends Dieta {
         try {
             while (rs.next()) {
                 Dieta dieta = new Dieta();
-                dieta.setId_proveedor(rs.getInt(1));
-                dieta.setCiudad_pro(rs.getString(2));
-                dieta.setNombre_pro(rs.getString(3));
-                dieta.setTelefono(rs.getString(4));
-                dieta.setEstadoProv(rs.getBoolean(5));
+                dieta.setPrecioAli(rs.getDouble(rs.getString(7)));
+                dieta.setNombreAli(rs.getString(8));
+                dieta.setDescripcionAli(rs.getString(9));
+
                 listaDieta.add(dieta);
             }
         } catch (SQLException e) {
