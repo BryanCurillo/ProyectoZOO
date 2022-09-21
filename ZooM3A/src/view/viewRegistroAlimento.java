@@ -49,6 +49,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         txtidAli = new javax.swing.JTextField();
         txtidPorv = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         btnSeleccionarProv = new javax.swing.JButton();
@@ -67,7 +68,6 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         txtAdescripcion = new javax.swing.JTextArea();
         jbtnAgregar = new javax.swing.JButton();
         jbtnCancelar = new javax.swing.JButton();
-        txtPrecio1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -148,6 +148,11 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(210, 215, 159));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel10.setBackground(new java.awt.Color(255, 253, 227));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setText("$ ");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, 30));
+
         jPanel1.setBackground(new java.awt.Color(210, 215, 159));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -184,7 +189,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 520, 200));
 
         txtPrecio.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 278, 30));
+        jPanel2.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 250, 30));
 
         jLabel7.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel7.setText("PRECIO:");
@@ -195,7 +200,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, -1));
 
         txtnombrealimento.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtnombrealimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 278, 30));
+        jPanel2.add(txtnombrealimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 0, 270, 30));
 
         jLabel9.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel9.setText("DESCRIPCIÓN:");
@@ -221,11 +226,6 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jbtnCancelar.setText("CANCELAR");
         jbtnCancelar.setBorder(null);
         jPanel2.add(jbtnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, -1));
-
-        txtPrecio1.setEditable(false);
-        txtPrecio1.setBackground(new java.awt.Color(255, 253, 227));
-        txtPrecio1.setText("$");
-        jPanel2.add(txtPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 20, 30));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 40)); // NOI18N
         jLabel3.setText("Datos del Proveedor");
@@ -260,6 +260,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnseleccionardlg;
     private javax.swing.JDialog jDlgProveedor;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -286,7 +287,6 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
     private javax.swing.JTable tabladlg;
     private javax.swing.JTextArea txtAdescripcion;
     private javax.swing.JTextField txtPrecio;
-    private javax.swing.JTextField txtPrecio1;
     private javax.swing.JTextField txtbuscardlg;
     private javax.swing.JTextField txtciudadProv;
     private javax.swing.JTextField txtidAli;
@@ -506,14 +506,6 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
     public void setjDlgProveedor(JDialog jDlgProveedor) {
         this.jDlgProveedor = jDlgProveedor;
-    }
-
-    public JTextField getTxtPrecio1() {
-        return txtPrecio1;
-    }
-
-    public void setTxtPrecio1(JTextField txtPrecio1) {
-        this.txtPrecio1 = txtPrecio1;
     }
 
     public JTextField getTxtidAli() {
