@@ -7,6 +7,8 @@ package model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.stream.ImageInputStream;
@@ -64,4 +66,35 @@ public class modelZoologo extends Zoologo {
         return DatoRol;
     }
 
+    public List<Zoologo> busquedaincremental(String busqueda) {
+        List<Zoologo> listaZoologo = new ArrayList<>();
+        String sql = "select z.zol_id,(p.per_nombre||' '||p.per_apellido) as nombre ,z.zol_rama"
+                + " from zoologo z join empleado e on(e.emp_id=z.zol_idempleado)"
+                + " join persona p on (e.emp_cedula=p.per_cedula)"
+                + " where zol_estado=true"
+                + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
+                + "  or lower(z.zol_rama) like '%" + busqueda + "%' ";
+                //                + "  or a.ali_precio=" + busqueda
+
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Zoologo zoologo = new Zoologo();
+                zoologo.setIdZoo(rs.getInt(1));
+                zoologo.setNombre(rs.getString(2));
+                zoologo.setRama(rs.getString(3));
+
+                listaZoologo.add(zoologo);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaZoologo;
+    }
 }
