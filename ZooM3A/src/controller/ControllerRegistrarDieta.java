@@ -4,54 +4,67 @@
  */
 package controller;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Alimento;
 import model.Dieta;
 import model.ModelDieta;
-import model.Proveedor;
+import model.ModelAlimento;
+import model.Alimento;
 import view.viewRegistroDieta;
+import view.viewVistaDieta;
 
 /**
  *
  * @author ALEJO
  */
-public class ControllerRegistrarDieta extends Dieta {
+public class ControllerRegistrarDieta {
 
     private viewRegistroDieta vrd;
+    private viewVistaDieta vvd;
     private ModelDieta md;
+    private ModelAlimento ma;
     int i = 0;
+    boolean banvista = false;
     DefaultTableModel estructuraTabla;
 
     public ControllerRegistrarDieta() {
     }
 
-    public ControllerRegistrarDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla) {
+    public ControllerRegistrarDieta(viewRegistroDieta vrd, ModelDieta md, ModelAlimento ma) {
         this.vrd = vrd;
         this.md = md;
-        this.estructuraTabla = estructuraTabla;
-    }
-
-    public ControllerRegistrarDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla, int die_id, String die_horario, String die_porcion, int die_idAlimento, boolean die_estado) {
-        super(die_id, die_horario, die_porcion, die_idAlimento, die_estado);
-        this.vrd = vrd;
-        this.md = md;
-        this.estructuraTabla = estructuraTabla;
-    }
-
-    public ControllerRegistrarDieta(viewRegistroDieta vrd, ModelDieta md, DefaultTableModel estructuraTabla, int die_id, String die_horario, String die_porcion, int die_idAlimento, boolean die_estado, int idalimento, double precioAli, String nombreAli, String descripcionAli, int idproveedor, boolean estadoAli) {
-        super(die_id, die_horario, die_porcion, die_idAlimento, die_estado, idalimento, precioAli, nombreAli, descripcionAli, idproveedor, estadoAli);
-        this.vrd = vrd;
-        this.md = md;
-        this.estructuraTabla = estructuraTabla;
+        this.ma = ma;
+        vrd.toFront();
+        vrd.setVisible(true);
+        banvista = false;
     }
 
     public void iniciarControles() {
-        vrd.getBtnagregardieta().addActionListener(l -> registrarDieta());
         vrd.getBtncancelardieta().addActionListener(l -> vrd.dispose());
 
+        vrd.getBtnagregardieta().addActionListener(l -> registrarDieta());
+        vrd.getBtncancelardieta().addActionListener(l -> vrd.dispose());
+        vrd.getBtnSeleccionarAliemento().addActionListener(l -> abrirDlg());
+        vrd.getBtnseleccionardlg().addActionListener(l -> llenarDatosAlimento());
+        vrd.getTxtbuscardlg().addKeyListener(busquedaIncren);
     }
+    KeyListener busquedaIncren = new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            cargarDatosDlg(2);
+        }
+    };
 
     public void abrirRegistro(int op) {
         vrd.toFront();
@@ -73,23 +86,21 @@ public class ControllerRegistrarDieta extends Dieta {
 
     public void registrarDieta() {
         if (validar()) {
-
             vrd.getNoborrarIDALIMENTO().setVisible(false);
             String horario = vrd.getCombohoradieta().getSelectedItem().toString(),
                     porcion = vrd.getTxtporcion().getText();
-            int fila = vrd.getTabladlg().getSelectedRow();
+//            int fila = vrd.getTabladlg().getSelectedRow();
 
-            vrd.getNoborrarIDALIMENTO().setText(vrd.getTabladlg().getValueAt(fila, 0).toString());
-            vrd.getTxtnombrealiemento().setText(vrd.getTabladlg().getValueAt(fila, 1).toString());
-            vrd.getTxtprecioalimento().setText(vrd.getTabladlg().getValueAt(fila, 2).toString());
-            vrd.getTxtdescripalimento().setText(vrd.getTabladlg().getValueAt(fila, 3).toString());
-
+//            vrd.getNoborrarIDALIMENTO().setText(vrd.getTabladlg().getValueAt(fila, 0).toString());
+//            vrd.getTxtnombrealiemento().setText(vrd.getTabladlg().getValueAt(fila, 1).toString());
+//            vrd.getTxtprecioalimento().setText(vrd.getTabladlg().getValueAt(fila, 2).toString());
+//            vrd.getTxtdescripalimento().setText(vrd.getTabladlg().getValueAt(fila, 3).toString());
             int idali = Integer.parseInt(vrd.getNoborrarIDALIMENTO().getText());
-
             ModelDieta dieta = new ModelDieta();
             dieta.setDie_horario(horario);
             dieta.setDie_porcion(porcion);
             dieta.setDie_idAlimento(idali);
+            dieta.setDie_estado(true);
 
             if (vrd.getName().equals("Registro")) {
                 int response = JOptionPane.showConfirmDialog(vrd, "¿Agregar Dieta?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -105,30 +116,20 @@ public class ControllerRegistrarDieta extends Dieta {
         }
     }
 
-    public boolean validar() {
-        boolean ban = true;
-        validaciones mivalidacion = new validaciones();
+    public void llenarDatosAlimento() {
+        vrd.getNoborrarIDALIMENTO().setVisible(false);
+        vrd.getNoborrarIDDIETA().setVisible(false);
 
-        if (vrd.getCombohoradieta().getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(vrd, "SELECCIONE UNA HORA");
-            ban = false;
-        }
+        int fila = vrd.getTabladlg().getSelectedRow();
+//        int idProv = Integer.parseInt(vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString());
+        System.out.println(vrd.getTabladlg().getValueAt(fila, 0).toString());
+        vrd.getNoborrarIDALIMENTO().setText(vrd.getTabladlg().getValueAt(fila, 0).toString());
+        vrd.getTxtnombrealiemento().setText(vrd.getTabladlg().getValueAt(fila, 1).toString());
+        vrd.getTxtprecioalimento().setText(vrd.getTabladlg().getValueAt(fila, 2).toString());
+        vrd.getTxtdescripalimento().setText(vrd.getTabladlg().getValueAt(fila, 3).toString());
 
-        if (!vrd.getTxtporcion().getText().isEmpty()) {
-            if (mivalidacion.validarDouble(vrd.getTxtporcion().getText()) == 0) {
-                JOptionPane.showMessageDialog(vrd, "Porcion invalida");
-                ban = false;
-            }
-        } else {
-            JOptionPane.showMessageDialog(vrd, "Ingrese una porcion");
-            ban = false;
-        }
-
-        if (vrd.getTxtnombrealiemento().getText().isEmpty() && vrd.getTxtdescripalimento().getText().isEmpty() && vrd.getTxtprecioalimento().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vrd, "ELIJA UN ALIMENTO");
-            ban = false;
-        }
-        return ban;
+        vrd.getDlgAlimento().dispose();
+        vrd.getTxtbuscardlg().setText("");
     }
 
     public boolean llenarDatos() {
@@ -165,19 +166,20 @@ public class ControllerRegistrarDieta extends Dieta {
         estructuraTabla = (DefaultTableModel) vrd.getTabladlg().getModel();
         estructuraTabla.setRowCount(0);
 
-        List<Dieta> listaDieta;
+        List<Alimento> listaAlimento;
 
         String busqueda = vrd.getTxtbuscardlg().getText().toLowerCase().trim();
-        listaDieta = md.busquedaIncrementalDieta(busqueda);
+        listaAlimento = ma.busquedaincrementalDlg(busqueda);
 
         i = 0;
-        listaDieta.stream().sorted((x, y)
-                -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(emp -> {
-            estructuraTabla.addRow(new Object[listaDieta.size()]);
-            vrd.getTabladlg().setValueAt(emp.getId_proveedor(), i, 0);
-            vrd.getTabladlg().setValueAt(emp.getNombre_pro(), i, 1);
-            vrd.getTabladlg().setValueAt(emp.getCiudad_pro(), i, 2);
-            vrd.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
+        listaAlimento.stream().sorted((x, y)
+                -> x.getNombreAli().compareToIgnoreCase(y.getNombreAli())).forEach(ali -> {
+            estructuraTabla.addRow(new Object[listaAlimento.size()]);
+            vrd.getTabladlg().setValueAt(ali.getIdalimento(), i, 0);
+            vrd.getTabladlg().setValueAt(ali.getNombreAli(), i, 1);
+            vrd.getTabladlg().setValueAt(ali.getPrecioAli(), i, 2);
+            vrd.getTabladlg().setValueAt(ali.getNombre_pro(), i, 3);
+            vrd.getTabladlg().setValueAt(ali.getDescripcionAli(), i, 4);
             i++;
         });
 
@@ -192,4 +194,29 @@ public class ControllerRegistrarDieta extends Dieta {
 
     }
 
+    public boolean validar() {
+        boolean ban = true;
+        validaciones mivalidacion = new validaciones();
+
+        if (vrd.getCombohoradieta().getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(vrd, "SELECCIONE UN HORARIO");
+            ban = false;
+        }
+
+        if (!vrd.getTxtporcion().getText().isEmpty()) {
+            if (mivalidacion.validarDouble(vrd.getTxtporcion().getText()) == 0) {
+                JOptionPane.showMessageDialog(vrd, "Porcion invalida");
+                ban = false;
+            }
+        } else {
+            JOptionPane.showMessageDialog(vrd, "Ingrese una porcion");
+            ban = false;
+        }
+
+        if (vrd.getTxtnombrealiemento().getText().isEmpty() && vrd.getTxtdescripalimento().getText().isEmpty() && vrd.getTxtprecioalimento().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(vrd, "ELIJA UN ALIMENTO");
+            ban = false;
+        }
+        return ban;
+    }
 }

@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -69,8 +69,8 @@ public class controllerPantallaprincipal {
         vista.getjMIagregarAlimento().addActionListener(l -> registroAlimento());
         vista.getjMIcrudAlimento().addActionListener(l -> vistaAlimento());
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
-        vista.getjMIAgregarDieta().addActionListener(l -> vistaRegistrarDieta());
-        vista.getjMIAgregarHabitat().addActionListener(l->registroHabitat());
+        vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
+        vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
     }
 
     //CARGAR DATOS
@@ -239,6 +239,31 @@ public class controllerPantallaprincipal {
 //        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modelHab);
 //        controllerVali.inicialControl();
 //    }
+    ///DIETA
+    public void registroDieta() {
+        //Instancio las clases del modelo y la vista        
+        ModelAlimento modelAli = new ModelAlimento();
+        viewRegistroDieta vistaRegDieta = new viewRegistroDieta();
+        ModelDieta modeloDie = new ModelDieta();
+
+        //Agragar vista al desktop pane
+        vistaRegDieta.setName("Registro");
+        vista.getjDPprincipal().add(vistaRegDieta);
+        ControllerRegistrarDieta controReglAli = new ControllerRegistrarDieta(vistaRegDieta, modeloDie, modelAli);
+        controReglAli.iniciarControles();
+    }
+
+//    public void vistaAlimento() {
+//        ModelAlimento modeloAli = new ModelAlimento();
+//        viewVistaAlimento vistaAli = new viewVistaAlimento();
+//
+//        //Agragar vista al desktop pane                
+//        vista.getjDPprincipal().add(vistaAli);
+//        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
+//        controllerVali.inicialControl();
+//    }
+    
+    ////////
 
     public void vistaActualizarTicket() {
         ModelTickets mt = new ModelTickets();
@@ -250,11 +275,4 @@ public class controllerPantallaprincipal {
 
     }
 
-    public void vistaRegistrarDieta() {
-        ModelDieta md = new ModelDieta();
-        viewRegistroDieta vrd = new viewRegistroDieta();
-
-        vista.getjDPprincipal().add(vrd);
-//        ControllerDieta cd = new ControllerDieta(vrd, md, estructuraTabla);
-    }
 }
