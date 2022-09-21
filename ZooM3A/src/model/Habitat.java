@@ -8,21 +8,25 @@ package model;
  *
  * @author ALEJO
  */
-public class Habitat {
+public class Habitat extends Zoologo{
 
     private int id_habitat;
-    private int capacidad;
-    private String tipo;
-    private int idZoologo;
+    private String tipohab;
+    private int capacidadhap;
+    private int idZoologohab;
+    private String ubicacionhab;
+    private boolean estadohab;
 
     public Habitat() {
     }
 
-    public Habitat(int id_habitat, int capacidad, String tipo, int idZoologo) {
+    public Habitat(int id_habitat, String tipohab, int capacidadhap, int idZoologohab, String ubicacionhab, boolean estadohab) {
         this.id_habitat = id_habitat;
-        this.capacidad = capacidad;
-        this.tipo = tipo;
-        this.idZoologo = idZoologo;
+        this.tipohab = tipohab;
+        this.capacidadhap = capacidadhap;
+        this.idZoologohab = idZoologohab;
+        this.ubicacionhab = ubicacionhab;
+        this.estadohab = estadohab;
     }
 
     public int getId_habitat() {
@@ -33,29 +37,44 @@ public class Habitat {
         this.id_habitat = id_habitat;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public String getTipohab() {
+        return tipohab;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setTipohab(String tipohab) {
+        this.tipohab = tipohab;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getCapacidadhap() {
+        return capacidadhap;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setCapacidadhap(int capacidadhap) {
+        this.capacidadhap = capacidadhap;
     }
 
-    public int getIdZoologo() {
-        return idZoologo;
+    public int getIdZoologohab() {
+        return idZoologohab;
     }
 
-    public void setIdZoologo(int idZoologo) {
-        this.idZoologo = idZoologo;
+    public void setIdZoologohab(int idZoologohab) {
+        this.idZoologohab = idZoologohab;
     }
 
+    public String getUbicacionhab() {
+        return ubicacionhab;
+    }
+
+    public void setUbicacionhab(String ubicacionhab) {
+        this.ubicacionhab = ubicacionhab;
+    }
+
+    public boolean isEstadohab() {
+        return estadohab;
+    }
+
+    public void setEstadohab(boolean estadohab) {
+        this.estadohab = estadohab;
+    }
 
 }
