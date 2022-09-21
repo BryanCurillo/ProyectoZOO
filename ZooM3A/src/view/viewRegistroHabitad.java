@@ -38,6 +38,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jSpiCapacidad = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
         comboTipoHab = new javax.swing.JComboBox<>();
+        txtOtrotipo = new javax.swing.JTextField();
         btregistrar = new javax.swing.JButton();
         txtOtrobloque = new javax.swing.JTextField();
         btcancelar = new javax.swing.JButton();
@@ -72,8 +73,9 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, 30));
 
         comboTipoHab.setBackground(new java.awt.Color(255, 253, 227));
-        comboTipoHab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "Pradera", "Bosque", "Desierto", "Montaña", "Marisma", "Sabana", "Región polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Río", "Arrecife de coral", "Océano", "Playa" }));
+        comboTipoHab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "Pradera", "Bosque", "Desierto", "Montaña", "Marisma", "Sabana", "Región polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Río", "Arrecife de coral", "Océano", "Playa", "Otro..." }));
         getContentPane().add(comboTipoHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 260, 30));
+        getContentPane().add(txtOtrotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 130, 30));
 
         btregistrar.setBackground(new java.awt.Color(210, 215, 159));
         btregistrar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
@@ -163,6 +165,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JSpinner jSpiCapacidad;
     private javax.swing.JButton jbtnSelecZoologo;
     private javax.swing.JTextField txtOtrobloque;
+    private javax.swing.JTextField txtOtrotipo;
     private javax.swing.JTextField txtnombreZol;
     private javax.swing.JTextField txtramaZol;
     // End of variables declaration//GEN-END:variables
@@ -333,6 +336,14 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     public void setTxtOtrobloque(JTextField txtOtrobloque) {
         this.txtOtrobloque = txtOtrobloque;
+    }
+
+    public JTextField getTxtOtrotipo() {
+        return txtOtrotipo;
+    }
+
+    public void setTxtOtrotipo(JTextField txtOtrotipo) {
+        this.txtOtrotipo = txtOtrotipo;
     }
 
 
