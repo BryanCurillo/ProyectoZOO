@@ -237,7 +237,6 @@ public class ControllerRegistrarAlimento {
             vistaRegAlimento.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
             i++;
         });
-
     }
 
     public boolean validar() {
