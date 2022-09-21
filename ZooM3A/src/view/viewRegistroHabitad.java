@@ -4,6 +4,14 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ALEJO
@@ -325,4 +333,318 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtramaZol;
     private javax.swing.JTextField txtramaZol1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtcancelar() {
+        return btcancelar;
+    }
+
+    public void setBtcancelar(JButton btcancelar) {
+        this.btcancelar = btcancelar;
+    }
+
+    public JButton getBtcancelar1() {
+        return btcancelar1;
+    }
+
+    public void setBtcancelar1(JButton btcancelar1) {
+        this.btcancelar1 = btcancelar1;
+    }
+
+    public JButton getBtregistrar() {
+        return btregistrar;
+    }
+
+    public void setBtregistrar(JButton btregistrar) {
+        this.btregistrar = btregistrar;
+    }
+
+    public JButton getBtregistrar1() {
+        return btregistrar1;
+    }
+
+    public void setBtregistrar1(JButton btregistrar1) {
+        this.btregistrar1 = btregistrar1;
+    }
+
+    public JComboBox<String> getComboTipoHab() {
+        return comboTipoHab;
+    }
+
+    public void setComboTipoHab(JComboBox<String> comboTipoHab) {
+        this.comboTipoHab = comboTipoHab;
+    }
+
+    public JComboBox<String> getComboTipoHab1() {
+        return comboTipoHab1;
+    }
+
+    public void setComboTipoHab1(JComboBox<String> comboTipoHab1) {
+        this.comboTipoHab1 = comboTipoHab1;
+    }
+
+    public JComboBox<String> getComboUbicacion() {
+        return comboUbicacion;
+    }
+
+    public void setComboUbicacion(JComboBox<String> comboUbicacion) {
+        this.comboUbicacion = comboUbicacion;
+    }
+
+    public JComboBox<String> getComboUbicacion1() {
+        return comboUbicacion1;
+    }
+
+    public void setComboUbicacion1(JComboBox<String> comboUbicacion1) {
+        this.comboUbicacion1 = comboUbicacion1;
+    }
+
+    public JInternalFrame getjInternalFrame1() {
+        return jInternalFrame1;
+    }
+
+    public void setjInternalFrame1(JInternalFrame jInternalFrame1) {
+        this.jInternalFrame1 = jInternalFrame1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public void setjLabel18(JLabel jLabel18) {
+        this.jLabel18 = jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JSpinner getjSpiCapacidad() {
+        return jSpiCapacidad;
+    }
+
+    public void setjSpiCapacidad(JSpinner jSpiCapacidad) {
+        this.jSpiCapacidad = jSpiCapacidad;
+    }
+
+    public JSpinner getjSpiCapacidad1() {
+        return jSpiCapacidad1;
+    }
+
+    public void setjSpiCapacidad1(JSpinner jSpiCapacidad1) {
+        this.jSpiCapacidad1 = jSpiCapacidad1;
+    }
+
+    public JButton getJbtnSelecZoologo() {
+        return jbtnSelecZoologo;
+    }
+
+    public void setJbtnSelecZoologo(JButton jbtnSelecZoologo) {
+        this.jbtnSelecZoologo = jbtnSelecZoologo;
+    }
+
+    public JButton getJbtnSelecZoologo1() {
+        return jbtnSelecZoologo1;
+    }
+
+    public void setJbtnSelecZoologo1(JButton jbtnSelecZoologo1) {
+        this.jbtnSelecZoologo1 = jbtnSelecZoologo1;
+    }
+
+    public JTextField getTxtnombreZol() {
+        return txtnombreZol;
+    }
+
+    public void setTxtnombreZol(JTextField txtnombreZol) {
+        this.txtnombreZol = txtnombreZol;
+    }
+
+    public JTextField getTxtnombreZol1() {
+        return txtnombreZol1;
+    }
+
+    public void setTxtnombreZol1(JTextField txtnombreZol1) {
+        this.txtnombreZol1 = txtnombreZol1;
+    }
+
+    public JTextField getTxtramaZol() {
+        return txtramaZol;
+    }
+
+    public void setTxtramaZol(JTextField txtramaZol) {
+        this.txtramaZol = txtramaZol;
+    }
+
+    public JTextField getTxtramaZol1() {
+        return txtramaZol1;
+    }
+
+    public void setTxtramaZol1(JTextField txtramaZol1) {
+        this.txtramaZol1 = txtramaZol1;
+    }
+
+
 }
