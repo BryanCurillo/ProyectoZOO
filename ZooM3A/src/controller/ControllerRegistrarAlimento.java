@@ -166,7 +166,7 @@ public class ControllerRegistrarAlimento {
     public boolean llenarDatos() {
         int fila = vistaAli.getjTblAlimento().getSelectedRow();
         if (fila == -1) {
-            JOptionPane.showMessageDialog(vistaAli, "Seleccione un cliente a modificar");
+            JOptionPane.showMessageDialog(vistaAli, "Seleccione un alimento a modificar");
             return false;
         } else {
             int id = Integer.parseInt(vistaAli.getjTblAlimento().getValueAt(fila, 0).toString());

@@ -8,7 +8,7 @@ package model;
  *
  * @author ALEJO
  */
-public class Dieta {
+public class Dieta extends Alimento {
 
     private int die_id;
     private String die_horario;

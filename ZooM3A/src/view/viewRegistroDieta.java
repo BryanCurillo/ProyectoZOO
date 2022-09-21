@@ -443,6 +443,16 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
     public void setTxtprecioalimento(JTextField txtprecioalimento) {
         this.txtprecioalimento = txtprecioalimento;
     }
+
+    public JTextField getNoborrarIDALIMENTO() {
+        return noborrarIDALIMENTO;
+    }
+
+    public void setNoborrarIDALIMENTO(JTextField noborrarIDALIMENTO) {
+        this.noborrarIDALIMENTO = noborrarIDALIMENTO;
+    }
+    
+    
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog DlgAlimento;
