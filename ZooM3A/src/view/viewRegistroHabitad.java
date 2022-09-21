@@ -53,7 +53,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         comboTipoHab = new javax.swing.JComboBox<>();
         txtOtrotipo = new javax.swing.JTextField();
         btregistrar = new javax.swing.JButton();
-        txtOtrobloque = new javax.swing.JTextField();
         btcancelar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         comboUbicacion = new javax.swing.JComboBox<>();
@@ -69,6 +68,8 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        txtidZoologoNoborrar = new javax.swing.JTextField();
+        txtidHabitadNoborrar = new javax.swing.JTextField();
 
         jDlgCuidador.setResizable(false);
         jDlgCuidador.setSize(new java.awt.Dimension(545, 310));
@@ -159,7 +160,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         btregistrar.setText("REGISTRARSE");
         btregistrar.setBorder(null);
         getContentPane().add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
-        getContentPane().add(txtOtrobloque, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 130, 30));
 
         btcancelar.setBackground(new java.awt.Color(210, 215, 159));
         btcancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
@@ -218,6 +218,8 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
+        getContentPane().add(txtidZoologoNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 300, 0, 0));
+        getContentPane().add(txtidHabitadNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 0, 0));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -250,9 +252,10 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbtnSelecZoologo;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JTable tabladlg;
-    private javax.swing.JTextField txtOtrobloque;
     private javax.swing.JTextField txtOtrotipo;
     private javax.swing.JTextField txtbuscardlg;
+    private javax.swing.JTextField txtidHabitadNoborrar;
+    private javax.swing.JTextField txtidZoologoNoborrar;
     private javax.swing.JTextField txtnombreZol;
     private javax.swing.JTextField txtramaZol;
     // End of variables declaration//GEN-END:variables
@@ -418,11 +421,11 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     }
 
     public JTextField getTxtOtrobloque() {
-        return txtOtrobloque;
+        return txtidHabitadNoborrar;
     }
 
     public void setTxtOtrobloque(JTextField txtOtrobloque) {
-        this.txtOtrobloque = txtOtrobloque;
+        this.txtidHabitadNoborrar = txtOtrobloque;
     }
 
     public JTextField getTxtOtrotipo() {
@@ -471,6 +474,22 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     public void setTxtbuscardlg(JTextField txtbuscardlg) {
         this.txtbuscardlg = txtbuscardlg;
+    }
+
+    public JTextField getTxtidHabitadNoborrar() {
+        return txtidHabitadNoborrar;
+    }
+
+    public void setTxtidHabitadNoborrar(JTextField txtidHabitadNoborrar) {
+        this.txtidHabitadNoborrar = txtidHabitadNoborrar;
+    }
+
+    public JTextField getTxtidZoologoNoborrar() {
+        return txtidZoologoNoborrar;
+    }
+
+    public void setTxtidZoologoNoborrar(JTextField txtidZoologoNoborrar) {
+        this.txtidZoologoNoborrar = txtidZoologoNoborrar;
     }
 
 
