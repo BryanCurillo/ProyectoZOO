@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Alimento;
+import model.Habitat;
 import model.ModelHabitad;
 import model.Zoologo;
 import model.modelZoologo;
@@ -93,13 +94,13 @@ public class ControllerRegistrarHabitad {
             vistaRegHabitat.setVisible(true);
             this.iniciarControl();
         } else {
-//            if (llenarDatos()) {
-//                vistaRegHabitad.setName("Editar");
-////                vistaRegAlimento.getTxtcedula().setEditable(false);
-//                vistaRegHabitad.getBtregistrar().setText("ACTUALIZAR");
-//                vistaRegHabitad.setVisible(true);
-//                this.iniciarControl();
-//            }
+            if (llenarDatos()) {
+                vistaRegHabitat.setName("Editar");
+//                vistaRegAlimento.getTxtcedula().setEditable(false);
+                vistaRegHabitat.getBtregistrar().setText("ACTUALIZAR");
+                vistaRegHabitat.setVisible(true);
+                this.iniciarControl();
+            }
         }
     }
 
@@ -129,7 +130,7 @@ public class ControllerRegistrarHabitad {
             String tipo = "",
                     ubicacion = "";
             int capacidad = (int) vistaRegHabitat.getjSpiCapacidad().getValue(),
-                    idZoologo = Integer.parseInt(vistaRegHabitat.getTxtidZoologoNoborrar().getText());;
+                    idZoologo = Integer.parseInt(vistaRegHabitat.getTxtidZoologoNoborrar().getText());
 
             if (vistaRegHabitat.getComboTipoHab().getSelectedIndex() == vistaRegHabitat.getComboTipoHab().getItemCount() - 1) {
                 tipo = vistaRegHabitat.getTxtOtrotipo().getText();
@@ -168,21 +169,23 @@ public class ControllerRegistrarHabitad {
                 }
             } else {
                 //UPDATE
-//                int id = Integer.parseInt(vistaRegHabitad.getTxtidAli().getText());
-//                habitad.setIdalimento(id);
-//                int response = JOptionPane.showConfirmDialog(vistaRegHabitad, "¿Seguro que desea actualizar los datos del cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//                if (response == JOptionPane.YES_OPTION) {
-//                    if (habitad.updateAlimento()) {//Grabamos
-//                        JOptionPane.showMessageDialog(vistaRegHabitad, "Alimento actualizado correctamente");
-//                        vistaRegHabitad.dispose();
-//                    } else {
-//                        JOptionPane.showMessageDialog(vistaRegHabitad, "No se pudo actualizar a los datos del alimento");
-//                    }
-//                }
-//            }
-//            if (banvista) {
-//                ControllerVistaAlimento controlAli = new ControllerVistaAlimento(vistaHab, modelHabitad);
-//                controlAli.cargarDatos(1);
+                int id = Integer.parseInt(vistaRegHabitat.getTxtidHabitadNoborrar().getText());
+                habitad.setId_habitat(id);
+                int response = JOptionPane.showConfirmDialog(vistaRegHabitat, "¿Seguro que desea actualizar los datos del cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    if (habitad.updateHabitad()) {//Grabamos
+                        JOptionPane.showMessageDialog(vistaRegHabitat, "Alimento actualizado correctamente");
+                        vistaRegHabitat.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vistaRegHabitat, "No se pudo actualizar a los datos del alimento");
+                    }
+                }
+            }
+
+            System.out.println(banvista);
+            if (banvista) {
+                ControllerVistaHabitat controlHab = new ControllerVistaHabitat(vistaHab, modelHabitat);
+                controlHab.cargarDatos(1);
             }
         }
     }
@@ -199,30 +202,54 @@ public class ControllerRegistrarHabitad {
         vistaRegHabitat.getTxtidZoologoNoborrar().setText("");
     }
 
-//    public boolean llenarDatos() {
-//        int fila = vistaHab.getjTblAlimento().getSelectedRow();
-//        if (fila == -1) {
-//            JOptionPane.showMessageDialog(vistaHab, "Seleccione un cliente a modificar");
-//            return false;
-//        } else {
-//            int id = Integer.parseInt(vistaHab.getjTblAlimento().getValueAt(fila, 0).toString());
-//            List<Alimento> listap = modelHabitad.getAlimento();
-//            listap.stream().forEach(ali -> {
-//                if (id == ali.getIdalimento()) {
-//                    vistaRegHabitad.getTxtidAli().setText(String.valueOf(ali.getIdalimento()));
-//                    vistaRegHabitad.getTxtnombrealimento().setText(ali.getNombreAli());
-//                    vistaRegHabitad.getTxtPrecio().setText(String.valueOf(ali.getPrecioAli()));
-//                    vistaRegHabitad.getTxtAdescripcion().setText(ali.getDescripcionAli());
-//                    vistaRegHabitad.getTxtidPorv().setText(String.valueOf(ali.getIdproveedor()));
-//                    vistaRegHabitad.getTxtnombreProv().setText(ali.getNombre_pro());
-//                    vistaRegHabitad.getTxtciudadProv().setText(ali.getCiudad_pro());
-//                    vistaRegHabitad.getTxttelefonoProv().setText(ali.getTelefono());
-//
-//                }
-//            });
-//            return true;
-//        }
-//    }
+    public boolean llenarDatos() {
+        vistaRegHabitat.getTxtidHabitadNoborrar().setVisible(false);
+        int fila = vistaHab.getjTblHabitat().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione el proveedor a modificar");
+            return false;
+        } else {
+
+            int id = Integer.parseInt(vistaHab.getjTblHabitat().getValueAt(fila, 0).toString());
+            List<Habitat> listap = modelHabitat.getHabitad();
+            listap.stream().forEach(hab -> {
+                if (id == hab.getId_habitat()) {
+                    vistaRegHabitat.getTxtidHabitadNoborrar().setText(String.valueOf(hab.getId_habitat()));
+                    vistaRegHabitat.getjSpiCapacidad().setValue(hab.getCapacidadhap());
+                    vistaRegHabitat.getTxtnombreZol().setText(hab.getNombre());
+                    vistaRegHabitat.getTxtramaZol().setText(hab.getRama());
+                    vistaRegHabitat.getTxtidZoologoNoborrar().setText(String.valueOf(hab.getIdZoologohab()));
+                    //tipo habitat
+                    for (int j = 0; j < vistaRegHabitat.getComboTipoHab().getItemCount(); j++) {
+                        if (vistaRegHabitat.getComboTipoHab().getItemAt(j).equalsIgnoreCase(hab.getTipohab())) {
+                            vistaRegHabitat.getComboTipoHab().setSelectedIndex(j);
+                        }
+                    }
+                    if (vistaRegHabitat.getComboTipoHab().getSelectedIndex() == 0) {
+                        vistaRegHabitat.getComboTipoHab().setSelectedIndex(vistaRegHabitat.getComboTipoHab().getItemCount() - 1);
+                        vistaRegHabitat.getTxtOtrotipo().setText(hab.getTipohab());
+                    }
+
+                    //ubicacion
+                    for (int j = 0; j < vistaRegHabitat.getComboUbicacion().getItemCount(); j++) {
+                        if (vistaRegHabitat.getComboUbicacion().getItemAt(j).equalsIgnoreCase(hab.getUbicacionhab())) {
+                            vistaRegHabitat.getComboUbicacion().setSelectedIndex(j);
+                        }
+                    }
+                    if (vistaRegHabitat.getComboUbicacion().getSelectedIndex() == 0) {
+                        vistaRegHabitat.getComboUbicacion().setSelectedIndex(vistaRegHabitat.getComboUbicacion().getItemCount() - 1);
+                        vistaRegHabitat.getTxtOtrobloque().setText(hab.getUbicacionhab());
+                    }
+                }
+
+            });
+//            vistaE.dispose();
+
+            return true;
+        }
+
+    }
+
     public void llenarDatosZoologo() {
         vistaRegHabitat.getTxtidHabitadNoborrar().setVisible(false);
         vistaRegHabitat.getTxtidZoologoNoborrar().setVisible(false);
@@ -285,6 +312,10 @@ public class ControllerRegistrarHabitad {
             ban = false;
         }
         if (vistaRegHabitat.getTxtnombreZol().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(vistaRegHabitat, "Seleccione el zoologo acargo");
+            ban = false;
+        }
+        if (vistaRegHabitat.getTxtidZoologoNoborrar().getText().isEmpty()) {
             JOptionPane.showMessageDialog(vistaRegHabitat, "Seleccione el zoologo acargo");
             ban = false;
         }

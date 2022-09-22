@@ -35,6 +35,7 @@ import view.viewVistaAlimento;
 import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
 import view.viewRegistroDieta;
+import view.viewVistaHabitats;
 import view.viewVistaTickets;
 
 /**
@@ -73,6 +74,7 @@ public class controllerPantallaprincipal {
         vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
         vista.getjMIVisualizarPrecios().addActionListener(l -> viewVistaTickets());
+        vista.getjMIVisualizarHabitat().addActionListener(l->vistaHabitat());
     }
 
     //CARGAR DATOS
@@ -232,15 +234,15 @@ public class controllerPantallaprincipal {
         System.out.println(vista.getjDPprincipal().getComponentCount());
     }
 
-//    public void vistaHabitat() {
-//        ModelHabitad modelHab = new ModelHabitad();
-//        viewVistaAlimento vistaAli = new viewVistaAlimento();
-//
-//        //Agragar vista al desktop pane                
-//        vista.getjDPprincipal().add(vistaAli);
-//        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modelHab);
-//        controllerVali.inicialControl();
-//    }
+    public void vistaHabitat() {
+        ModelHabitad modelHab = new ModelHabitad();
+        viewVistaHabitats vistaHab = new viewVistaHabitats();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaHab);
+        ControllerVistaHabitat controllerVhab = new ControllerVistaHabitat(vista, vistaHab, modelHab);
+        controllerVhab.inicialControl();
+    }
     ///DIETA
     public void registroDieta() {
         //Instancio las clases del modelo y la vista        
