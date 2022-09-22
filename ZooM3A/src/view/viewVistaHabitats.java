@@ -4,6 +4,13 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JToolBar;
+
 /**
  *
  * @author Bryan
@@ -28,7 +35,7 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblAlimento = new javax.swing.JTable();
+        jTblHabitat = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         btnAgregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
@@ -41,29 +48,32 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
         txtbuscar = new javax.swing.JTextField();
         jBtnBuscar = new javax.swing.JButton();
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        jLabel3.setText("VISTA DE ALIMENTO");
+        setBorder(null);
+        setClosable(true);
 
-        jTblAlimento.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setText("VISTA DE HABITATS");
+
+        jTblHabitat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nombre", "Precio", "Proveedor", "Ciudad", "Telefono", "Descripcion"
+                "Id", "Tipo", "Ubicacion", "Capacidad", "Zoologo", "Rama Zoologo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTblAlimento);
+        jScrollPane1.setViewportView(jTblHabitat);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToolBar1.setFloatable(false);
@@ -104,20 +114,20 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane1)
                     .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(176, 176, 176))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel3)
-                .addGap(48, 48, 48)
+                .addGap(35, 35, 35)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -137,8 +147,121 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JTable jTblAlimento;
+    private javax.swing.JTable jTblHabitat;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnModificar() {
+        return BtnModificar;
+    }
+
+    public void setBtnModificar(JButton BtnModificar) {
+        this.BtnModificar = BtnModificar;
+    }
+
+    public JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public void setBtnAgregar(JButton btnAgregar) {
+        this.btnAgregar = btnAgregar;
+    }
+
+    public JButton getBtnEliminar() {
+        return btnEliminar;
+    }
+
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
+    }
+
+    public JButton getjBtnBuscar() {
+        return jBtnBuscar;
+    }
+
+    public void setjBtnBuscar(JButton jBtnBuscar) {
+        this.jBtnBuscar = jBtnBuscar;
+    }
+
+    public JButton getjBtnImprimir() {
+        return jBtnImprimir;
+    }
+
+    public void setjBtnImprimir(JButton jBtnImprimir) {
+        this.jBtnImprimir = jBtnImprimir;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JToolBar.Separator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JToolBar.Separator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JToolBar.Separator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JToolBar.Separator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JToolBar.Separator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    public void setjSeparator3(JToolBar.Separator jSeparator3) {
+        this.jSeparator3 = jSeparator3;
+    }
+
+    public JToolBar.Separator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    public void setjSeparator4(JToolBar.Separator jSeparator4) {
+        this.jSeparator4 = jSeparator4;
+    }
+
+    public JTable getjTblHabitat() {
+        return jTblHabitat;
+    }
+
+    public void setjTblHabitat(JTable jTblHabitat) {
+        this.jTblHabitat = jTblHabitat;
+    }
+
+    public JToolBar getjToolBar1() {
+        return jToolBar1;
+    }
+
+    public void setjToolBar1(JToolBar jToolBar1) {
+        this.jToolBar1 = jToolBar1;
+    }
+
+    public JTextField getTxtbuscar() {
+        return txtbuscar;
+    }
+
+    public void setTxtbuscar(JTextField txtbuscar) {
+        this.txtbuscar = txtbuscar;
+    }
+
 }
