@@ -21,25 +21,25 @@ public class ModelHabitad extends Habitat {
 
     public List<Habitat> getHabitad() {
         List<Habitat> listaHabitad = new ArrayList<>();
-        String sql = "SELECT * FROM habitad h join zoologo z on(h.hab_idzoologo=z.zol_id)"
-                + "  where hab_estado=true";
+        String sql = "SELECT h.hab_id,h.hab_tipo,h.hab_ubicacion,hab_capacidad,(p.per_nombre||' '||p.per_apellido) as nombre,z.zol_rama,z.zol_id "
+                + "FROM habitad h  "
+                + "join zoologo z on(h.hab_idzoologo=z.zol_id) "
+                + "join empleado e on(e.emp_id=z.zol_idempleado) "
+                + "join persona p on(p.per_cedula=e.emp_cedula) "
+                + "  where h.hab_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
                 Habitat habitad = new Habitat();
-                
+
                 habitad.setId_habitat(rs.getInt(1));
                 habitad.setTipohab(rs.getString(2));
-                habitad.setCapacidadhap(rs.getInt(3));
-                habitad.setIdZoologohab(rs.getInt(4));
-                habitad.setUbicacionhab(rs.getString(5));
-                habitad.setEstadohab(rs.getBoolean(6));
-                
-                habitad.setIdZoo(rs.getInt(7));
-                habitad.setRama(rs.getString(8));
-                habitad.setIdEmpleadoZoo(rs.getInt(9));
-                habitad.setEstadoZol(rs.getBoolean(10));
-                
+                habitad.setUbicacionhab(rs.getString(3));
+                habitad.setCapacidadhap(rs.getInt(4));
+                habitad.setNombre(rs.getString(5));
+                habitad.setRama(rs.getString(6));
+                habitad.setIdZoologohab(rs.getInt(7));
+
                 listaHabitad.add(habitad);
             }
         } catch (SQLException e) {
@@ -55,14 +55,14 @@ public class ModelHabitad extends Habitat {
 
     public boolean setHabitad() {
         String sql = "INSERT INTO habitad(hab_tipo, hab_capacidad, hab_idzoologo, hab_ubicacion, hab_estado)"
-                + "VALUES ('" + getTipohab()+ "', " + getCapacidadhap()+ ", " + getIdZoologohab()+ ", '" + getUbicacionhab()+ "'," + isEstadohab()+ ")";
+                + "VALUES ('" + getTipohab() + "', " + getCapacidadhap() + ", " + getIdZoologohab() + ", '" + getUbicacionhab() + "'," + isEstadohab() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateHabitad() {
         String sql;
         sql = "UPDATE habitad "
-                + "	SET hab_tipo='" + getTipohab()+ "', hab_capacidad=" + getCapacidadhap()+ ",hab_idzoologo=" + getIdZoologohab()+ ", hab_ubicacion='" + getUbicacionhab()+ "', hab_estado=" + isEstadohab()
+                + "	SET hab_tipo='" + getTipohab() + "', hab_capacidad=" + getCapacidadhap() + ",hab_idzoologo=" + getIdZoologohab() + ", hab_ubicacion='" + getUbicacionhab() + "', hab_estado=" + isEstadohab()
                 + "	WHERE hab_id = " + getId_habitat();
         return mpgc.accion(sql);
     }
@@ -75,31 +75,33 @@ public class ModelHabitad extends Habitat {
         return mpgc.accion(sql);
     }
 
-    public List<Alimento> busquedaincremental(String busqueda) {
-        List<Alimento> listaAlimento = new ArrayList<>();
-        String sql = "SELECT * FROM habitad h join zoologo z on(h.hab_idzoologo=z.zol_id)"
-                + "  where hab_estado=true "
+    public List<Habitat> busquedaincremental(String busqueda) {
+        List<Habitat> listaHabitad = new ArrayList<>();
+        String sql = "SELECT h.hab_id,h.hab_tipo,h.hab_ubicacion,hab_capacidad,(p.per_nombre||' '||p.per_apellido) as nombre,z.zol_rama,z.zol_id  "
+                + "FROM habitad h  "
+                + "join zoologo z on(h.hab_idzoologo=z.zol_id) "
+                + "join empleado e on(e.emp_id=z.zol_idempleado) "
+                + "join persona p on(p.per_cedula=e.emp_cedula) "
+                + "  where h.hab_estado=true"
                 + "  and lower(h.hab_tipo) like '%" + busqueda + "%' "
                 + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' "
+                + "  or lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(z.zol_rama) like '%" + busqueda + "%' ";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
-                Alimento alimento = new Alimento();
-                alimento.setIdalimento(rs.getInt(1));
-                alimento.setPrecioAli(rs.getDouble(2));
-                alimento.setNombreAli(rs.getString(3));
-                alimento.setDescripcionAli(rs.getString(4));
-                alimento.setEstadoAli(rs.getBoolean(5));
-                alimento.setIdproveedor(rs.getInt(6));
-                
-                alimento.setId_proveedor(7);
-                alimento.setCiudad_pro(rs.getString(8));
-                alimento.setNombre_pro(rs.getString(9));
-                alimento.setTelefono(rs.getString(10));
-                alimento.setEstadoProv(rs.getBoolean(11));
+                Habitat habitad = new Habitat();
 
-                listaAlimento.add(alimento);
+                habitad.setId_habitat(rs.getInt(1));
+                habitad.setTipohab(rs.getString(2));
+                habitad.setUbicacionhab(rs.getString(3));
+                habitad.setCapacidadhap(rs.getInt(4));
+                habitad.setNombre(rs.getString(5));
+                habitad.setRama(rs.getString(6));
+                habitad.setIdZoologohab(rs.getInt(7));
+
+                listaHabitad.add(habitad);
             }
         } catch (SQLException e) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
@@ -109,6 +111,6 @@ public class ModelHabitad extends Habitat {
         } catch (SQLException ex) {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return listaAlimento;
+        return listaHabitad;
     }
 }
