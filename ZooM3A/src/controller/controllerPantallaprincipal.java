@@ -5,11 +5,8 @@
 package controller;
 
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import model.Empleado;
 import model.modelEmpleado;
@@ -21,6 +18,8 @@ import model.ModelDieta;
 import model.ModelHabitad;
 import model.ModelTickets;
 import model.modelLogin;
+import model.ModelAnimal;
+import model.modelCuidador;
 import view.viewActualizarTicket;
 import view.viewLogin;
 import view.viewPantallaPrincipal;
@@ -32,9 +31,10 @@ import view.viewVistaEmpleados;
 import view.viewVistaCliente;
 import view.viewVistaProveedor;
 import view.viewVistaAlimento;
-import view.viewVentaTicket;
 import view.viewRegistrarProveedor;
 import view.viewRegistroDieta;
+import view.viewRegistroAnimal;
+import view.viewVistaAnimal;
 import view.viewVistaHabitats;
 import view.viewVistaTickets;
 
@@ -73,8 +73,9 @@ public class controllerPantallaprincipal {
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
         vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
-        vista.getjMIVisualizarPrecios().addActionListener(l -> viewVistaTickets());
-        vista.getjMIVisualizarHabitat().addActionListener(l->vistaHabitat());
+        vista.getjMIvisualizarPrecios().addActionListener(l -> viewVistaTickets());
+        vista.getjMIVisualizarHabitat().addActionListener(l -> vistaHabitat());
+        vista.getjMIagregarAnimal().addActionListener(l->registroAnimal());
     }
 
     //CARGAR DATOS
@@ -243,6 +244,7 @@ public class controllerPantallaprincipal {
         ControllerVistaHabitat controllerVhab = new ControllerVistaHabitat(vista, vistaHab, modelHab);
         controllerVhab.inicialControl();
     }
+
     ///DIETA
     public void registroDieta() {
         //Instancio las clases del modelo y la vista        
@@ -286,4 +288,29 @@ public class controllerPantallaprincipal {
         ControllerVistaTickets cvt = new ControllerVistaTickets(vvt, mt);
     }
 
+    ///DIETA
+    public void registroAnimal() {
+        //Instancio las clases del modelo y la vista        
+        ModelAnimal modelAni = new ModelAnimal();
+        viewRegistroAnimal vistaRegAnimal = new viewRegistroAnimal();
+        ModelHabitad modeloHab = new ModelHabitad();
+        modelCuidador modeloCui = new modelCuidador();
+
+        //Agragar vista al desktop pane
+        vistaRegAnimal.setName("Registro");
+        vista.getjDPprincipal().add(vistaRegAnimal);
+        ControllerRegistrarAnimal controReglAni = new ControllerRegistrarAnimal(modelAni, modeloHab, modeloCui, vistaRegAnimal);
+        controReglAni.inicialControl();
+    }
+
+//    public void vistaAlimento() {
+//        ModelAlimento modeloAli = new ModelAlimento();
+//        viewVistaAlimento vistaAli = new viewVistaAlimento();
+//
+//        //Agragar vista al desktop pane                
+//        vista.getjDPprincipal().add(vistaAli);
+//        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
+//        controllerVali.inicialControl();
+//    }
+    ////////
 }

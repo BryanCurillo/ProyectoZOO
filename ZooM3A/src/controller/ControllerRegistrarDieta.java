@@ -33,6 +33,16 @@ public class ControllerRegistrarDieta {
     public ControllerRegistrarDieta() {
     }
 
+    public ControllerRegistrarDieta(viewRegistroDieta vrd, viewVistaDieta vvd, ModelDieta md, ModelAlimento ma) {
+        this.vrd = vrd;
+        this.vvd = vvd;
+        this.md = md;
+        this.ma = ma;
+        vrd.toFront();
+        vrd.setVisible(true);
+        banvista = true;
+    }
+
     public ControllerRegistrarDieta(viewRegistroDieta vrd, ModelDieta md, ModelAlimento ma) {
         this.vrd = vrd;
         this.md = md;
