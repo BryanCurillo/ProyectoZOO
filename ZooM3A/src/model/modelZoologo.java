@@ -71,7 +71,7 @@ public class modelZoologo extends Zoologo {
         String sql = "select z.zol_id,(p.per_nombre||' '||p.per_apellido) as nombre ,z.zol_rama"
                 + " from zoologo z join empleado e on(e.emp_id=z.zol_idempleado)"
                 + " join persona p on (e.emp_cedula=p.per_cedula)"
-                + " where zol_estado=true"
+                + " where z.zol_estado=true"
                 + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(z.zol_rama) like '%" + busqueda + "%' ";

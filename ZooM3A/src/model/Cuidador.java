@@ -8,8 +8,8 @@ package model;
  *
  * @author Bryan
  */
-public class Cuidador {
-
+public class Cuidador extends Empleado{
+    private int idCuidador;
     private int idSecretaria;
     private String tipoSangre;
     private int idEmpleado;
@@ -18,22 +18,21 @@ public class Cuidador {
     public Cuidador() {
     }
 
-    public Cuidador(int idSecretaria, String tipoSangre, int idEmpleado, boolean estadoCui) {
+    public Cuidador(int idCuidadro, int idSecretaria, String tipoSangre, int idEmpleado, boolean estadoCui) {
+        this.idCuidador = idCuidadro;
         this.idSecretaria = idSecretaria;
         this.tipoSangre = tipoSangre;
         this.idEmpleado = idEmpleado;
         this.estadoCui = estadoCui;
     }
 
-    public boolean isEstadoCui() {
-        return estadoCui;
+    public int getIdCuidador() {
+        return idCuidador;
     }
 
-    public void setEstadoCui(boolean estadoCui) {
-        this.estadoCui = estadoCui;
+    public void setIdCuidador(int idCuidadro) {
+        this.idCuidador = idCuidadro;
     }
-
-
 
     public int getIdSecretaria() {
         return idSecretaria;
@@ -58,5 +57,15 @@ public class Cuidador {
     public void setIdEmpleado(int idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
+
+    public boolean isEstadoCui() {
+        return estadoCui;
+    }
+
+    public void setEstadoCui(boolean estadoCui) {
+        this.estadoCui = estadoCui;
+    }
+
+   
 
 }

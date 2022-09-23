@@ -31,35 +31,7 @@ public class ModelAnimal extends Animales {
     public ModelAnimal() {
     }
 
-    public ModelAnimal(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano) {
-        super(idanimal, nombreanimal, genero, especie, iddieta, idhabitad, idcuidador, dieta, edad, fecha_nacimiento, foto, imageFile, tamano);
-    }
-
     modelPGconexion mpgc = new modelPGconexion();
-
-    public boolean setFotoAnimal() {
-        String sql;
-        sql = "INSERT INTO animal(ani_nombre, ani_genero, ani_especie, ani_edad, ani_foto, ani_iddieta, ani_idhabitad, ani_idcuidador)";
-        sql += "VALUES(?,?,?,?,?,?,?,?)";
-        try {
-
-            PreparedStatement ps = mpgc.con.prepareStatement(sql);
-            ps.setString(2, getNombreanimal());
-            ps.setString(3, getGenero());
-            ps.setString(4, getEspecie());
-            ps.setInt(5, getEdad());
-            ps.setBinaryStream(6, getImageFile(), getTamano());
-            ps.setInt(7, getIddieta());
-            ps.setInt(8, getIdhabitad());
-            ps.setInt(9, getIdcuidador());
-
-            ps.executeUpdate();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
 
     private Image getImagen(byte[] bytes) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
@@ -73,29 +45,148 @@ public class ModelAnimal extends Animales {
         return imageReader.read(0, param);
     }
 
-    public List<Animales> getAnimalRellenar(int idanimal) {
+    public boolean setAnimal() {
+        String sql;
+        sql = "INSERT INTO animal(ani_nombre, ani_genero, ani_especie, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
+        sql += "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setString(1, getNombreAnimal());
+            ps.setString(2, getGeneroAnimal());
+            ps.setString(3, getEspecieAnimal());
+            ps.setDate(4, (java.sql.Date) getFecha_ingresoAnimal());
+            ps.setDate(5, (java.sql.Date) getFecha_nacimientoAnimal());
+            ps.setBoolean(6, isEstadoAnimal());
+            ps.setInt(7, getIdhabitadAnimal());
+            ps.setInt(8, getIdcuidadorAnimal());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean setFotoAnimal() {
+        String sql;
+        sql = "INSERT INTO animal(ani_nombre, ani_genero, ani_especie, ani_foto, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
+        sql += "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setString(1, getNombreAnimal());
+            ps.setString(2, getGeneroAnimal());
+            ps.setString(3, getEspecieAnimal());
+            ps.setBinaryStream(4, getImageFile(), getTamano());
+            ps.setDate(5, (java.sql.Date) getFecha_ingresoAnimal());
+            ps.setDate(6, (java.sql.Date) getFecha_nacimientoAnimal());
+            ps.setBoolean(7, isEstadoAnimal());
+            ps.setInt(8, getIdhabitadAnimal());
+            ps.setInt(9, getIdcuidadorAnimal());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean updateAnimal() {
+        String sql;
+        sql = "UPDATE animal SET ani_nombre=?, ani_genero=?, ani_especie=?, "
+                + "ani_fechaingreso=?, ani_fechanacimiento=?, "
+                + "ani_idhabitad=?, ani_idcuidador=?"
+                + "where ani_id=" + getIdAnimal();
+
+        try {
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setString(1, getNombreAnimal());
+            ps.setString(2, getGeneroAnimal());
+            ps.setString(3, getEspecieAnimal());
+            ps.setDate(4, (java.sql.Date) getFecha_ingresoAnimal());
+            ps.setDate(5, (java.sql.Date) getFecha_nacimientoAnimal());
+            ps.setInt(6, getIdhabitadAnimal());
+            ps.setInt(7, getIdcuidadorAnimal());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean updateFotoAnimal() {
+        String sql;
+        sql = "UPDATE animal SET ani_nombre=?, ani_genero=?, ani_especie=?, "
+                + "ani_foto=?, ani_fechaingreso=?, ani_fechanacimiento=?, "
+                + "ani_idhabitad=?, ani_idcuidador=?"
+                + "where ani_id=" + getIdAnimal();
+
+        try {
+            PreparedStatement ps = mpgc.con.prepareStatement(sql);
+            ps.setString(1, getNombreAnimal());
+            ps.setString(2, getGeneroAnimal());
+            ps.setString(3, getEspecieAnimal());
+            ps.setBinaryStream(4, getImageFile());
+            ps.setDate(5, (java.sql.Date) getFecha_ingresoAnimal());
+            ps.setDate(6, (java.sql.Date) getFecha_nacimientoAnimal());
+            ps.setInt(7, getIdhabitadAnimal());
+            ps.setInt(8, getIdcuidadorAnimal());
+
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public boolean deleteAnimal(int id) {
+        String sql;
+        sql = "UPDATE animal SET ani_estado=false "
+                + "WHERE ani_id=" + id;
+        return mpgc.accion(sql);
+    }
+
+    public List<Animales> getAnimal(int idanimal) {
         List<Animales> listaAnimales = new ArrayList<>();
 
-        String sql = "select * from animal where ani_id ='" + idanimal + "'";
+        String sql = "select a.ani_id, a.ani_nombre, a.ani_genero, a.ani_especie,a.ani_foto, "//1-6
+                + "     a.ani_fechaingreso, a.ani_fechanacimiento, a.ani_estado, a.ani_idhabitad, a.ani_idcuidador,  "//7-11
+                + "	c.cui_tiposangre,(p.per_nombre||' '||p.per_apellido)as nombre,h.hab_ubicacion,h.hab_tipo  "//12-15
+                + "from animal a join habitad h on (a.ani_idhabitad=h.hab_id)  "
+                + "join cuidador c on (c.cui_id=a.ani_idcuidador)  "
+                + "join empleado e on(e.emp_id=c.cui_idempleado)  "
+                + "join persona p on (p.per_cedula=e.emp_cedula)  "
+                + "where a.ani_estado=true  ";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
         try {
             while (rs.next()) {
                 Animales animal = new Animales();
-                animal.setIdanimal(rs.getInt(1));
-                animal.setNombreanimal(rs.getString(2));
-                animal.setGenero(rs.getString(3));
-                animal.setEspecie(rs.getString(4));
-                animal.setEdad(rs.getInt(5));
+                animal.setIdAnimal(rs.getInt(1));
+                animal.setNombreAnimal(rs.getString(2));
+                animal.setGeneroAnimal(rs.getString(3));
+                animal.setEspecieAnimal(rs.getString(4));
 
-                bytea = rs.getBytes(6);
+                bytea = rs.getBytes(5);
                 if (bytea != null) {
                     animal.setFoto(getImagen(bytea));
                 }
 
-                animal.setIddieta(rs.getInt(7));
-                animal.setIdhabitad(rs.getInt(8));
-                animal.setIdcuidador(9);
+                animal.setFecha_ingresoAnimal(rs.getDate(6));
+                animal.setFecha_nacimientoAnimal(rs.getDate(7));
+                animal.setEstadoAnimal(rs.getBoolean(8));
+                animal.setIdhabitadAnimal(rs.getInt(9));
+                animal.setIdcuidadorAnimal(rs.getInt(10));
+                animal.setTiposangreCuidador(rs.getString(11));
+                animal.setNombreCuidador(rs.getString(12));
+                animal.setUbicacionHabitat(rs.getString(13));
+                animal.setTipoHabitat(rs.getString(14));
                 listaAnimales.add(animal);
             }
         } catch (IOException | SQLException e) {
@@ -111,16 +202,62 @@ public class ModelAnimal extends Animales {
         return listaAnimales;
     }
 
-    public boolean deleteAnimal(int codigoanimal) {
+    public List<Animales> busquedaIncremental(String busqueda) {
+        List<Animales> listaAnimales = new ArrayList<>();
 
-        String sql = "delete from from animal where = " + codigoanimal + ";";
-        return mpgc.accion(sql);//EJECUTAMOS EN DELETE
-    }
+        String sql = "select a.ani_id, a.ani_nombre, a.ani_genero, a.ani_especie, a.ani_foto, "//1-6
+                + "     a.ani_fechaingreso, a.ani_fechanacimiento, a.ani_estado, a.ani_idhabitad, a.ani_idcuidador,  "//7-11
+                + "	c.cui_tiposangre,(p.per_nombre||' '||p.per_apellido)as nombre,h.hab_ubicacion,h.hab_tipo  "//12-15
+                + "from animal a join habitad h on (a.ani_idhabitad=h.hab_id)  "
+                + "join cuidador c on (c.cui_id=a.ani_idcuidador)  "
+                + "join empleado e on(e.emp_id=c.cui_idempleado)  "
+                + "join persona p on (p.per_cedula=e.emp_cedula)  "
+                + "where a.ani_estado=true  "
+                + "  and lower(a.ani_nombre) like '%" + busqueda + "%' "
+                + "  or lower(a.ani_genero) like '%" + busqueda + "%' "
+                + "  or lower(a.ani_especie) like '%" + busqueda + "%' "
+                + "  or lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
+                + "  or lower(h.hab_tipo) like '%" + busqueda + "%' "
+                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        byte[] bytea;
+        try {
+            while (rs.next()) {
+                Animales animal = new Animales();
+                animal.setIdAnimal(rs.getInt(1));
+                animal.setNombreAnimal(rs.getString(2));
+                animal.setGeneroAnimal(rs.getString(3));
+                animal.setEspecieAnimal(rs.getString(4));
 
-    public boolean updateAnimal() {
-        String sql;
-        sql = "UPDATE animal SET ani_iddieta=" + getIddieta() + ", ani_idcuidador=" + getIdcuidador() + " WHERE ani_id=" + getIdanimal() + "";
-        return mpgc.accion(sql);
+                bytea = rs.getBytes(5);
+                if (bytea != null) {
+                    animal.setFoto(getImagen(bytea));
+                }
+
+                animal.setFecha_ingresoAnimal(rs.getDate(6));
+                animal.setFecha_nacimientoAnimal(rs.getDate(7));
+                animal.setEstadoAnimal(rs.getBoolean(8));
+                animal.setIdhabitadAnimal(rs.getInt(9));
+                animal.setIdcuidadorAnimal(rs.getInt(10));
+                animal.setTiposangreCuidador(rs.getString(11));
+                animal.setNombreCuidador(rs.getString(12));
+                animal.setUbicacionHabitat(rs.getString(13));
+                animal.setTipoHabitat(rs.getString(14));
+
+                listaAnimales.add(animal);
+            }
+        } catch (IOException | SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaAnimales;
     }
 
 }

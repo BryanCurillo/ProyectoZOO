@@ -6,6 +6,8 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,9 +23,6 @@ public class modelCuidador extends Cuidador {
     public modelCuidador() {
     }
 
-    public modelCuidador(int idSecretaria, String tipoSangre, int idEmpleado, boolean estadoCui) {
-        super(idSecretaria, tipoSangre, idEmpleado, estadoCui);
-    }
 
     public boolean setCuidador() {
         String sql = "INSERT INTO cuidador (cui_tiposangre, cui_idempleado,cui_estado)"
@@ -60,5 +59,37 @@ public class modelCuidador extends Cuidador {
             Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
         return DatoRol;
+    }
+
+    public List<Cuidador> busquedaincremental(String busqueda) {
+        List<Cuidador> listaCuidador = new ArrayList<>();
+        String sql = "select c.cui_id,(p.per_nombre||' '||p.per_apellido) as nombre ,c.cui_tiposangre"
+                + " from cuidador c join empleado e on(e.emp_id=c.cui_idempleado)"
+                + " join persona p on (e.emp_cedula=p.per_cedula)"
+                + " where c.cui_estado=true"
+                + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
+                + "  or lower(c.cui_tiposangre) like '%" + busqueda + "%' ";
+        //                + "  or a.ali_precio=" + busqueda
+
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Cuidador cuidador = new Cuidador();
+                cuidador.setIdCuidador(rs.getInt(1));
+                cuidador.setNombre(rs.getString(2));
+                cuidador.setTipoSangre(rs.getString(3));
+
+                listaCuidador.add(cuidador);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaCuidador;
     }
 }

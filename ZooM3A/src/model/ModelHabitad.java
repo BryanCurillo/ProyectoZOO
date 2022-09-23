@@ -113,4 +113,33 @@ public class ModelHabitad extends Habitat {
         }
         return listaHabitad;
     }
+
+    public List<Habitat> busquedaincrementalDlg(String busqueda) {
+        List<Habitat> listaHabitad = new ArrayList<>();
+        String sql = "SELECT h.hab_id,h.hab_tipo,h.hab_ubicacion  "
+                + "FROM habitad h  "
+                + "  where h.hab_estado=true"
+                + "  and lower(h.hab_tipo) like '%" + busqueda + "%' "
+                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Habitat habitad = new Habitat();
+
+                habitad.setId_habitat(rs.getInt(1));
+                habitad.setTipohab(rs.getString(2));
+                habitad.setUbicacionhab(rs.getString(3));
+
+                listaHabitad.add(habitad);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaHabitad;
+    }
 }

@@ -21,17 +21,23 @@ public class ModelDieta extends Dieta {
 
     public List<Dieta> getDieta() {
         List<Dieta> listaDieta = new ArrayList<>();
-        String sql = "select * from dieta d join alimento a on (d.idalimento=a.ali_id)"
-                + "  where die_estado=true";
+        String sql = "select * from dieta d join alimento a on (d.die_idalimento=a.ali_id) "
+                + "  where d.die_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
                 Dieta dieta = new Dieta();
 
-                dieta.setDie_id(rs.getInt(0));
-                dieta.setDie_horario(rs.getString(1));
-                dieta.setDie_porcion(rs.getString(2));
-                dieta.setDie_idAlimento(rs.getInt(3));
+                dieta.setDie_id(rs.getInt(1));
+                dieta.setDie_horario(rs.getString(2));
+                dieta.setDie_porcion(rs.getString(3));
+                dieta.setDie_idAlimento(rs.getInt(4));
+                dieta.setDie_estado(rs.getBoolean(5));
+                
+                dieta.setIdalimento(rs.getInt(6));
+                dieta.setPrecioAli(rs.getDouble(7));
+                dieta.setNombreAli(rs.getString(8));
+                dieta.setDescripcionAli(rs.getString(9));                
 
                 listaDieta.add(dieta);
             }
@@ -68,31 +74,39 @@ public class ModelDieta extends Dieta {
         return mpgc.accion(sql);
     }
 
-//    public List<Dieta> busquedaIncrementalDieta(String busqueda) {
-//        List<Dieta> listaDieta = new ArrayList<>();
-//        String sql = "select * from alimento "
-//                + "where ali_estado=true "
-//                + "and lower(die_horario) like '%" + busqueda + "%' "
-//                + "or lower(die_horario) like '%" + busqueda + "%' ";
-////                + "or die_id like '%" + busqueda + "%' ";
-//        ResultSet rs = mpgc.consulta(sql);
-//        try {
-//            while (rs.next()) {
-//                Dieta dieta = new Dieta();
-//                dieta.setPrecioAli(rs.getDouble(rs.getString(7)));
-//                dieta.setNombreAli(rs.getString(8));
-//                dieta.setDescripcionAli(rs.getString(9));
-//
-//                listaDieta.add(dieta);
-//            }
-//        } catch (SQLException e) {
-//            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
-//        }
-//        try {
-//            rs.close();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return listaDieta;
+    public List<Dieta> busquedaIncrementalDieta(String busqueda) {
+        List<Dieta> listaDieta = new ArrayList<>();
+        String sql = "select * from dieta d join alimento a on (d.die_idalimento=a.ali_id) "
+                + "  where d.die_estado=true"
+                + "and lower(d.die_horario) like '%" + busqueda + "%' "
+                + "or lower(a.ali_nombre) like '%" + busqueda + "%' "
+                + "or lower(a.ali_descripcion) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                 Dieta dieta = new Dieta();
+
+                dieta.setDie_id(rs.getInt(1));
+                dieta.setDie_horario(rs.getString(2));
+                dieta.setDie_porcion(rs.getString(3));
+                dieta.setDie_idAlimento(rs.getInt(4));
+                dieta.setDie_estado(rs.getBoolean(5));
+                
+                dieta.setIdalimento(rs.getInt(6));
+                dieta.setPrecioAli(rs.getDouble(7));
+                dieta.setNombreAli(rs.getString(8));
+                dieta.setDescripcionAli(rs.getString(9));                
+
+                listaDieta.add(dieta);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelProveedor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaDieta;
     }
-//}
+}

@@ -14,121 +14,113 @@ import java.util.Date;
  */
 public class Animales {
 
-    private int idanimal;
-    private String nombreanimal;
-    private String genero;
-    private String especie;
-    private int iddieta;
-    private int idhabitad;
-    private int idcuidador;
-    private String dieta;
-    private int edad;
-    private Date fecha_nacimiento;
+    private int idAnimal;
+    private String nombreAnimal;
+    private String generoAnimal;
+    private String especieAnimal;
     //foto
     private Image foto;
     //guardar foto
     private FileInputStream imageFile;
     private int tamano;
+    
+    private Date fecha_ingresoAnimal;
+    private Date fecha_nacimientoAnimal;
+    private boolean estadoAnimal;
+    private int idhabitadAnimal;
+    private int idcuidadorAnimal;
+    
+    private String tiposangreCuidador;
+    private String nombreCuidador;
+    private String ubicacionHabitat;
+    private String tipoHabitat;
 
     public Animales() {
     }
 
-    public Animales(int idanimal, String nombreanimal, String genero, String especie, int iddieta, int idhabitad, int idcuidador, String dieta, int edad, Date fecha_nacimiento, Image foto, FileInputStream imageFile, int tamano) {
-        this.idanimal = idanimal;
-        this.nombreanimal = nombreanimal;
-        this.genero = genero;
-        this.especie = especie;
-        this.iddieta = iddieta;
-        this.idhabitad = idhabitad;
-        this.idcuidador = idcuidador;
-        this.dieta = dieta;
-        this.edad = edad;
-        this.fecha_nacimiento = fecha_nacimiento;
+    public Animales(int idAnimal, String nombreAnimal, String generoAnimal, String especieAnimal, Image foto, FileInputStream imageFile, int tamano, Date fecha_ingresoAnimal, Date fecha_nacimientoAnimal, boolean estadoAnimal, int idhabitadAnimal, int idcuidadorAnimal, String tiposangreCuidador, String nombreCuidador, String ubicacionHabitat, String tipoHabitat) {
+        this.idAnimal = idAnimal;
+        this.nombreAnimal = nombreAnimal;
+        this.generoAnimal = generoAnimal;
+        this.especieAnimal = especieAnimal;
         this.foto = foto;
         this.imageFile = imageFile;
         this.tamano = tamano;
+        this.fecha_ingresoAnimal = fecha_ingresoAnimal;
+        this.fecha_nacimientoAnimal = fecha_nacimientoAnimal;
+        this.estadoAnimal = estadoAnimal;
+        this.idhabitadAnimal = idhabitadAnimal;
+        this.idcuidadorAnimal = idcuidadorAnimal;
+        this.tiposangreCuidador = tiposangreCuidador;
+        this.nombreCuidador = nombreCuidador;
+        this.ubicacionHabitat = ubicacionHabitat;
+        this.tipoHabitat = tipoHabitat;
+    }
+
+    public String getUbicacionHabitat() {
+        return ubicacionHabitat;
+    }
+
+    public void setUbicacionHabitat(String ubicacionHabitat) {
+        this.ubicacionHabitat = ubicacionHabitat;
+    }
+
+    public String getTipoHabitat() {
+        return tipoHabitat;
+    }
+
+    public void setTipoHabitat(String tipoHabitat) {
+        this.tipoHabitat = tipoHabitat;
     }
 
 
 
-    public int getIdanimal() {
-        return idanimal;
+    public String getTiposangreCuidador() {
+        return tiposangreCuidador;
     }
 
-    public void setIdanimal(int idanimal) {
-        this.idanimal = idanimal;
+    public void setTiposangreCuidador(String tiposangreCuidador) {
+        this.tiposangreCuidador = tiposangreCuidador;
     }
 
-    public String getNombreanimal() {
-        return nombreanimal;
+    public String getNombreCuidador() {
+        return nombreCuidador;
     }
 
-    public void setNombreanimal(String nombreanimal) {
-        this.nombreanimal = nombreanimal;
+    public void setNombreCuidador(String nombreCuidador) {
+        this.nombreCuidador = nombreCuidador;
     }
 
-    public String getGenero() {
-        return genero;
+    public int getIdAnimal() {
+        return idAnimal;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
-    public String getEspecie() {
-        return especie;
+    public String getNombreAnimal() {
+        return nombreAnimal;
     }
 
-    public void setEspecie(String especie) {
-        this.especie = especie;
+    public void setNombreAnimal(String nombreAnimal) {
+        this.nombreAnimal = nombreAnimal;
     }
 
-    public int getIddieta() {
-        return iddieta;
+    public String getGeneroAnimal() {
+        return generoAnimal;
     }
 
-    public void setIddieta(int iddieta) {
-        this.iddieta = iddieta;
+    public void setGeneroAnimal(String generoAnimal) {
+        this.generoAnimal = generoAnimal;
     }
 
-    public int getIdhabitad() {
-        return idhabitad;
+    public String getEspecieAnimal() {
+        return especieAnimal;
     }
 
-    public void setIdhabitad(int idhabitad) {
-        this.idhabitad = idhabitad;
-    }
-
-    public int getIdcuidador() {
-        return idcuidador;
-    }
-
-    public void setIdcuidador(int idcuidador) {
-        this.idcuidador = idcuidador;
-    }
-
-    public String getDieta() {
-        return dieta;
-    }
-
-    public void setDieta(String dieta) {
-        this.dieta = dieta;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setEspecieAnimal(String especieAnimal) {
+        this.especieAnimal = especieAnimal;
     }
 
     public Image getFoto() {
@@ -153,6 +145,46 @@ public class Animales {
 
     public void setTamano(int tamano) {
         this.tamano = tamano;
+    }
+
+    public Date getFecha_ingresoAnimal() {
+        return fecha_ingresoAnimal;
+    }
+
+    public void setFecha_ingresoAnimal(Date fecha_ingresoAnimal) {
+        this.fecha_ingresoAnimal = fecha_ingresoAnimal;
+    }
+
+    public Date getFecha_nacimientoAnimal() {
+        return fecha_nacimientoAnimal;
+    }
+
+    public void setFecha_nacimientoAnimal(Date fecha_nacimientoAnimal) {
+        this.fecha_nacimientoAnimal = fecha_nacimientoAnimal;
+    }
+
+    public boolean isEstadoAnimal() {
+        return estadoAnimal;
+    }
+
+    public void setEstadoAnimal(boolean estadoAnimal) {
+        this.estadoAnimal = estadoAnimal;
+    }
+
+    public int getIdhabitadAnimal() {
+        return idhabitadAnimal;
+    }
+
+    public void setIdhabitadAnimal(int idhabitadAnimal) {
+        this.idhabitadAnimal = idhabitadAnimal;
+    }
+
+    public int getIdcuidadorAnimal() {
+        return idcuidadorAnimal;
+    }
+
+    public void setIdcuidadorAnimal(int idcuidadorAnimal) {
+        this.idcuidadorAnimal = idcuidadorAnimal;
     }
 
 }
