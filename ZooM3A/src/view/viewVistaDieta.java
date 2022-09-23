@@ -36,7 +36,7 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblAlimento = new javax.swing.JTable();
+        jTblDieta = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         btnAgregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
@@ -54,26 +54,26 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("VISTA DE CLIENTES");
 
-        jTblAlimento.setModel(new javax.swing.table.DefaultTableModel(
+        jTblDieta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nombre", "Precio", "Proveedor", "Ciudad", "Telefono", "Descripcion"
+                "Id", "Alimento", "Horario", "Porcion", "Descripcion Alimento"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTblAlimento);
+        jScrollPane1.setViewportView(jTblDieta);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToolBar1.setFloatable(false);
@@ -147,7 +147,7 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JTable jTblAlimento;
+    private javax.swing.JTable jTblDieta;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
@@ -192,12 +192,68 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         this.jBtnImprimir = jBtnImprimir;
     }
 
-    public JTable getjTblAlimento() {
-        return jTblAlimento;
+    public JLabel getjLabel3() {
+        return jLabel3;
     }
 
-    public void setjTblAlimento(JTable jTblAlimento) {
-        this.jTblAlimento = jTblAlimento;
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JToolBar.Separator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JToolBar.Separator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JToolBar.Separator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JToolBar.Separator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JToolBar.Separator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    public void setjSeparator3(JToolBar.Separator jSeparator3) {
+        this.jSeparator3 = jSeparator3;
+    }
+
+    public JToolBar.Separator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    public void setjSeparator4(JToolBar.Separator jSeparator4) {
+        this.jSeparator4 = jSeparator4;
+    }
+
+    public JTable getjTblDieta() {
+        return jTblDieta;
+    }
+
+    public void setjTblDieta(JTable jTblDieta) {
+        this.jTblDieta = jTblDieta;
+    }
+
+    public JToolBar getjToolBar1() {
+        return jToolBar1;
+    }
+
+    public void setjToolBar1(JToolBar jToolBar1) {
+        this.jToolBar1 = jToolBar1;
     }
 
     public JTextField getTxtbuscar() {

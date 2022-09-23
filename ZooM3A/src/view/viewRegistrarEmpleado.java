@@ -98,8 +98,7 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
         jLabel3.setText("REGISTRO DE PERSONAL");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 18, -1, -1));
-
-        getContentPane().add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 131, 143));
+        getContentPane().add(lblfoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 130, 140));
 
         btagregarfoto.setBackground(new java.awt.Color(210, 215, 159));
         btagregarfoto.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N

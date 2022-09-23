@@ -76,7 +76,7 @@
             <Property name="text" type="java.lang.String" value="Animales"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="jMIagregarAnimal">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+Alt+A"/>
@@ -87,7 +87,7 @@
                 <Property name="text" type="java.lang.String" value="Agregar animal"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+            <MenuItem class="javax.swing.JMenuItem" name="jMIvisualizarAnimal">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+Alt+V"/>
@@ -116,7 +116,7 @@
                 <Property name="text" type="java.lang.String" value="Actualizar Precio"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jMIvisualizarPrecios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar Precios"/>
               </Properties>

@@ -55,11 +55,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="lblfoto">
-      <Properties>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="760" y="90" width="131" height="143"/>
+          <AbsoluteConstraints x="760" y="90" width="130" height="140"/>
         </Constraint>
       </Constraints>
     </Component>

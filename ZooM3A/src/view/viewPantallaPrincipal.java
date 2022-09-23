@@ -62,11 +62,11 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMIagregarAlimento = new javax.swing.JMenuItem();
         jMIcrudAlimento = new javax.swing.JMenuItem();
         menuanimales = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        jMIagregarAnimal = new javax.swing.JMenuItem();
+        jMIvisualizarAnimal = new javax.swing.JMenuItem();
         MenuTicket = new javax.swing.JMenu();
         MIActualizarPrecio = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMIvisualizarPrecios = new javax.swing.JMenuItem();
         MenuProveedor = new javax.swing.JMenu();
         jMIagregarProveedor = new javax.swing.JMenuItem();
         JMIvistaProveedor = new javax.swing.JMenuItem();
@@ -295,15 +295,15 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         menuanimales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (2).png"))); // NOI18N
         menuanimales.setText("Animales");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuidado-de-mascotas.png"))); // NOI18N
-        jMenuItem5.setText("Agregar animal");
-        menuanimales.add(jMenuItem5);
+        jMIagregarAnimal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIagregarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuidado-de-mascotas.png"))); // NOI18N
+        jMIagregarAnimal.setText("Agregar animal");
+        menuanimales.add(jMIagregarAnimal);
 
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
-        jMenuItem9.setText("Visualizar registro");
-        menuanimales.add(jMenuItem9);
+        jMIvisualizarAnimal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIvisualizarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIvisualizarAnimal.setText("Visualizar registro");
+        menuanimales.add(jMIvisualizarAnimal);
 
         barramenus.add(menuanimales);
 
@@ -314,8 +314,8 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MIActualizarPrecio.setText("Actualizar Precio");
         MenuTicket.add(MIActualizarPrecio);
 
-        jMenuItem1.setText("Visualizar Precios");
-        MenuTicket.add(jMenuItem1);
+        jMIvisualizarPrecios.setText("Visualizar Precios");
+        MenuTicket.add(jMIvisualizarPrecios);
 
         barramenus.add(MenuTicket);
 
@@ -418,14 +418,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIVisualizarDietas;
     private javax.swing.JMenuItem jMIVisualizarHabitat;
     private javax.swing.JMenuItem jMIagregarAlimento;
+    private javax.swing.JMenuItem jMIagregarAnimal;
     private javax.swing.JMenuItem jMIagregarCliente;
     private javax.swing.JMenuItem jMIagregarPersona;
     private javax.swing.JMenuItem jMIagregarProveedor;
     private javax.swing.JMenuItem jMIcrudAlimento;
     private javax.swing.JMenuItem jMIvistaEmpleado;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMIvisualizarAnimal;
+    private javax.swing.JMenuItem jMIvisualizarPrecios;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -638,6 +638,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMIagregarAlimento = jMIagregarAlimento;
     }
 
+    public JMenuItem getjMIagregarAnimal() {
+        return jMIagregarAnimal;
+    }
+
+    public void setjMIagregarAnimal(JMenuItem jMIagregarAnimal) {
+        this.jMIagregarAnimal = jMIagregarAnimal;
+    }
+
     public JMenuItem getjMIagregarCliente() {
         return jMIagregarCliente;
     }
@@ -678,28 +686,20 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.jMIvistaEmpleado = jMIvistaEmpleado;
     }
 
-    public JMenuItem getjMenuItem1() {
-        return jMenuItem1;
+    public JMenuItem getjMIvisualizarAnimal() {
+        return jMIvisualizarAnimal;
     }
 
-    public void setjMenuItem1(JMenuItem jMenuItem1) {
-        this.jMenuItem1 = jMenuItem1;
+    public void setjMIvisualizarAnimal(JMenuItem jMIvisualizarAnimal) {
+        this.jMIvisualizarAnimal = jMIvisualizarAnimal;
     }
 
-    public JMenuItem getjMenuItem5() {
-        return jMenuItem5;
+    public JMenuItem getjMIvisualizarPrecios() {
+        return jMIvisualizarPrecios;
     }
 
-    public void setjMenuItem5(JMenuItem jMenuItem5) {
-        this.jMenuItem5 = jMenuItem5;
-    }
-
-    public JMenuItem getjMenuItem9() {
-        return jMenuItem9;
-    }
-
-    public void setjMenuItem9(JMenuItem jMenuItem9) {
-        this.jMenuItem9 = jMenuItem9;
+    public void setjMIvisualizarPrecios(JMenuItem jMIvisualizarPrecios) {
+        this.jMIvisualizarPrecios = jMIvisualizarPrecios;
     }
 
     public JPanel getjPanel1() {
@@ -780,14 +780,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
-    }
-
-    public JMenuItem getjMIVisualizarPrecios() {
-        return jMenuItem1;
-    }
-
-    public void setjMIVisualizarPrecios(JMenuItem jMIVisualizarPrecios) {
-        this.jMenuItem1 = jMIVisualizarPrecios;
     }
 
 }
