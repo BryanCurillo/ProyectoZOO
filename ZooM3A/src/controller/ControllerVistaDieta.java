@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import model.ModelAlimento;
 import javax.swing.table.DefaultTableModel;
 import model.Dieta;
+import model.ModelAnimal;
 import model.ModelDieta;
 import view.viewPantallaPrincipal;
 import view.viewRegistroDieta;
@@ -26,6 +27,7 @@ public class ControllerVistaDieta {
     private viewVistaDieta vistaDie;
     private controllerPantallaprincipal controllerpp;
     private ModelAlimento modeloAli;
+    private ModelAnimal modeloAni;
     private ModelDieta modeloDie;
     int i = 0;
 
@@ -60,16 +62,18 @@ public class ControllerVistaDieta {
         ModelDieta modeloDie = new ModelDieta();
         viewRegistroDieta vistaRegistroDie = new viewRegistroDieta();
         ModelAlimento modelAli = new ModelAlimento();
+        ModelAnimal modelAni = new ModelAnimal();
+
         if (op == 1) {
 
             //Agragar vista al desktop pane
             vistaP.getjDPprincipal().add(vistaRegistroDie);
-            ControllerRegistrarDieta controladorDie = new ControllerRegistrarDieta(vistaRegistroDie, vistaDie, modeloDie, modelAli);
+            ControllerRegistrarDieta controladorDie = new ControllerRegistrarDieta(vistaRegistroDie, vistaDie, modeloDie, modelAli, modelAni);
 //            ControllerRegistrarAlimento controladorAli = new ControllerRegistrarAlimento(vistaRegistroHab, modeloHab, modeloProv, vistaHab);
             controladorDie.abrirRegistro(1);
 
         } else {
-            ControllerRegistrarDieta controladorDie = new ControllerRegistrarDieta(vistaRegistroDie, vistaDie, modeloDie, modelAli);
+            ControllerRegistrarDieta controladorDie = new ControllerRegistrarDieta(vistaRegistroDie, vistaDie, modeloDie, modelAli, modelAni);
             int fila = vistaDie.getjTblDieta().getSelectedRow();
             if (fila == -1) {
                 JOptionPane.showMessageDialog(null, "Seleccione la dieta a modificar");
@@ -113,13 +117,15 @@ public class ControllerVistaDieta {
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
         listaHab.stream().sorted((x, y)
-                -> x.getDie_horario().compareToIgnoreCase(y.getDie_horario())).forEach(emp -> {
+                -> x.getEspecieAnimal().compareToIgnoreCase(y.getEspecieAnimal())).forEach(emp -> {
             estructuraTabla.addRow(new Object[7]);
             vistaDie.getjTblDieta().setValueAt(emp.getDie_id(), i, 0);
-            vistaDie.getjTblDieta().setValueAt(emp.getNombreAli(), i, 1);
-            vistaDie.getjTblDieta().setValueAt(emp.getDie_horario(), i, 2);
-            vistaDie.getjTblDieta().setValueAt(emp.getDie_porcion(), i, 3);
+            vistaDie.getjTblDieta().setValueAt(emp.getDie_horario(), i, 1);
+            vistaDie.getjTblDieta().setValueAt(emp.getDie_porcion(), i, 2);
+            vistaDie.getjTblDieta().setValueAt(emp.getNombreAli(), i, 3);
             vistaDie.getjTblDieta().setValueAt(emp.getDescripcionAli(), i, 4);
+            vistaDie.getjTblDieta().setValueAt(emp.getNombreAnimal(), i, 5);
+            vistaDie.getjTblDieta().setValueAt(emp.getEspecieAnimal(), i, 6);
             i++;
         });
 

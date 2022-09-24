@@ -35,6 +35,7 @@ import view.viewRegistrarProveedor;
 import view.viewRegistroDieta;
 import view.viewRegistroAnimal;
 import view.viewVistaAnimal;
+import view.viewVistaDieta;
 import view.viewVistaHabitats;
 import view.viewVistaTickets;
 
@@ -72,6 +73,7 @@ public class controllerPantallaprincipal {
         vista.getjMIcrudAlimento().addActionListener(l -> vistaAlimento());
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
         vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
+        vista.getjMIVisualizarDietas().addActionListener(l->vistaDieta());
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
         vista.getjMIvisualizarPrecios().addActionListener(l -> viewVistaTickets());
         vista.getjMIVisualizarHabitat().addActionListener(l -> vistaHabitat());
@@ -251,25 +253,26 @@ public class controllerPantallaprincipal {
     public void registroDieta() {
         //Instancio las clases del modelo y la vista        
         ModelAlimento modelAli = new ModelAlimento();
+        ModelAnimal modelAni = new ModelAnimal();
         viewRegistroDieta vistaRegDieta = new viewRegistroDieta();
         ModelDieta modeloDie = new ModelDieta();
 
         //Agragar vista al desktop pane
         vistaRegDieta.setName("Registro");
         vista.getjDPprincipal().add(vistaRegDieta);
-        ControllerRegistrarDieta controReglAli = new ControllerRegistrarDieta(vistaRegDieta, modeloDie, modelAli);
+        ControllerRegistrarDieta controReglAli = new ControllerRegistrarDieta(vistaRegDieta, modeloDie, modelAli, modelAni);
         controReglAli.iniciarControles();
     }
 
-//    public void vistaAlimento() {
-//        ModelAlimento modeloAli = new ModelAlimento();
-//        viewVistaAlimento vistaAli = new viewVistaAlimento();
-//
-//        //Agragar vista al desktop pane                
-//        vista.getjDPprincipal().add(vistaAli);
-//        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
-//        controllerVali.inicialControl();
-//    }
+    public void vistaDieta() {
+        ModelDieta modeloDie = new ModelDieta();
+        viewVistaDieta vistaDie = new viewVistaDieta();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaDie);
+        ControllerVistaDieta controllerDie = new ControllerVistaDieta(vista, vistaDie, modeloDie);
+        controllerDie.inicialControl();
+    }
     ////////
     public void vistaActualizarTicket() {
         ModelTickets mt = new ModelTickets();
