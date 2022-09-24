@@ -96,27 +96,11 @@ public class ModelAnimal extends Animales {
 
     public boolean updateAnimal() {
         String sql;
-        sql = "UPDATE animal SET ani_nombre=?, ani_genero=?, ani_especie=?, "
-                + "ani_fechaingreso=?, ani_fechanacimiento=?, "
-                + "ani_idhabitad=?, ani_idcuidador=?"
+        sql = "UPDATE animal SET ani_nombre='" + getNombreAnimal() + "', ani_genero='" + getGeneroAnimal() + "', ani_especie='" + getEspecieAnimal() + "', "
+                + "ani_fechaingreso='" + getFecha_ingresoAnimal() + "', ani_fechanacimiento='" + getFecha_nacimientoAnimal() + "', "
+                + "ani_idhabitad=" + getIdhabitadAnimal() + ", ani_idcuidador=" + getIdcuidadorAnimal()
                 + "where ani_id=" + getIdAnimal();
-
-        try {
-            PreparedStatement ps = mpgc.con.prepareStatement(sql);
-            ps.setString(1, getNombreAnimal());
-            ps.setString(2, getGeneroAnimal());
-            ps.setString(3, getEspecieAnimal());
-            ps.setDate(4, (java.sql.Date) getFecha_ingresoAnimal());
-            ps.setDate(5, (java.sql.Date) getFecha_nacimientoAnimal());
-            ps.setInt(6, getIdhabitadAnimal());
-            ps.setInt(7, getIdcuidadorAnimal());
-
-            ps.executeUpdate();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
+        return mpgc.accion(sql);
     }
 
     public boolean updateFotoAnimal() {
@@ -152,7 +136,7 @@ public class ModelAnimal extends Animales {
         return mpgc.accion(sql);
     }
 
-    public List<Animales> getAnimal(int idanimal) {
+    public List<Animales> getAnimal() {
         List<Animales> listaAnimales = new ArrayList<>();
 
         String sql = "select a.ani_id, a.ani_nombre, a.ani_genero, a.ani_especie,a.ani_foto, "//1-6
