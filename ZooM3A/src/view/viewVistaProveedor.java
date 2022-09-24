@@ -48,14 +48,16 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         jBtnBuscar = new javax.swing.JButton();
         jBtnActualizar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE PROVEEDORES");
 
+        jTblProveedor.setBackground(new java.awt.Color(255, 253, 227));
         jTblProveedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -77,31 +79,43 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblProveedor);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(null);
 
+        jbtnAgregar.setBackground(new java.awt.Color(210, 215, 159));
+        jbtnAgregar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jbtnAgregar.setText("AGREGAR");
         jbtnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jbtnAgregar);
         jToolBar1.add(jSeparator1);
 
+        jBtnModificar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnModificar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnModificar.setText("MODIFICAR");
         jToolBar1.add(jBtnModificar);
         jToolBar1.add(jSeparator2);
 
+        jBtnElimina.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnElimina.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnElimina.setText("ELIMINAR");
         jBtnElimina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnElimina.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnElimina);
         jToolBar1.add(jSeparator3);
 
+        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
+        txtBuscar.setEditable(false);
+        txtBuscar.setBackground(new java.awt.Color(255, 253, 227));
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
 
+        jCbFiltroRol.setBackground(new java.awt.Color(210, 215, 159));
         jCbFiltroRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar rol", "Gerente", "Secretaria", "Zoologo", "Cuidador" }));
         jCbFiltroRol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,9 +124,13 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(jCbFiltroRol);
 
+        jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnBuscar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnBuscar.setText("BUSCAR");
         jToolBar1.add(jBtnBuscar);
 
+        jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnActualizar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnActualizar.setText("ACTUALIZAR");
         jBtnActualizar.setFocusable(false);
         jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -127,22 +145,22 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(170, 170, 170))
+                .addGap(228, 228, 228))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
