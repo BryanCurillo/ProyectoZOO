@@ -65,7 +65,7 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
 
         combocategoria.setBackground(new java.awt.Color(255, 253, 227));
         combocategoria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        combocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR CATEGORIA", " " }));
+        combocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar categoria" }));
         jPanel1.add(combocategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 290, 40));
 
         jLabel5.setFont(new java.awt.Font("Microsoft Himalaya", 1, 36)); // NOI18N
@@ -83,9 +83,9 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
         btnactualizarticket.setBackground(new java.awt.Color(238, 227, 203));
         btnactualizarticket.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btnactualizarticket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
-        btnactualizarticket.setText("AGREGAR");
+        btnactualizarticket.setText("ACTUALIZAR");
         btnactualizarticket.setBorder(null);
-        jPanel1.add(btnactualizarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 180, -1));
+        jPanel1.add(btnactualizarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 200, -1));
 
         btncancelarticket.setBackground(new java.awt.Color(238, 227, 203));
         btncancelarticket.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N

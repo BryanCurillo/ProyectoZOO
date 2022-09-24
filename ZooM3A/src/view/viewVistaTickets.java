@@ -61,7 +61,7 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
         jBtnImprimir.setBackground(new java.awt.Color(238, 227, 203));
         jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (2).png"))); // NOI18N
-        jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setText("IMPRIMIR PRECIOS");
         jBtnImprimir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 230, 40));
 

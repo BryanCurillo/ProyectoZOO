@@ -175,118 +175,118 @@ public class ControllerRegistrarAnimal {
 
         validaciones mivalidacion = new validaciones();
 
-//        if (validar()) {
-        //ALIMENTO
-        String nombre = vistaRegAni.getTxtnombreanimal().getText(),
-                genero = "",
-                especie = vistaRegAni.getComboEspecie().getSelectedItem().toString();
-        if (vistaRegAni.getBtnmacho().isSelected()) {
-            genero = "Macho";
-        } else {
-            if (vistaRegAni.getBtnhembra().isSelected()) {
-                genero = "Hembra";
+        if (validar()) {
+            //ALIMENTO
+            String nombre = vistaRegAni.getTxtnombreanimal().getText(),
+                    genero = "",
+                    especie = vistaRegAni.getComboEspecie().getSelectedItem().toString();
+            if (vistaRegAni.getBtnmacho().isSelected()) {
+                genero = "Macho";
             } else {
-                JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el genero del animal");
-            }
-        }
-
-        if (vistaRegAni.getComboEspecie().getSelectedIndex() == vistaRegAni.getComboEspecie().getItemCount() - 1) {
-            especie = vistaRegAni.getTxtOtraEspecie().getText();
-        } else {
-            especie = vistaRegAni.getComboEspecie().getSelectedItem().toString();
-        }
-        Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
-
-        Date fechaNacimiento = vistaRegAni.getCalendarNacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
-        long d = fechaNacimiento.getTime(); //guardamos en un long el tiempo
-        java.sql.Date fechanacimientoSQL = new java.sql.Date(d);// parseamos al formato del sql  
-
-        int idCuidador = Integer.parseInt(vistaRegAni.getTxtidCuidadorNoborrar().getText()),
-                idHabitat = Integer.parseInt(vistaRegAni.getTxtidHabitatNoborrar().getText());
-        int colorAux = vistaRegAni.getLblFotoAnimal().getBackground().hashCode(),
-                colorAux2 = 0;
-
-        ModelAnimal animal = new ModelAnimal();
-        animal.setNombreAnimal(nombre);
-        animal.setGeneroAnimal(genero);
-        animal.setEspecieAnimal(especie);
-        animal.setFecha_ingresoAnimal(fechaRegistro);
-        animal.setFecha_nacimientoAnimal(fechanacimientoSQL);
-        animal.setEstadoAnimal(true);
-        animal.setIdcuidadorAnimal(idCuidador);
-        animal.setIdhabitadAnimal(idHabitat);
-        try {
-            FileInputStream img = new FileInputStream(jfc.getSelectedFile());
-            int largo = (int) jfc.getSelectedFile().length();
-            animal.setImageFile(img);
-            animal.setTamano(largo);
-            colorAux2 = vistaRegAni.getLblFotoAnimal().getBackground().hashCode() + 2;
-
-        } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (NullPointerException e) {
-            colorAux2 = vistaRegAni.getLblFotoAnimal().getBackground().hashCode();
-        }
-
-        if (vistaRegAni.getName().equals("Registro")) {
-            int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Agregar Animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-
-                if (colorAux != colorAux2) {
-                    System.out.println("registro1");
-                    if (animal.setFotoAnimal()) {
-                        System.out.println("CON FOTO");
-                        ban = true;
-                    }
+                if (vistaRegAni.getBtnhembra().isSelected()) {
+                    genero = "Hembra";
                 } else {
-                    if (animal.setAnimal()) {
-                        System.out.println("SIN FOTO");
-                        ban = true;
-                    }
+                    JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el genero del animal");
                 }
+            }
+
+            if (vistaRegAni.getComboEspecie().getSelectedIndex() == vistaRegAni.getComboEspecie().getItemCount() - 1) {
+                especie = vistaRegAni.getTxtOtraEspecie().getText();
+            } else {
+                especie = vistaRegAni.getComboEspecie().getSelectedItem().toString();
+            }
+            Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
+
+            Date fechaNacimiento = vistaRegAni.getCalendarNacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
+            long d = fechaNacimiento.getTime(); //guardamos en un long el tiempo
+            java.sql.Date fechanacimientoSQL = new java.sql.Date(d);// parseamos al formato del sql  
+
+            int idCuidador = Integer.parseInt(vistaRegAni.getTxtidCuidadorNoborrar().getText()),
+                    idHabitat = Integer.parseInt(vistaRegAni.getTxtidHabitatNoborrar().getText());
+            int colorAux = vistaRegAni.getLblFotoAnimal().getBackground().hashCode(),
+                    colorAux2 = 0;
+
+            ModelAnimal animal = new ModelAnimal();
+            animal.setNombreAnimal(nombre);
+            animal.setGeneroAnimal(genero);
+            animal.setEspecieAnimal(especie);
+            animal.setFecha_ingresoAnimal(fechaRegistro);
+            animal.setFecha_nacimientoAnimal(fechanacimientoSQL);
+            animal.setEstadoAnimal(true);
+            animal.setIdcuidadorAnimal(idCuidador);
+            animal.setIdhabitadAnimal(idHabitat);
+            try {
+                FileInputStream img = new FileInputStream(jfc.getSelectedFile());
+                int largo = (int) jfc.getSelectedFile().length();
+                animal.setImageFile(img);
+                animal.setTamano(largo);
+                colorAux2 = vistaRegAni.getLblFotoAnimal().getBackground().hashCode() + 2;
+
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (NullPointerException e) {
+                colorAux2 = vistaRegAni.getLblFotoAnimal().getBackground().hashCode();
+            }
+
+            if (vistaRegAni.getName().equals("Registro")) {
+                int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Agregar Animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+
+                    if (colorAux != colorAux2) {
+                        System.out.println("registro1");
+                        if (animal.setFotoAnimal()) {
+                            System.out.println("CON FOTO");
+                            ban = true;
+                        }
+                    } else {
+                        if (animal.setAnimal()) {
+                            System.out.println("SIN FOTO");
+                            ban = true;
+                        }
+                    }
 
 //                    if (alimento.comprobarDuplicado(cedula)) {
-                if (ban) {
-                    JOptionPane.showMessageDialog(vistaRegAni, "Animal agregado/a correctamente");
-                    vistaRegAni.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(vistaRegAni, "No se pudo agregar el Animal");
-                }
-            }
-        } else {
-            //UPDATE
-            int id = Integer.parseInt(vistaRegAni.getTxtidAnimalNoborrar().getText());
-            System.out.println("animal id= " + vistaRegAni.getTxtidAnimalNoborrar().getText());
-            animal.setIdAnimal(id);
-            int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Seguro que desea actualizar los datos del animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-                if (colorAux != colorAux2) {
-                    System.out.println("registro1");
-                    if (animal.updateFotoAnimal()) {
-                        System.out.println("CON FOTO");
-                        ban = true;
-                    }
-                } else {
-                    if (animal.updateAnimal()) {
-                        System.out.println("SIN FOTO");
-                        ban = true;
+                    if (ban) {
+                        JOptionPane.showMessageDialog(vistaRegAni, "Animal agregado/a correctamente");
+                        vistaRegAni.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vistaRegAni, "No se pudo agregar el Animal");
                     }
                 }
-                if (ban) {//Grabamos
-                    JOptionPane.showMessageDialog(vistaRegAni, "Animal actualizado correctamente");
-                    vistaRegAni.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(vistaRegAni, "No se pudo actualizar a los datos del animal");
+            } else {
+                //UPDATE
+                int id = Integer.parseInt(vistaRegAni.getTxtidAnimalNoborrar().getText());
+                System.out.println("animal id= " + vistaRegAni.getTxtidAnimalNoborrar().getText());
+                animal.setIdAnimal(id);
+                int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Seguro que desea actualizar los datos del animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    if (colorAux != colorAux2) {
+                        System.out.println("registro1");
+                        if (animal.updateFotoAnimal()) {
+                            System.out.println("CON FOTO");
+                            ban = true;
+                        }
+                    } else {
+                        if (animal.updateAnimal()) {
+                            System.out.println("SIN FOTO");
+                            ban = true;
+                        }
+                    }
+                    if (ban) {//Grabamos
+                        JOptionPane.showMessageDialog(vistaRegAni, "Animal actualizado correctamente");
+                        vistaRegAni.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vistaRegAni, "No se pudo actualizar a los datos del animal");
+                    }
                 }
-            }
 
-            if (banvista) {
-                ControllerVistaAnimal controlAni = new ControllerVistaAnimal(vistaVani, modeloAni);
-                controlAni.cargarDatos(1);
-            }
+                if (banvista) {
+                    ControllerVistaAnimal controlAni = new ControllerVistaAnimal(vistaVani, modeloAni);
+                    controlAni.cargarDatos(1);
+                }
 //            
+            }
         }
-//        }
     }
 
     public boolean llenarDatos() {

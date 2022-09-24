@@ -21,7 +21,9 @@ public class ModelTickets extends Tickets {
 
     public List<Tickets> getTickets() {
         List<Tickets> listaTickets = new ArrayList<>();
-        String sql = "select tic_id, tic_categoria, tic_precio from ticket";
+        String sql = "select tic_id, tic_categoria, tic_precio from ticket "
+                + "  order by tic_id";
+        System.out.println("");
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -41,10 +43,36 @@ public class ModelTickets extends Tickets {
         }
         return listaTickets;
     }
+    
+        public List<Tickets> getTicketsPrecio() {
+        List<Tickets> listaTickets = new ArrayList<>();
+        String sql = "select tic_id, tic_categoria, tic_precio "
+                + "from ticket where tic_id="+getTic_id();
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Tickets t = new Tickets();
+                t.setTic_id(rs.getInt(1));
+                t.setTic_categoria(rs.getString(2));
+                t.setTic_precio(rs.getDouble(3));
+                System.out.println(t.getTic_categoria()+"= "+t.getTic_precio());
+                listaTickets.add(t);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaTickets;
+    }
 
     public boolean updateTicket() {
         String sql;
-        sql = "update ticket set tic_precio = " + getTic_precio() + " where tic_categoria = " + getTic_categoria();
+//        System.out.println("nuevo="+getTic_precio());
+        sql = "update ticket set tic_precio = " + getTic_precio() + " where tic_id = " + getTic_id();
         return mpgc.accion(sql);
     }
 }

@@ -283,7 +283,7 @@ public class controllerPantallaprincipal {
         ct.iniciarControl();
 
     }
-
+///TICKET
     public void viewVistaTickets() {
 
         ModelTickets mt = new ModelTickets();
