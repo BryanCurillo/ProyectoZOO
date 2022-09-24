@@ -43,9 +43,9 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        txtBuscar = new javax.swing.JTextField();
-        jCbFiltroRol = new javax.swing.JComboBox<>();
         jBtnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         jBtnActualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -54,13 +54,15 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setOpaque(true);
+        setPreferredSize(new java.awt.Dimension(970, 630));
         setVisible(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE EMPLEADOS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
 
+        jTblEmpleado.setBackground(new java.awt.Color(255, 253, 227));
         jTblEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -80,70 +82,83 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTblEmpleado.setCellSelectionEnabled(true);
+        jTblEmpleado.setGridColor(new java.awt.Color(51, 51, 51));
+        jTblEmpleado.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        jTblEmpleado.setShowGrid(false);
         jScrollPane1.setViewportView(jTblEmpleado);
         if (jTblEmpleado.getColumnModel().getColumnCount() > 0) {
             jTblEmpleado.getColumnModel().getColumn(5).setResizable(false);
             jTblEmpleado.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 138, 983, 402));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 138, 940, 402));
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(null);
 
+        jbtnAgregar.setBackground(new java.awt.Color(210, 215, 159));
+        jbtnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jbtnAgregar.setText("AGREGAR");
+        jbtnAgregar.setBorder(null);
         jbtnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jbtnAgregar);
         jToolBar1.add(jSeparator1);
 
+        jBtnModificar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnModificar.setText("MODIFICAR");
+        jBtnModificar.setBorder(null);
         jToolBar1.add(jBtnModificar);
         jToolBar1.add(jSeparator2);
 
+        jBtnElimina.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnElimina.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnElimina.setText("ELIMINAR");
+        jBtnElimina.setBorder(null);
         jBtnElimina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnElimina.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnElimina);
         jToolBar1.add(jSeparator3);
 
+        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setBorder(null);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
-        txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(txtBuscar);
-
-        jCbFiltroRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar rol", "Gerente", "Secretaria", "Zoologo", "Cuidador" }));
-        jCbFiltroRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCbFiltroRolActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jCbFiltroRol);
-
+        jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnBuscar.setText("BUSCAR");
+        jBtnBuscar.setBorder(null);
         jToolBar1.add(jBtnBuscar);
 
+        txtBuscar.setBackground(new java.awt.Color(255, 253, 227));
+        txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtBuscar);
+        jToolBar1.add(jSeparator5);
+
+        jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnActualizar.setText("ACTUALIZAR");
+        jBtnActualizar.setBorder(null);
         jBtnActualizar.setFocusable(false);
         jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizar);
 
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, 983, -1));
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 83, 940, -1));
 
-        jLabel1.setBackground(new java.awt.Color(144, 183, 125));
-        jLabel1.setText("jLabel1");
+        jLabel1.setBackground(new java.awt.Color(210, 215, 159));
+        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
         jLabel1.setOpaque(true);
-        jLabel1.setPreferredSize(new java.awt.Dimension(1000, 550));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 550));
+        jLabel1.setPreferredSize(new java.awt.Dimension(970, 630));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCbFiltroRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbFiltroRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCbFiltroRolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +170,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnElimina;
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JButton jBtnModificar;
-    private javax.swing.JComboBox<String> jCbFiltroRol;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
@@ -163,6 +177,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JTable jTblEmpleado;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnAgregar;
@@ -201,13 +216,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         this.jBtnModificar = jBtnModificar;
     }
 
-    public JComboBox<String> getjCbFiltro() {
-        return jCbFiltroRol;
-    }
-
-    public void setjCbFiltro(JComboBox<String> jCbFiltro) {
-        this.jCbFiltroRol = jCbFiltro;
-    }
 
     public JTable getjTblEmpleado() {
         return jTblEmpleado;
@@ -231,14 +239,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
     public void setjBtnActualizar(JButton jBtnActualizar) {
         this.jBtnActualizar = jBtnActualizar;
-    }
-
-    public JComboBox<String> getjCbFiltroRol() {
-        return jCbFiltroRol;
-    }
-
-    public void setjCbFiltroRol(JComboBox<String> jCbFiltroRol) {
-        this.jCbFiltroRol = jCbFiltroRol;
     }
 
     public JTextField getTxtBuscar() {
