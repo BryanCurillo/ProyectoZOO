@@ -59,10 +59,10 @@ public class ControllerVistaAnimal {
     }
 
     public void inicialControl() {
-//        vistaAni.getJbtnAgregarAnimal().addActionListener(l -> abrirRegistro(1));
-//        vistaAni.getjBtnModificarAnimal().addActionListener(l -> abrirRegistro(2));
-//        vistaAni.getjBtnEliminarAnimal().addActionListener(l -> eliminarAlimento());
-//        vistaAni.getTxtbuscarAnimal().addKeyListener(busquedaIncren);
+        vistaAni.getJbtnAgregarAnimal().addActionListener(l -> abrirRegistro(1));
+        vistaAni.getjBtnModificarAnimal().addActionListener(l -> abrirRegistro(2));
+        vistaAni.getjBtnEliminarAnimal().addActionListener(l -> eliminarAlimento());
+        vistaAni.getTxtbuscarAnimal().addKeyListener(busquedaIncren);
     }
 
     public void abrirRegistro(int op) {
@@ -79,13 +79,13 @@ public class ControllerVistaAnimal {
 
         } else {
             ControllerRegistrarAnimal controladorAni = new ControllerRegistrarAnimal(modeloAni, modeloHab, modeloCui, vistaRegistroAni, vistaAni);
-//            int fila = vistaAni.getjTblAnimal().getSelectedRow();
-//            if (fila == -1) {
-//                JOptionPane.showMessageDialog(null, "Seleccione el animal a modificar");
-//            } else {
-//                vistaP.getjDPprincipal().add(vistaRegistroAni);
-//                controladorAni.abrirRegistro(2);
-//            }
+            int fila = vistaAni.getjTblAnimal().getSelectedRow();
+            if (fila == -1) {
+                JOptionPane.showMessageDialog(null, "Seleccione el animal a modificar");
+            } else {
+                vistaP.getjDPprincipal().add(vistaRegistroAni);
+                controladorAni.abrirRegistro(2);
+            }
             cargarDatos(1);
         }
     }
@@ -106,64 +106,64 @@ public class ControllerVistaAnimal {
     };
 
     public void cargarDatos(int opc) {
-//        vistaAni.getjTblAnimal().setDefaultRenderer(Object.class, new imageTable());
-//        vistaAni.getjTblAnimal().setRowHeight(50);
-//        estructuraTabla = (DefaultTableModel) vistaAni.getjTblAnimal().getModel();
-//        estructuraTabla.setRowCount(0);
-//
-//        List<Animales> listaAli;
-//        if (opc == 1) {
-//            listaAli = modeloAni.getAnimal();
-//        } else {
-//            String busqueda = vistaAni.getTxtbuscarAnimal().getText().toLowerCase().trim();
-//            listaAli = modeloAni.busquedaIncremental(busqueda);
-//        }
-//
-////        Holder<Integer> i = new Holder<>(0);
-//        i = 0;
-//        listaAli.stream().sorted((x, y)
-//                -> x.getEspecieAnimal().compareToIgnoreCase(y.getEspecieAnimal())).forEach(emp -> {
-//            estructuraTabla.addRow(new Object[8]);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getIdAnimal(), i, 0);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getNombreAnimal(), i, 1);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getGeneroAnimal(), i, 2);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getEspecieAnimal(), i, 3);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getFecha_nacimientoAnimal(), i, 4);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getTipoHabitat(), i, 5);
-//            vistaAni.getjTblAnimal().setValueAt(emp.getNombreCuidador(), i, 6);
-//            Image foto = emp.getFoto();
-//            if (foto != null) {
-//                foto = foto.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-//                ImageIcon icono = new ImageIcon(foto);
-//
-//                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-//                dtcr.setIcon(icono);
-//                vistaAni.getjTblAnimal().setValueAt(new JLabel(icono), i, 7);
-//            } else {
-//                vistaAni.getjTblAnimal().setValueAt(null, i, 7);
-//            }
-//            i++;
-//        });
+        vistaAni.getjTblAnimal().setDefaultRenderer(Object.class, new imageTable());
+        vistaAni.getjTblAnimal().setRowHeight(50);
+        estructuraTabla = (DefaultTableModel) vistaAni.getjTblAnimal().getModel();
+        estructuraTabla.setRowCount(0);
+
+        List<Animales> listaAli;
+        if (opc == 1) {
+            listaAli = modeloAni.getAnimal();
+        } else {
+            String busqueda = vistaAni.getTxtbuscarAnimal().getText().toLowerCase().trim();
+            listaAli = modeloAni.busquedaIncremental(busqueda);
+        }
+
+//        Holder<Integer> i = new Holder<>(0);
+        i = 0;
+        listaAli.stream().sorted((x, y)
+                -> x.getEspecieAnimal().compareToIgnoreCase(y.getEspecieAnimal())).forEach(emp -> {
+            estructuraTabla.addRow(new Object[8]);
+            vistaAni.getjTblAnimal().setValueAt(emp.getIdAnimal(), i, 0);
+            vistaAni.getjTblAnimal().setValueAt(emp.getNombreAnimal(), i, 1);
+            vistaAni.getjTblAnimal().setValueAt(emp.getGeneroAnimal(), i, 2);
+            vistaAni.getjTblAnimal().setValueAt(emp.getEspecieAnimal(), i, 3);
+            vistaAni.getjTblAnimal().setValueAt(emp.getFecha_nacimientoAnimal(), i, 4);
+            vistaAni.getjTblAnimal().setValueAt(emp.getTipoHabitat(), i, 5);
+            vistaAni.getjTblAnimal().setValueAt(emp.getNombreCuidador(), i, 6);
+            Image foto = emp.getFoto();
+            if (foto != null) {
+                foto = foto.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+                ImageIcon icono = new ImageIcon(foto);
+
+                DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+                dtcr.setIcon(icono);
+                vistaAni.getjTblAnimal().setValueAt(new JLabel(icono), i, 7);
+            } else {
+                vistaAni.getjTblAnimal().setValueAt(null, i, 7);
+            }
+            i++;
+        });
 
     }
 
     public void eliminarAlimento() {
-//        ModelAnimal animal = new ModelAnimal();
-//        int fila = vistaAni.getjTblAnimal().getSelectedRow();
-//        if (fila == -1) {
-//            JOptionPane.showMessageDialog(null, "Seleccione el alimento a eliminar");
-//        } else {
-//            int response = JOptionPane.showConfirmDialog(vistaAni, "¿Esta seguro de eliminar el alimento?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//            if (response == JOptionPane.YES_OPTION) {
-//                int id = Integer.parseInt(vistaAni.getjTblAnimal().getValueAt(fila, 0).toString());
-//
-//                if (animal.deleteAnimal(id)) {//Grabamos
-//                    JOptionPane.showMessageDialog(vistaAni, "Alimento eliminado correctamente");
-//                    cargarDatos(1);
-//                } else {
-//                    JOptionPane.showMessageDialog(vistaAni, "No se pudo eliminar el alimento");
-//                }
-//            }
-//        }
+        ModelAnimal animal = new ModelAnimal();
+        int fila = vistaAni.getjTblAnimal().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione el alimento a eliminar");
+        } else {
+            int response = JOptionPane.showConfirmDialog(vistaAni, "¿Esta seguro de eliminar el alimento?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+                int id = Integer.parseInt(vistaAni.getjTblAnimal().getValueAt(fila, 0).toString());
+
+                if (animal.deleteAnimal(id)) {//Grabamos
+                    JOptionPane.showMessageDialog(vistaAni, "Alimento eliminado correctamente");
+                    cargarDatos(1);
+                } else {
+                    JOptionPane.showMessageDialog(vistaAni, "No se pudo eliminar el alimento");
+                }
+            }
+        }
     }
 }
