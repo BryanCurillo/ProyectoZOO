@@ -55,6 +55,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 0));
         setBorder(null);
@@ -160,8 +161,13 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(61, 131, 97));
         jLabel4.setText("CLIENTES");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 200, -1));
+
+        jLabel6.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel6.setText("CLIENTES");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(658, 453, 200, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
 
@@ -313,6 +319,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

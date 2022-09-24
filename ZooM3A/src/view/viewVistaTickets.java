@@ -32,20 +32,38 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jBtnImprimir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblTickets = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         jSeparator3 = new javax.swing.JToolBar.Separator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jBtnImprimir = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(210, 215, 159));
+        setBackground(new java.awt.Color(238, 227, 203));
         setBorder(null);
+        setClosable(true);
         setOpaque(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(250, 112, 112));
+        jLabel4.setText("VISTA DE TICKETS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 17, 410, -1));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE TICKETS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 410, -1));
+
+        jBtnImprimir.setBackground(new java.awt.Color(238, 227, 203));
+        jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (2).png"))); // NOI18N
+        jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 230, 40));
 
         jTblTickets.setBackground(new java.awt.Color(255, 253, 227));
         jTblTickets.setModel(new javax.swing.table.DefaultTableModel(
@@ -69,48 +87,23 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblTickets);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 930, 450));
+
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(null);
         jToolBar1.setFloatable(false);
+        jToolBar1.setForeground(new java.awt.Color(210, 215, 159));
         jToolBar1.add(jSeparator3);
-        jToolBar1.add(jSeparator4);
 
-        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
-        jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jBtnImprimir.setText("IMPRIMIR REPORTE");
-        jBtnImprimir.setBorder(null);
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 110, -1, 5));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(264, 264, 264))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(394, 394, 394))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (4) (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 80, 70));
+
+        jLabel2.setBackground(new java.awt.Color(238, 227, 203));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 5));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -174,7 +167,10 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnImprimir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;

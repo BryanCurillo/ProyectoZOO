@@ -33,10 +33,12 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblHabitat = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         btnAgregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         BtnModificar = new javax.swing.JButton();
@@ -46,15 +48,26 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         txtbuscar = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
         jBtnBuscar = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
         setClosable(true);
         setOpaque(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(61, 131, 97));
+        jLabel4.setText("VISTA DE HABITATS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 27, 440, -1));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE HABITATS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 30, 440, -1));
 
         jTblHabitat.setBackground(new java.awt.Color(255, 253, 227));
         jTblHabitat.setModel(new javax.swing.table.DefaultTableModel(
@@ -78,12 +91,16 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblHabitat);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 165, 940, 435));
+
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
         jToolBar1.setFloatable(false);
+        jToolBar1.add(jSeparator5);
 
         btnAgregar.setBackground(new java.awt.Color(210, 215, 159));
         btnAgregar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/globo.png"))); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setBorder(null);
         btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -93,13 +110,17 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
 
         BtnModificar.setBackground(new java.awt.Color(210, 215, 159));
         BtnModificar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        BtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cambio-climatico.png"))); // NOI18N
         BtnModificar.setText("MODIFICAR");
         BtnModificar.setBorder(null);
+        BtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(BtnModificar);
         jToolBar1.add(jSeparator2);
 
         btnEliminar.setBackground(new java.awt.Color(210, 215, 159));
         btnEliminar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cambio-climatico (1).png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
         btnEliminar.setBorder(null);
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -109,47 +130,35 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
 
         jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
         jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos.png"))); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
         jBtnImprimir.setBorder(null);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
-        txtbuscar.setBackground(new java.awt.Color(255, 253, 227));
+        txtbuscar.setBackground(new java.awt.Color(177, 215, 180));
         txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtbuscar);
+        jToolBar1.add(jSeparator7);
 
         jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnBuscar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (3).png"))); // NOI18N
         jBtnBuscar.setText("BUSCAR");
         jBtnBuscar.setBorder(null);
         jToolBar1.add(jBtnBuscar);
+        jToolBar1.add(jSeparator6);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(254, 254, 254))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel3)
-                .addGap(52, 52, 52)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 95, 950, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/earth (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 70, 80));
+
+        jLabel2.setBackground(new java.awt.Color(210, 215, 159));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,12 +170,18 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnImprimir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JTable jTblHabitat;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtbuscar;

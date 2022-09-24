@@ -31,7 +31,9 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblEmpleado = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
@@ -44,6 +46,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         jBtnBuscar = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         txtBuscar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JToolBar.Separator();
         jBtnActualizar = new javax.swing.JButton();
@@ -54,13 +57,23 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setOpaque(true);
-        setPreferredSize(new java.awt.Dimension(970, 630));
+        setPreferredSize(new java.awt.Dimension(970, 654));
         setVisible(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario (2) (1).png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 70, 70));
+
+        jLabel3.setBackground(new java.awt.Color(250, 112, 112));
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(37, 49, 109));
         jLabel3.setText("VISTA DE EMPLEADOS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 38, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(95, 111, 148));
+        jLabel4.setText("VISTA DE EMPLEADOS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
         jTblEmpleado.setBackground(new java.awt.Color(255, 253, 227));
         jTblEmpleado.setModel(new javax.swing.table.DefaultTableModel(
@@ -92,13 +105,14 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
             jTblEmpleado.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 138, 940, 402));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 178, 940, 410));
 
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
 
         jbtnAgregar.setBackground(new java.awt.Color(210, 215, 159));
         jbtnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jbtnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (5).png"))); // NOI18N
         jbtnAgregar.setText("AGREGAR");
         jbtnAgregar.setBorder(null);
         jbtnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -108,13 +122,17 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
         jBtnModificar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario (6).png"))); // NOI18N
         jBtnModificar.setText("MODIFICAR");
         jBtnModificar.setBorder(null);
+        jBtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnModificar);
         jToolBar1.add(jSeparator2);
 
         jBtnElimina.setBackground(new java.awt.Color(210, 215, 159));
         jBtnElimina.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnElimina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar-usuario.png"))); // NOI18N
         jBtnElimina.setText("ELIMINAR");
         jBtnElimina.setBorder(null);
         jBtnElimina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -124,24 +142,31 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
         jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
         jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (1).png"))); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
         jBtnImprimir.setBorder(null);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
         jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (3).png"))); // NOI18N
         jBtnBuscar.setText("BUSCAR");
         jBtnBuscar.setBorder(null);
+        jBtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jToolBar1.add(jBtnBuscar);
+        jToolBar1.add(jSeparator6);
 
-        txtBuscar.setBackground(new java.awt.Color(255, 253, 227));
+        txtBuscar.setBackground(new java.awt.Color(183, 211, 223));
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
         jToolBar1.add(jSeparator5);
 
         jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar (1).png"))); // NOI18N
         jBtnActualizar.setText("ACTUALIZAR");
         jBtnActualizar.setBorder(null);
         jBtnActualizar.setFocusable(false);
@@ -149,7 +174,7 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizar);
 
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 83, 940, -1));
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 115, 930, 50));
 
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
         jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
@@ -171,13 +196,16 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JButton jBtnModificar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JTable jTblEmpleado;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnAgregar;

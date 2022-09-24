@@ -43,19 +43,26 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        txtBuscar = new javax.swing.JTextField();
-        jCbFiltroRol = new javax.swing.JComboBox<>();
         jBtnBuscar = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
+        txtBuscar = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         jBtnActualizar = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setVisible(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(37, 49, 109));
         jLabel3.setText("VISTA DE PROVEEDORES");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 24, -1, -1));
 
         jTblProveedor.setBackground(new java.awt.Color(255, 253, 227));
         jTblProveedor.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,12 +86,16 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblProveedor);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 169, 940, 430));
+
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
 
         jbtnAgregar.setBackground(new java.awt.Color(210, 215, 159));
         jbtnAgregar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jbtnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (5).png"))); // NOI18N
         jbtnAgregar.setText("AGREGAR");
+        jbtnAgregar.setBorder(null);
         jbtnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jbtnAgregar);
@@ -92,13 +103,19 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
 
         jBtnModificar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnModificar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario (6).png"))); // NOI18N
         jBtnModificar.setText("MODIFICAR");
+        jBtnModificar.setBorder(null);
+        jBtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnModificar);
         jToolBar1.add(jSeparator2);
 
         jBtnElimina.setBackground(new java.awt.Color(210, 215, 159));
         jBtnElimina.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnElimina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar-usuario.png"))); // NOI18N
         jBtnElimina.setText("ELIMINAR");
+        jBtnElimina.setBorder(null);
         jBtnElimina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnElimina.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnElimina);
@@ -106,70 +123,56 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
 
         jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
         jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (1).png"))); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setBorder(null);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
-        txtBuscar.setEditable(false);
-        txtBuscar.setBackground(new java.awt.Color(255, 253, 227));
-        txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(txtBuscar);
-
-        jCbFiltroRol.setBackground(new java.awt.Color(210, 215, 159));
-        jCbFiltroRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar rol", "Gerente", "Secretaria", "Zoologo", "Cuidador" }));
-        jCbFiltroRol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCbFiltroRolActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jCbFiltroRol);
-
         jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnBuscar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (3).png"))); // NOI18N
         jBtnBuscar.setText("BUSCAR");
+        jBtnBuscar.setBorder(null);
         jToolBar1.add(jBtnBuscar);
+        jToolBar1.add(jSeparator7);
+
+        txtBuscar.setEditable(false);
+        txtBuscar.setBackground(new java.awt.Color(183, 211, 223));
+        txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtBuscar);
+        jToolBar1.add(jSeparator6);
 
         jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnActualizar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar (1).png"))); // NOI18N
         jBtnActualizar.setText("ACTUALIZAR");
+        jBtnActualizar.setBorder(null);
         jBtnActualizar.setFocusable(false);
         jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizar);
+        jToolBar1.add(jSeparator5);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(228, 228, 228))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel3)
-                .addGap(26, 26, 26)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 89, 940, 53));
+        jToolBar1.getAccessibleContext().setAccessibleName("");
+
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(95, 111, 148));
+        jLabel4.setText("VISTA DE PROVEEDORES");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 26, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor (2) (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 70, 70));
+
+        jLabel2.setBackground(new java.awt.Color(210, 215, 159));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCbFiltroRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbFiltroRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCbFiltroRolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,13 +184,18 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnElimina;
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JButton jBtnModificar;
-    private javax.swing.JComboBox<String> jCbFiltroRol;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JTable jTblProveedor;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnAgregar;
@@ -232,14 +240,6 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
 
     public void setjBtnModificar(JButton jBtnModificar) {
         this.jBtnModificar = jBtnModificar;
-    }
-
-    public JComboBox<String> getjCbFiltroRol() {
-        return jCbFiltroRol;
-    }
-
-    public void setjCbFiltroRol(JComboBox<String> jCbFiltroRol) {
-        this.jCbFiltroRol = jCbFiltroRol;
     }
 
     public JTable getjTblProveedor() {

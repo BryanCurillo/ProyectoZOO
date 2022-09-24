@@ -84,6 +84,7 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
@@ -379,8 +380,14 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, 200, 210));
 
         jLabel2.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(37, 49, 109));
         jLabel2.setText("PERSONAL");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 150, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 541, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(95, 111, 148));
+        jLabel20.setText("PERSONAL");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(768, 543, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -412,6 +419,7 @@ public class viewRegistrarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

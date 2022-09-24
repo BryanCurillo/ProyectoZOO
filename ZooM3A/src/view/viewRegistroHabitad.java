@@ -52,7 +52,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         txtidHabitadNoborrar = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         txtOtrotipo = new javax.swing.JTextField();
         txtOtrobloque = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -72,6 +71,8 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jDlgZoologo.setSize(new java.awt.Dimension(545, 310));
 
@@ -138,180 +139,120 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         setBorder(null);
 
         jPanel2.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(61, 131, 97));
         jLabel16.setText("HABITATS");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 520, -1, -1));
+
+        txtOtrotipo.setBackground(new java.awt.Color(255, 253, 227));
+        jPanel2.add(txtOtrotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 153, 130, 30));
+
+        txtOtrobloque.setBackground(new java.awt.Color(255, 253, 227));
+        jPanel2.add(txtOtrobloque, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 279, 130, 30));
 
         jPanel1.setBackground(new java.awt.Color(210, 215, 159));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel17.setText("NOMBRE:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 40));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 55, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel18.setText("RAMA:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, 60));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         txtnombreZol.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel1.add(txtnombreZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 260, 30));
+        jPanel1.add(txtnombreZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 260, 30));
 
         txtramaZol.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel1.add(txtramaZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 260, 30));
+        jPanel1.add(txtramaZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 260, 30));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("ZOOLOGO ACARGO:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 7, -1, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
 
         jbtnSelecZoologo.setText("Seleccionar");
-        jPanel1.add(jbtnSelecZoologo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
+        jPanel1.add(jbtnSelecZoologo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 390, -1, 141));
 
         jLabel14.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
         jLabel14.setText("REGISTRO DE HABITATS");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
         jLabel5.setText("DATOS DE ZOOLOGO A CARGO");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
         comboTipoHab.setBackground(new java.awt.Color(255, 253, 227));
         comboTipoHab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "Pradera", "Bosque", "Desierto", "Montaña", "Marisma", "Sabana", "Región polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Río", "Arrecife de coral", "Océano", "Playa", "Otro..." }));
+        jPanel2.add(comboTipoHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 111, 219, 30));
 
         jSpiCapacidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel2.add(jSpiCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 195, 219, 30));
 
         comboUbicacion.setBackground(new java.awt.Color(255, 253, 227));
         comboUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar bloque", "A", "B", "C", "D", "E", "F", "G", "H", "I", "Otro..." }));
+        jPanel2.add(comboUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 243, 219, 30));
 
         btcancelar.setBackground(new java.awt.Color(210, 215, 159));
         btcancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btcancelar.setText("CANCELAR");
         btcancelar.setBorder(null);
+        jPanel2.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 590, -1, -1));
 
         btregistrar.setBackground(new java.awt.Color(210, 215, 159));
         btregistrar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         btregistrar.setText("REGISTRARSE");
         btregistrar.setBorder(null);
+        jPanel2.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("UBICACION(BLOQUE):");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("CAPACIDAD:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 202, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("TIPO DE HABITAD:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 111, -1, 30));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jSpiCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(comboTipoHab, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(comboUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtOtrobloque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtOtrotipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(32, 32, 32))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(btregistrar)
-                                .addGap(31, 31, 31)
-                                .addComponent(btcancelar))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(53, 53, 53))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel14)
-                .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtOtrotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboTipoHab, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpiCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtOtrobloque, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(98, 98, 98)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btregistrar)
-                    .addComponent(btcancelar))
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16)
-                .addGap(115, 115, 115))
-        );
+        jLabel19.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel19.setText("HABITATS");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 523, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/earth (2).png"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 460, 410));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 952, Short.MAX_VALUE)))
+                        .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 964, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 612, Short.MAX_VALUE)))
+                        .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 655, Short.MAX_VALUE)))
         );
 
         pack();
@@ -325,12 +266,13 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> comboTipoHab;
     private javax.swing.JComboBox<String> comboUbicacion;
     private javax.swing.JDialog jDlgZoologo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -394,14 +336,6 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
     public void setjLabel14(JLabel jLabel14) {
         this.jLabel14 = jLabel14;
-    }
-
-    public JLabel getjLabel15() {
-        return jLabel15;
-    }
-
-    public void setjLabel15(JLabel jLabel15) {
-        this.jLabel15 = jLabel15;
     }
 
     public JLabel getjLabel16() {

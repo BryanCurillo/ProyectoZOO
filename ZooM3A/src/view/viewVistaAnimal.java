@@ -33,10 +33,12 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblAnimal = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
         jbtnAgregarAnimal = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jBtnModificarAnimal = new javax.swing.JButton();
@@ -46,13 +48,30 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
         jBtnImprimirAnimal = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         jBtnBuscarAnimal = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
         txtbuscarAnimal = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         jBtnActualizarAnimal = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(210, 215, 159));
+        setBorder(null);
         setClosable(true);
+        setPreferredSize(new java.awt.Dimension(970, 630));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(250, 112, 112));
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 149, 81));
+        jLabel4.setText("VISTA DE ANIMALES");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 25, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 192, 144));
         jLabel3.setText("VISTA DE ANIMALES");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 27, -1, -1));
 
         jTblAnimal.setBackground(new java.awt.Color(255, 253, 227));
         jTblAnimal.setModel(new javax.swing.table.DefaultTableModel(
@@ -74,14 +93,21 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTblAnimal.setGridColor(new java.awt.Color(255, 253, 227));
+        jTblAnimal.setShowGrid(true);
         jScrollPane1.setViewportView(jTblAnimal);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 167, 940, 433));
 
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
+        jToolBar1.add(jSeparator7);
 
         jbtnAgregarAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jbtnAgregarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jbtnAgregarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (6).png"))); // NOI18N
         jbtnAgregarAnimal.setText("AGREGAR");
+        jbtnAgregarAnimal.setBorder(null);
         jbtnAgregarAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtnAgregarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jbtnAgregarAnimal);
@@ -89,13 +115,19 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
 
         jBtnModificarAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jBtnModificarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnModificarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/editar (7).png"))); // NOI18N
         jBtnModificarAnimal.setText("MODIFICAR");
+        jBtnModificarAnimal.setBorder(null);
+        jBtnModificarAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnModificarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnModificarAnimal);
         jToolBar1.add(jSeparator2);
 
         jBtnEliminarAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jBtnEliminarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnEliminarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/borrar.png"))); // NOI18N
         jBtnEliminarAnimal.setText("ELIMINAR");
+        jBtnEliminarAnimal.setBorder(null);
         jBtnEliminarAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnEliminarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnEliminarAnimal);
@@ -103,53 +135,46 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
 
         jBtnImprimirAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jBtnImprimirAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnImprimirAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (2).png"))); // NOI18N
         jBtnImprimirAnimal.setText("IMPRIMIR REPORTE");
+        jBtnImprimirAnimal.setBorder(null);
+        jBtnImprimirAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimirAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimirAnimal);
         jToolBar1.add(jSeparator4);
 
         jBtnBuscarAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jBtnBuscarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnBuscarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (4).png"))); // NOI18N
         jBtnBuscarAnimal.setText("BUSCAR");
+        jBtnBuscarAnimal.setBorder(null);
         jToolBar1.add(jBtnBuscarAnimal);
+        jToolBar1.add(jSeparator8);
 
         txtbuscarAnimal.setBackground(new java.awt.Color(255, 253, 227));
         txtbuscarAnimal.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtbuscarAnimal);
+        jToolBar1.add(jSeparator6);
 
         jBtnActualizarAnimal.setBackground(new java.awt.Color(210, 215, 159));
         jBtnActualizarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jBtnActualizarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-actualizar.png"))); // NOI18N
         jBtnActualizarAnimal.setText("ACTUALIZAR");
+        jBtnActualizarAnimal.setBorder(null);
         jBtnActualizarAnimal.setFocusable(false);
         jBtnActualizarAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnActualizarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizarAnimal);
+        jToolBar1.add(jSeparator5);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(191, 191, 191))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel3)
-                .addGap(30, 30, 30)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 96, 940, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (5) (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 70, 70));
+
+        jLabel2.setBackground(new java.awt.Color(210, 215, 159));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,12 +186,19 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnEliminarAnimal;
     private javax.swing.JButton jBtnImprimirAnimal;
     private javax.swing.JButton jBtnModificarAnimal;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JTable jTblAnimal;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnAgregarAnimal;
