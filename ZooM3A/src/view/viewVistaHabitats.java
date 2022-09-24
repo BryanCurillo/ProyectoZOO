@@ -48,12 +48,15 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
         txtbuscar = new javax.swing.JTextField();
         jBtnBuscar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
         setClosable(true);
+        setOpaque(true);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE HABITATS");
 
+        jTblHabitat.setBackground(new java.awt.Color(255, 253, 227));
         jTblHabitat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -75,33 +78,50 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblHabitat);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(null);
         jToolBar1.setFloatable(false);
 
+        btnAgregar.setBackground(new java.awt.Color(210, 215, 159));
+        btnAgregar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnAgregar.setText("AGREGAR");
+        btnAgregar.setBorder(null);
         btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnAgregar);
         jToolBar1.add(jSeparator1);
 
+        BtnModificar.setBackground(new java.awt.Color(210, 215, 159));
+        BtnModificar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         BtnModificar.setText("MODIFICAR");
+        BtnModificar.setBorder(null);
         jToolBar1.add(BtnModificar);
         jToolBar1.add(jSeparator2);
 
+        btnEliminar.setBackground(new java.awt.Color(210, 215, 159));
+        btnEliminar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(null);
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnEliminar);
         jToolBar1.add(jSeparator3);
 
+        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setBorder(null);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
+        txtbuscar.setBackground(new java.awt.Color(255, 253, 227));
         txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtbuscar);
 
+        jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnBuscar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jBtnBuscar.setText("BUSCAR");
+        jBtnBuscar.setBorder(null);
         jToolBar1.add(jBtnBuscar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,22 +132,22 @@ public class viewVistaHabitats extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE))
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(176, 176, 176))
+                .addGap(254, 254, 254))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel3)
-                .addGap(35, 35, 35)
+                .addGap(52, 52, 52)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
