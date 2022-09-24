@@ -75,7 +75,9 @@ public class controllerPantallaprincipal {
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
         vista.getjMIvisualizarPrecios().addActionListener(l -> viewVistaTickets());
         vista.getjMIVisualizarHabitat().addActionListener(l -> vistaHabitat());
-        vista.getjMIagregarAnimal().addActionListener(l->registroAnimal());
+        vista.getjMIagregarAnimal().addActionListener(l -> registroAnimal());
+        vista.getjMIvisualizarAnimal().addActionListener(l -> vistaAnimal());
+
     }
 
     //CARGAR DATOS
@@ -303,14 +305,16 @@ public class controllerPantallaprincipal {
         controReglAni.inicialControl();
     }
 
-//    public void vistaAlimento() {
-//        ModelAlimento modeloAli = new ModelAlimento();
-//        viewVistaAlimento vistaAli = new viewVistaAlimento();
-//
-//        //Agragar vista al desktop pane                
-//        vista.getjDPprincipal().add(vistaAli);
-//        ControllerVistaAlimento controllerVali = new ControllerVistaAlimento(vista, vistaAli, modeloAli);
-//        controllerVali.inicialControl();
-//    }
+    public void vistaAnimal() {
+        ModelAnimal modelAni = new ModelAnimal();
+        viewVistaAnimal vistaAni = new viewVistaAnimal();
+        ModelHabitad modeloHab = new ModelHabitad();
+        modelCuidador modeloCui = new modelCuidador();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaAni);
+        ControllerVistaAnimal controViewAni = new ControllerVistaAnimal(vista, vistaAni, modelAni);
+        controViewAni.inicialControl();
+    }
     ////////
 }

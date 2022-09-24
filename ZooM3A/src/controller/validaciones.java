@@ -63,6 +63,12 @@ public class validaciones {
         return validar;
     }
 
+//    public boolean validarFoto(String cadena) {
+//        boolean validar = cadena.matches("([^\\ s] + (\\. (? i) (jpe? g | png | gif | bmp)) $)");
+//
+//        return validar;
+//    }
+
     public boolean validarCedula(String cedula) {
 //        boolean val = false;
         boolean val = true;

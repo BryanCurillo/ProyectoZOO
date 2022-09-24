@@ -140,14 +140,14 @@ public class ControllerRegistrarAnimal {
             this.inicialControl();
 //            abrirRegistroEmpleado();
         } else {
-//            titulo = "Editar";
-//            if (llenarDatos()) {
-//                vistaRegAni.setName("Editar");
-//                vistaRegAni.getBtnAgregar().setText("ACTUALIZAR");
-//                vistaRegAni.setVisible(true);
-//                this.inicialControl();
-////                abrirRegistroEmpleado();
-//            }
+            titulo = "Editar";
+            if (llenarDatos()) {
+                vistaRegAni.setName("Editar");
+                vistaRegAni.getBtnAgregar().setText("ACTUALIZAR");
+                vistaRegAni.setVisible(true);
+                this.inicialControl();
+//                abrirRegistroEmpleado();
+            }
         }
     }
 
@@ -190,11 +190,10 @@ public class ControllerRegistrarAnimal {
                 }
             }
             Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
-            
+
             Date fechaNacimiento = vistaRegAni.getCalendarNacimiento().getDate(); //vista es la interfaz, jDate el JDatechooser
             long d = fechaNacimiento.getTime(); //guardamos en un long el tiempo
             java.sql.Date fechanacimientoSQL = new java.sql.Date(d);// parseamos al formato del sql  
-            
 
             int idCuidador = Integer.parseInt(vistaRegAni.getTxtidCuidadorNoborrar().getText()),
                     idHabitat = Integer.parseInt(vistaRegAni.getTxtidHabitatNoborrar().getText());
@@ -250,104 +249,93 @@ public class ControllerRegistrarAnimal {
                 }
             } else {
                 //UPDATE
-//                int id = Integer.parseInt(vistaRegAni.getTxtidAli().getText());
-//                animal.setIdalimento(id);
-//                int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Seguro que desea actualizar los datos del animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//                if (response == JOptionPane.YES_OPTION) {
-//                    if (animal.updateAlimento()) {//Grabamos
-//                        JOptionPane.showMessageDialog(vistaRegAni, "Alimento actualizado correctamente");
-//                        vistaRegAni.dispose();
-//                    } else {
-//                        JOptionPane.showMessageDialog(vistaRegAni, "No se pudo actualizar a los datos del alimento");
-//                    }
-//                }
-//            }
-//            if (banvista) {
-//                ControllerVistaAlimento controlAli = new ControllerVistaAlimento(vistaAli, modelAlimento);
-//                controlAli.cargarDatos(1);
-//            }
-//            }
+                int id = Integer.parseInt(vistaRegAni.getTxtidAnimalNoborrar().getText());
+                System.out.println("animal id= " + vistaRegAni.getTxtidAnimalNoborrar().getText());
+                animal.setIdAnimal(id);
+                int response = JOptionPane.showConfirmDialog(vistaRegAni, "¿Seguro que desea actualizar los datos del animal?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    if (colorAux != colorAux2) {
+                        System.out.println("registro1");
+                        if (animal.updateFotoAnimal()) {
+                            System.out.println("CON FOTO");
+                            ban = true;
+                        }
+                    } else {
+                        if (animal.updateAnimal()) {
+                            System.out.println("SIN FOTO");
+                            ban = true;
+                        }
+                    }
+                    if (ban) {//Grabamos
+                        JOptionPane.showMessageDialog(vistaRegAni, "Animal actualizado correctamente");
+                        vistaRegAni.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(vistaRegAni, "No se pudo actualizar a los datos del animal");
+                    }
+                }
+
+                if (banvista) {
+                    ControllerVistaAnimal controlAni = new ControllerVistaAnimal(vistaVani, modeloAni);
+                    controlAni.cargarDatos(1);
+                }
+//            
             }
-            //
-            //    public boolean llenarDatos() {
-            //        int fila = vistaVani.getjTblEmpleado().getSelectedRow();
-            //        if (fila == -1) {
-            //            JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
-            //            return false;
-            //        } else {
-            //
-            //            int id = Integer.parseInt(vistaVani.getjTblEmpleado().getValueAt(fila, 0).toString());
-            //            List<Empleado> listap = modeloAni.getempleado();
-            //            listap.stream().forEach(emp -> {
-            //                if (id == emp.getIdEmp()) {
-            //                    vistaRegAni.getTxtcedula().setText(emp.getCedula());
-            //                    vistaRegAni.getTxtnombre().setText(emp.getNombre());
-            //                    vistaRegAni.getTxtapellido().setText(emp.getApellido());
-            //                    vistaRegAni.getTxttelefono().setText(emp.getTelefono());
-            //                    vistaRegAni.getTxtcorreo().setText(emp.getCorreo());
-            //                    if (emp.getGenero().equalsIgnoreCase("Masculino")) {
-            //                        vistaRegAni.getBtmasculino().setSelected(true);
-            //                    }
-            //                    if (emp.getGenero().equalsIgnoreCase("Femenino")) {
-            //                        vistaRegAni.getBtfemenino().setSelected(true);
-            //                    }
-            //                    vistaRegAni.getCalendarFechanacimiento().setDate(emp.getFechanacimiento());
-            //                    vistaRegAni.getTxtusuario().setText(emp.getUsuario());
-            //                    vistaRegAni.getTxtcontra().setText(emp.getContraseña());
-            //                    vistaRegAni.getTxtconfirmacontra().setText(emp.getContraseña());
-            //                    Image foto = emp.getFoto();
-            //                    if (foto != null) {
-            //                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
-            //                        ImageIcon icono = new ImageIcon(foto);
-            //                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-            //                        dtcr.setIcon(icono);
-            //                        vistaRegAni.getLblfoto().setIcon(icono);
-            //                    } else {
-            //                        vistaRegAni.getLblfoto().setIcon(null);
-            //                    }
-            //
-            //                    String opc = vistaVani.getjTblEmpleado().getValueAt(fila, 8).toString();
-            ////                    System.out.println(opc + "lllllll");
-            //                    switch (opc) {
-            //                        case "Gerente":
-            //                            //Gerente
-            //                            modelGerente me = new modelGerente();
-            //                            vistaRegAni.getComborol().setSelectedIndex(1);
-            //                            vistaRegAni.getTxtTitulo().setText(me.obtenerDatosRol(id));
-            //                            break;
-            //                        case "Secretaria":
-            //                            //Secretaria
-            //                            vistaRegAni.getComborol().setSelectedIndex(2);
-            //                            modelSecretaria ms = new modelSecretaria();
-            //                            vistaRegAni.getjSexperiencia().setValue(ms.obtenerDatosRol(id));
-            //                            break;
-            //                        case "Zoologo":
-            //                            //Zoologo
-            //                            vistaRegAni.getComborol().setSelectedIndex(3);
-            //
-            //                            modelZoologo mz = new modelZoologo();
-            //                            for (int j = 0; j < vistaRegAni.getComborama().getItemCount(); j++) {
-            //                                if (vistaRegAni.getComborama().getItemAt(j).equalsIgnoreCase(mz.obtenerDatosRol(id))) {
-            //                                    vistaRegAni.getComborama().setSelectedIndex(j);
-            //                                }
-            //                            }
-            //                            break;
-            //                        case "Cuidador":
-            //                            //Cuidador
-            //                            vistaRegAni.getComborol().setSelectedIndex(4);
-            //                            modelCuidador mc = new modelCuidador();
-            //                            for (int j = 0; j < vistaRegAni.getCombosangre().getItemCount(); j++) {
-            //                                if (vistaRegAni.getCombosangre().getItemAt(j).equalsIgnoreCase(mc.obtenerDatosRol(id))) {
-            //                                    vistaRegAni.getCombosangre().setSelectedIndex(j);
-            ////                                    vista.getCombosangre().setSelectedItem(mc.obtenerDatosRol(id));
-            //                                }
-            //                            }
-            //                            break;
-            //                    }
-            //                }
-            //
-            //            });
-//            vistaRegAni.dispose();
+        }
+    }
+
+    public boolean llenarDatos() {
+        int fila = vistaVani.getjTblAnimal().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(vistaVani, "Seleccione un animal a modificar");
+            return false;
+        } else {
+            int id = Integer.parseInt(vistaVani.getjTblAnimal().getValueAt(fila, 0).toString());
+            List<Animales> listap = modeloAni.getAnimal();
+            listap.stream().forEach(ani -> {
+                if (id == ani.getIdAnimal()) {
+                    vistaRegAni.getTxtidAnimalNoborrar().setText(String.valueOf(ani.getIdAnimal()));
+                    vistaRegAni.getTxtnombreanimal().setText(ani.getNombreAnimal());
+                    if (ani.getGeneroAnimal().equalsIgnoreCase("Macho")) {
+                        vistaRegAni.getBtnmacho().setSelected(true);
+                    }
+                    if (ani.getGeneroAnimal().equalsIgnoreCase("Hembra")) {
+                        vistaRegAni.getBtnhembra().setSelected(true);
+                    }
+                    //CARGAR COMBO ESPECIE
+                    for (int j = 0; j < vistaRegAni.getComboEspecie().getItemCount(); j++) {
+                        if (vistaRegAni.getComboEspecie().getItemAt(j).equalsIgnoreCase(ani.getEspecieAnimal())) {
+                            vistaRegAni.getComboEspecie().setSelectedIndex(j);
+                        }
+                    }
+                    if (vistaRegAni.getComboEspecie().getSelectedIndex() == 0) {
+                        vistaRegAni.getComboEspecie().setSelectedIndex(vistaRegAni.getComboEspecie().getItemCount() - 1);
+                        vistaRegAni.getTxtOtraEspecie().setText(ani.getEspecieAnimal());
+                    }
+                    /////
+                    vistaRegAni.getCalendarNacimiento().setDate(ani.getFecha_nacimientoAnimal());
+                    //CUIDADOR
+                    vistaRegAni.getTxtidCuidadorNoborrar().setText(String.valueOf(ani.getIdcuidadorAnimal()));
+                    vistaRegAni.getTxtNombreCuidador().setText(ani.getNombreCuidador());
+                    vistaRegAni.getTxtTipoSangre().setText(ani.getTiposangreCuidador());
+                    //ANIMAL
+                    vistaRegAni.getTxtidHabitatNoborrar().setText(String.valueOf(ani.getIdhabitadAnimal()));
+                    vistaRegAni.getTxtTipoHabitat().setText(ani.getTipoHabitat());
+                    vistaRegAni.getTxtUbicacion().setText(ani.getUbicacionHabitat());
+
+                    Image foto = ani.getFoto();
+                    if (foto != null) {
+                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
+                        ImageIcon icono = new ImageIcon(foto);
+                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+                        dtcr.setIcon(icono);
+                        vistaRegAni.getLblFotoAnimal().setIcon(icono);
+                    } else {
+                        vistaRegAni.getLblFotoAnimal().setIcon(null);
+                    }
+
+                }
+            });
+            return true;
         }
     }
 
