@@ -141,14 +141,14 @@ public class ControllerRegistrarAnimal {
 //            abrirRegistroEmpleado();
         } else {
             titulo = "Editar";
-            if (llenarDatos()) {
+//            if (llenarDatos()) {
                 vistaRegAni.setName("Editar");
                 vistaRegAni.getBtnAgregar().setText("ACTUALIZAR");
                 vistaRegAni.setVisible(true);
                 this.inicialControl();
 //                abrirRegistroEmpleado();
             }
-        }
+//        }
     }
 
     public void examinarFoto() {
@@ -175,7 +175,7 @@ public class ControllerRegistrarAnimal {
 
         validaciones mivalidacion = new validaciones();
 
-        if (validar()) {
+//        if (validar()) {
             //ALIMENTO
             String nombre = vistaRegAni.getTxtnombreanimal().getText(),
                     genero = "",
@@ -280,107 +280,107 @@ public class ControllerRegistrarAnimal {
                 }
 //            
             }
-        }
+//        }
     }
 
-    public boolean llenarDatos() {
-        int fila = vistaVani.getjTblAnimal().getSelectedRow();
-        if (fila == -1) {
-            JOptionPane.showMessageDialog(vistaVani, "Seleccione un animal a modificar");
-            return false;
-        } else {
-            int id = Integer.parseInt(vistaVani.getjTblAnimal().getValueAt(fila, 0).toString());
-            List<Animales> listap = modeloAni.getAnimal();
-            listap.stream().forEach(ani -> {
-                if (id == ani.getIdAnimal()) {
-                    vistaRegAni.getTxtidAnimalNoborrar().setText(String.valueOf(ani.getIdAnimal()));
-                    vistaRegAni.getTxtnombreanimal().setText(ani.getNombreAnimal());
-                    if (ani.getGeneroAnimal().equalsIgnoreCase("Macho")) {
-                        vistaRegAni.getBtnmacho().setSelected(true);
-                    }
-                    if (ani.getGeneroAnimal().equalsIgnoreCase("Hembra")) {
-                        vistaRegAni.getBtnhembra().setSelected(true);
-                    }
-                    //CARGAR COMBO ESPECIE
-                    for (int j = 0; j < vistaRegAni.getComboEspecie().getItemCount(); j++) {
-                        if (vistaRegAni.getComboEspecie().getItemAt(j).equalsIgnoreCase(ani.getEspecieAnimal())) {
-                            vistaRegAni.getComboEspecie().setSelectedIndex(j);
-                        }
-                    }
-                    if (vistaRegAni.getComboEspecie().getSelectedIndex() == 0) {
-                        vistaRegAni.getComboEspecie().setSelectedIndex(vistaRegAni.getComboEspecie().getItemCount() - 1);
-                        vistaRegAni.getTxtOtraEspecie().setText(ani.getEspecieAnimal());
-                    }
-                    /////
-                    vistaRegAni.getCalendarNacimiento().setDate(ani.getFecha_nacimientoAnimal());
-                    //CUIDADOR
-                    vistaRegAni.getTxtidCuidadorNoborrar().setText(String.valueOf(ani.getIdcuidadorAnimal()));
-                    vistaRegAni.getTxtNombreCuidador().setText(ani.getNombreCuidador());
-                    vistaRegAni.getTxtTipoSangre().setText(ani.getTiposangreCuidador());
-                    //ANIMAL
-                    vistaRegAni.getTxtidHabitatNoborrar().setText(String.valueOf(ani.getIdhabitadAnimal()));
-                    vistaRegAni.getTxtTipoHabitat().setText(ani.getTipoHabitat());
-                    vistaRegAni.getTxtUbicacion().setText(ani.getUbicacionHabitat());
-
-                    Image foto = ani.getFoto();
-                    if (foto != null) {
-                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
-                        ImageIcon icono = new ImageIcon(foto);
-                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
-                        dtcr.setIcon(icono);
-                        vistaRegAni.getLblFotoAnimal().setIcon(icono);
-                    } else {
-                        vistaRegAni.getLblFotoAnimal().setIcon(null);
-                    }
-
-                }
-            });
-            return true;
-        }
-    }
-
-    public boolean validar() {
-        boolean ban = true;
-
-        validaciones mivalidacion = new validaciones();
-
-        //NOMBRE
-        if (!vistaRegAni.getTxtnombreanimal().getText().isEmpty()) {
-            if (!mivalidacion.validarNombApeEspacios(vistaRegAni.getTxtnombreanimal().getText())) {
-                JOptionPane.showMessageDialog(vistaRegAni, "Nombre invalido");
-                ban = false;
-            }
-        } else {
-            JOptionPane.showMessageDialog(vistaRegAni, "Ingrese el nombre");
-            ban = false;
-        }
-        //GENERO
-        if (!vistaRegAni.getBtnhembra().isSelected() && !vistaRegAni.getBtnmacho().isSelected()) {
-            ban = false;
-            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione un genero");
-        }
-        //FECHANACIMIENTO
-        if (vistaRegAni.getCalendarNacimiento().getDate() == null) {
-            JOptionPane.showMessageDialog(vistaRegAni, "Ingrese la fecha de naciemiento");
-            ban = false;
-        }
-        //ESPECIE
-        if (vistaRegAni.getComboEspecie().getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione la especie del animal");
-            ban = false;
-        }
-        //Cuidador
-        if (vistaRegAni.getTxtNombreCuidador().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el cuidador");
-            ban = false;
-        }
-        //Habitat
-        if (vistaRegAni.getTxtTipoHabitat().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el habitad");
-            ban = false;
-        }
-        return ban;
-    }
+//    public boolean llenarDatos() {
+//        int fila = vistaVani.getjTblAnimal().getSelectedRow();
+//        if (fila == -1) {
+//            JOptionPane.showMessageDialog(vistaVani, "Seleccione un animal a modificar");
+//            return false;
+//        } else {
+//            int id = Integer.parseInt(vistaVani.getjTblAnimal().getValueAt(fila, 0).toString());
+//            List<Animales> listap = modeloAni.getAnimal();
+//            listap.stream().forEach(ani -> {
+//                if (id == ani.getIdAnimal()) {
+//                    vistaRegAni.getTxtidAnimalNoborrar().setText(String.valueOf(ani.getIdAnimal()));
+//                    vistaRegAni.getTxtnombreanimal().setText(ani.getNombreAnimal());
+//                    if (ani.getGeneroAnimal().equalsIgnoreCase("Macho")) {
+//                        vistaRegAni.getBtnmacho().setSelected(true);
+//                    }
+//                    if (ani.getGeneroAnimal().equalsIgnoreCase("Hembra")) {
+//                        vistaRegAni.getBtnhembra().setSelected(true);
+//                    }
+//                    //CARGAR COMBO ESPECIE
+//                    for (int j = 0; j < vistaRegAni.getComboEspecie().getItemCount(); j++) {
+//                        if (vistaRegAni.getComboEspecie().getItemAt(j).equalsIgnoreCase(ani.getEspecieAnimal())) {
+//                            vistaRegAni.getComboEspecie().setSelectedIndex(j);
+//                        }
+//                    }
+//                    if (vistaRegAni.getComboEspecie().getSelectedIndex() == 0) {
+//                        vistaRegAni.getComboEspecie().setSelectedIndex(vistaRegAni.getComboEspecie().getItemCount() - 1);
+//                        vistaRegAni.getTxtOtraEspecie().setText(ani.getEspecieAnimal());
+//                    }
+//                    /////
+//                    vistaRegAni.getCalendarNacimiento().setDate(ani.getFecha_nacimientoAnimal());
+//                    //CUIDADOR
+//                    vistaRegAni.getTxtidCuidadorNoborrar().setText(String.valueOf(ani.getIdcuidadorAnimal()));
+//                    vistaRegAni.getTxtNombreCuidador().setText(ani.getNombreCuidador());
+//                    vistaRegAni.getTxtTipoSangre().setText(ani.getTiposangreCuidador());
+//                    //ANIMAL
+//                    vistaRegAni.getTxtidHabitatNoborrar().setText(String.valueOf(ani.getIdhabitadAnimal()));
+//                    vistaRegAni.getTxtTipoHabitat().setText(ani.getTipoHabitat());
+//                    vistaRegAni.getTxtUbicacion().setText(ani.getUbicacionHabitat());
+//
+//                    Image foto = ani.getFoto();
+//                    if (foto != null) {
+//                        foto = foto.getScaledInstance(94, 101, Image.SCALE_SMOOTH);
+//                        ImageIcon icono = new ImageIcon(foto);
+//                        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+//                        dtcr.setIcon(icono);
+//                        vistaRegAni.getLblFotoAnimal().setIcon(icono);
+//                    } else {
+//                        vistaRegAni.getLblFotoAnimal().setIcon(null);
+//                    }
+//
+//                }
+//            });
+//            return true;
+//        }
+//    }
+//
+//    public boolean validar() {
+//        boolean ban = true;
+//
+//        validaciones mivalidacion = new validaciones();
+//
+//        //NOMBRE
+//        if (!vistaRegAni.getTxtnombreanimal().getText().isEmpty()) {
+//            if (!mivalidacion.validarNombApeEspacios(vistaRegAni.getTxtnombreanimal().getText())) {
+//                JOptionPane.showMessageDialog(vistaRegAni, "Nombre invalido");
+//                ban = false;
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(vistaRegAni, "Ingrese el nombre");
+//            ban = false;
+//        }
+//        //GENERO
+//        if (!vistaRegAni.getBtnhembra().isSelected() && !vistaRegAni.getBtnmacho().isSelected()) {
+//            ban = false;
+//            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione un genero");
+//        }
+//        //FECHANACIMIENTO
+//        if (vistaRegAni.getCalendarNacimiento().getDate() == null) {
+//            JOptionPane.showMessageDialog(vistaRegAni, "Ingrese la fecha de naciemiento");
+//            ban = false;
+//        }
+//        //ESPECIE
+//        if (vistaRegAni.getComboEspecie().getSelectedIndex() == 0) {
+//            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione la especie del animal");
+//            ban = false;
+//        }
+//        //Cuidador
+//        if (vistaRegAni.getTxtNombreCuidador().getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el cuidador");
+//            ban = false;
+//        }
+//        //Habitat
+//        if (vistaRegAni.getTxtTipoHabitat().getText().isEmpty()) {
+//            JOptionPane.showMessageDialog(vistaRegAni, "Seleccione el habitad");
+//            ban = false;
+//        }
+//        return ban;
+//    }
 
     public void limpiarCampos() {
         vistaRegAni.getTxtnombreanimal().setText("");
