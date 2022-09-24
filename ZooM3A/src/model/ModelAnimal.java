@@ -244,4 +244,34 @@ public class ModelAnimal extends Animales {
         return listaAnimales;
     }
 
+    public List<Animales> busquedaIncrementalDlg(String busqueda) {
+        List<Animales> listaAnimales = new ArrayList<>();
+
+        String sql = "select ani_id, ani_nombre,ani_especie  "
+                + " from animal where ani_estado=true"
+                + "  and lower(ani_nombre) like '%" + busqueda + "%' "
+                + "  or lower(ani_especie) like '%" + busqueda + "%' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Animales animal = new Animales();
+                animal.setIdAnimal(rs.getInt(1));
+                animal.setNombreAnimal(rs.getString(2));
+                animal.setEspecieAnimal(rs.getString(3));
+
+                listaAnimales.add(animal);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaAnimales;
+    }
+
 }
