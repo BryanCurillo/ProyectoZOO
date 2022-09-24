@@ -34,12 +34,14 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblCliente = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
-        btnAgregarCliente = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
+        btnAgregarCliente = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         BtnModificarCliente = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnEliminarCliente = new javax.swing.JButton();
@@ -47,13 +49,26 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         jBtnImprimirCliente = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         txtbuscar = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         jBtnBuscarCliente = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
 
+        jToggleButton1.setText("jToggleButton1");
+
+        setBackground(new java.awt.Color(210, 215, 159));
+        setBorder(null);
         setClosable(true);
+        setOpaque(true);
+        setPreferredSize(new java.awt.Dimension(970, 630));
+        setRequestFocusEnabled(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE CLIENTES");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 440, -1));
 
+        jTblCliente.setBackground(new java.awt.Color(255, 253, 227));
         jTblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -75,63 +90,83 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblCliente);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 197, 940, 391));
 
-        btnAgregarCliente.setText("AGREGAR");
-        btnAgregarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAgregarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnAgregarCliente);
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToolBar1.setBorderPainted(false);
         jToolBar1.add(jSeparator1);
 
+        btnAgregarCliente.setBackground(new java.awt.Color(210, 215, 159));
+        btnAgregarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAgregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar (2).png"))); // NOI18N
+        btnAgregarCliente.setText("AGREGAR");
+        btnAgregarCliente.setBorder(null);
+        btnAgregarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAgregarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarClienteActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(btnAgregarCliente);
+        jToolBar1.add(jSeparator5);
+
+        BtnModificarCliente.setBackground(new java.awt.Color(210, 215, 159));
+        BtnModificarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BtnModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/editar (5).png"))); // NOI18N
         BtnModificarCliente.setText("MODIFICAR");
+        BtnModificarCliente.setBorder(null);
+        BtnModificarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnModificarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(BtnModificarCliente);
         jToolBar1.add(jSeparator2);
 
+        btnEliminarCliente.setBackground(new java.awt.Color(210, 215, 159));
+        btnEliminarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/basura.png"))); // NOI18N
         btnEliminarCliente.setText("ELIMINAR");
+        btnEliminarCliente.setBorder(null);
         btnEliminarCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminarCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnEliminarCliente);
         jToolBar1.add(jSeparator3);
 
+        jBtnImprimirCliente.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimirCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnImprimirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imprimir-contorno-del-boton.png"))); // NOI18N
         jBtnImprimirCliente.setText("IMPRIMIR REPORTE");
+        jBtnImprimirCliente.setBorder(null);
+        jBtnImprimirCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimirCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimirCliente);
         jToolBar1.add(jSeparator4);
 
+        txtbuscar.setBackground(new java.awt.Color(255, 253, 227));
+        txtbuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        txtbuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtbuscar.setPreferredSize(new java.awt.Dimension(50, 22));
         jToolBar1.add(txtbuscar);
+        jToolBar1.add(jSeparator7);
+        jToolBar1.add(jSeparator6);
 
+        jBtnBuscarCliente.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnBuscarCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnBuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         jBtnBuscarCliente.setText("BUSCAR");
+        jBtnBuscarCliente.setBorder(null);
         jToolBar1.add(jBtnBuscarCliente);
+        jToolBar1.add(jSeparator8);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel3)
-                .addGap(48, 48, 48)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 116, 946, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -146,7 +181,12 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JTable jTblCliente;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtbuscar;
     // End of variables declaration//GEN-END:variables
