@@ -1,25 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package view;
 
-import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
-import javax.swing.event.EventListenerList;
-import javax.swing.plaf.ComponentUI;
 
 /**
  *
- * @author ASUS ROG
+ * @author Bryan
  */
-public class viewVistaAnimal extends javax.swing.JPanel {
+public class viewVistaAnimal extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form viewVistaAnimal
@@ -49,27 +45,29 @@ public class viewVistaAnimal extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimirAnimal = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jTextField1 = new javax.swing.JTextField();
-        jCbFiltro = new javax.swing.JComboBox<>();
         jBtnBuscarAnimal = new javax.swing.JButton();
+        txtbuscarAnimal = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         jBtnActualizarAnimal = new javax.swing.JButton();
+
+        setClosable(true);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel3.setText("VISTA DE ANIMALES");
 
         jTblAnimal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nombre", "Genero", "Especie", "Edad", "Id de la dieta", "Id del habitad", "Id del cuidador", "Foto"
+                "Id", "Nombre", "Genero", "Especie", "Fecha de Nacimiento", "Habitat", "Cuidador", "Foto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -100,14 +98,12 @@ public class viewVistaAnimal extends javax.swing.JPanel {
         jToolBar1.add(jBtnImprimirAnimal);
         jToolBar1.add(jSeparator4);
 
-        jTextField1.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(jTextField1);
-
-        jCbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jToolBar1.add(jCbFiltro);
-
         jBtnBuscarAnimal.setText("BUSCAR");
         jToolBar1.add(jBtnBuscarAnimal);
+
+        txtbuscarAnimal.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtbuscarAnimal);
+        jToolBar1.add(jSeparator5);
 
         jBtnActualizarAnimal.setText("ACTUALIZAR");
         jBtnActualizarAnimal.setFocusable(false);
@@ -115,33 +111,55 @@ public class viewVistaAnimal extends javax.swing.JPanel {
         jBtnActualizarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizarAnimal);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 904, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
+                .addGap(286, 286, 286)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel3)
-                .addGap(48, 48, 48)
+                .addGap(42, 42, 42)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnActualizarAnimal;
+    private javax.swing.JButton jBtnBuscarAnimal;
+    private javax.swing.JButton jBtnEliminarAnimal;
+    private javax.swing.JButton jBtnImprimirAnimal;
+    private javax.swing.JButton jBtnModificarAnimal;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JTable jTblAnimal;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton jbtnAgregarAnimal;
+    private javax.swing.JTextField txtbuscarAnimal;
+    // End of variables declaration//GEN-END:variables
 
     public JButton getjBtnActualizarAnimal() {
         return jBtnActualizarAnimal;
@@ -181,14 +199,6 @@ public class viewVistaAnimal extends javax.swing.JPanel {
 
     public void setjBtnModificarAnimal(JButton jBtnModificarAnimal) {
         this.jBtnModificarAnimal = jBtnModificarAnimal;
-    }
-
-    public JComboBox<String> getjCbFiltro() {
-        return jCbFiltro;
-    }
-
-    public void setjCbFiltro(JComboBox<String> jCbFiltro) {
-        this.jCbFiltro = jCbFiltro;
     }
 
     public JLabel getjLabel3() {
@@ -239,20 +249,20 @@ public class viewVistaAnimal extends javax.swing.JPanel {
         this.jSeparator4 = jSeparator4;
     }
 
+    public JToolBar.Separator getjSeparator5() {
+        return jSeparator5;
+    }
+
+    public void setjSeparator5(JToolBar.Separator jSeparator5) {
+        this.jSeparator5 = jSeparator5;
+    }
+
     public JTable getjTblAnimal() {
         return jTblAnimal;
     }
 
     public void setjTblAnimal(JTable jTblAnimal) {
         this.jTblAnimal = jTblAnimal;
-    }
-
-    public JTextField getjTextField1() {
-        return jTextField1;
-    }
-
-    public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
     }
 
     public JToolBar getjToolBar1() {
@@ -271,38 +281,13 @@ public class viewVistaAnimal extends javax.swing.JPanel {
         this.jbtnAgregarAnimal = jbtnAgregarAnimal;
     }
 
-    public ComponentUI getUi() {
-        return ui;
+    public JTextField getTxtbuscarAnimal() {
+        return txtbuscarAnimal;
     }
 
-    public void setUi(ComponentUI ui) {
-        this.ui = ui;
+    public void setTxtbuscarAnimal(JTextField txtbuscarAnimal) {
+        this.txtbuscarAnimal = txtbuscarAnimal;
     }
 
-    public EventListenerList getListenerList() {
-        return listenerList;
-    }
 
-    public void setListenerList(EventListenerList listenerList) {
-        this.listenerList = listenerList;
-    }
-   
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnActualizarAnimal;
-    private javax.swing.JButton jBtnBuscarAnimal;
-    private javax.swing.JButton jBtnEliminarAnimal;
-    private javax.swing.JButton jBtnImprimirAnimal;
-    private javax.swing.JButton jBtnModificarAnimal;
-    private javax.swing.JComboBox<String> jCbFiltro;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToolBar.Separator jSeparator1;
-    private javax.swing.JToolBar.Separator jSeparator2;
-    private javax.swing.JToolBar.Separator jSeparator3;
-    private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JTable jTblAnimal;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JButton jbtnAgregarAnimal;
-    // End of variables declaration//GEN-END:variables
 }
