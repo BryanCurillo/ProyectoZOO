@@ -49,11 +49,14 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         txtbuscar = new javax.swing.JTextField();
         jBtnBuscar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(210, 215, 159));
+        setBorder(null);
         setClosable(true);
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE CLIENTES");
 
+        jTblDieta.setBackground(new java.awt.Color(255, 253, 227));
         jTblDieta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -75,33 +78,46 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblDieta);
 
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jToolBar1.setFloatable(false);
 
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnAgregar);
         jToolBar1.add(jSeparator1);
 
+        BtnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BtnModificar.setText("MODIFICAR");
+        BtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(BtnModificar);
         jToolBar1.add(jSeparator2);
 
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEliminar.setText("ELIMINAR");
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnEliminar);
         jToolBar1.add(jSeparator3);
 
+        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
+        txtbuscar.setBackground(new java.awt.Color(255, 253, 227));
         txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtbuscar);
 
+        jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBtnBuscar.setText("BUSCAR");
+        jBtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnBuscar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,7 +128,7 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 836, Short.MAX_VALUE))
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(222, 222, 222)
@@ -127,7 +143,7 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
