@@ -80,6 +80,8 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MenuHabitad = new javax.swing.JMenu();
         jMIAgregarHabitat = new javax.swing.JMenuItem();
         jMIVisualizarHabitat = new javax.swing.JMenuItem();
+        MenuFactura = new javax.swing.JMenu();
+        MIconsultaFacturas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -377,6 +379,15 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(MenuHabitad);
 
+        MenuFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
+        MenuFactura.setText("Factura");
+
+        MIconsultaFacturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
+        MIconsultaFacturas.setText("Consultar Facturas");
+        MenuFactura.add(MIconsultaFacturas);
+
+        barramenus.add(MenuFactura);
+
         setJMenuBar(barramenus);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -402,9 +413,11 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIvistaCliente;
     private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
+    private javax.swing.JMenuItem MIconsultaFacturas;
     private javax.swing.JMenuItem MIventaTickets;
     private javax.swing.JMenu MenuClientes;
     private javax.swing.JMenu MenuDieta;
+    private javax.swing.JMenu MenuFactura;
     private javax.swing.JMenu MenuHabitad;
     private javax.swing.JMenu MenuPersonal;
     private javax.swing.JMenu MenuProveedor;
@@ -795,6 +808,22 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
+    }
+
+    public JMenuItem getMIconsultaFacturas() {
+        return MIconsultaFacturas;
+    }
+
+    public void setMIconsultaFacturas(JMenuItem MIconsultaFacturas) {
+        this.MIconsultaFacturas = MIconsultaFacturas;
+    }
+
+    public JMenu getMenuFactura() {
+        return MenuFactura;
+    }
+
+    public void setMenuFactura(JMenu MenuFactura) {
+        this.MenuFactura = MenuFactura;
     }
 
     

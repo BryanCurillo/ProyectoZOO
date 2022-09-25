@@ -21,7 +21,8 @@ public class ModelCliente extends Cliente {
 
     public List<Cliente> getClientes() {
         List<Cliente> listaClientes = new ArrayList<>();
-        String sql = "SELECT * FROM cliente c, persona p where c.cli_cedula = p.per_cedula;";
+        String sql = "SELECT * FROM cliente c, persona p "
+                + "where c.cli_cedula = p.per_cedula and c.cli_estado=true ";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

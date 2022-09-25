@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Bryan
  */
-public class factura {
+public class factura extends Cliente {
 
     //encabezado
     private int enca_id;
@@ -29,10 +29,15 @@ public class factura {
     private double pie_TOTAL;
     private int pie_idEnca;
 
+    //FACTURA GROP BY
+    private int Items;
+    private int cantTotal;
+//    private double sumaBoletos;
+
     public factura() {
     }
 
-    public factura(int enca_id, Date enca_fecha, int enca_idCliente, int det_id, int det_cantidad, double det_total, int det_idenca, int det_idticket, int pie_id, double pie_subTotal, double pie_descuento, double pie_TOTAL, int pie_idEnca) {
+    public factura(int enca_id, Date enca_fecha, int enca_idCliente, int det_id, int det_cantidad, double det_total, int det_idenca, int det_idticket, int pie_id, double pie_subTotal, double pie_descuento, double pie_TOTAL, int pie_idEnca, int Items, int cantTotal) {
         this.enca_id = enca_id;
         this.enca_fecha = enca_fecha;
         this.enca_idCliente = enca_idCliente;
@@ -46,6 +51,24 @@ public class factura {
         this.pie_descuento = pie_descuento;
         this.pie_TOTAL = pie_TOTAL;
         this.pie_idEnca = pie_idEnca;
+        this.Items = Items;
+        this.cantTotal = cantTotal;
+    }
+
+    public int getItems() {
+        return Items;
+    }
+
+    public void setItems(int Items) {
+        this.Items = Items;
+    }
+
+    public int getCantTotal() {
+        return cantTotal;
+    }
+
+    public void setCantTotal(int cantTotal) {
+        this.cantTotal = cantTotal;
     }
 
     public int getEnca_id() {

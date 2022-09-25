@@ -22,7 +22,7 @@ public class ModelFactura extends factura {
 
     public boolean setEncabezado() {
         String sql = "INSERT INTO fac_encabezado(enca_fecha, enca_idcliente)  "
-                + "  VALUES ('" + getEnca_fecha() + "', " + getEnca_idCliente()+ ")";
+                + "  VALUES ('" + getEnca_fecha() + "', " + getEnca_idCliente() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
@@ -57,45 +57,115 @@ public class ModelFactura extends factura {
         return idEnca;
     }
 
-//    public List<factura> getempleado() {
-//        List<factura> listaEmpleado = new ArrayList<>();
-//
-//        String sql = "Select *  "
-//                + "  from fac_encabezado enca join fac_detalle det on (enca.enca_id = det.det_idenca)  "
-//                + "  join fac_pie pie on (enca.enca_id = pie.pie_idenca)";
-//        ResultSet rs = mpgc.consulta(sql);
-//        try {
-//            while (rs.next()) {
-//                factura fac = new factura();
-//                fac.setCedula(rs.getString(1));
-//                fac.setNombre(rs.getString(2));
-//                fac.setApellido(rs.getString(3));
-//                fac.setFechaRegistro(rs.getDate(4));
-//                fac.setCorreo(rs.getString(5));
-//                fac.setTelefono(rs.getString(6));
-//                fac.setEstadoEmp(rs.getBoolean(7));
-//                fac.setIdEmp(rs.getInt(8));
-//                fac.setFechanacimiento(rs.getDate(10));
-//                fac.setRol(rs.getInt(11));
-//                fac.setGenero(rs.getString(12));
-//                fac.setUsuario(rs.getString(13));
-//                fac.setContraseña(rs.getString(14));
-//                fac.setCedulaEmp(rs.getString(15));
-//
-//                listaEmpleado.add(fac);
-//
-//            }
-//        } catch (SQLException e) {
-//            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
-//        }
-//
-//        try {
-//            rs.close();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        return listaEmpleado;
-//    }
+    public List<factura> getFacturas() {
+        List<factura> listaFacturas = new ArrayList<>();
+
+        String sql = "Select enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
+                + "		cli.cli_id, cli.cli_cedula, (per.per_nombre||' '||per.per_apellido) as nombre, per.per_telefono, per.per_correo, cli.cli_direccion,  "
+                + "		count(*) as Items, sum(det.det_cantidad) as cantidadTotal  ,sum(det.det_total) as sumaBoletos,  "
+                + "		pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total  "
+                + "	from fac_encabezado enca join cliente cli on (enca.enca_idcliente = cli.cli_id)  "
+                + "	join persona per on (cli.cli_cedula=per.per_cedula)  "
+                + "	join fac_detalle det on (enca.enca_id = det.det_idenca)  "
+                + "	join fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
+                + "	group by det.det_idenca,  "
+                + "				enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
+                + "				pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total,  "
+                + "				cli.cli_id, cli.cli_cedula, per.per_nombre, per.per_apellido, per.per_telefono, per.per_correo, cli.cli_direccion";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                factura fac = new factura();
+                //ENCABEZADO
+                fac.setEnca_id(rs.getInt(1));
+                fac.setEnca_fecha(rs.getDate(2));
+                fac.setEnca_idCliente(rs.getInt(3));
+                //CLIENTE
+                fac.setCli_id(rs.getInt(4));
+                fac.setCli_cedula(rs.getString(5));
+                fac.setNombre(rs.getString(6));
+                fac.setTelefono(rs.getString(7));
+                fac.setCorreo(rs.getString(8));
+                fac.setCli_direccion(rs.getString(9));
+                //DETALLE
+                fac.setItems(rs.getInt(10));
+                fac.setCantTotal(rs.getInt(11));
+                //PIE
+                fac.setPie_id(rs.getInt(12));
+                fac.setPie_descuento(rs.getDouble(13));
+                fac.setPie_subTotal(rs.getDouble(14));
+                fac.setPie_TOTAL(rs.getDouble(15));
+
+                listaFacturas.add(fac);
+
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaFacturas;
+    }
+
+    public List<factura> getFacturasBuscar(String cedula) {
+        List<factura> listaFacturas = new ArrayList<>();
+
+        String sql = "Select enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
+                + "		cli.cli_id, cli.cli_cedula, (per.per_nombre||' '||per.per_apellido) as nombre, per.per_telefono, per.per_correo, cli.cli_direccion,  "
+                + "		count(*) as Items, sum(det.det_cantidad) as cantidadTotal  ,sum(det.det_total) as sumaBoletos,  "
+                + "		pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total  "
+                + "	from fac_encabezado enca join cliente cli on (enca.enca_idcliente = cli.cli_id)  "
+                + "	join persona per on (cli.cli_cedula=per.per_cedula)  "
+                + "	join fac_detalle det on (enca.enca_id = det.det_idenca)  "
+                + "	join fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
+                + "			where  cli.cli_cedula like '%" + cedula + "%'  "
+                + "	group by det.det_idenca,  "
+                + "				enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
+                + "				pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total,  "
+                + "				cli.cli_id, cli.cli_cedula, per.per_nombre, per.per_apellido, per.per_telefono, per.per_correo, cli.cli_direccion;";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                factura fac = new factura();
+                //ENCABEZADO
+                fac.setEnca_id(rs.getInt(1));
+                fac.setEnca_fecha(rs.getDate(2));
+                fac.setEnca_idCliente(rs.getInt(3));
+                //CLIENTE
+                fac.setCli_id(rs.getInt(4));
+                fac.setCli_cedula(rs.getString(5));
+                fac.setNombre(rs.getString(6));
+                fac.setTelefono(rs.getString(7));
+                fac.setCorreo(rs.getString(8));
+                fac.setCli_direccion(rs.getString(9));
+                //DETALLE
+                fac.setItems(rs.getInt(10));
+                fac.setCantTotal(rs.getInt(11));
+                //PIE
+                fac.setPie_id(rs.getInt(12));
+                fac.setPie_descuento(rs.getDouble(13));
+                fac.setPie_subTotal(rs.getDouble(14));
+                fac.setPie_TOTAL(rs.getDouble(15));
+
+                listaFacturas.add(fac);
+
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelPGconexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listaFacturas;
+    }
 
 }

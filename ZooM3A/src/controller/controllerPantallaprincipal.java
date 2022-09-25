@@ -20,8 +20,10 @@ import model.ModelHabitad;
 import model.ModelTickets;
 import model.modelLogin;
 import model.ModelAnimal;
+import model.ModelFactura;
 import model.modelCuidador;
 import view.viewActualizarTicket;
+import view.viewConsultarFacturas;
 import view.viewLogin;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarEmpleado;
@@ -83,7 +85,8 @@ public class controllerPantallaprincipal {
         vista.getjMIVisualizarHabitat().addActionListener(l -> vistaHabitat());
         vista.getjMIagregarAnimal().addActionListener(l -> registroAnimal());
         vista.getjMIvisualizarAnimal().addActionListener(l -> vistaAnimal());
-        vista.getMIventaTickets().addActionListener(l->vistaVentaTicket());
+        vista.getMIventaTickets().addActionListener(l -> vistaVentaTicket());
+        vista.getMIconsultaFacturas().addActionListener(l->vistaFACTURA());
 
     }
 
@@ -337,5 +340,16 @@ public class controllerPantallaprincipal {
         vista.getjDPprincipal().add(vistaVenta);
         controllerVentaTicket controllerVenta = new controllerVentaTicket(vista, vistaVenta, modelticket, modelcli);
         controllerVenta.iniciarControl();
+    }
+
+    //FACTURA
+    public void vistaFACTURA() {
+        ModelFactura modelFac = new ModelFactura();
+        viewConsultarFacturas vistaConsultaF = new viewConsultarFacturas();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaConsultaF);
+        ControllerConsultaFacturas controConsultaFac = new ControllerConsultaFacturas(vistaConsultaF, vista, modelFac);
+        controConsultaFac.inicialControl();
     }
 }

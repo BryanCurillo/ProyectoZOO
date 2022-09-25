@@ -96,9 +96,13 @@ public class controllerVentaTicket {
         if (Double.parseDouble(vistaVenta.getTxtSUBTOTAL().getText()) != 0) {
             int response = JOptionPane.showConfirmDialog(vistaVenta, "¿Confirmar Compra?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
-
+                int idCliente;
                 //ENCABEZADO
-                int idCliente = Integer.parseInt(vistaVenta.getTxtidclienteNB().getText());
+                if (!vistaVenta.getTxtidclienteNB().getText().isEmpty()) {
+                    idCliente = Integer.parseInt(vistaVenta.getTxtidclienteNB().getText());
+                }else{
+                    idCliente=1;
+                }
                 Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
                 ModelFactura encabezadoFac = new ModelFactura();
                 encabezadoFac.setEnca_idCliente(idCliente);
@@ -125,43 +129,43 @@ public class controllerVentaTicket {
 
                 //Det_niño
                 if (Double.parseDouble(vistaVenta.getTxtCantidadNiño().getText()) != 0) {
-                    List<factura> listaDetalleNino = new ArrayList<>();
+//                    List<factura> listaDetalleNino = new ArrayList<>();
+//                    for (int i = 0; i < cantNino; i++) {
+                    ModelFactura detalleFacNino = new ModelFactura();
+                    detalleFacNino.setDet_cantidad(cantNino);
+                    detalleFacNino.setDet_total(totalNino);
+                    detalleFacNino.setDet_idenca(idEncabezado);
+                    detalleFacNino.setDet_idticket(idNino);
+//                        listaDetalleNino.add(detalleFacNino);
 
-                    for (int i = 0; i < cantNino; i++) {
-                        ModelFactura detalleFacNino = new ModelFactura();
-                        detalleFacNino.setDet_cantidad(cantNino);
-                        detalleFacNino.setDet_total(totalNino);
-                        detalleFacNino.setDet_idenca(idEncabezado);
-                        detalleFacNino.setDet_idticket(idNino);
-                        listaDetalleNino.add(detalleFacNino);
-
-                        detalleFacNino.setDetalle();
-                    }
+                    detalleFacNino.setDetalle();
+//                    }
                 }
 
                 //Det_adulto
-                List<factura> listaDetalleAdulto = new ArrayList<>();
-
-                for (int i = 0; i < cantAdulto; i++) {
+//                List<factura> listaDetalleAdulto = new ArrayList<>();
+                if (Double.parseDouble(vistaVenta.getTxtCantidadAdulto().getText()) != 0) {
+//                for (int i = 0; i < cantAdulto; i++) {
                     ModelFactura detalleFacAdulto = new ModelFactura();
                     detalleFacAdulto.setDet_cantidad(cantAdulto);
                     detalleFacAdulto.setDet_total(totalAdulto);
                     detalleFacAdulto.setDet_idenca(idEncabezado);
                     detalleFacAdulto.setDet_idticket(idAdulto);
-                    listaDetalleAdulto.add(detalleFacAdulto);
+//                    listaDetalleAdulto.add(detalleFacAdulto);
 
                     detalleFacAdulto.setDetalle();
                 }
-                //Det_adultoMayor
-                List<factura> listaDetalleAdultoMayor = new ArrayList<>();
 
-                for (int i = 0; i < cantAdultoMayor; i++) {
+                //Det_adultoMayor
+//                List<factura> listaDetalleAdultoMayor = new ArrayList<>();
+                if (Double.parseDouble(vistaVenta.getTxtCantidadAdulto().getText()) != 0) {
+//                for (int i = 0; i < cantAdultoMayor; i++) {
                     ModelFactura detalleFacAdulMayor = new ModelFactura();
                     detalleFacAdulMayor.setDet_cantidad(cantAdultoMayor);
                     detalleFacAdulMayor.setDet_total(totalAdultoMayor);
                     detalleFacAdulMayor.setDet_idenca(idEncabezado);
                     detalleFacAdulMayor.setDet_idticket(idAdultoMayor);
-                    listaDetalleAdultoMayor.add(detalleFacAdulMayor);
+//                    listaDetalleAdultoMayor.add(detalleFacAdulMayor);
 
                     detalleFacAdulMayor.setDetalle();
                 }
@@ -233,8 +237,7 @@ public class controllerVentaTicket {
         vistaVenta.getTxtCorreoCliente().setText("");
         vistaVenta.getTxtTelefonoCliente().setText("");
         vistaVenta.getTxtDireccionCliente().setText("");
-        
-        
+
         vistaVenta.getTxtfecha().setText(formatofecha.format(fecha));
         vistaVenta.getTxtCantidadNiño().setText("0");
         vistaVenta.getTxtCantidadAdulto().setText("0");
