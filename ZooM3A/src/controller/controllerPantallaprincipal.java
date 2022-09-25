@@ -329,11 +329,13 @@ public class controllerPantallaprincipal {
 
     ///VENTA
     public void vistaVentaTicket() {
+        ModelCliente modelcli = new ModelCliente();
+        ModelTickets modelticket = new ModelTickets();
         viewVentaTicket vistaVenta = new viewVentaTicket();
 
         //Agragar vista al desktop pane                
         vista.getjDPprincipal().add(vistaVenta);
-        controllerVentaTicket controllerVenta = new controllerVentaTicket(vistaVenta);
+        controllerVentaTicket controllerVenta = new controllerVentaTicket(vista, vistaVenta, modelticket, modelcli);
         controllerVenta.iniciarControl();
     }
 }

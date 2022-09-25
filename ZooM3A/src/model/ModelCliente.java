@@ -50,6 +50,41 @@ public class ModelCliente extends Cliente {
         return listaClientes;
     }
 
+    public List<Cliente> getClientesFac(String cedula) {
+        List<Cliente> listaClientes = new ArrayList<>();
+        String sql = "select * from cliente c "
+                + "join persona p on(p.per_cedula=c.cli_cedula) "
+                + "where c.cli_estado=true "
+                + "and "
+                + "c.cli_cedula ='" + cedula + "' ";
+        ResultSet rs = mpgc.consulta(sql);
+        try {
+            while (rs.next()) {
+                Cliente c = new Cliente();
+                c.setCli_id(rs.getInt(1));
+                c.setCli_direccion(rs.getString(2));
+                c.setCli_cedula(rs.getString(3));
+                c.setCli_estado(rs.getBoolean(4));
+                c.setCedula(rs.getString(5));
+                c.setNombre(rs.getString(6));
+                c.setApellido(rs.getString(7));
+                c.setFechaRegistro(rs.getDate(8));
+                c.setCorreo(rs.getString(9));
+                c.setTelefono(rs.getString(10));
+
+                listaClientes.add(c);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, e);
+        }
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(modelEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaClientes;
+    }
+
     public boolean setCliente() {
         String sql = "INSERT INTO cliente(cli_direccion,  cli_cedula,cli_estado)"
                 + "VALUES ('" + getCli_direccion() + "', '" + getCli_cedula() + "', " + isCli_estado() + ")";

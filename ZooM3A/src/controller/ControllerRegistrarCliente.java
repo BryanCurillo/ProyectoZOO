@@ -131,9 +131,10 @@ public class ControllerRegistrarCliente {
             }
 
         }
-        ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
-        controlCli.cargarDatos(1);
-
+        if (banvista) {
+            ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
+            controlCli.cargarDatos(1);
+        }
     }
 
     public void limpiarCampos() {
