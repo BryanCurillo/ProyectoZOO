@@ -67,7 +67,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         jLabel55 = new javax.swing.JLabel();
         txtPrecioAdultoMayor = new javax.swing.JLabel();
         btnMenosAdultoMayor = new javax.swing.JButton();
-        jLabel57 = new javax.swing.JLabel();
+        txtCantidadAdultoMayor = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         btnMasAdultoMayor = new javax.swing.JButton();
         jSeparator12 = new javax.swing.JSeparator();
@@ -79,7 +79,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         jLabel60 = new javax.swing.JLabel();
         txtPrecioAdulto = new javax.swing.JLabel();
         btnMenosAdulto = new javax.swing.JButton();
-        jLabel62 = new javax.swing.JLabel();
+        txtCantidadAdulto = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         btnMasAdulto = new javax.swing.JButton();
         jSeparator14 = new javax.swing.JSeparator();
@@ -91,7 +91,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         jLabel71 = new javax.swing.JLabel();
         txtPrecioNiño = new javax.swing.JLabel();
         btnMenosNiño = new javax.swing.JButton();
-        jLabel73 = new javax.swing.JLabel();
+        txtCantidadNiño = new javax.swing.JLabel();
         jSeparator19 = new javax.swing.JSeparator();
         btnMasNiño = new javax.swing.JButton();
         jSeparator20 = new javax.swing.JSeparator();
@@ -316,9 +316,9 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
 
         btnMenosAdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-menos-de-una-linea-en-posicion-horizontal.png"))); // NOI18N
 
-        jLabel57.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel57.setText("0");
+        txtCantidadAdultoMayor.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtCantidadAdultoMayor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCantidadAdultoMayor.setText("0");
 
         jSeparator11.setForeground(new java.awt.Color(242, 242, 242));
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -354,7 +354,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMenosAdultoMayor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCantidadAdultoMayor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMasAdultoMayor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -384,7 +384,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                                         .addComponent(txtTotalAdultoMayor)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel57)
+                                        .addComponent(txtCantidadAdultoMayor)
                                         .addComponent(btnMenosAdultoMayor)
                                         .addComponent(btnMasAdultoMayor))
                                     .addGap(8, 8, 8)))
@@ -413,9 +413,9 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
 
         btnMenosAdulto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-menos-de-una-linea-en-posicion-horizontal.png"))); // NOI18N
 
-        jLabel62.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel62.setText("0");
+        txtCantidadAdulto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtCantidadAdulto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCantidadAdulto.setText("0");
 
         jSeparator13.setForeground(new java.awt.Color(242, 242, 242));
         jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -451,7 +451,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMenosAdulto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCantidadAdulto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMasAdulto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -475,7 +475,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                             .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel62)
+                                    .addComponent(txtCantidadAdulto)
                                     .addComponent(btnMenosAdulto)
                                     .addComponent(btnMasAdulto))
                                 .addGap(8, 8, 8))
@@ -510,9 +510,9 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
 
         btnMenosNiño.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/signo-menos-de-una-linea-en-posicion-horizontal.png"))); // NOI18N
 
-        jLabel73.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel73.setText("0");
+        txtCantidadNiño.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtCantidadNiño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtCantidadNiño.setText("0");
 
         jSeparator19.setForeground(new java.awt.Color(242, 242, 242));
         jSeparator19.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -548,7 +548,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMenosNiño)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCantidadNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMasNiño)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -582,7 +582,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel73)
+                                    .addComponent(txtCantidadNiño)
                                     .addComponent(btnMenosNiño)
                                     .addComponent(btnMasNiño))
                                 .addGap(8, 8, 8)))
@@ -733,14 +733,11 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -764,6 +761,9 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField txtApellidoCliente;
+    private javax.swing.JLabel txtCantidadAdulto;
+    private javax.swing.JLabel txtCantidadAdultoMayor;
+    private javax.swing.JLabel txtCantidadNiño;
     private javax.swing.JTextField txtCedulaCliente;
     private javax.swing.JTextField txtCorreoCliente;
     private javax.swing.JLabel txtDESCUENTO;
@@ -852,396 +852,36 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         this.btnMenosNiño = btnMenosNiño;
     }
 
-    public JLabel getjLabel10() {
-        return jLabel10;
-    }
-
-    public void setjLabel10(JLabel jLabel10) {
-        this.jLabel10 = jLabel10;
-    }
-
-    public JLabel getjLabel11() {
-        return jLabel11;
-    }
-
-    public void setjLabel11(JLabel jLabel11) {
-        this.jLabel11 = jLabel11;
-    }
-
-    public JLabel getjLabel13() {
-        return jLabel13;
-    }
-
-    public void setjLabel13(JLabel jLabel13) {
-        this.jLabel13 = jLabel13;
-    }
-
-    public JLabel getjLabel130() {
-        return jLabel130;
-    }
-
-    public void setjLabel130(JLabel jLabel130) {
-        this.jLabel130 = jLabel130;
-    }
-
-    public JLabel getjLabel132() {
-        return jLabel132;
-    }
-
-    public void setjLabel132(JLabel jLabel132) {
-        this.jLabel132 = jLabel132;
-    }
-
-    public JLabel getjLabel134() {
-        return jLabel134;
-    }
-
-    public void setjLabel134(JLabel jLabel134) {
-        this.jLabel134 = jLabel134;
-    }
-
-    public JLabel getjLabel15() {
-        return jLabel15;
-    }
-
-    public void setjLabel15(JLabel jLabel15) {
-        this.jLabel15 = jLabel15;
-    }
-
-    public JLabel getjLabel25() {
-        return jLabel25;
-    }
-
-    public void setjLabel25(JLabel jLabel25) {
-        this.jLabel25 = jLabel25;
-    }
-
-    public JLabel getjLabel37() {
-        return jLabel37;
-    }
-
-    public void setjLabel37(JLabel jLabel37) {
-        this.jLabel37 = jLabel37;
-    }
-
-    public JLabel getjLabel41() {
-        return jLabel41;
-    }
-
-    public void setjLabel41(JLabel jLabel41) {
-        this.jLabel41 = jLabel41;
-    }
-
-    public JLabel getjLabel42() {
-        return jLabel42;
-    }
-
-    public void setjLabel42(JLabel jLabel42) {
-        this.jLabel42 = jLabel42;
-    }
-
-    public JLabel getjLabel43() {
-        return jLabel43;
-    }
-
-    public void setjLabel43(JLabel jLabel43) {
-        this.jLabel43 = jLabel43;
-    }
-
-    public JLabel getjLabel44() {
-        return jLabel44;
-    }
-
-    public void setjLabel44(JLabel jLabel44) {
-        this.jLabel44 = jLabel44;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
-    public JLabel getjLabel51() {
-        return jLabel51;
-    }
-
-    public void setjLabel51(JLabel jLabel51) {
-        this.jLabel51 = jLabel51;
-    }
-
-    public JLabel getjLabel52() {
-        return jLabel52;
-    }
-
-    public void setjLabel52(JLabel jLabel52) {
-        this.jLabel52 = jLabel52;
-    }
-
-    public JLabel getjLabel53() {
-        return jLabel53;
-    }
-
-    public void setjLabel53(JLabel jLabel53) {
-        this.jLabel53 = jLabel53;
-    }
-
-    public JLabel getjLabel55() {
-        return jLabel55;
-    }
-
-    public void setjLabel55(JLabel jLabel55) {
-        this.jLabel55 = jLabel55;
-    }
-
-    public JLabel getjLabel57() {
-        return jLabel57;
-    }
-
-    public void setjLabel57(JLabel jLabel57) {
-        this.jLabel57 = jLabel57;
-    }
-
-    public JLabel getjLabel58() {
-        return jLabel58;
-    }
-
-    public void setjLabel58(JLabel jLabel58) {
-        this.jLabel58 = jLabel58;
-    }
-
-    public JLabel getjLabel60() {
-        return jLabel60;
-    }
-
-    public void setjLabel60(JLabel jLabel60) {
-        this.jLabel60 = jLabel60;
-    }
-
-    public JLabel getjLabel62() {
-        return jLabel62;
-    }
-
-    public void setjLabel62(JLabel jLabel62) {
-        this.jLabel62 = jLabel62;
-    }
-
-    public JLabel getjLabel63() {
-        return jLabel63;
-    }
-
-    public void setjLabel63(JLabel jLabel63) {
-        this.jLabel63 = jLabel63;
-    }
-
-    public JLabel getjLabel70() {
-        return jLabel70;
-    }
-
-    public void setjLabel70(JLabel jLabel70) {
-        this.jLabel70 = jLabel70;
-    }
-
-    public JLabel getjLabel71() {
-        return jLabel71;
-    }
-
-    public void setjLabel71(JLabel jLabel71) {
-        this.jLabel71 = jLabel71;
-    }
-
-    public JLabel getjLabel73() {
-        return jLabel73;
-    }
-
-    public void setjLabel73(JLabel jLabel73) {
-        this.jLabel73 = jLabel73;
-    }
-
-    public JLabel getjLabel74() {
-        return jLabel74;
-    }
-
-    public void setjLabel74(JLabel jLabel74) {
-        this.jLabel74 = jLabel74;
-    }
-
-    public JLabel getjLabel9() {
-        return jLabel9;
-    }
-
-    public void setjLabel9(JLabel jLabel9) {
-        this.jLabel9 = jLabel9;
-    }
-
-    public JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public void setjPanel1(JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
-
-    public JPanel getjPanel11() {
-        return jPanel11;
-    }
-
-    public void setjPanel11(JPanel jPanel11) {
-        this.jPanel11 = jPanel11;
-    }
-
-    public JPanel getjPanel2() {
-        return jPanel2;
-    }
-
-    public void setjPanel2(JPanel jPanel2) {
-        this.jPanel2 = jPanel2;
-    }
-
-    public JPanel getjPanel7() {
-        return jPanel7;
-    }
-
-    public void setjPanel7(JPanel jPanel7) {
-        this.jPanel7 = jPanel7;
-    }
-
-    public JPanel getjPanel8() {
-        return jPanel8;
-    }
-
-    public void setjPanel8(JPanel jPanel8) {
-        this.jPanel8 = jPanel8;
-    }
-
-    public JPanel getjPanel9() {
-        return jPanel9;
-    }
-
-    public void setjPanel9(JPanel jPanel9) {
-        this.jPanel9 = jPanel9;
-    }
-
-    public JSeparator getjSeparator1() {
-        return jSeparator1;
-    }
-
-    public void setjSeparator1(JSeparator jSeparator1) {
-        this.jSeparator1 = jSeparator1;
-    }
-
-    public JSeparator getjSeparator10() {
-        return jSeparator10;
-    }
-
-    public void setjSeparator10(JSeparator jSeparator10) {
-        this.jSeparator10 = jSeparator10;
-    }
-
-    public JSeparator getjSeparator11() {
-        return jSeparator11;
-    }
-
-    public void setjSeparator11(JSeparator jSeparator11) {
-        this.jSeparator11 = jSeparator11;
-    }
-
-    public JSeparator getjSeparator12() {
-        return jSeparator12;
-    }
-
-    public void setjSeparator12(JSeparator jSeparator12) {
-        this.jSeparator12 = jSeparator12;
-    }
-
-    public JSeparator getjSeparator13() {
-        return jSeparator13;
-    }
-
-    public void setjSeparator13(JSeparator jSeparator13) {
-        this.jSeparator13 = jSeparator13;
-    }
-
-    public JSeparator getjSeparator14() {
-        return jSeparator14;
-    }
-
-    public void setjSeparator14(JSeparator jSeparator14) {
-        this.jSeparator14 = jSeparator14;
-    }
-
-    public JSeparator getjSeparator15() {
-        return jSeparator15;
-    }
-
-    public void setjSeparator15(JSeparator jSeparator15) {
-        this.jSeparator15 = jSeparator15;
-    }
-
-    public JSeparator getjSeparator19() {
-        return jSeparator19;
-    }
-
-    public void setjSeparator19(JSeparator jSeparator19) {
-        this.jSeparator19 = jSeparator19;
-    }
-
-    public JSeparator getjSeparator2() {
-        return jSeparator2;
-    }
-
-    public void setjSeparator2(JSeparator jSeparator2) {
-        this.jSeparator2 = jSeparator2;
-    }
-
-    public JSeparator getjSeparator20() {
-        return jSeparator20;
-    }
-
-    public void setjSeparator20(JSeparator jSeparator20) {
-        this.jSeparator20 = jSeparator20;
-    }
-
-    public JSeparator getjSeparator21() {
-        return jSeparator21;
-    }
-
-    public void setjSeparator21(JSeparator jSeparator21) {
-        this.jSeparator21 = jSeparator21;
-    }
-
-    public JSeparator getjSeparator3() {
-        return jSeparator3;
-    }
-
-    public void setjSeparator3(JSeparator jSeparator3) {
-        this.jSeparator3 = jSeparator3;
-    }
-
-    public JSeparator getjSeparator4() {
-        return jSeparator4;
-    }
-
-    public void setjSeparator4(JSeparator jSeparator4) {
-        this.jSeparator4 = jSeparator4;
-    }
-
-    public JSeparator getjSeparator5() {
-        return jSeparator5;
-    }
-
-    public void setjSeparator5(JSeparator jSeparator5) {
-        this.jSeparator5 = jSeparator5;
-    }
-
     public JTextField getTxtApellidoCliente() {
         return txtApellidoCliente;
     }
 
     public void setTxtApellidoCliente(JTextField txtApellidoCliente) {
         this.txtApellidoCliente = txtApellidoCliente;
+    }
+
+    public JLabel getTxtCantidadAdulto() {
+        return txtCantidadAdulto;
+    }
+
+    public void setTxtCantidadAdulto(JLabel txtCantidadAdulto) {
+        this.txtCantidadAdulto = txtCantidadAdulto;
+    }
+
+    public JLabel getTxtCantidadAdultoMayor() {
+        return txtCantidadAdultoMayor;
+    }
+
+    public void setTxtCantidadAdultoMayor(JLabel txtCantidadAdultoMayor) {
+        this.txtCantidadAdultoMayor = txtCantidadAdultoMayor;
+    }
+
+    public JLabel getTxtCantidadNiño() {
+        return txtCantidadNiño;
+    }
+
+    public void setTxtCantidadNiño(JLabel txtCantidadNiño) {
+        this.txtCantidadNiño = txtCantidadNiño;
     }
 
     public JTextField getTxtCedulaCliente() {
@@ -1340,14 +980,6 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         this.txtTotalAdulto = txtTotalAdulto;
     }
 
-    public JLabel getTxtTotalAdultoMayor() {
-        return txtTotalAdultoMayor;
-    }
-
-    public void setTxtTotalAdultoMayor(JLabel txtTotalAdultoMayor) {
-        this.txtTotalAdultoMayor = txtTotalAdultoMayor;
-    }
-
     public JLabel getTxtTotalNiño() {
         return txtTotalNiño;
     }
@@ -1355,8 +987,6 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
     public void setTxtTotalNiño(JLabel txtTotalNiño) {
         this.txtTotalNiño = txtTotalNiño;
     }
-
-
 
 
 }

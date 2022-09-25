@@ -545,7 +545,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMenosAdultoMayor" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel57" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txtCantidadAdultoMayor" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMasAdultoMayor" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -579,7 +579,7 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtCantidadAdultoMayor" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnMenosAdultoMayor" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnMasAdultoMayor" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
@@ -637,7 +637,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel57">
+            <Component class="javax.swing.JLabel" name="txtCantidadAdultoMayor">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="24" style="1"/>
@@ -722,7 +722,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMenosAdulto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel62" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txtCantidadAdulto" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMasAdulto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -748,7 +748,7 @@
                                   <Component id="jSeparator14" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtCantidadAdulto" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnMenosAdulto" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnMasAdulto" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -813,7 +813,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel62">
+            <Component class="javax.swing.JLabel" name="txtCantidadAdulto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="24" style="1"/>
@@ -898,7 +898,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMenosNiño" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel73" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txtCantidadNiño" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnMasNiño" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -936,7 +936,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtCantidadNiño" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnMenosNiño" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnMasNiño" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -989,7 +989,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel73">
+            <Component class="javax.swing.JLabel" name="txtCantidadNi&#xf1;o">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="24" style="1"/>
