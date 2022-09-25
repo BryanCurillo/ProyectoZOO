@@ -364,10 +364,10 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(MenuDieta);
 
-        MenuHabitad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        MenuHabitad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tierra.png"))); // NOI18N
         MenuHabitad.setText("Habitat");
 
-        jMIAgregarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
+        jMIAgregarHabitat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nacio.png"))); // NOI18N
         jMIAgregarHabitat.setText("Agregar habitat");
         MenuHabitad.add(jMIAgregarHabitat);
 
