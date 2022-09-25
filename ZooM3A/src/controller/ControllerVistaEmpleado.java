@@ -43,7 +43,7 @@ public class ControllerVistaEmpleado {
         this.vistaP = vistaP;
 //        desactivarDatosRol();        
         cargarDatos(1);
-//        ((javax.swing.plaf.basic.BasicInternalFrameUI) vistaE.getUI()).setNorthPane(null);
+        vistaE.toFront();
         vistaE.setVisible(true);
     }
 
