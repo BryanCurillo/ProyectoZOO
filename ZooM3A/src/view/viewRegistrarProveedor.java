@@ -47,6 +47,7 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
         txtOtraCiudad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -120,9 +121,15 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agente-inmobiliario (2).png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, 320, 330));
 
+        jLabel9.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(37, 49, 109));
+        jLabel9.setText("PROVEEDORES");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 458, 290, -1));
+
         jLabel5.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(95, 111, 148));
         jLabel5.setText("PROVEEDORES");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, 290, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 460, 270, -1));
 
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
         jLabel1.setOpaque(true);
@@ -161,6 +168,7 @@ public class viewRegistrarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtOtraCiudad;
     private javax.swing.JLabel txtid_prov;

@@ -48,6 +48,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnseleccionardlg = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
+        jLabel2 = new javax.swing.JLabel();
         txtidZoologoNoborrar = new javax.swing.JTextField();
         txtidHabitadNoborrar = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -75,10 +76,14 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         jDlgZoologo.setSize(new java.awt.Dimension(545, 310));
+        jDlgZoologo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbltitulo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lbltitulo.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
         lbltitulo.setText("SELECCIÓN DE PROVEEDOR");
+        jDlgZoologo.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
+        tabladlg.setAutoCreateRowSorter(true);
+        tabladlg.setBackground(new java.awt.Color(255, 253, 227));
         tabladlg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -100,41 +105,35 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tabladlg);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jDlgZoologo.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 91, 510, 170));
+
+        jToolBar1.setBackground(new java.awt.Color(238, 227, 203));
+        jToolBar1.setBorder(null);
         jToolBar1.setFloatable(false);
         jToolBar1.add(jSeparator1);
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (2).png"))); // NOI18N
         jLabel10.setText("BUSCAR:  ");
         jToolBar1.add(jLabel10);
+
+        txtbuscardlg.setBackground(new java.awt.Color(255, 253, 227));
         jToolBar1.add(txtbuscardlg);
         jToolBar1.add(jSeparator2);
 
+        btnseleccionardlg.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        btnseleccionardlg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seleccione.png"))); // NOI18N
         btnseleccionardlg.setText("SELECCIONAR");
+        btnseleccionardlg.setBorder(null);
+        btnseleccionardlg.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jToolBar1.add(btnseleccionardlg);
         jToolBar1.add(jSeparator3);
 
-        javax.swing.GroupLayout jDlgZoologoLayout = new javax.swing.GroupLayout(jDlgZoologo.getContentPane());
-        jDlgZoologo.getContentPane().setLayout(jDlgZoologoLayout);
-        jDlgZoologoLayout.setHorizontalGroup(
-            jDlgZoologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jDlgZoologoLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(lbltitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jDlgZoologoLayout.setVerticalGroup(
-            jDlgZoologoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDlgZoologoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbltitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
-        );
+        jDlgZoologo.getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 41, 510, 40));
+
+        jLabel2.setBackground(new java.awt.Color(238, 227, 203));
+        jLabel2.setOpaque(true);
+        jDlgZoologo.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         setBorder(null);
 
@@ -202,14 +201,14 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         btcancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btcancelar.setText("CANCELAR");
         btcancelar.setBorder(null);
-        jPanel2.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 590, -1, -1));
+        jPanel2.add(btcancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, -1, -1));
 
         btregistrar.setBackground(new java.awt.Color(210, 215, 159));
         btregistrar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
         btregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         btregistrar.setText("REGISTRARSE");
         btregistrar.setBorder(null);
-        jPanel2.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, -1, -1));
+        jPanel2.add(btregistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("UBICACION(BLOQUE):");
@@ -245,14 +244,16 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 655, Short.MAX_VALUE)))
+                    .addGap(0, 597, Short.MAX_VALUE)))
         );
 
         pack();
@@ -273,6 +274,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

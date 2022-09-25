@@ -57,32 +57,38 @@ public class viewLogin extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Impact", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("  iNGRESA CON TU USUARIO ");
         jLabel3.setPreferredSize(new java.awt.Dimension(188, 17));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 220, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(575, 140, 210, 30));
 
+        txtusuarioingreso.setBackground(new java.awt.Color(255, 245, 228));
         txtusuarioingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
         txtusuarioingreso.setToolTipText("INGRESE LA CONTRASEÑA");
         txtusuarioingreso.setBorder(null);
+        txtusuarioingreso.setOpaque(true);
         getContentPane().add(txtusuarioingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 310, 30));
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel2.setFont(new java.awt.Font("MS Gothic", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Impact", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("iNGRESA TU CONTRASEÑA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 190, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(583, 230, 180, 30));
 
+        txtcontraingreso.setBackground(new java.awt.Color(255, 245, 228));
         txtcontraingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
         txtcontraingreso.setBorder(null);
+        txtcontraingreso.setOpaque(true);
         getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 310, 30));
 
-        btiniciarsesion.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
+        btiniciarsesion.setBackground(new java.awt.Color(255, 245, 228));
+        btiniciarsesion.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         btiniciarsesion.setText("INICIAR SESION");
         btiniciarsesion.setBorder(null);
-        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 200, 30));
+        btiniciarsesion.setOpaque(true);
+        getContentPane().add(btiniciarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 240, 40));
 
         jbtnClose.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jbtnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar (1).png"))); // NOI18N

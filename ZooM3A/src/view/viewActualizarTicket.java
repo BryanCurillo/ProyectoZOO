@@ -44,6 +44,7 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(238, 227, 203));
         setBorder(null);
@@ -97,7 +98,7 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
                 btncancelarticketActionPerformed(evt);
             }
         });
-        jPanel1.add(btncancelarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 240, -1));
+        jPanel1.add(btncancelarticket, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 220, -1));
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jLabel1.setText("categoria: ");
@@ -111,8 +112,13 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, 340, 320));
 
         jLabel8.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(250, 112, 112));
         jLabel8.setText("TICKETS");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 170, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(663, 487, 170, -1));
+
+        jLabel9.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel9.setText("TICKETS");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 170, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 970, 630));
 
@@ -199,6 +205,7 @@ public class viewActualizarTicket extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtprecio;
     // End of variables declaration//GEN-END:variables
