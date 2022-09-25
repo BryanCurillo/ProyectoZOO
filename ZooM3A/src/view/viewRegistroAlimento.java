@@ -158,7 +158,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
         jLabel16.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel16.setText("PROVEEDOR");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
 
         btnSeleccionarProv.setBackground(new java.awt.Color(255, 253, 227));
         btnSeleccionarProv.setText("SELECCIONAR");
@@ -167,15 +167,15 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
         jLabel17.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel17.setText("NOMBRE:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 40));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 40));
 
         jLabel18.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel18.setText("CIUDAD:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 40));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 40));
 
         jLabel19.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
         jLabel19.setText("TELÉFONO:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 155, -1, 30));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 40));
 
         txtnombreProv.setBackground(new java.awt.Color(255, 253, 227));
         jPanel1.add(txtnombreProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 270, 30));

@@ -136,6 +136,9 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jDlgZoologo.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         setBorder(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(txtidZoologoNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
+        getContentPane().add(txtidHabitadNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(210, 215, 159));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -146,34 +149,42 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 520, -1, -1));
 
         txtOtrotipo.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtOtrotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 153, 130, 30));
+        txtOtrotipo.setBorder(null);
+        jPanel2.add(txtOtrotipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 153, 150, 30));
 
         txtOtrobloque.setBackground(new java.awt.Color(255, 253, 227));
-        jPanel2.add(txtOtrobloque, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 279, 130, 30));
+        txtOtrobloque.setBorder(null);
+        jPanel2.add(txtOtrobloque, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 279, 150, 30));
 
         jPanel1.setBackground(new java.awt.Color(210, 215, 159));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("NOMBRE:");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 55, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("RAMA:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 30));
 
         txtnombreZol.setBackground(new java.awt.Color(255, 253, 227));
+        txtnombreZol.setBorder(null);
         jPanel1.add(txtnombreZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 260, 30));
 
         txtramaZol.setBackground(new java.awt.Color(255, 253, 227));
+        txtramaZol.setBorder(null);
         jPanel1.add(txtramaZol, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 260, 30));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("ZOOLOGO ACARGO:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
 
+        jbtnSelecZoologo.setBackground(new java.awt.Color(255, 253, 227));
+        jbtnSelecZoologo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jbtnSelecZoologo.setText("Seleccionar");
-        jPanel1.add(jbtnSelecZoologo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        jbtnSelecZoologo.setBorder(null);
+        jbtnSelecZoologo.setOpaque(true);
+        jPanel1.add(jbtnSelecZoologo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 6, 100, 30));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 390, -1, 141));
 
@@ -183,18 +194,21 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
         jLabel5.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
         jLabel5.setText("DATOS DE ZOOLOGO A CARGO");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         comboTipoHab.setBackground(new java.awt.Color(255, 253, 227));
         comboTipoHab.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "Pradera", "Bosque", "Desierto", "Montaña", "Marisma", "Sabana", "Región polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Río", "Arrecife de coral", "Océano", "Playa", "Otro..." }));
-        jPanel2.add(comboTipoHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 111, 219, 30));
+        comboTipoHab.setBorder(null);
+        jPanel2.add(comboTipoHab, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 111, 260, 30));
 
         jSpiCapacidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel2.add(jSpiCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 195, 219, 30));
+        jSpiCapacidad.setBorder(null);
+        jPanel2.add(jSpiCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 195, 260, 30));
 
         comboUbicacion.setBackground(new java.awt.Color(255, 253, 227));
         comboUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar bloque", "A", "B", "C", "D", "E", "F", "G", "H", "I", "Otro..." }));
-        jPanel2.add(comboUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 243, 219, 30));
+        comboUbicacion.setBorder(null);
+        jPanel2.add(comboUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 243, 260, 30));
 
         btcancelar.setBackground(new java.awt.Color(210, 215, 159));
         btcancelar.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
@@ -212,15 +226,15 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("UBICACION(BLOQUE):");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 250, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("CAPACIDAD:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 202, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("TIPO DE HABITAD:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 111, -1, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 30));
 
         jLabel19.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel19.setText("HABITATS");
@@ -229,32 +243,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/earth (2).png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 460, 410));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 964, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtidZoologoNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtidHabitadNoborrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 597, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 603));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
