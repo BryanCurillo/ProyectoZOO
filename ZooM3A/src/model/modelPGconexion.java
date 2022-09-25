@@ -66,6 +66,14 @@ public class modelPGconexion {
         return correcto;
     }
 
+    public Connection getCon() {
+        return con;
+    }
+
+    public void setCon(Connection con) {
+        this.con = con;
+    }
+
 
 }//final de clase
 

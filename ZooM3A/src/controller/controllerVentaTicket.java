@@ -12,7 +12,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import model.ModelTickets;
@@ -20,6 +22,13 @@ import model.ModelCliente;
 import model.ModelFactura;
 import model.Tickets;
 import model.factura;
+import model.modelPGconexion;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarCliente;
 import view.viewVentaTicket;
@@ -100,8 +109,8 @@ public class controllerVentaTicket {
                 //ENCABEZADO
                 if (!vistaVenta.getTxtidclienteNB().getText().isEmpty()) {
                     idCliente = Integer.parseInt(vistaVenta.getTxtidclienteNB().getText());
-                }else{
-                    idCliente=1;
+                } else {
+                    idCliente = 1;
                 }
                 Date fechaRegistro = java.sql.Date.valueOf(LocalDate.now());
                 ModelFactura encabezadoFac = new ModelFactura();
@@ -114,9 +123,9 @@ public class controllerVentaTicket {
                 int cantNino = Integer.parseInt(vistaVenta.getTxtCantidadNiño().getText()),
                         cantAdulto = Integer.parseInt(vistaVenta.getTxtCantidadAdulto().getText()),
                         cantAdultoMayor = Integer.parseInt(vistaVenta.getTxtCantidadAdultoMayor().getText());
-                System.out.println(cantNino);
-                System.out.println(cantAdulto);
-                System.out.println(cantAdultoMayor);
+//                System.out.println(cantNino);
+//                System.out.println(cantAdulto);
+//                System.out.println(cantAdultoMayor);
                 int idNino = 2,
                         idAdulto = 1,
                         idAdultoMayor = 3;
@@ -183,34 +192,13 @@ public class controllerVentaTicket {
                 pieFac.setPie();
 
                 JOptionPane.showMessageDialog(vistaVenta, "Compra Registrada con exito");
+                imprimeFactura(idEncabezado);
                 datosInicial();
 
             } else {
                 JOptionPane.showMessageDialog(vistaVenta, "No se a realizado ninguna compra");
             }
         }
-
-//        if (vrc.getName().equals("Registro")) {
-//            int response = JOptionPane.showConfirmDialog(vrc, "¿Agregar cliente?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-//            if (response == JOptionPane.YES_OPTION) {
-//                if (detalleFac.comprobarDuplicado(cedula)) {
-//                    if (detalleFac.setPersona() && cli.setCliente()) {
-//                        JOptionPane.showMessageDialog(vrc, "Cliente agregado/a correctamente");
-//                        vrc.dispose();
-//                    } else {
-//                        JOptionPane.showMessageDialog(vrc, "No se pudo agregar al cliente");
-//                    }
-//                } else {
-//                    JOptionPane.showMessageDialog(vrc, "El cliente ya se encuentra registrado");
-//                }
-//
-//            }
-//        }
-//        }
-//        if (banvista) {
-//            ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
-//            controlCli.cargarDatos(1);
-//        }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     KeyListener buscarcliente = new KeyListener() {
@@ -456,5 +444,25 @@ public class controllerVentaTicket {
         vistaVenta.getTxtTelefonoCliente().setText("");
         vistaVenta.getTxtDireccionCliente().setText("");
         datosInicial();
+    }
+
+    private void imprimeFactura(int idFactura) {
+        //Instanciamos la conexion proyecto
+        modelPGconexion con = new modelPGconexion();
+
+        JasperReport jr;
+        try {
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/FACTURA.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+
+            parametros.put("IdEncabezado", idFactura);
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
     }
 }
