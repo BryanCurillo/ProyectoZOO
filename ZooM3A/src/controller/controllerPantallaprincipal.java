@@ -279,7 +279,7 @@ public class controllerPantallaprincipal {
         viewActualizarTicket vat = new viewActualizarTicket();
 
         vista.getjDPprincipal().add(vat);
-        ControllerTickets ct = new ControllerTickets(vat, mt);
+        controllerActualizarTickets ct = new controllerActualizarTickets(vat, mt);
         ct.iniciarControl();
 
     }
