@@ -59,9 +59,9 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         txtSUBTOTAL = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
         txtDESCUENTO = new javax.swing.JLabel();
-        jLabel132 = new javax.swing.JLabel();
         txtTOTAL = new javax.swing.JLabel();
         jLabel134 = new javax.swing.JLabel();
+        jLabel132 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
@@ -97,6 +97,7 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         jSeparator5 = new javax.swing.JSeparator();
 
         setBorder(null);
+        setClosable(true);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel5.setText("VENTA DE BOLETOS");
@@ -223,16 +224,17 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         jLabel130.setText("$");
 
         txtDESCUENTO.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        txtDESCUENTO.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtDESCUENTO.setText("precio");
-
-        jLabel132.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel132.setText("$");
 
         txtTOTAL.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         txtTOTAL.setText("precio");
 
         jLabel134.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel134.setText("$");
+
+        jLabel132.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel132.setText("%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,13 +251,15 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel132)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtDESCUENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDESCUENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel132)
+                        .addGap(16, 16, 16)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,8 +280,8 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel132)
-                            .addComponent(txtDESCUENTO)))
+                            .addComponent(txtDESCUENTO)
+                            .addComponent(jLabel132)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
