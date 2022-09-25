@@ -46,6 +46,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnseleccionardlg = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
+        jLabel11 = new javax.swing.JLabel();
         txtidAli = new javax.swing.JTextField();
         txtidPorv = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -69,17 +70,21 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jbtnAgregar = new javax.swing.JButton();
         jbtnCancelar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jDlgProveedor.setResizable(false);
         jDlgProveedor.setSize(new java.awt.Dimension(545, 310));
+        jDlgProveedor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbltitulo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lbltitulo.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
         lbltitulo.setText("SELECCIÓN DE PROVEEDOR");
+        jDlgProveedor.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
+        tabladlg.setBackground(new java.awt.Color(255, 253, 227));
         tabladlg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -101,41 +106,36 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(tabladlg);
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jDlgProveedor.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 510, 180));
+
+        jToolBar1.setBackground(new java.awt.Color(238, 227, 203));
+        jToolBar1.setBorder(null);
         jToolBar1.setFloatable(false);
         jToolBar1.add(jSeparator1);
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (2).png"))); // NOI18N
         jLabel8.setText("BUSCAR:  ");
         jToolBar1.add(jLabel8);
+
+        txtbuscardlg.setBackground(new java.awt.Color(255, 253, 227));
         jToolBar1.add(txtbuscardlg);
         jToolBar1.add(jSeparator2);
 
+        btnseleccionardlg.setBackground(new java.awt.Color(238, 227, 203));
+        btnseleccionardlg.setFont(new java.awt.Font("MS Gothic", 1, 12)); // NOI18N
+        btnseleccionardlg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seleccione.png"))); // NOI18N
         btnseleccionardlg.setText("SELECCIONAR");
+        btnseleccionardlg.setBorder(null);
+        btnseleccionardlg.setOpaque(true);
         jToolBar1.add(btnseleccionardlg);
         jToolBar1.add(jSeparator3);
 
-        javax.swing.GroupLayout jDlgProveedorLayout = new javax.swing.GroupLayout(jDlgProveedor.getContentPane());
-        jDlgProveedor.getContentPane().setLayout(jDlgProveedorLayout);
-        jDlgProveedorLayout.setHorizontalGroup(
-            jDlgProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jDlgProveedorLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(lbltitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jDlgProveedorLayout.setVerticalGroup(
-            jDlgProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDlgProveedorLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbltitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
-        );
+        jDlgProveedor.getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 41, 510, -1));
+
+        jLabel11.setBackground(new java.awt.Color(238, 227, 203));
+        jLabel11.setOpaque(true);
+        jDlgProveedor.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         setBorder(null);
         setClosable(true);
@@ -154,7 +154,6 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, 30));
 
         jPanel1.setBackground(new java.awt.Color(210, 215, 159));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
@@ -163,6 +162,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
         btnSeleccionarProv.setBackground(new java.awt.Color(255, 253, 227));
         btnSeleccionarProv.setText("SELECCIONAR");
+        btnSeleccionarProv.setOpaque(true);
         jPanel1.add(btnSeleccionarProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 120, -1));
 
         jLabel17.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
@@ -233,16 +233,22 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 530, 540));
 
-        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
-        jLabel4.setText("ALIMENTO");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 480, -1));
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alimentos-para-mascotas (2).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 330, 300));
 
         jLabel6.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
         jLabel6.setText("REGISTRO DE ALIMENTO");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 480, -1));
+
+        jLabel12.setBackground(new java.awt.Color(250, 112, 112));
+        jLabel12.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(250, 112, 112));
+        jLabel12.setText("ALIMENTO");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 468, 210, -1));
+
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel4.setText("ALIMENTO");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 210, -1));
 
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
         jLabel1.setOpaque(true);
@@ -261,6 +267,8 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
     private javax.swing.JDialog jDlgProveedor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
