@@ -781,5 +781,13 @@ public class viewVentaTicket extends javax.swing.JInternalFrame {
         this.txtTotalNiño = txtTotalNiño;
     }
 
+    public JLabel getTxtTotalAdultoMayor() {
+        return txtTotalAdultoMayor;
+    }
+
+    public void setTxtTotalAdultoMayor(JLabel txtTotalAdultoMayor) {
+        this.txtTotalAdultoMayor = txtTotalAdultoMayor;
+    }
+
 
 }
