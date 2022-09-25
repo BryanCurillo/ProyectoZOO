@@ -38,6 +38,7 @@ import view.viewVistaAnimal;
 import view.viewVistaDieta;
 import view.viewVistaHabitats;
 import view.viewVistaTickets;
+import view.viewVentaTicket;
 
 /**
  *
@@ -73,12 +74,13 @@ public class controllerPantallaprincipal {
         vista.getjMIcrudAlimento().addActionListener(l -> vistaAlimento());
         vista.getMIActualizarPrecio().addActionListener(l -> vistaActualizarTicket());
         vista.getjMIAgregarDieta().addActionListener(l -> registroDieta());
-        vista.getjMIVisualizarDietas().addActionListener(l->vistaDieta());
+        vista.getjMIVisualizarDietas().addActionListener(l -> vistaDieta());
         vista.getjMIAgregarHabitat().addActionListener(l -> registroHabitat());
         vista.getjMIvisualizarPrecios().addActionListener(l -> viewVistaTickets());
         vista.getjMIVisualizarHabitat().addActionListener(l -> vistaHabitat());
         vista.getjMIagregarAnimal().addActionListener(l -> registroAnimal());
         vista.getjMIvisualizarAnimal().addActionListener(l -> vistaAnimal());
+        vista.getMIventaTickets().addActionListener(l->vistaVentaTicket());
 
     }
 
@@ -273,6 +275,7 @@ public class controllerPantallaprincipal {
         ControllerVistaDieta controllerDie = new ControllerVistaDieta(vista, vistaDie, modeloDie);
         controllerDie.inicialControl();
     }
+
     ////////
     public void vistaActualizarTicket() {
         ModelTickets mt = new ModelTickets();
@@ -284,6 +287,7 @@ public class controllerPantallaprincipal {
 
     }
 ///TICKET
+
     public void viewVistaTickets() {
 
         ModelTickets mt = new ModelTickets();
@@ -319,5 +323,14 @@ public class controllerPantallaprincipal {
         ControllerVistaAnimal controViewAni = new ControllerVistaAnimal(vista, vistaAni, modelAni);
         controViewAni.inicialControl();
     }
-    ////////
+
+    ///VENTA
+    public void vistaVentaTicket() {
+        viewVentaTicket vistaVenta = new viewVentaTicket();
+
+        //Agragar vista al desktop pane                
+        vista.getjDPprincipal().add(vistaVenta);
+        controllerVentaTicket controllerVenta = new controllerVentaTicket(vistaVenta);
+        controllerVenta.iniciarControl();
+    }
 }

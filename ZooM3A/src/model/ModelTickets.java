@@ -30,7 +30,7 @@ public class ModelTickets extends Tickets {
                 Tickets t = new Tickets();
                 t.setTic_id(rs.getInt(1));
                 t.setTic_categoria(rs.getString(2));
-                t.setTic_precio(rs.getInt(3));
+                t.setTic_precio(rs.getDouble(3));
                 listaTickets.add(t);
             }
         } catch (SQLException e) {
