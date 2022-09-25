@@ -5,6 +5,7 @@
 package controller;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -60,6 +61,8 @@ public class controllerPantallaprincipal {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
         cargarDatosEmpleado();
+        vista.setTitle("ZOOMANIA");
+        vista.setIconImage(new ImageIcon(getClass().getResource("/imagenes/leon_JF.png")).getImage());
     }
 
     public void iniciaControl() {
