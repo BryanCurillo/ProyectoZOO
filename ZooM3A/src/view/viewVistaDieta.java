@@ -34,10 +34,10 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTblDieta = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
         btnAgregar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         BtnModificar = new javax.swing.JButton();
@@ -47,14 +47,96 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         txtbuscar = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
         jBtnBuscar = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTblDieta = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(210, 215, 159));
         setBorder(null);
         setClosable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(166, 108, 255));
+        jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(166, 108, 255));
+        jLabel4.setText("VISTA DE DIETAS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 27, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
         jLabel3.setText("VISTA DE DIETAS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+
+        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
+        jToolBar1.setBorder(null);
+        jToolBar1.setFloatable(false);
+        jToolBar1.add(jSeparator7);
+
+        btnAgregar.setBackground(new java.awt.Color(210, 215, 159));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/masa.png"))); // NOI18N
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.setBorder(null);
+        btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAgregar.setOpaque(true);
+        btnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnAgregar);
+        jToolBar1.add(jSeparator1);
+
+        BtnModificar.setBackground(new java.awt.Color(210, 215, 159));
+        BtnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BtnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/editar (8).png"))); // NOI18N
+        BtnModificar.setText("MODIFICAR");
+        BtnModificar.setBorder(null);
+        BtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnModificar.setOpaque(true);
+        BtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(BtnModificar);
+        jToolBar1.add(jSeparator2);
+
+        btnEliminar.setBackground(new java.awt.Color(210, 215, 159));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comida.png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.setBorder(null);
+        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEliminar.setOpaque(true);
+        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnEliminar);
+        jToolBar1.add(jSeparator3);
+
+        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (3).png"))); // NOI18N
+        jBtnImprimir.setText("IMPRIMIR REPORTE");
+        jBtnImprimir.setBorder(null);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setOpaque(true);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnImprimir);
+        jToolBar1.add(jSeparator4);
+
+        txtbuscar.setBackground(new java.awt.Color(210, 218, 255));
+        txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
+        jToolBar1.add(txtbuscar);
+        jToolBar1.add(jSeparator6);
+
+        jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa (1).png"))); // NOI18N
+        jBtnBuscar.setText("BUSCAR");
+        jBtnBuscar.setBorder(null);
+        jBtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jBtnBuscar.setOpaque(true);
+        jToolBar1.add(jBtnBuscar);
+        jToolBar1.add(jSeparator5);
+
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 96, 940, 50));
+
+        jPanel1.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTblDieta.setBackground(new java.awt.Color(255, 253, 227));
         jTblDieta.setModel(new javax.swing.table.DefaultTableModel(
@@ -78,74 +160,9 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTblDieta);
 
-        jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToolBar1.setFloatable(false);
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 171, 940, 420));
 
-        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAgregar.setText("AGREGAR");
-        btnAgregar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAgregar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnAgregar);
-        jToolBar1.add(jSeparator1);
-
-        BtnModificar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        BtnModificar.setText("MODIFICAR");
-        BtnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        BtnModificar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(BtnModificar);
-        jToolBar1.add(jSeparator2);
-
-        btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnEliminar.setText("ELIMINAR");
-        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnEliminar);
-        jToolBar1.add(jSeparator3);
-
-        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnImprimir.setText("IMPRIMIR REPORTE");
-        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnImprimir);
-        jToolBar1.add(jSeparator4);
-
-        txtbuscar.setBackground(new java.awt.Color(255, 253, 227));
-        txtbuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
-        jToolBar1.add(txtbuscar);
-
-        jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnBuscar.setText("BUSCAR");
-        jBtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnBuscar);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(222, 222, 222))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3)
-                .addGap(36, 36, 36)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,11 +175,16 @@ public class viewVistaDieta extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JTable jTblDieta;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtbuscar;
