@@ -82,6 +82,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMIVisualizarHabitat = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(1150, 0));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
