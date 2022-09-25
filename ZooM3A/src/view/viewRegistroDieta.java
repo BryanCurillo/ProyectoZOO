@@ -38,9 +38,6 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         DlgAlimento = new javax.swing.JDialog();
-        lbltitulo = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabladlgAlimento = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jLabel9 = new javax.swing.JLabel();
@@ -48,8 +45,11 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JToolBar.Separator();
         btnseleccionardlgAlimento = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
+        jPanel4 = new javax.swing.JPanel();
+        lbltitulo = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabladlgAlimento = new javax.swing.JTable();
         DlgAnimal = new javax.swing.JDialog();
-        lbltitulo1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabladlgAnimal = new javax.swing.JTable();
         jToolBar2 = new javax.swing.JToolBar();
@@ -59,6 +59,8 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         jSeparator5 = new javax.swing.JToolBar.Separator();
         btnseleccionardlgAnimal = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
+        jPanel5 = new javax.swing.JPanel();
+        lbltitulo1 = new javax.swing.JLabel();
         txtidDietaNB = new javax.swing.JTextField();
         txtidAlimentoNB = new javax.swing.JTextField();
         txtidAnimalNB = new javax.swing.JTextField();
@@ -93,10 +95,37 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         DlgAlimento.setSize(new java.awt.Dimension(545, 310));
         DlgAlimento.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbltitulo.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        lbltitulo.setText("SELECCIÓN DE ALIMENTO");
-        DlgAlimento.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jToolBar1.setBackground(new java.awt.Color(238, 227, 203));
+        jToolBar1.setBorder(null);
+        jToolBar1.setFloatable(false);
+        jToolBar1.add(jSeparator1);
 
+        jLabel9.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (2).png"))); // NOI18N
+        jLabel9.setText("BUSCAR:  ");
+        jToolBar1.add(jLabel9);
+
+        txtbuscardlgAlimento.setBackground(new java.awt.Color(255, 253, 227));
+        jToolBar1.add(txtbuscardlgAlimento);
+        jToolBar1.add(jSeparator2);
+
+        btnseleccionardlgAlimento.setBackground(new java.awt.Color(238, 227, 203));
+        btnseleccionardlgAlimento.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        btnseleccionardlgAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seleccione.png"))); // NOI18N
+        btnseleccionardlgAlimento.setText("SELECCIONAR");
+        btnseleccionardlgAlimento.setBorder(null);
+        btnseleccionardlgAlimento.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jToolBar1.add(btnseleccionardlgAlimento);
+        jToolBar1.add(jSeparator3);
+
+        DlgAlimento.getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 520, 30));
+
+        jPanel4.setBackground(new java.awt.Color(238, 227, 203));
+
+        lbltitulo.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
+        lbltitulo.setText("SELECCIÓN DE ALIMENTO");
+
+        tabladlgAlimento.setBackground(new java.awt.Color(255, 253, 227));
         tabladlgAlimento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -113,31 +142,36 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
             tabladlgAlimento.getColumnModel().getColumn(2).setHeaderValue("Descripcion");
         }
 
-        DlgAlimento.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 470, 162));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(lbltitulo)
+                        .addGap(129, 129, 129))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lbltitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToolBar1.setFloatable(false);
-        jToolBar1.add(jSeparator1);
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel9.setText("BUSCAR:  ");
-        jToolBar1.add(jLabel9);
-        jToolBar1.add(txtbuscardlgAlimento);
-        jToolBar1.add(jSeparator2);
-
-        btnseleccionardlgAlimento.setText("SELECCIONAR");
-        jToolBar1.add(btnseleccionardlgAlimento);
-        jToolBar1.add(jSeparator3);
-
-        DlgAlimento.getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 460, -1));
+        DlgAlimento.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 280));
 
         DlgAnimal.setSize(new java.awt.Dimension(545, 310));
         DlgAnimal.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lbltitulo1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-        lbltitulo1.setText("SELECCIÓN DE ANIMAL");
-        DlgAnimal.getContentPane().add(lbltitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
-
+        tabladlgAnimal.setBackground(new java.awt.Color(255, 253, 227));
         tabladlgAnimal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -151,27 +185,66 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         ));
         jScrollPane3.setViewportView(tabladlgAnimal);
 
-        DlgAnimal.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 470, 162));
+        DlgAnimal.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 510, 162));
 
-        jToolBar2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToolBar2.setBackground(new java.awt.Color(238, 227, 203));
+        jToolBar2.setBorder(null);
         jToolBar2.setFloatable(false);
         jToolBar2.add(jSeparator4);
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(238, 227, 203));
+        jLabel10.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (2).png"))); // NOI18N
         jLabel10.setText("BUSCAR:  ");
         jToolBar2.add(jLabel10);
+
+        txtbuscardlgAnimal.setBackground(new java.awt.Color(255, 253, 227));
         jToolBar2.add(txtbuscardlgAnimal);
         jToolBar2.add(jSeparator5);
 
+        btnseleccionardlgAnimal.setBackground(new java.awt.Color(238, 227, 203));
+        btnseleccionardlgAnimal.setFont(new java.awt.Font("MS Gothic", 1, 14)); // NOI18N
+        btnseleccionardlgAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/seleccione.png"))); // NOI18N
         btnseleccionardlgAnimal.setText("SELECCIONAR");
+        btnseleccionardlgAnimal.setBorder(null);
+        btnseleccionardlgAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnseleccionardlgAnimal.setOpaque(true);
         jToolBar2.add(btnseleccionardlgAnimal);
         jToolBar2.add(jSeparator6);
 
-        DlgAnimal.getContentPane().add(jToolBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 460, -1));
+        DlgAnimal.getContentPane().add(jToolBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 510, -1));
+
+        jPanel5.setBackground(new java.awt.Color(238, 227, 203));
+
+        lbltitulo1.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
+        lbltitulo1.setText("SELECCIÓN DE ANIMAL");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(lbltitulo1)
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(lbltitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(231, Short.MAX_VALUE))
+        );
+
+        DlgAnimal.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 280));
 
         setBorder(null);
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(txtidDietaNB, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 206, 0, 0));
+        getContentPane().add(txtidAlimentoNB, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 206, 0, 0));
+        getContentPane().add(txtidAnimalNB, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 206, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(210, 215, 159));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -190,22 +263,28 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         jPanel2.add(combohoradieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 110, 227, -1));
 
         jPanel1.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setText("ALIMENTO");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, -1, -1));
 
         btnSeleccionarAliemento.setBackground(new java.awt.Color(255, 253, 227));
         btnSeleccionarAliemento.setText("SELECCIONAR");
         btnSeleccionarAliemento.setBorder(null);
+        jPanel1.add(btnSeleccionarAliemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 94, 21));
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("NOMBRE:");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 34, -1, 26));
 
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setText("DESCRIPCION:");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 72, -1, -1));
 
         txtnombrealiemento.setBackground(new java.awt.Color(255, 253, 227));
         txtnombrealiemento.setBorder(null);
+        jPanel1.add(txtnombrealiemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 34, 224, 19));
 
         txtAdescripcionAlimento.setBackground(new java.awt.Color(255, 253, 227));
         txtAdescripcionAlimento.setColumns(20);
@@ -213,44 +292,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         txtAdescripcionAlimento.setBorder(null);
         jScrollPane1.setViewportView(txtAdescripcionAlimento);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtnombrealiemento, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addComponent(btnSeleccionarAliemento, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel16)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarAliemento, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtnombrealiemento, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 72, 224, -1));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 390, -1));
 
@@ -267,78 +309,46 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         btnagregardieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
         btnagregardieta.setText("AGREGAR");
         btnagregardieta.setBorder(null);
-        jPanel2.add(btnagregardieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 200, 50));
+        jPanel2.add(btnagregardieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 200, 50));
 
         btncancelardieta.setBackground(new java.awt.Color(210, 215, 159));
         btncancelardieta.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
         btncancelardieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
         btncancelardieta.setText("CANCELAR");
         btncancelardieta.setBorder(null);
-        jPanel2.add(btncancelardieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, 210, 50));
+        jPanel2.add(btncancelardieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 210, 50));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("kg.");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 150, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setText("ANIMAL:");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 5, -1, -1));
 
         btnSeleccionarAnimal.setBackground(new java.awt.Color(255, 253, 227));
         btnSeleccionarAnimal.setText("SELECCIONAR");
         btnSeleccionarAnimal.setBorder(null);
+        jPanel3.add(btnSeleccionarAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 0, 94, 21));
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel21.setText("NOMBRE");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 41, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel23.setText("ESPECIE:");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 76, -1, 23));
 
         txtnombreanimal.setBackground(new java.awt.Color(255, 253, 227));
         txtnombreanimal.setBorder(null);
+        jPanel3.add(txtnombreanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 34, 218, 23));
 
         txtespecie.setBackground(new java.awt.Color(255, 253, 227));
         txtespecie.setBorder(null);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel20))
-                .addGap(91, 91, 91)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtnombreanimal)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSeleccionarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtespecie, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnSeleccionarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel21)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtnombreanimal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtespecie)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)))
-        );
+        jPanel3.add(txtespecie, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 76, 218, 23));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 382, -1));
 
@@ -354,33 +364,7 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
         jLabel4.setText("DIETA");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(377, 377, 377)
-                    .addComponent(txtidDietaNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(36, 36, 36)
-                    .addComponent(txtidAlimentoNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(37, 37, 37)
-                    .addComponent(txtidAnimalNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(531, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(206, 206, 206)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtidDietaNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtidAlimentoNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtidAnimalNB, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(423, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 981, 629));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -413,6 +397,8 @@ public class viewRegistroDieta extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
