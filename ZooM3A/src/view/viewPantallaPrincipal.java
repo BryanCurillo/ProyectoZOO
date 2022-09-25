@@ -65,6 +65,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jMIagregarAnimal = new javax.swing.JMenuItem();
         jMIvisualizarAnimal = new javax.swing.JMenuItem();
         MenuTicket = new javax.swing.JMenu();
+        MIventaTickets = new javax.swing.JMenuItem();
         MIActualizarPrecio = new javax.swing.JMenuItem();
         jMIvisualizarPrecios = new javax.swing.JMenuItem();
         MenuProveedor = new javax.swing.JMenu();
@@ -310,6 +311,10 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MenuTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
         MenuTicket.setText("Tickets");
 
+        MIventaTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
+        MIventaTickets.setText("Venta de Tickets");
+        MenuTicket.add(MIventaTickets);
+
         MIActualizarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
         MIActualizarPrecio.setText("Actualizar Precio");
         MenuTicket.add(MIActualizarPrecio);
@@ -396,6 +401,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIvistaCliente;
     private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
+    private javax.swing.JMenuItem MIventaTickets;
     private javax.swing.JMenu MenuClientes;
     private javax.swing.JMenu MenuDieta;
     private javax.swing.JMenu MenuHabitad;
@@ -460,6 +466,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMIActualizarPrecio(JMenuItem MIActualizarPrecio) {
         this.MIActualizarPrecio = MIActualizarPrecio;
+    }
+
+    public JMenuItem getMIventaTickets() {
+        return MIventaTickets;
+    }
+
+    public void setMIventaTickets(JMenuItem MIventaTickets) {
+        this.MIventaTickets = MIventaTickets;
     }
 
     public JMenu getMenuClientes() {
@@ -782,4 +796,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.menuanimales = menuanimales;
     }
 
+    
+    
 }
