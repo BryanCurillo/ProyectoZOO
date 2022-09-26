@@ -56,7 +56,7 @@ public class ControllerVistaProveedor {
         vistaProv.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaProv.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaProv.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-        vistaProv.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+//        vistaProv.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
         vistaProv.getTxtBuscar().addKeyListener(busquedaIncren);
     }
 

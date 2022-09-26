@@ -12,7 +12,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
 import view.viewConsultarFacturas;
-import view.viewRegistrarEmpleado;
+import view.viewConsultarFacturas;
+import controller.controllerVentaTicket;
 import model.modelPersona;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -51,42 +52,15 @@ public class ControllerConsultaFacturas {
         vistaConsultaF.setVisible(true);
     }
 
-    public ControllerConsultaFacturas(viewConsultarFacturas vistaConsultaF, ModelFactura modelFactura) {
+    public ControllerConsultaFacturas(viewConsultarFacturas vistaConsultaF) {
         this.vistaConsultaF = vistaConsultaF;
         this.modelFactura = modelFactura;
     }
 
     public void inicialControl() {
-        vistaConsultaF.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
         vistaConsultaF.getTxtBuscar().addKeyListener(busquedaIncren);
+        vistaConsultaF.getjBtnImprimir().addActionListener(l->verFactura());
     }
-
-//    public void abrirRegistro(int op) {
-//        modelEmpleado modeloEmpleado = new modelEmpleado();
-//        viewRegistrarEmpleado vistaRegistroEmpleado = new viewRegistrarEmpleado();
-//        ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaConsultaF);
-//
-//        if (op == 1) {
-//
-//            //Agragar vista al desktop pane
-//            vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
-//
-////            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
-//            controladorEmpleado.abrirRegistro(1);
-//
-//        } else {
-//            //Agragar vista al desktop pane
-////            ControllerRegistroEmpleado controladorEmpleado = new ControllerRegistroEmpleado(modeloEmpleado, vistaRegistroEmpleado, vistaE);
-//            int fila = vistaConsultaF.getjTblEmpleado().getSelectedRow();
-//            if (fila == -1) {
-//                JOptionPane.showMessageDialog(null, "Seleccione la persona a modificar");
-//            } else {
-//                vistaP.getjDPprincipal().add(vistaRegistroEmpleado);
-//                controladorEmpleado.abrirRegistro(2);
-//            }
-//            cargarDatos(1);
-//        }
-//    }
 
     KeyListener busquedaIncren = new KeyListener() {
         @Override
@@ -134,11 +108,24 @@ public class ControllerConsultaFacturas {
             vistaConsultaF.getjTblFactura().setValueAt(emp.getItems(), i, 7);
             vistaConsultaF.getjTblFactura().setValueAt(emp.getCantTotal(), i, 8);
             //PIE
-            vistaConsultaF.getjTblFactura().setValueAt(("$ "+emp.getPie_subTotal()), i, 9);
-            vistaConsultaF.getjTblFactura().setValueAt((emp.getPie_descuento()+" %"), i, 10);
-            vistaConsultaF.getjTblFactura().setValueAt(("$ "+emp.getPie_TOTAL()), i, 11);
+            vistaConsultaF.getjTblFactura().setValueAt(("$ " + emp.getPie_subTotal()), i, 9);
+            vistaConsultaF.getjTblFactura().setValueAt((emp.getPie_descuento() + " %"), i, 10);
+            vistaConsultaF.getjTblFactura().setValueAt(("$ " + emp.getPie_TOTAL()), i, 11);
             i++;
         });
 
+    }
+
+    public boolean verFactura() {
+        int fila = vistaConsultaF.getjTblFactura().getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(vistaConsultaF, "Seleccione la factura que desea visualizar");
+            return false;
+        } else {
+            int id = Integer.parseInt(vistaConsultaF.getjTblFactura().getValueAt(fila, 0).toString());
+            controllerVentaTicket contultaFac = new controllerVentaTicket();
+            contultaFac.imprimeFactura(id);
+            return true;
+        }
     }
 }

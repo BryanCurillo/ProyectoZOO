@@ -54,7 +54,7 @@ public class ControllerVistaEmpleado {
 
     public void inicialControl() {
         vistaE.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+//        vistaE.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
         vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaE.getTxtBuscar().addKeyListener(busquedaIncren);
