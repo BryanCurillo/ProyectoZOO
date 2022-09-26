@@ -314,7 +314,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MenuTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
         MenuTicket.setText("Tickets");
 
-        MIventaTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
+        MIventaTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
         MIventaTickets.setText("Venta de Tickets");
         MenuTicket.add(MIventaTickets);
 
@@ -322,6 +322,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MIActualizarPrecio.setText("Actualizar Precio");
         MenuTicket.add(MIActualizarPrecio);
 
+        jMIvisualizarPrecios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
         jMIvisualizarPrecios.setText("Visualizar Precios");
         MenuTicket.add(jMIvisualizarPrecios);
 

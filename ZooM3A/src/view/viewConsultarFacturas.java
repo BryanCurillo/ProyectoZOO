@@ -40,7 +40,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblFactura = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
-        jSeparator1 = new javax.swing.JToolBar.Separator();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         jSeparator3 = new javax.swing.JToolBar.Separator();
         jBtnImprimir = new javax.swing.JButton();
@@ -50,6 +49,7 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         txtBuscar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JToolBar.Separator();
         jBtnActualizar = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(144, 183, 125));
@@ -61,17 +61,16 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         setVisible(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario (2) (1).png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 70, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documento.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 70, 40));
 
         jLabel3.setBackground(new java.awt.Color(250, 112, 112));
         jLabel3.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(37, 49, 109));
+        jLabel3.setForeground(new java.awt.Color(250, 112, 112));
         jLabel3.setText("CONSULTA DE FACTURAS");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 38, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(95, 111, 148));
         jLabel4.setText("CONSULTA DE FACTURAS");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
@@ -92,7 +91,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTblFactura.setColumnSelectionAllowed(false);
         jTblFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTblFactura.setGridColor(new java.awt.Color(51, 51, 51));
         jTblFactura.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -101,7 +99,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         if (jTblFactura.getColumnModel().getColumnCount() > 0) {
             jTblFactura.getColumnModel().getColumn(0).setResizable(false);
             jTblFactura.getColumnModel().getColumn(0).setPreferredWidth(35);
-            jTblFactura.getColumnModel().getColumn(0).setCellRenderer(null);
             jTblFactura.getColumnModel().getColumn(1).setResizable(false);
             jTblFactura.getColumnModel().getColumn(1).setPreferredWidth(60);
             jTblFactura.getColumnModel().getColumn(2).setResizable(false);
@@ -112,13 +109,12 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
 
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
-        jToolBar1.add(jSeparator1);
         jToolBar1.add(jSeparator2);
         jToolBar1.add(jSeparator3);
 
         jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
         jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (1).png"))); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documento.png"))); // NOI18N
         jBtnImprimir.setText("VER DETALLE");
         jBtnImprimir.setBorder(null);
         jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -128,27 +124,29 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
 
         jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (3).png"))); // NOI18N
+        jBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar (2).png"))); // NOI18N
         jBtnBuscar.setText("BUSCAR");
         jBtnBuscar.setBorder(null);
         jBtnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jToolBar1.add(jBtnBuscar);
         jToolBar1.add(jSeparator6);
 
-        txtBuscar.setBackground(new java.awt.Color(183, 211, 223));
+        txtBuscar.setBackground(new java.awt.Color(255, 253, 227));
+        txtBuscar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
         jToolBar1.add(jSeparator5);
 
         jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
         jBtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar (1).png"))); // NOI18N
+        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar-pagina.png"))); // NOI18N
         jBtnActualizar.setText("ACTUALIZAR");
         jBtnActualizar.setBorder(null);
         jBtnActualizar.setFocusable(false);
         jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jBtnActualizar);
+        jToolBar1.add(jSeparator7);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 115, 930, 50));
 
@@ -174,12 +172,12 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JTable jTblFactura;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtBuscar;
@@ -247,14 +245,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
 
     public void setjScrollPane1(JScrollPane jScrollPane1) {
         this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JToolBar.Separator getjSeparator1() {
-        return jSeparator1;
-    }
-
-    public void setjSeparator1(JToolBar.Separator jSeparator1) {
-        this.jSeparator1 = jSeparator1;
     }
 
     public JToolBar.Separator getjSeparator2() {
