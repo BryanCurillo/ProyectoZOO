@@ -128,6 +128,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jlblNombrePP.setText("Nombre usuario");
 
         jlblFotoPP.setBackground(new java.awt.Color(72, 56, 56));
+        jlblFotoPP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
         jlblFotoPP.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jlblFotoPP.setOpaque(true);
 
