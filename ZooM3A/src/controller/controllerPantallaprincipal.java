@@ -385,6 +385,7 @@ public class controllerPantallaprincipal {
 
         vista.getjDPprincipal().add(vvt);
         ControllerVistaTickets cvt = new ControllerVistaTickets(vvt, mt);
+        cvt.iniciarControl();
     }
 
     ///DIETA

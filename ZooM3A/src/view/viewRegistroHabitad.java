@@ -105,7 +105,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jDlgZoologo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbltitulo.setFont(new java.awt.Font("MS Gothic", 1, 24)); // NOI18N
-        lbltitulo.setText("SELECCIÓN DE PROVEEDOR");
+        lbltitulo.setText("SELECCIÓN DE ZOOLOGO");
         jDlgZoologo.getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         tabladlg.setAutoCreateRowSorter(true);

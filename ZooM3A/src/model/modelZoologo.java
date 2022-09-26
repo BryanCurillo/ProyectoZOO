@@ -72,9 +72,9 @@ public class modelZoologo extends Zoologo {
                 + " from zoologo z join empleado e on(e.emp_id=z.zol_idempleado)"
                 + " join persona p on (e.emp_cedula=p.per_cedula)"
                 + " where z.zol_estado=true"
-                + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  and (lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
-                + "  or lower(z.zol_rama) like '%" + busqueda + "%' ";
+                + "  or lower(z.zol_rama) like '%" + busqueda + "%') ";
                 //                + "  or a.ali_precio=" + busqueda
 
         ResultSet rs = mpgc.consulta(sql);

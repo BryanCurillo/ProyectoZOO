@@ -276,12 +276,12 @@ public class modelEmpleado extends Empleado {
                 + "join empleado e on(p.per_cedula=e.emp_cedula) "
                 + "join rol r on(e.emp_rol=r.rol_id) "
                 + "where e.emp_estado=true "
-                + "and p.per_cedula like '%" + busqueda + "%' "
+                + "and (p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "or p.per_telefono like '%" + busqueda + "%' "
                 + "or lower(e.emp_usuario) like '%" + busqueda + "%' "
-                + "or lower(r.rol_nombre) like '%" + busqueda + "%' ";
+                + "or lower(r.rol_nombre) like '%" + busqueda + "%') ";
 
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;

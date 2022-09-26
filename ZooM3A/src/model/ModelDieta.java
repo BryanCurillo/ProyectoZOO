@@ -88,11 +88,11 @@ public class ModelDieta extends Dieta {
                 + "from dieta d join alimento al on (d.die_idalimento=al.ali_id)  "
                 + "join animal a on (a.ani_id=d.die_idanimal)  "
                 + "where d.die_estado=true  "
-                + "and lower(d.die_horario) like '%" + busqueda + "%' "
+                + "and (lower(d.die_horario) like '%" + busqueda + "%' "
                 + "or lower(a.ani_nombre) like '%" + busqueda + "%' "
                 + "or lower(a.ani_especie) like '%" + busqueda + "%' "
                 + "or lower(al.ali_nombre) like '%" + busqueda + "%' "
-                + "or lower(al.ali_descripcion) like '%" + busqueda + "%' ";
+                + "or lower(al.ali_descripcion) like '%" + busqueda + "%') ";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

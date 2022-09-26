@@ -197,13 +197,13 @@ public class ModelAnimal extends Animales {
                 + "join empleado e on(e.emp_id=c.cui_idempleado)  "
                 + "join persona p on (p.per_cedula=e.emp_cedula)  "
                 + "where a.ani_estado=true  "
-                + "  and lower(a.ani_nombre) like '%" + busqueda + "%' "
+                + "  and (lower(a.ani_nombre) like '%" + busqueda + "%' "
                 + "  or lower(a.ani_genero) like '%" + busqueda + "%' "
                 + "  or lower(a.ani_especie) like '%" + busqueda + "%' "
                 + "  or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(h.hab_tipo) like '%" + busqueda + "%' "
-                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' ";
+                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' )";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
         try {

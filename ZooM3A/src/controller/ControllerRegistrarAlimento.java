@@ -233,12 +233,15 @@ public class ControllerRegistrarAlimento {
 
         i = 0;
         listaProv.stream().sorted((x, y)
-                -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(emp -> {
-            estructuraTabla.addRow(new Object[listaProv.size()]);
-            vistaRegAlimento.getTabladlg().setValueAt(emp.getId_proveedor(), i, 0);
-            vistaRegAlimento.getTabladlg().setValueAt(emp.getNombre_pro(), i, 1);
-            vistaRegAlimento.getTabladlg().setValueAt(emp.getCiudad_pro(), i, 2);
-            vistaRegAlimento.getTabladlg().setValueAt(emp.getTelefono(), i, 3);
+                -> x.getCiudad_pro().compareToIgnoreCase(y.getCiudad_pro())).forEach(prov -> {
+            if (prov.isEstadoProv()) {
+
+                estructuraTabla.addRow(new Object[listaProv.size()]);
+                vistaRegAlimento.getTabladlg().setValueAt(prov.getId_proveedor(), i, 0);
+                vistaRegAlimento.getTabladlg().setValueAt(prov.getNombre_pro(), i, 1);
+                vistaRegAlimento.getTabladlg().setValueAt(prov.getCiudad_pro(), i, 2);
+                vistaRegAlimento.getTabladlg().setValueAt(prov.getTelefono(), i, 3);
+            }
             i++;
         });
     }

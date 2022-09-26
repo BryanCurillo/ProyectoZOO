@@ -84,10 +84,10 @@ public class ModelHabitad extends Habitat {
                 + "join persona p on(p.per_cedula=e.emp_cedula) "
                 + "  where h.hab_estado=true"
                 + "  and lower(h.hab_tipo) like '%" + busqueda + "%' "
-                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' "
+                + "  or (lower(h.hab_ubicacion) like '%" + busqueda + "%' "
                 + "  or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
-                + "  or lower(z.zol_rama) like '%" + busqueda + "%' ";
+                + "  or lower(z.zol_rama) like '%" + busqueda + "%' )";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

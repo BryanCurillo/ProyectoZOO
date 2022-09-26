@@ -63,13 +63,13 @@ public class modelCuidador extends Cuidador {
 
     public List<Cuidador> busquedaincremental(String busqueda) {
         List<Cuidador> listaCuidador = new ArrayList<>();
-        String sql = "select c.cui_id,(p.per_nombre||' '||p.per_apellido) as nombre ,c.cui_tiposangre"
+        String sql = "select c.cui_id,(p.per_nombre||' '||p.per_apellido) as nombre ,c.cui_tiposangre,c.cui_estado"
                 + " from cuidador c join empleado e on(e.emp_id=c.cui_idempleado)"
                 + " join persona p on (e.emp_cedula=p.per_cedula) "
                 + "  where c.cui_estado=true"
-                + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
+                + "  and (lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
-                + "  or lower(c.cui_tiposangre) like '%" + busqueda + "%' ";
+                + "  or lower(c.cui_tiposangre) like '%" + busqueda + "%') ";
 
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -78,6 +78,7 @@ public class modelCuidador extends Cuidador {
                 cuidador.setIdCuidador(rs.getInt(1));
                 cuidador.setNombre(rs.getString(2));
                 cuidador.setTipoSangre(rs.getString(3));
+                cuidador.setEstadoCui(rs.getBoolean(4));
 
                 listaCuidador.add(cuidador);
             }

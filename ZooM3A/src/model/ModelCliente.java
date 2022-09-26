@@ -115,11 +115,11 @@ public class ModelCliente extends Cliente {
                 + "join persona p on(p.per_cedula=c.cli_cedula) "
                 + "where c.cli_estado=true "
                 + "and "
-                + "p.per_cedula like '%" + busqueda + "%' "
+                + "(p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "or p.per_telefono like '%" + busqueda + "%' "
-                + "or lower(c.cli_direccion) like '%" + busqueda + "%' ";
+                + "or lower(c.cli_direccion) like '%" + busqueda + "%') ";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

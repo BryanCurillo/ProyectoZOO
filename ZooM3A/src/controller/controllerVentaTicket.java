@@ -59,6 +59,12 @@ public class controllerVentaTicket {
     public controllerVentaTicket() {
     }
 
+    public controllerVentaTicket(viewVentaTicket vistaVenta, ModelCliente modelCliente, String cedula) {
+        this.vistaVenta = vistaVenta;
+        this.modelCliente = modelCliente;
+        llenarDatos(cedula);
+    }
+
     public controllerVentaTicket(viewPantallaPrincipal vistaP, viewVentaTicket vistaVenta, ModelTickets modelTicket, ModelCliente modelCliente) {
         this.vistaP = vistaP;
         this.vistaVenta = vistaVenta;
@@ -205,7 +211,7 @@ public class controllerVentaTicket {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            llenarDatos();
+            llenarDatos(vistaVenta.getTxtCedulaCliente().getText().trim());
         }
     };
 
@@ -387,8 +393,8 @@ public class controllerVentaTicket {
         vistaVenta.getTxtTOTAL().setText(String.valueOf(TOTALDESC));
     }
 
-    public boolean llenarDatos() {
-        String cedula = vistaVenta.getTxtCedulaCliente().getText();
+    public boolean llenarDatos(String cedula) {
+//        String cedula = 
         List<Cliente> listap = modelCliente.getClientesFac(cedula);
         listap.stream().forEach(cli -> {
 //            System.out.println(cedula + "==" + cli.getCli_cedula());
@@ -424,8 +430,11 @@ public class controllerVentaTicket {
         //Agragar vista al desktop pane
         vRc.setName("Registro");
         vistaP.getjDPprincipal().add(vRc);
-        ControllerRegistrarCliente ccli = new ControllerRegistrarCliente(vRc, mc);
+        vRc.getTxtcedula().setText(vistaVenta.getTxtCedulaCliente().getText().trim());
+        ControllerRegistrarCliente ccli = new ControllerRegistrarCliente(vRc, mc, vistaVenta);
+//        ControllerRegistrarCliente ccli = new ControllerRegistrarCliente(vRc, mc);
         ccli.iniciarControl();
+//        llenarDatos(vistaVenta.getTxtCedulaCliente().getText());
     }
 
     public void limpiarCampos() {
@@ -456,6 +465,5 @@ public class controllerVentaTicket {
         } catch (JRException ex) {
             java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
     }
 }

@@ -87,10 +87,7 @@ public class viewRegistroAlimento extends javax.swing.JInternalFrame {
         tabladlg.setBackground(new java.awt.Color(255, 253, 227));
         tabladlg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Id", "Nombre", "Ciudad", "Telefono"

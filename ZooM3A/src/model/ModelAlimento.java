@@ -80,13 +80,13 @@ public class ModelAlimento extends Alimento {
         List<Alimento> listaAlimento = new ArrayList<>();
         String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
                 + "  where ali_estado=true "
-                + "  and p.pro_telefono like '%" + busqueda + "%' "
+                + "  and (p.pro_telefono like '%" + busqueda + "%' "
                 //                + "  or p.pro_id=" + busqueda
                 + "  or lower(p.pro_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.pro_ciudad) like '%" + busqueda + "%' "
                 + "  or lower(a.ali_descripcion) like '%" + busqueda + "%' "
                 //                + "  or a.ali_precio=" + busqueda
-                + "  or lower(a.ali_nombre) like '%" + busqueda + "%' ";
+                + "  or lower(a.ali_nombre) like '%" + busqueda + "%' )";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

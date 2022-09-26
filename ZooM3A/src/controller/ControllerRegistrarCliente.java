@@ -13,6 +13,7 @@ import model.ModelCliente;
 import model.modelPersona;
 import view.viewLogin;
 import view.viewRegistrarCliente;
+import view.viewVentaTicket;
 import view.viewVistaCliente;
 
 /**
@@ -25,9 +26,22 @@ public class ControllerRegistrarCliente {
     private viewVistaCliente vvc;
     private ModelCliente mc;
     boolean banvista = false;
+    boolean banventa = false;
+    private viewVentaTicket vistaventa;
 
 //    private viewLogin vl;
     public ControllerRegistrarCliente() {
+    }
+
+    public ControllerRegistrarCliente(viewRegistrarCliente vrc, ModelCliente mc, viewVentaTicket vistaventa) {
+        this.vrc = vrc;
+        this.mc = mc;
+        this.vistaventa=vistaventa;
+        banventa=true;
+        vrc.toFront();
+        vrc.setVisible(true);
+        banvista = false;
+        System.out.println("ban= "+banventa);
     }
 
     public ControllerRegistrarCliente(viewRegistrarCliente vrc, ModelCliente mc) {
@@ -134,6 +148,12 @@ public class ControllerRegistrarCliente {
         if (banvista) {
             ControllerVistaCliente controlCli = new ControllerVistaCliente(vvc, mc);
             controlCli.cargarDatos(1);
+        }
+        if (banventa) {
+            System.out.println("ia llegue");
+
+            controllerVentaTicket controlventa = new controllerVentaTicket(vistaventa, mc, vrc.getTxtcedula().getText().trim());
+//            controlventa.llenarDatos(vis);
         }
     }
 

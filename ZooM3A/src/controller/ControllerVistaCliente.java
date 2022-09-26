@@ -68,8 +68,8 @@ public class ControllerVistaCliente {
         vistaCli.getBtnModificarCliente().addActionListener(l -> abrirRegistro(2));
         vistaCli.getBtnEliminarCliente().addActionListener(l -> eliminarCliente());
         vistaCli.getTxtbuscar().addKeyListener(busquedaIncren);
-        
-        vistaCli.getjBtnImprimirCliente().addActionListener(l->imprimeReporte());
+
+        vistaCli.getjBtnImprimirCliente().addActionListener(l -> imprimeReporte());
     }
 
     public void abrirRegistro(int op) {

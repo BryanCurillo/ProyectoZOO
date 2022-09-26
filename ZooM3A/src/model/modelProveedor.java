@@ -78,9 +78,9 @@ public class modelProveedor extends Proveedor {
         List<Proveedor> listaProveedores = new ArrayList<>();
         String sql = "select * from proveedor "
                 + "where pro_estado=true "
-                + "and lower(pro_ciudad) like '%" + busqueda + "%' "
+                + "and (lower(pro_ciudad) like '%" + busqueda + "%' "
                 + "or lower(pro_nombre) like '%" + busqueda + "%' "
-                + "or pro_telefono like '%" + busqueda + "%' ";
+                + "or pro_telefono like '%" + busqueda + "%') ";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

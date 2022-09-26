@@ -63,9 +63,11 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
         jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documentos (2).png"))); // NOI18N
         jBtnImprimir.setText("IMPRIMIR PRECIOS");
         jBtnImprimir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 560, 230, 40));
+        getContentPane().add(jBtnImprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 550, 230, 40));
 
+        jTblTickets.setAutoCreateRowSorter(true);
         jTblTickets.setBackground(new java.awt.Color(255, 253, 227));
+        jTblTickets.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jTblTickets.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -85,9 +87,15 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTblTickets.setAlignmentX(7.0F);
         jScrollPane1.setViewportView(jTblTickets);
+        if (jTblTickets.getColumnModel().getColumnCount() > 0) {
+            jTblTickets.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTblTickets.getColumnModel().getColumn(1).setPreferredWidth(310);
+            jTblTickets.getColumnModel().getColumn(2).setPreferredWidth(60);
+        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 930, 450));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 930, 430));
 
         jToolBar1.setBackground(new java.awt.Color(210, 215, 159));
         jToolBar1.setBorder(null);
@@ -102,7 +110,7 @@ public class viewVistaTickets extends javax.swing.JInternalFrame {
 
         jLabel2.setBackground(new java.awt.Color(238, 227, 203));
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 630));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 970, 630));
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 5));
 
         pack();
