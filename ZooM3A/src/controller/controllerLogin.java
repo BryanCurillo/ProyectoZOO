@@ -4,6 +4,7 @@
  */
 package controller;
 
+import javax.swing.ImageIcon;
 import model.modelEmpleado;
 import model.modelLogin;
 import view.viewPantallaPrincipal;
@@ -26,18 +27,20 @@ public class controllerLogin {
         this.modeloL = modeloL;
         this.vista = vista;
         vista.setVisible(true);
+        vista.setTitle("ZOOMANIA");
+        vista.setIconImage(new ImageIcon(getClass().getResource("/imagenes/leon_JF.png")).getImage());
     }
 
     public void inicialControl() {
         vista.getBtiniciarsesion().addActionListener(l -> abrirPrincipal());
-        vista.getJbtnClose().addActionListener(l->System.exit(0));
+        vista.getJbtnClose().addActionListener(l -> System.exit(0));
     }
 
     public void abrirPrincipal() {
 //        viewPantallaPrincipal vistaP = new viewPantallaPrincipal();
         if (mivalidacion.validarLogin(vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText())) {
             viewPantallaPrincipal vistap = new viewPantallaPrincipal();
-            controllerPantallaprincipal controller = new controllerPantallaprincipal(vistap,vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText());
+            controllerPantallaprincipal controller = new controllerPantallaprincipal(vistap, vista.getTxtusuarioingreso().getText(), vista.getTxtcontraingreso().getText());
             controller.iniciaControl();
             vista.dispose();
         }
