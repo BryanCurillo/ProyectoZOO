@@ -47,13 +47,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jlblCedulaPP1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         CrudPersonal = new javax.swing.JButton();
+        CrudAnimal = new javax.swing.JButton();
+        CrudClientes = new javax.swing.JButton();
         CrudAlimento = new javax.swing.JButton();
+        CrudTicket = new javax.swing.JButton();
         CrudDieta = new javax.swing.JButton();
         CrudProveedor = new javax.swing.JButton();
-        CrudTicket = new javax.swing.JButton();
-        CrudClientes = new javax.swing.JButton();
-        CrudAnimal = new javax.swing.JButton();
         barramenus = new javax.swing.JMenuBar();
         MenuPersonal = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
@@ -188,17 +189,37 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         btnCerrarSesion.setToolTipText("Vaciar pantalla");
         btnCerrarSesion.setBorder(null);
 
+        jPanel4.setBackground(new java.awt.Color(144, 183, 125));
+
         CrudPersonal.setBackground(new java.awt.Color(144, 183, 125));
         CrudPersonal.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
         CrudPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario (1).png"))); // NOI18N
         CrudPersonal.setText("Personal");
         CrudPersonal.setBorder(null);
 
+        CrudAnimal.setBackground(new java.awt.Color(144, 183, 125));
+        CrudAnimal.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (3).png"))); // NOI18N
+        CrudAnimal.setText("Animales");
+        CrudAnimal.setBorder(null);
+
+        CrudClientes.setBackground(new java.awt.Color(144, 183, 125));
+        CrudClientes.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente (1).png"))); // NOI18N
+        CrudClientes.setText("Clientes");
+        CrudClientes.setBorder(null);
+
         CrudAlimento.setBackground(new java.awt.Color(144, 183, 125));
         CrudAlimento.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
         CrudAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alimentos-para-mascotas (3).png"))); // NOI18N
         CrudAlimento.setText("Alimento");
         CrudAlimento.setBorder(null);
+
+        CrudTicket.setBackground(new java.awt.Color(144, 183, 125));
+        CrudTicket.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (3).png"))); // NOI18N
+        CrudTicket.setText("Tickets");
+        CrudTicket.setBorder(null);
 
         CrudDieta.setBackground(new java.awt.Color(144, 183, 125));
         CrudDieta.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
@@ -212,59 +233,55 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         CrudProveedor.setText("Proveedor");
         CrudProveedor.setBorder(null);
 
-        CrudTicket.setBackground(new java.awt.Color(144, 183, 125));
-        CrudTicket.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        CrudTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (3).png"))); // NOI18N
-        CrudTicket.setText("Tickets");
-        CrudTicket.setBorder(null);
-
-        CrudClientes.setBackground(new java.awt.Color(144, 183, 125));
-        CrudClientes.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        CrudClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente (1).png"))); // NOI18N
-        CrudClientes.setText("Clientes");
-        CrudClientes.setBorder(null);
-
-        CrudAnimal.setBackground(new java.awt.Color(144, 183, 125));
-        CrudAnimal.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        CrudAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (3).png"))); // NOI18N
-        CrudAnimal.setText("Animales");
-        CrudAnimal.setBorder(null);
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CrudPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(CrudProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(CrudPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CrudProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-            .addComponent(CrudAlimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudTicket, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudDieta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudPersonal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(CrudAnimal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(CrudPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CrudAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CrudAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CrudTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CrudProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CrudClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CrudDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 460));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 240, 450));
 
         MenuPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario.png"))); // NOI18N
         MenuPersonal.setText("Personal");
@@ -450,6 +467,7 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jlblCedulaPP;
     private javax.swing.JLabel jlblCedulaPP1;
     private javax.swing.JLabel jlblFotoPP;

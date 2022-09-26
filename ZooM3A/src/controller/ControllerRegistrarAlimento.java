@@ -189,22 +189,26 @@ public class ControllerRegistrarAlimento {
     }
 
     public void llenarDatosProv() {
-        vistaRegAlimento.getTxtidAli().setVisible(false);
-        vistaRegAlimento.getTxtidPorv().setVisible(false);
+        if (vistaRegAlimento.getTabladlg().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegAlimento.getTabladlg(), "No ha seleccionado ningun proveedor");
+        } else {
+            vistaRegAlimento.getTxtidAli().setVisible(false);
+            vistaRegAlimento.getTxtidPorv().setVisible(false);
 
-        int fila = vistaRegAlimento.getTabladlg().getSelectedRow();
+            int fila = vistaRegAlimento.getTabladlg().getSelectedRow();
 //        int idProv = Integer.parseInt(vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString());
-        String nombre = vistaRegAlimento.getTabladlg().getValueAt(fila, 1).toString(),
-                ciudad = vistaRegAlimento.getTabladlg().getValueAt(fila, 2).toString(),
-                telefono = vistaRegAlimento.getTabladlg().getValueAt(fila, 3).toString(),
-                id = vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString();
+            String nombre = vistaRegAlimento.getTabladlg().getValueAt(fila, 1).toString(),
+                    ciudad = vistaRegAlimento.getTabladlg().getValueAt(fila, 2).toString(),
+                    telefono = vistaRegAlimento.getTabladlg().getValueAt(fila, 3).toString(),
+                    id = vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString();
 
-        vistaRegAlimento.getTxtidPorv().setText(id);
-        vistaRegAlimento.getTxtnombreProv().setText(nombre);
-        vistaRegAlimento.getTxtciudadProv().setText(ciudad);
-        vistaRegAlimento.getTxttelefonoProv().setText(telefono);
-        vistaRegAlimento.getjDlgProveedor().dispose();
-        vistaRegAlimento.getTxtbuscardlg().setText("");
+            vistaRegAlimento.getTxtidPorv().setText(id);
+            vistaRegAlimento.getTxtnombreProv().setText(nombre);
+            vistaRegAlimento.getTxtciudadProv().setText(ciudad);
+            vistaRegAlimento.getTxttelefonoProv().setText(telefono);
+            vistaRegAlimento.getjDlgProveedor().dispose();
+            vistaRegAlimento.getTxtbuscardlg().setText("");
+        }
     }
 
     public void abrirDlg() {

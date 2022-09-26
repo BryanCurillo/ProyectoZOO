@@ -251,20 +251,24 @@ public class ControllerRegistrarHabitad {
     }
 
     public void llenarDatosZoologo() {
-        vistaRegHabitat.getTxtidHabitadNoborrar().setVisible(false);
-        vistaRegHabitat.getTxtidZoologoNoborrar().setVisible(false);
+        if (vistaRegHabitat.getTabladlg().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegHabitat.getTabladlg(), "No ha seleccionado ningun zoologo");
+        } else {
+            vistaRegHabitat.getTxtidHabitadNoborrar().setVisible(false);
+            vistaRegHabitat.getTxtidZoologoNoborrar().setVisible(false);
 
-        int fila = vistaRegHabitat.getTabladlg().getSelectedRow();
+            int fila = vistaRegHabitat.getTabladlg().getSelectedRow();
 //        int idProv = Integer.parseInt(vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString());
-        String nombre = vistaRegHabitat.getTabladlg().getValueAt(fila, 1).toString(),
-                rama = vistaRegHabitat.getTabladlg().getValueAt(fila, 2).toString(),
-                id = vistaRegHabitat.getTabladlg().getValueAt(fila, 0).toString();
+            String nombre = vistaRegHabitat.getTabladlg().getValueAt(fila, 1).toString(),
+                    rama = vistaRegHabitat.getTabladlg().getValueAt(fila, 2).toString(),
+                    id = vistaRegHabitat.getTabladlg().getValueAt(fila, 0).toString();
 
-        vistaRegHabitat.getTxtidZoologoNoborrar().setText(id);
-        vistaRegHabitat.getTxtnombreZol().setText(nombre);
-        vistaRegHabitat.getTxtramaZol().setText(rama);
-        vistaRegHabitat.getjDlgZoologo().dispose();
-        vistaRegHabitat.getTxtbuscardlg().setText("");
+            vistaRegHabitat.getTxtidZoologoNoborrar().setText(id);
+            vistaRegHabitat.getTxtnombreZol().setText(nombre);
+            vistaRegHabitat.getTxtramaZol().setText(rama);
+            vistaRegHabitat.getjDlgZoologo().dispose();
+            vistaRegHabitat.getTxtbuscardlg().setText("");
+        }
     }
 
     public void abrirDlg() {

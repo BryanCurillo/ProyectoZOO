@@ -52,6 +52,7 @@ public class controllerPantallaprincipal {
     private viewPantallaPrincipal vista;
     private String usuario;
     private String password;
+    private String rol;
 
     public controllerPantallaprincipal() {
     }
@@ -63,6 +64,7 @@ public class controllerPantallaprincipal {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
         cargarDatosEmpleado();
+        asignarBotones();
         vista.setTitle("ZOOMANIA");
         vista.setIconImage(new ImageIcon(getClass().getResource("/imagenes/leon_JF.png")).getImage());
     }
@@ -88,13 +90,6 @@ public class controllerPantallaprincipal {
         vista.getMIventaTickets().addActionListener(l -> vistaVentaTicket());
         vista.getMIconsultaFacturas().addActionListener(l -> vistaFACTURA());
         ////BOTONES
-        vista.getCrudAlimento().addActionListener(l ->vistaAlimento());
-        vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
-        vista.getCrudClientes().addActionListener(l -> vistaCliente());
-        vista.getCrudDieta().addActionListener(l -> vistaDieta());
-        vista.getCrudPersonal().addActionListener(l -> vistaEmpleado());
-        vista.getCrudProveedor().addActionListener(l -> vistaProveedor());
-        vista.getCrudTicket().addActionListener(l -> vistaFACTURA());
 
     }
 
@@ -106,11 +101,11 @@ public class controllerPantallaprincipal {
 
         listaE.stream().forEach(emp -> {
             vista.getJlblNombrePP().setText(emp.getNombre());
-            vista.getJlblrolPP().setText(emp.getApellido());
+            vista.getJlblrolPP().setText(emp.getApellido());//NOMBRE DEL ROL
             vista.getJlblCedulaPP().setText(emp.getCedula());
             Image foto = emp.getFoto();
             if (foto != null) {
-                foto = foto.getScaledInstance(93, 91, Image.SCALE_SMOOTH);
+                foto = foto.getScaledInstance(98, 106, Image.SCALE_SMOOTH);
                 ImageIcon icono = new ImageIcon(foto);
 
                 DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
@@ -120,7 +115,88 @@ public class controllerPantallaprincipal {
                 ImageIcon iconoUsuario = new ImageIcon("src\\imagenes\\usuario.png");
                 vista.getJlblFotoPP().setIcon(iconoUsuario);
             }
+            rol = emp.getApellido();
         });
+        System.out.println(rol);
+    }
+
+    public void asignarBotones() {
+        switch (rol) {
+            case "Gerente":
+                //BOTONES LATERALES
+                vista.getCrudAlimento().addActionListener(l -> vistaAlimento());
+                vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
+                vista.getCrudClientes().addActionListener(l -> vistaCliente());
+                vista.getCrudDieta().addActionListener(l -> vistaDieta());
+                vista.getCrudPersonal().addActionListener(l -> vistaEmpleado());
+                vista.getCrudProveedor().addActionListener(l -> vistaProveedor());
+                vista.getCrudTicket().addActionListener(l -> vistaFACTURA());
+                break;
+            case "Cuidador":
+                //LATERALES
+                vista.getCrudAlimento().addActionListener(l -> vistaAlimento());
+                vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
+                vista.getCrudDieta().addActionListener(l -> vistaDieta());
+                vista.getCrudPersonal().setVisible(false);
+                vista.getCrudPersonal().setEnabled(false);
+                vista.getCrudTicket().setVisible(false);
+                vista.getCrudTicket().setEnabled(false);
+                vista.getCrudProveedor().setVisible(false);
+                vista.getCrudProveedor().setEnabled(false);
+                vista.getCrudClientes().setVisible(false);
+                vista.getCrudClientes().setEnabled(false);
+                //MENU
+                vista.getMenuPersonal().setVisible(false);
+                vista.getMenuPersonal().setEnabled(false);
+                vista.getMenuTicket().setVisible(false);
+                vista.getMenuTicket().setEnabled(false);
+                vista.getMenuProveedor().setVisible(false);
+                vista.getMenuProveedor().setEnabled(false);
+                vista.getMenuClientes().setVisible(false);
+                vista.getMenuClientes().setEnabled(false);
+                vista.getMenuFactura().setVisible(false);
+                vista.getMenuFactura().setEnabled(false);
+                break;
+            case "Zoologo":
+                //LATERALES
+                vista.getCrudAlimento().addActionListener(l -> vistaAlimento());
+                vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
+                vista.getCrudDieta().addActionListener(l -> vistaDieta());
+                vista.getCrudPersonal().setVisible(false);
+                vista.getCrudPersonal().setEnabled(false);
+                vista.getCrudTicket().setVisible(false);
+                vista.getCrudTicket().setEnabled(false);
+                vista.getCrudProveedor().setVisible(false);
+                vista.getCrudProveedor().setEnabled(false);
+                vista.getCrudClientes().setVisible(false);
+                vista.getCrudClientes().setEnabled(false);
+                //MENU
+                vista.getMenuPersonal().setVisible(false);
+                vista.getMenuPersonal().setEnabled(false);
+                vista.getMenuTicket().setVisible(false);
+                vista.getMenuTicket().setEnabled(false);
+                vista.getMenuProveedor().setVisible(false);
+                vista.getMenuProveedor().setEnabled(false);
+                vista.getMenuClientes().setVisible(false);
+                vista.getMenuClientes().setEnabled(false);
+                vista.getMenuFactura().setVisible(false);
+                vista.getMenuFactura().setEnabled(false);
+                break;
+            case "Secretaria":
+                //BOTONES LATERALES
+                vista.getCrudAlimento().addActionListener(l -> vistaAlimento());
+                vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
+                vista.getCrudClientes().addActionListener(l -> vistaCliente());
+                vista.getCrudDieta().addActionListener(l -> vistaDieta());
+                vista.getCrudPersonal().addActionListener(l -> vistaEmpleado());
+                vista.getCrudProveedor().addActionListener(l -> vistaProveedor());
+                vista.getCrudTicket().addActionListener(l -> vistaVentaTicket());
+                //BOTONES MENU
+                vista.getMIActualizarPrecio().setVisible(false);
+                vista.getMIActualizarPrecio().setEnabled(false);
+                break;
+            default:
+        }
     }
 
     //CERRAR SESION

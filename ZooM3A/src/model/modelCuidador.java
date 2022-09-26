@@ -65,12 +65,11 @@ public class modelCuidador extends Cuidador {
         List<Cuidador> listaCuidador = new ArrayList<>();
         String sql = "select c.cui_id,(p.per_nombre||' '||p.per_apellido) as nombre ,c.cui_tiposangre"
                 + " from cuidador c join empleado e on(e.emp_id=c.cui_idempleado)"
-                + " join persona p on (e.emp_cedula=p.per_cedula)"
-                + " where c.cui_estado=true"
+                + " join persona p on (e.emp_cedula=p.per_cedula) "
+                + "  where c.cui_estado=true"
                 + "  and lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(c.cui_tiposangre) like '%" + busqueda + "%' ";
-        //                + "  or a.ali_precio=" + busqueda
 
         ResultSet rs = mpgc.consulta(sql);
         try {

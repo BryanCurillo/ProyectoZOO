@@ -74,6 +74,32 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        txtidZoologoNoborrar1 = new javax.swing.JTextField();
+        txtidHabitadNoborrar1 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        txtOtrotipo1 = new javax.swing.JTextField();
+        txtOtrobloque1 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtnombreZol1 = new javax.swing.JTextField();
+        txtramaZol1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jbtnSelecZoologo1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        comboTipoHab1 = new javax.swing.JComboBox<>();
+        jSpiCapacidad1 = new javax.swing.JSpinner();
+        comboUbicacion1 = new javax.swing.JComboBox<>();
+        btcancelar1 = new javax.swing.JButton();
+        btregistrar1 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jDlgZoologo.setSize(new java.awt.Dimension(545, 310));
         jDlgZoologo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -136,6 +162,7 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
         jDlgZoologo.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         setBorder(null);
+        setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(txtidZoologoNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
         getContentPane().add(txtidHabitadNoborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
@@ -245,25 +272,154 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 603));
 
+        jInternalFrame1.setBorder(null);
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jInternalFrame1.getContentPane().add(txtidZoologoNoborrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
+        jInternalFrame1.getContentPane().add(txtidHabitadNoborrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 0, 0));
+
+        jPanel3.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(61, 131, 97));
+        jLabel20.setText("HABITATS");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 520, -1, -1));
+
+        txtOtrotipo1.setBackground(new java.awt.Color(255, 253, 227));
+        txtOtrotipo1.setBorder(null);
+        jPanel3.add(txtOtrotipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 153, 150, 30));
+
+        txtOtrobloque1.setBackground(new java.awt.Color(255, 253, 227));
+        txtOtrobloque1.setBorder(null);
+        jPanel3.add(txtOtrobloque1, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 279, 150, 30));
+
+        jPanel4.setBackground(new java.awt.Color(210, 215, 159));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel21.setText("NOMBRE:");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 55, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel22.setText("RAMA:");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 30));
+
+        txtnombreZol1.setBackground(new java.awt.Color(255, 253, 227));
+        txtnombreZol1.setBorder(null);
+        jPanel4.add(txtnombreZol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 260, 30));
+
+        txtramaZol1.setBackground(new java.awt.Color(255, 253, 227));
+        txtramaZol1.setBorder(null);
+        jPanel4.add(txtramaZol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 260, 30));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("ZOOLOGO ACARGO:");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 30));
+
+        jbtnSelecZoologo1.setBackground(new java.awt.Color(255, 253, 227));
+        jbtnSelecZoologo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jbtnSelecZoologo1.setText("Seleccionar");
+        jbtnSelecZoologo1.setBorder(null);
+        jbtnSelecZoologo1.setOpaque(true);
+        jPanel4.add(jbtnSelecZoologo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 6, 100, 30));
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 390, -1, 141));
+
+        jLabel15.setFont(new java.awt.Font("MS Gothic", 1, 44)); // NOI18N
+        jLabel15.setText("REGISTRO DE HABITATS");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
+        jLabel12.setText("DATOS DE ZOOLOGO A CARGO");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+
+        comboTipoHab1.setBackground(new java.awt.Color(255, 253, 227));
+        comboTipoHab1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo", "Pradera", "Bosque", "Desierto", "Montaña", "Marisma", "Sabana", "Región polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Río", "Arrecife de coral", "Océano", "Playa", "Otro..." }));
+        comboTipoHab1.setBorder(null);
+        jPanel3.add(comboTipoHab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 111, 260, 30));
+
+        jSpiCapacidad1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpiCapacidad1.setBorder(null);
+        jPanel3.add(jSpiCapacidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 195, 260, 30));
+
+        comboUbicacion1.setBackground(new java.awt.Color(255, 253, 227));
+        comboUbicacion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar bloque", "A", "B", "C", "D", "E", "F", "G", "H", "I", "Otro..." }));
+        comboUbicacion1.setBorder(null);
+        jPanel3.add(comboUbicacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 243, 260, 30));
+
+        btcancelar1.setBackground(new java.awt.Color(210, 215, 159));
+        btcancelar1.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btcancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-x.png"))); // NOI18N
+        btcancelar1.setText("CANCELAR");
+        btcancelar1.setBorder(null);
+        jPanel3.add(btcancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 540, -1, -1));
+
+        btregistrar1.setBackground(new java.awt.Color(210, 215, 159));
+        btregistrar1.setFont(new java.awt.Font("MS Gothic", 1, 28)); // NOI18N
+        btregistrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/comprobado (1).png"))); // NOI18N
+        btregistrar1.setText("REGISTRARSE");
+        btregistrar1.setBorder(null);
+        jPanel3.add(btregistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("UBICACION(BLOQUE):");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel23.setText("CAPACIDAD:");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel24.setText("TIPO DE HABITAD:");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 30));
+
+        jLabel25.setFont(new java.awt.Font("MS Gothic", 1, 48)); // NOI18N
+        jLabel25.setText("HABITATS");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 523, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/earth (2).png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 460, 410));
+
+        jInternalFrame1.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 603));
+
+        getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcancelar;
+    private javax.swing.JButton btcancelar1;
     private javax.swing.JButton btnseleccionardlg;
     private javax.swing.JButton btregistrar;
+    private javax.swing.JButton btregistrar1;
     private javax.swing.JComboBox<String> comboTipoHab;
+    private javax.swing.JComboBox<String> comboTipoHab1;
     private javax.swing.JComboBox<String> comboUbicacion;
+    private javax.swing.JComboBox<String> comboUbicacion1;
     private javax.swing.JDialog jDlgZoologo;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -271,22 +427,32 @@ public class viewRegistroHabitad extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JSpinner jSpiCapacidad;
+    private javax.swing.JSpinner jSpiCapacidad1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jbtnSelecZoologo;
+    private javax.swing.JButton jbtnSelecZoologo1;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JTable tabladlg;
     private javax.swing.JTextField txtOtrobloque;
+    private javax.swing.JTextField txtOtrobloque1;
     private javax.swing.JTextField txtOtrotipo;
+    private javax.swing.JTextField txtOtrotipo1;
     private javax.swing.JTextField txtbuscardlg;
     private javax.swing.JTextField txtidHabitadNoborrar;
+    private javax.swing.JTextField txtidHabitadNoborrar1;
     private javax.swing.JTextField txtidZoologoNoborrar;
+    private javax.swing.JTextField txtidZoologoNoborrar1;
     private javax.swing.JTextField txtnombreZol;
+    private javax.swing.JTextField txtnombreZol1;
     private javax.swing.JTextField txtramaZol;
+    private javax.swing.JTextField txtramaZol1;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBtcancelar() {

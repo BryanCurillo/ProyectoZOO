@@ -200,31 +200,39 @@ public class ControllerRegistrarDieta {
     }
 
     public void llenarDatosAlimento() {
-        vistaRegDieta.getTxtidAlimentoNB().setVisible(false);
-        vistaRegDieta.getTxtidAnimalNB().setVisible(false);
-        vistaRegDieta.getTxtidDietaNB().setVisible(false);
+        if (vistaRegDieta.getTabladlgAlimento().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegDieta.getTabladlgAlimento(), "No ha seleccionado ningun alimento");
+        } else {
+            vistaRegDieta.getTxtidAlimentoNB().setVisible(false);
+            vistaRegDieta.getTxtidAnimalNB().setVisible(false);
+            vistaRegDieta.getTxtidDietaNB().setVisible(false);
 
-        int fila = vistaRegDieta.getTabladlgAlimento().getSelectedRow();
-        vistaRegDieta.getTxtidAlimentoNB().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 0).toString());
-        vistaRegDieta.getTxtnombrealiemento().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 1).toString());
-        vistaRegDieta.getTxtAdescripcionAlimento().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 2).toString());
+            int fila = vistaRegDieta.getTabladlgAlimento().getSelectedRow();
+            vistaRegDieta.getTxtidAlimentoNB().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 0).toString());
+            vistaRegDieta.getTxtnombrealiemento().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 1).toString());
+            vistaRegDieta.getTxtAdescripcionAlimento().setText(vistaRegDieta.getTabladlgAlimento().getValueAt(fila, 2).toString());
 
-        vistaRegDieta.getDlgAlimento().dispose();
-        vistaRegDieta.getTxtbuscardlgAlimento().setText("");
+            vistaRegDieta.getDlgAlimento().dispose();
+            vistaRegDieta.getTxtbuscardlgAlimento().setText("");
+        }
     }
 
     public void llenarDatosAnimal() {
-        vistaRegDieta.getTxtidAlimentoNB().setVisible(false);
-        vistaRegDieta.getTxtidAnimalNB().setVisible(false);
-        vistaRegDieta.getTxtidDietaNB().setVisible(false);
+        if (vistaRegDieta.getTabladlgAnimal().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegDieta.getTabladlgAnimal(), "No ha seleccionado ningun animal");
+        } else {
+            vistaRegDieta.getTxtidAlimentoNB().setVisible(false);
+            vistaRegDieta.getTxtidAnimalNB().setVisible(false);
+            vistaRegDieta.getTxtidDietaNB().setVisible(false);
 
-        int fila = vistaRegDieta.getTabladlgAnimal().getSelectedRow();
-        vistaRegDieta.getTxtidAnimalNB().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 0).toString());
-        vistaRegDieta.getTxtnombreanimal().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 1).toString());
-        vistaRegDieta.getTxtespecie().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 2).toString());
+            int fila = vistaRegDieta.getTabladlgAnimal().getSelectedRow();
+            vistaRegDieta.getTxtidAnimalNB().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 0).toString());
+            vistaRegDieta.getTxtnombreanimal().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 1).toString());
+            vistaRegDieta.getTxtespecie().setText(vistaRegDieta.getTabladlgAnimal().getValueAt(fila, 2).toString());
 
-        vistaRegDieta.getDlgAnimal().dispose();
-        vistaRegDieta.getTxtbuscardlgAnimal().setText("");
+            vistaRegDieta.getDlgAnimal().dispose();
+            vistaRegDieta.getTxtbuscardlgAnimal().setText("");
+        }
     }
 
     public void abrirDlgAlimento() {

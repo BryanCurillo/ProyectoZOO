@@ -426,7 +426,7 @@ public class ControllerRegistrarAnimal {
         String busqueda = vistaRegAni.getTxtbuscardlgCui().getText().toLowerCase().trim();
         listaCui = modeloCui.busquedaincremental(busqueda);
 //        }
-
+        System.out.println("listacuidador="+listaCui.size());
         i = 0;
         listaCui.stream().sorted((x, y)
                 -> x.getNombre().compareToIgnoreCase(y.getNombre())).forEach(emp -> {
@@ -439,20 +439,24 @@ public class ControllerRegistrarAnimal {
     }
 
     public void llenarDatosCuidador() {
-        vistaRegAni.getTxtidCuidadorNoborrar().setVisible(false);
-        vistaRegAni.getTxtidHabitatNoborrar().setVisible(false);
+        if (vistaRegAni.getTabladlgCuidador().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegAni.getTabladlgCuidador(), "No ha seleccionado ningun cuidador");
+        } else {
+            vistaRegAni.getTxtidCuidadorNoborrar().setVisible(false);
+            vistaRegAni.getTxtidHabitatNoborrar().setVisible(false);
 
-        int fila = vistaRegAni.getTabladlgCuidador().getSelectedRow();
+            int fila = vistaRegAni.getTabladlgCuidador().getSelectedRow();
 //        int idProv = Integer.parseInt(vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString());
-        String nombre = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 1).toString(),
-                tiposangre = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 2).toString(),
-                id = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 0).toString();
+            String nombre = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 1).toString(),
+                    tiposangre = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 2).toString(),
+                    id = vistaRegAni.getTabladlgCuidador().getValueAt(fila, 0).toString();
 
-        vistaRegAni.getTxtidCuidadorNoborrar().setText(id);
-        vistaRegAni.getTxtNombreCuidador().setText(nombre);
-        vistaRegAni.getTxtTipoSangre().setText(tiposangre);
-        vistaRegAni.getjDlgCuidador().dispose();
-        vistaRegAni.getTxtbuscardlgCui().setText("");
+            vistaRegAni.getTxtidCuidadorNoborrar().setText(id);
+            vistaRegAni.getTxtNombreCuidador().setText(nombre);
+            vistaRegAni.getTxtTipoSangre().setText(tiposangre);
+            vistaRegAni.getjDlgCuidador().dispose();
+            vistaRegAni.getTxtbuscardlgCui().setText("");
+        }
     }
 
     public void abrirDlgHabitat() {
@@ -487,20 +491,24 @@ public class ControllerRegistrarAnimal {
     }
 
     public void llenarDatosHabitat() {
-        vistaRegAni.getTxtidCuidadorNoborrar().setVisible(false);
-        vistaRegAni.getTxtidHabitatNoborrar().setVisible(false);
+        if (vistaRegAni.getTabladlgHabitat().getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(vistaRegAni.getTabladlgHabitat(), "No ha seleccionado ningun habitat");
+        } else {
+            vistaRegAni.getTxtidCuidadorNoborrar().setVisible(false);
+            vistaRegAni.getTxtidHabitatNoborrar().setVisible(false);
 
-        int fila = vistaRegAni.getTabladlgHabitat().getSelectedRow();
+            int fila = vistaRegAni.getTabladlgHabitat().getSelectedRow();
 //        int idProv = Integer.parseInt(vistaRegAlimento.getTabladlg().getValueAt(fila, 0).toString());
-        String tipo = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 1).toString(),
-                ubicacion = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 2).toString(),
-                id = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 0).toString();
+            String tipo = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 1).toString(),
+                    ubicacion = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 2).toString(),
+                    id = vistaRegAni.getTabladlgHabitat().getValueAt(fila, 0).toString();
 
-        vistaRegAni.getTxtidHabitatNoborrar().setText(id);
-        vistaRegAni.getTxtTipoHabitat().setText(tipo);
-        vistaRegAni.getTxtUbicacion().setText(ubicacion);
-        vistaRegAni.getjDlgHabitat().dispose();
-        vistaRegAni.getTxtbuscardlgHab().setText("");
+            vistaRegAni.getTxtidHabitatNoborrar().setText(id);
+            vistaRegAni.getTxtTipoHabitat().setText(tipo);
+            vistaRegAni.getTxtUbicacion().setText(ubicacion);
+            vistaRegAni.getjDlgHabitat().dispose();
+            vistaRegAni.getTxtbuscardlgHab().setText("");
+        }
     }
 
 }
