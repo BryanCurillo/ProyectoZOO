@@ -48,7 +48,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JToolBar.Separator();
         txtBuscar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JToolBar.Separator();
-        jBtnActualizar = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JToolBar.Separator();
         jLabel1 = new javax.swing.JLabel();
 
@@ -136,16 +135,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
         jToolBar1.add(jSeparator5);
-
-        jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
-        jBtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar-pagina.png"))); // NOI18N
-        jBtnActualizar.setText("ACTUALIZAR");
-        jBtnActualizar.setBorder(null);
-        jBtnActualizar.setFocusable(false);
-        jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnActualizar);
         jToolBar1.add(jSeparator7);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 115, 930, 50));
@@ -164,7 +153,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnActualizar;
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnImprimir;
     private javax.swing.JLabel jLabel1;
@@ -182,14 +170,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
-
-    public JButton getjBtnActualizar() {
-        return jBtnActualizar;
-    }
-
-    public void setjBtnActualizar(JButton jBtnActualizar) {
-        this.jBtnActualizar = jBtnActualizar;
-    }
 
     public JButton getjBtnBuscar() {
         return jBtnBuscar;

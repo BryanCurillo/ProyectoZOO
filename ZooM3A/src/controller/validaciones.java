@@ -70,8 +70,8 @@ public class validaciones {
 //    }
 
     public boolean validarCedula(String cedula) {
-//        boolean val = false;
-        boolean val = true;
+        boolean val = false;
+//        boolean val = true;
         //Divide la cadena en los 10 numeros
         //Integer.parseInt sirve para transformar una cadena a entero. 
         //subString es un metodo de string(Desde, hasta)

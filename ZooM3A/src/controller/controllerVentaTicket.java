@@ -55,16 +55,9 @@ public class controllerVentaTicket {
     private double TOTAL;
     private double TOTALDESC;
     SimpleDateFormat formatofecha = new SimpleDateFormat("dd-MM-yyyy");
-//
-//    public controllerVentaTicket(viewVentaTicket vistaVenta, ModelTickets modelTicket, ModelCliente modelCliente) {
-//        this.vistaVenta = vistaVenta;
-//        this.modelTicket = modelTicket;
-//        this.modelCliente = modelCliente;
-//        vistaVenta.toFront();
-//        datosInicial();
-//        cargarPrecios();
-//        vistaVenta.setVisible(true);
-//    }
+
+    public controllerVentaTicket() {
+    }
 
     public controllerVentaTicket(viewPantallaPrincipal vistaP, viewVentaTicket vistaVenta, ModelTickets modelTicket, ModelCliente modelCliente) {
         this.vistaP = vistaP;
@@ -446,7 +439,7 @@ public class controllerVentaTicket {
         datosInicial();
     }
 
-    private void imprimeFactura(int idFactura) {
+    public void imprimeFactura(int idFactura) {
         //Instanciamos la conexion proyecto
         modelPGconexion con = new modelPGconexion();
 

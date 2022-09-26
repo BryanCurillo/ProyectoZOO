@@ -60,7 +60,7 @@ public class ModelFactura extends factura {
     public List<factura> getFacturas() {
         List<factura> listaFacturas = new ArrayList<>();
 
-        String sql = "Select enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
+        String sql = "Select enca.enca_id, enca.enca_fecha, enca.enca_idcliente,  "
                 + "		cli.cli_id, cli.cli_cedula, (per.per_nombre||' '||per.per_apellido) as nombre, per.per_telefono, per.per_correo, cli.cli_direccion,  "
                 + "		count(*) as Items, sum(det.det_cantidad) as cantidadTotal  ,sum(det.det_total) as sumaBoletos,  "
                 + "		pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total  "
@@ -91,11 +91,10 @@ public class ModelFactura extends factura {
                 fac.setItems(rs.getInt(10));
                 fac.setCantTotal(rs.getInt(11));
                 //PIE
-                fac.setPie_id(rs.getInt(12));
-                fac.setPie_descuento(rs.getDouble(13));
+                fac.setPie_id(rs.getInt(13));
                 fac.setPie_subTotal(rs.getDouble(14));
-                fac.setPie_TOTAL(rs.getDouble(15));
-
+                fac.setPie_descuento(rs.getDouble(15));
+                fac.setPie_TOTAL(rs.getDouble(16));
                 listaFacturas.add(fac);
 
             }
@@ -147,10 +146,10 @@ public class ModelFactura extends factura {
                 fac.setItems(rs.getInt(10));
                 fac.setCantTotal(rs.getInt(11));
                 //PIE
-                fac.setPie_id(rs.getInt(12));
-                fac.setPie_descuento(rs.getDouble(13));
+                fac.setPie_id(rs.getInt(13));
                 fac.setPie_subTotal(rs.getDouble(14));
-                fac.setPie_TOTAL(rs.getDouble(15));
+                fac.setPie_descuento(rs.getDouble(15));
+                fac.setPie_TOTAL(rs.getDouble(16));
 
                 listaFacturas.add(fac);
 

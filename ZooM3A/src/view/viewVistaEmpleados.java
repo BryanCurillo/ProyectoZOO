@@ -49,7 +49,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jSeparator6 = new javax.swing.JToolBar.Separator();
         txtBuscar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JToolBar.Separator();
-        jBtnActualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(144, 183, 125));
@@ -164,16 +163,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
         jToolBar1.add(txtBuscar);
         jToolBar1.add(jSeparator5);
 
-        jBtnActualizar.setBackground(new java.awt.Color(210, 215, 159));
-        jBtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actualizar (1).png"))); // NOI18N
-        jBtnActualizar.setText("ACTUALIZAR");
-        jBtnActualizar.setBorder(null);
-        jBtnActualizar.setFocusable(false);
-        jBtnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnActualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnActualizar);
-
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 115, 930, 50));
 
         jLabel1.setBackground(new java.awt.Color(210, 215, 159));
@@ -190,7 +179,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnActualizar;
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnElimina;
     private javax.swing.JButton jBtnImprimir;
@@ -259,14 +247,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
 
     public void setJbtnAgregar(JButton jbtnAgregar) {
         this.jbtnAgregar = jbtnAgregar;
-    }
-
-    public JButton getjBtnActualizar() {
-        return jBtnActualizar;
-    }
-
-    public void setjBtnActualizar(JButton jBtnActualizar) {
-        this.jBtnActualizar = jBtnActualizar;
     }
 
     public JTextField getTxtBuscar() {

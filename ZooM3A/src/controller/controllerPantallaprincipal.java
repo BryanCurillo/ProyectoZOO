@@ -86,7 +86,15 @@ public class controllerPantallaprincipal {
         vista.getjMIagregarAnimal().addActionListener(l -> registroAnimal());
         vista.getjMIvisualizarAnimal().addActionListener(l -> vistaAnimal());
         vista.getMIventaTickets().addActionListener(l -> vistaVentaTicket());
-        vista.getMIconsultaFacturas().addActionListener(l->vistaFACTURA());
+        vista.getMIconsultaFacturas().addActionListener(l -> vistaFACTURA());
+        ////BOTONES
+        vista.getCrudAlimento().addActionListener(l ->vistaAlimento());
+        vista.getCrudAnimal().addActionListener(l -> vistaAnimal());
+        vista.getCrudClientes().addActionListener(l -> vistaCliente());
+        vista.getCrudDieta().addActionListener(l -> vistaDieta());
+        vista.getCrudPersonal().addActionListener(l -> vistaEmpleado());
+        vista.getCrudProveedor().addActionListener(l -> vistaProveedor());
+        vista.getCrudTicket().addActionListener(l -> vistaFACTURA());
 
     }
 

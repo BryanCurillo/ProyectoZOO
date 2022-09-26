@@ -54,6 +54,7 @@ public class ControllerVistaAlimento {
         vistaAli.getBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaAli.getBtnEliminar().addActionListener(l -> eliminarAlimento());
         vistaAli.getTxtbuscar().addKeyListener(busquedaIncren);
+        
     }
 
     public void abrirRegistro(int op) {

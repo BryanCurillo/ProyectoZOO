@@ -47,13 +47,13 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jlblCedulaPP1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        CrudPersonal = new javax.swing.JButton();
+        CrudAlimento = new javax.swing.JButton();
+        CrudDieta = new javax.swing.JButton();
+        CrudProveedor = new javax.swing.JButton();
+        CrudTicket = new javax.swing.JButton();
+        CrudClientes = new javax.swing.JButton();
+        CrudAnimal = new javax.swing.JButton();
         barramenus = new javax.swing.JMenuBar();
         MenuPersonal = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
@@ -188,78 +188,78 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         btnCerrarSesion.setToolTipText("Vaciar pantalla");
         btnCerrarSesion.setBorder(null);
 
-        jButton2.setBackground(new java.awt.Color(144, 183, 125));
-        jButton2.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario (1).png"))); // NOI18N
-        jButton2.setText("Personal");
-        jButton2.setBorder(null);
+        CrudPersonal.setBackground(new java.awt.Color(144, 183, 125));
+        CrudPersonal.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/datos-del-usuario (1).png"))); // NOI18N
+        CrudPersonal.setText("Personal");
+        CrudPersonal.setBorder(null);
 
-        jButton3.setBackground(new java.awt.Color(144, 183, 125));
-        jButton3.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alimentos-para-mascotas (3).png"))); // NOI18N
-        jButton3.setText("Alimento");
-        jButton3.setBorder(null);
+        CrudAlimento.setBackground(new java.awt.Color(144, 183, 125));
+        CrudAlimento.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alimentos-para-mascotas (3).png"))); // NOI18N
+        CrudAlimento.setText("Alimento");
+        CrudAlimento.setBorder(null);
 
-        jButton4.setBackground(new java.awt.Color(144, 183, 125));
-        jButton4.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta (1).png"))); // NOI18N
-        jButton4.setText("Dieta");
-        jButton4.setBorder(null);
+        CrudDieta.setBackground(new java.awt.Color(144, 183, 125));
+        CrudDieta.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta (1).png"))); // NOI18N
+        CrudDieta.setText("Dieta");
+        CrudDieta.setBorder(null);
 
-        jButton5.setBackground(new java.awt.Color(144, 183, 125));
-        jButton5.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor (1).png"))); // NOI18N
-        jButton5.setText("Proveedor");
-        jButton5.setBorder(null);
+        CrudProveedor.setBackground(new java.awt.Color(144, 183, 125));
+        CrudProveedor.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor (1).png"))); // NOI18N
+        CrudProveedor.setText("Proveedor");
+        CrudProveedor.setBorder(null);
 
-        jButton6.setBackground(new java.awt.Color(144, 183, 125));
-        jButton6.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (3).png"))); // NOI18N
-        jButton6.setText("Tickets");
-        jButton6.setBorder(null);
+        CrudTicket.setBackground(new java.awt.Color(144, 183, 125));
+        CrudTicket.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (3).png"))); // NOI18N
+        CrudTicket.setText("Tickets");
+        CrudTicket.setBorder(null);
 
-        jButton7.setBackground(new java.awt.Color(144, 183, 125));
-        jButton7.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente (1).png"))); // NOI18N
-        jButton7.setText("Clientes");
-        jButton7.setBorder(null);
+        CrudClientes.setBackground(new java.awt.Color(144, 183, 125));
+        CrudClientes.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente (1).png"))); // NOI18N
+        CrudClientes.setText("Clientes");
+        CrudClientes.setBorder(null);
 
-        jButton1.setBackground(new java.awt.Color(144, 183, 125));
-        jButton1.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (3).png"))); // NOI18N
-        jButton1.setText("Animales");
-        jButton1.setBorder(null);
+        CrudAnimal.setBackground(new java.awt.Color(144, 183, 125));
+        CrudAnimal.setFont(new java.awt.Font("MS Gothic", 0, 18)); // NOI18N
+        CrudAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (3).png"))); // NOI18N
+        CrudAnimal.setText("Animales");
+        CrudAnimal.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudAlimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudTicket, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudDieta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudPersonal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudProveedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(CrudAnimal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrudDieta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -411,6 +411,13 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CrudAlimento;
+    private javax.swing.JButton CrudAnimal;
+    private javax.swing.JButton CrudClientes;
+    private javax.swing.JButton CrudDieta;
+    private javax.swing.JButton CrudPersonal;
+    private javax.swing.JButton CrudProveedor;
+    private javax.swing.JButton CrudTicket;
     private javax.swing.JMenuItem JMIvistaCliente;
     private javax.swing.JMenuItem JMIvistaProveedor;
     private javax.swing.JMenuItem MIActualizarPrecio;
@@ -425,13 +432,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenuTicket;
     private javax.swing.JMenuBar barramenus;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JDesktopPane jDPprincipal;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMIAgregarDieta;
@@ -459,6 +459,62 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuanimales;
     // End of variables declaration//GEN-END:variables
 
+    public JButton getCrudAlimento() {
+        return CrudAlimento;
+    }
+
+    public void setCrudAlimento(JButton CrudAlimento) {
+        this.CrudAlimento = CrudAlimento;
+    }
+
+    public JButton getCrudAnimal() {
+        return CrudAnimal;
+    }
+
+    public void setCrudAnimal(JButton CrudAnimal) {
+        this.CrudAnimal = CrudAnimal;
+    }
+
+    public JButton getCrudClientes() {
+        return CrudClientes;
+    }
+
+    public void setCrudClientes(JButton CrudClientes) {
+        this.CrudClientes = CrudClientes;
+    }
+
+    public JButton getCrudDieta() {
+        return CrudDieta;
+    }
+
+    public void setCrudDieta(JButton CrudDieta) {
+        this.CrudDieta = CrudDieta;
+    }
+
+    public JButton getCrudPersonal() {
+        return CrudPersonal;
+    }
+
+    public void setCrudPersonal(JButton CrudPersonal) {
+        this.CrudPersonal = CrudPersonal;
+    }
+
+    public JButton getCrudProveedor() {
+        return CrudProveedor;
+    }
+
+    public void setCrudProveedor(JButton CrudProveedor) {
+        this.CrudProveedor = CrudProveedor;
+    }
+
+    public JButton getCrudTicket() {
+        return CrudTicket;
+    }
+
+    public void setCrudTicket(JButton CrudTicket) {
+        this.CrudTicket = CrudTicket;
+    }
+
     public JMenuItem getJMIvistaCliente() {
         return JMIvistaCliente;
     }
@@ -483,6 +539,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         this.MIActualizarPrecio = MIActualizarPrecio;
     }
 
+    public JMenuItem getMIconsultaFacturas() {
+        return MIconsultaFacturas;
+    }
+
+    public void setMIconsultaFacturas(JMenuItem MIconsultaFacturas) {
+        this.MIconsultaFacturas = MIconsultaFacturas;
+    }
+
     public JMenuItem getMIventaTickets() {
         return MIventaTickets;
     }
@@ -505,6 +569,14 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuDieta(JMenu MenuDieta) {
         this.MenuDieta = MenuDieta;
+    }
+
+    public JMenu getMenuFactura() {
+        return MenuFactura;
+    }
+
+    public void setMenuFactura(JMenu MenuFactura) {
+        this.MenuFactura = MenuFactura;
     }
 
     public JMenu getMenuHabitad() {
@@ -553,62 +625,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setBtnCerrarSesion(JButton btnCerrarSesion) {
         this.btnCerrarSesion = btnCerrarSesion;
-    }
-
-    public JButton getjButton1() {
-        return jButton1;
-    }
-
-    public void setjButton1(JButton jButton1) {
-        this.jButton1 = jButton1;
-    }
-
-    public JButton getjButton2() {
-        return jButton2;
-    }
-
-    public void setjButton2(JButton jButton2) {
-        this.jButton2 = jButton2;
-    }
-
-    public JButton getjButton3() {
-        return jButton3;
-    }
-
-    public void setjButton3(JButton jButton3) {
-        this.jButton3 = jButton3;
-    }
-
-    public JButton getjButton4() {
-        return jButton4;
-    }
-
-    public void setjButton4(JButton jButton4) {
-        this.jButton4 = jButton4;
-    }
-
-    public JButton getjButton5() {
-        return jButton5;
-    }
-
-    public void setjButton5(JButton jButton5) {
-        this.jButton5 = jButton5;
-    }
-
-    public JButton getjButton6() {
-        return jButton6;
-    }
-
-    public void setjButton6(JButton jButton6) {
-        this.jButton6 = jButton6;
-    }
-
-    public JButton getjButton7() {
-        return jButton7;
-    }
-
-    public void setjButton7(JButton jButton7) {
-        this.jButton7 = jButton7;
     }
 
     public JDesktopPane getjDPprincipal() {
@@ -809,22 +825,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
     public void setMenuanimales(JMenu menuanimales) {
         this.menuanimales = menuanimales;
-    }
-
-    public JMenuItem getMIconsultaFacturas() {
-        return MIconsultaFacturas;
-    }
-
-    public void setMIconsultaFacturas(JMenuItem MIconsultaFacturas) {
-        this.MIconsultaFacturas = MIconsultaFacturas;
-    }
-
-    public JMenu getMenuFactura() {
-        return MenuFactura;
-    }
-
-    public void setMenuFactura(JMenu MenuFactura) {
-        this.MenuFactura = MenuFactura;
     }
 
     

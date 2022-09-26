@@ -51,7 +51,6 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
         jSeparator8 = new javax.swing.JToolBar.Separator();
         txtbuscarAnimal = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JToolBar.Separator();
-        jBtnActualizarAnimal = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -155,16 +154,6 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
         txtbuscarAnimal.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtbuscarAnimal);
         jToolBar1.add(jSeparator6);
-
-        jBtnActualizarAnimal.setBackground(new java.awt.Color(210, 215, 159));
-        jBtnActualizarAnimal.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jBtnActualizarAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boton-actualizar.png"))); // NOI18N
-        jBtnActualizarAnimal.setText("ACTUALIZAR");
-        jBtnActualizarAnimal.setBorder(null);
-        jBtnActualizarAnimal.setFocusable(false);
-        jBtnActualizarAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnActualizarAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnActualizarAnimal);
         jToolBar1.add(jSeparator5);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 96, 940, 50));
@@ -181,7 +170,6 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnActualizarAnimal;
     private javax.swing.JButton jBtnBuscarAnimal;
     private javax.swing.JButton jBtnEliminarAnimal;
     private javax.swing.JButton jBtnImprimirAnimal;
@@ -204,14 +192,6 @@ public class viewVistaAnimal extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbtnAgregarAnimal;
     private javax.swing.JTextField txtbuscarAnimal;
     // End of variables declaration//GEN-END:variables
-
-    public JButton getjBtnActualizarAnimal() {
-        return jBtnActualizarAnimal;
-    }
-
-    public void setjBtnActualizarAnimal(JButton jBtnActualizarAnimal) {
-        this.jBtnActualizarAnimal = jBtnActualizarAnimal;
-    }
 
     public JButton getjBtnBuscarAnimal() {
         return jBtnBuscarAnimal;
