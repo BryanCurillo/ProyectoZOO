@@ -45,7 +45,8 @@ public class ControllerVistaCliente {
     int i = 0;
 
     DefaultTableModel estructuraTabla;
-    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+//    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat formatofecha = new SimpleDateFormat("dd-MM-yyyy");
 
     public ControllerVistaCliente() {
     }
@@ -129,7 +130,7 @@ public class ControllerVistaCliente {
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
         listaCli.stream().sorted((x, y)
-                -> x.getCli_cedula().compareToIgnoreCase(y.getCli_cedula())).forEach(emp -> {
+                -> x.getNombre().compareToIgnoreCase(y.getNombre())).forEach(emp -> {
             estructuraTabla.addRow(new Object[4]);
             vistaCli.getjTblCliente().setValueAt(emp.getCli_id(), i, 0);
             vistaCli.getjTblCliente().setValueAt(emp.getCedula(), i, 1);
@@ -138,6 +139,7 @@ public class ControllerVistaCliente {
             vistaCli.getjTblCliente().setValueAt(emp.getCorreo(), i, 4);
             vistaCli.getjTblCliente().setValueAt(emp.getCli_direccion(), i, 5);
             vistaCli.getjTblCliente().setValueAt(emp.getTelefono(), i, 6);
+            vistaCli.getjTblCliente().setValueAt(formatofecha.format(emp.getFechaRegistro()), i, 7);
             i++;
         });
 
@@ -173,6 +175,7 @@ public class ControllerVistaCliente {
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE CLIENTES");
+            parametros.put("busqueda", vistaCli.getTxtbuscar().getText().toLowerCase());
 
             JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
             JasperViewer jv = new JasperViewer(jp, false);
@@ -180,6 +183,5 @@ public class ControllerVistaCliente {
         } catch (JRException ex) {
             java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
     }
 }

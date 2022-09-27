@@ -79,17 +79,17 @@ public class viewVistaCliente extends javax.swing.JInternalFrame {
         jTblCliente.setBackground(new java.awt.Color(255, 253, 227));
         jTblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Cedula", "Nombre", "Apellido", "Correo", "Direccion", "Telefono"
+                "Id", "Cedula", "Nombre", "Apellido", "Correo", "Direccion", "Telefono", "Fecha de Registro"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

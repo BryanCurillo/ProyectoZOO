@@ -119,7 +119,9 @@ public class ModelCliente extends Cliente {
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "or p.per_telefono like '%" + busqueda + "%' "
-                + "or lower(c.cli_direccion) like '%" + busqueda + "%') ";
+                + "or lower(c.cli_direccion) like '%" + busqueda + "%' "
+                + "OR to_char(p.per_fecha_registro,'DD-MM-YYYY') LIKE  '%" + busqueda + "%'  ) ";
+        
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

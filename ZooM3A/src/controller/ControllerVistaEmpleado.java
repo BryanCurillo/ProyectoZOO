@@ -8,7 +8,9 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import model.modelEmpleado;
 import view.viewVistaEmpleados;
@@ -19,6 +21,13 @@ import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import model.Empleado;
+import model.modelPGconexion;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.viewPantallaPrincipal;
 
 /**
@@ -35,7 +44,8 @@ public class ControllerVistaEmpleado {
     private viewVistaEmpleados vistaE;
     int i = 0;
     DefaultTableModel estructuraTabla;
-    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+//    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat formatofecha = new SimpleDateFormat("dd-MM-yyyy");
 
     public ControllerVistaEmpleado(modelEmpleado modeloE, viewVistaEmpleados vistaE, viewPantallaPrincipal vistaP) {
         this.modeloE = modeloE;
@@ -58,6 +68,7 @@ public class ControllerVistaEmpleado {
         vistaE.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaE.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaE.getTxtBuscar().addKeyListener(busquedaIncren);
+        vistaE.getjBtnImprimir().addActionListener(l -> imprimeReporte());
     }
 
     public void abrirRegistro(int op) {
@@ -118,20 +129,21 @@ public class ControllerVistaEmpleado {
 //        Holder<Integer> i = new Holder<>(0);
         i = 0;
         listaE.stream().sorted((x, y)
-                -> x.getCedula().compareToIgnoreCase(y.getCedula())).forEach(emp -> {
+                -> x.getNombre().compareToIgnoreCase(y.getNombre())).forEach(emp -> {
             estructuraTabla.addRow(new Object[8]);
             vistaE.getjTblEmpleado().setValueAt(emp.getIdEmp(), i, 0);
             vistaE.getjTblEmpleado().setValueAt(emp.getCedula(), i, 1);
             vistaE.getjTblEmpleado().setValueAt(emp.getNombre(), i, 2);
             vistaE.getjTblEmpleado().setValueAt(emp.getApellido(), i, 3);
             vistaE.getjTblEmpleado().setValueAt(emp.getTelefono(), i, 4);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
+            vistaE.getjTblEmpleado().setValueAt(formatofecha.format(emp.getFechanacimiento()), i, 5);
+//            vistaE.getjTblEmpleado().setValueAt(emp.getFechanacimiento().toString(), i, 5);
             vistaE.getjTblEmpleado().setValueAt(emp.getCorreo(), i, 6);
             vistaE.getjTblEmpleado().setValueAt(emp.getGenero(), i, 7);
             vistaE.getjTblEmpleado().setValueAt(modeloE.obtenerRol(emp.getRol()), i, 8);
             vistaE.getjTblEmpleado().setValueAt(emp.getUsuario(), i, 9);
             vistaE.getjTblEmpleado().setValueAt(emp.getContraseña(), i, 10);
-            vistaE.getjTblEmpleado().setValueAt(emp.getFechaRegistro().toString(), i, 11);
+            vistaE.getjTblEmpleado().setValueAt(formatofecha.format(emp.getFechaRegistro()), i, 11);
 
             Image foto = emp.getFoto();
             if (foto != null) {
@@ -199,6 +211,26 @@ public class ControllerVistaEmpleado {
                         break;
                 }
             }
+        }
+    }
+
+    private void imprimeReporte() {
+        //Instanciamos la conexion proyecto
+        modelPGconexion con = new modelPGconexion();
+
+        JasperReport jr;
+        try {
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReportePersonal.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            System.out.println("busqueda= "+vistaE.getTxtBuscar().getText().toLowerCase());
+            parametros.put("titulo", "REPORTE DE CLIENTES");
+            parametros.put("busqueda", vistaE.getTxtBuscar().getText().toLowerCase());
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 }
