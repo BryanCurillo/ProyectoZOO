@@ -25,6 +25,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import model.Empleado;
@@ -49,7 +50,7 @@ public class ControllerRegistroEmpleado {
     private viewVistaEmpleados vistaE;
     private JFileChooser jfc;
     int i = 0;
-    boolean banvista=false;
+    boolean banvista = false;
     DefaultTableModel estructuraTabla;
     SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -62,14 +63,14 @@ public class ControllerRegistroEmpleado {
 //        ((javax.swing.plaf.basic.BasicInternalFrameUI) vista.getUI()).setNorthPane(null);
         vista.toFront();
         vista.setVisible(true);
-        banvista=false;
+        banvista = false;
     }
 
     public ControllerRegistroEmpleado(modelEmpleado modeloE, viewRegistrarEmpleado vista, viewVistaEmpleados vistaE) {
         this.modeloE = modeloE;
         this.vistaE = vistaE;
         this.vista = vista;
-        banvista=true;
+        banvista = true;
         desactivarDatosRol();
         cargarComboRol();
 //        vista.setLo;
@@ -115,7 +116,9 @@ public class ControllerRegistroEmpleado {
     }
 
     public void examinarFoto() {
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPEG,PNG y JPG", "jpeg", "png", "jpg");
         jfc = new JFileChooser();
+        jfc.setFileFilter(filtro);
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int estado = jfc.showOpenDialog(vista);
         if (estado == JFileChooser.APPROVE_OPTION) {
@@ -128,7 +131,11 @@ public class ControllerRegistroEmpleado {
                 vista.getLblfoto().setIcon(icono);
                 vista.getLblfoto().updateUI();
             } catch (IOException ex) {
-                Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(vistaP, "El archivo de imagen esta corrupto","Ha ocurrido un error",2);
+//                Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NullPointerException n) {
+                JOptionPane.showMessageDialog(vistaP, "El archivo de imagen esta corrupto","Ha ocurrido un error",2);
+                
             }
         }
     }

@@ -94,7 +94,6 @@ public class viewVistaEmpleados extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTblEmpleado.setCellSelectionEnabled(true);
         jTblEmpleado.setGridColor(new java.awt.Color(51, 51, 51));
         jTblEmpleado.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         jTblEmpleado.setShowGrid(false);

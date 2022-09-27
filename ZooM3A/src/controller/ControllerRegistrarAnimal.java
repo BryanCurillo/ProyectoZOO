@@ -22,6 +22,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import model.Animales;
@@ -152,7 +153,9 @@ public class ControllerRegistrarAnimal {
     }
 
     public void examinarFoto() {
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPEG,PNG y JPG", "jpeg","png","jpg");
         jfc = new JFileChooser();
+        jfc.setFileFilter(filtro);
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int estado = jfc.showOpenDialog(vistaRegAni);
         if (estado == JFileChooser.APPROVE_OPTION) {
