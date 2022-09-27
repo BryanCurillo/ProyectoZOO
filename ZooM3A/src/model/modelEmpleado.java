@@ -228,7 +228,8 @@ public class modelEmpleado extends Empleado {
     public List<Empleado> getempleado() {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
-        String sql = "select * from persona join empleado on(per_cedula=emp_cedula) where emp_estado=true";
+        String sql = "select * from persona p join empleado e on(p.per_cedula= e.emp_cedula) "
+                + "  where e.emp_estado=true  and p.per_estado=true ";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
         try {
@@ -275,7 +276,7 @@ public class modelEmpleado extends Empleado {
         String sql = "select * from persona p "
                 + "join empleado e on(p.per_cedula=e.emp_cedula) "
                 + "join rol r on(e.emp_rol=r.rol_id) "
-                + "where e.emp_estado=true "
+                + "where e.emp_estado=true and p.per_estado=true"
                 + "and (p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "

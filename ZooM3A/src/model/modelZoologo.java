@@ -30,8 +30,9 @@ public class modelZoologo extends Zoologo {
     }
 
     public boolean setZoologo() {
+//        System.out.println("ID ZOOLOGO="+is);
         String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado,zol_estado)"
-                + "values('" + getRama() + "'," + getIdEmpleadoZoo() + "," + isEstadoEmp() + ")";
+                + "values('" + getRama() + "'," + getIdEmpleadoZoo() + "," + isEstadoZol()+ ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
@@ -71,7 +72,7 @@ public class modelZoologo extends Zoologo {
         String sql = "select z.zol_id,(p.per_nombre||' '||p.per_apellido) as nombre ,z.zol_rama"
                 + " from zoologo z join empleado e on(e.emp_id=z.zol_idempleado)"
                 + " join persona p on (e.emp_cedula=p.per_cedula)"
-                + " where z.zol_estado=true"
+                + " where z.zol_estado=true and e.emp_estado=true and p.per_estado=true "
                 + "  and (lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(z.zol_rama) like '%" + busqueda + "%') ";
