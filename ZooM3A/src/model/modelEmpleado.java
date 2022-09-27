@@ -276,7 +276,7 @@ public class modelEmpleado extends Empleado {
         String sql = "select * from persona p "
                 + "join empleado e on(p.per_cedula=e.emp_cedula) "
                 + "join rol r on(e.emp_rol=r.rol_id) "
-                + "where e.emp_estado=true and p.per_estado=true"
+                + "where e.emp_estado=true and p.per_estado=true "
                 + "and (p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "

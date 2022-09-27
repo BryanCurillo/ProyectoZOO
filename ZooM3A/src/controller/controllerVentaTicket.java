@@ -454,7 +454,7 @@ public class controllerVentaTicket {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/FACTURA.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/FACTURA.jasper"));//sacar imagenes
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("IdEncabezado", idFactura);
