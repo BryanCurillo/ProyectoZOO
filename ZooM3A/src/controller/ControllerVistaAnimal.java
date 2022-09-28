@@ -182,7 +182,8 @@ public class ControllerVistaAnimal {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteAnimales.jasper"));
+           // jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteAnimales.jasper"));
+           jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReporteAnimales.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE ANIMALES");

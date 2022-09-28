@@ -167,7 +167,8 @@ public class ControllerVistaDieta {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteDieta.jasper"));
+            //jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteDieta.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReporteDieta.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE DIETA");

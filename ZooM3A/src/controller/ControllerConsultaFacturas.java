@@ -145,7 +145,8 @@ public class ControllerConsultaFacturas {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteFacturas.jasper"));
+            //jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteFacturas.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReporteFacturas.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE VENTAS");

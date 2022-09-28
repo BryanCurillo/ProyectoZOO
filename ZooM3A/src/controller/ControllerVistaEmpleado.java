@@ -220,7 +220,8 @@ public class ControllerVistaEmpleado {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReportePersonal.jasper"));
+            //jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReportePersonal.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReportePersonal.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE PERSONAL");

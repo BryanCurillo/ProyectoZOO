@@ -79,7 +79,8 @@ public class ControllerVistaTickets {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteTickets.jasper"));
+            //jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteTickets.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReporteTickets.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE PRECIOS");

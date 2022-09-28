@@ -171,7 +171,8 @@ public class ControllerVistaCliente {
 
         JasperReport jr;
         try {
-            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteClientes.jasper"));
+            //jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteClientes.jasper"));
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportesH/ReporteClientes.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
 
             parametros.put("titulo", "REPORTE DE CLIENTES");
