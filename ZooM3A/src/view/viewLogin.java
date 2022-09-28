@@ -65,10 +65,12 @@ public class viewLogin extends javax.swing.JFrame {
 
         txtusuarioingreso.setBackground(new java.awt.Color(255, 245, 228));
         txtusuarioingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
+        txtusuarioingreso.setForeground(new java.awt.Color(153, 153, 153));
+        txtusuarioingreso.setText("Ingrese su nombre de usuario");
         txtusuarioingreso.setToolTipText("INGRESE LA CONTRASEÑA");
         txtusuarioingreso.setBorder(null);
         txtusuarioingreso.setOpaque(true);
-        getContentPane().add(txtusuarioingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 310, 30));
+        getContentPane().add(txtusuarioingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 360, 30));
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setFont(new java.awt.Font("Impact", 1, 16)); // NOI18N
@@ -78,10 +80,12 @@ public class viewLogin extends javax.swing.JFrame {
 
         txtcontraingreso.setBackground(new java.awt.Color(255, 245, 228));
         txtcontraingreso.setFont(new java.awt.Font("MS Gothic", 1, 20)); // NOI18N
+        txtcontraingreso.setForeground(new java.awt.Color(153, 153, 153));
+        txtcontraingreso.setText("***************");
         txtcontraingreso.setToolTipText("INGRESA TU CONTRASEÑA");
         txtcontraingreso.setBorder(null);
         txtcontraingreso.setOpaque(true);
-        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 310, 30));
+        getContentPane().add(txtcontraingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 360, 30));
 
         btiniciarsesion.setBackground(new java.awt.Color(255, 245, 228));
         btiniciarsesion.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N

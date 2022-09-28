@@ -59,28 +59,28 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MenuPersonal = new javax.swing.JMenu();
         jMIagregarPersona = new javax.swing.JMenuItem();
         jMIvistaEmpleado = new javax.swing.JMenuItem();
-        menualimento = new javax.swing.JMenu();
-        jMIagregarAlimento = new javax.swing.JMenuItem();
-        jMIcrudAlimento = new javax.swing.JMenuItem();
-        menuanimales = new javax.swing.JMenu();
-        jMIagregarAnimal = new javax.swing.JMenuItem();
-        jMIvisualizarAnimal = new javax.swing.JMenuItem();
-        MenuTicket = new javax.swing.JMenu();
-        MIventaTickets = new javax.swing.JMenuItem();
-        MIActualizarPrecio = new javax.swing.JMenuItem();
-        jMIvisualizarPrecios = new javax.swing.JMenuItem();
-        MenuProveedor = new javax.swing.JMenu();
-        jMIagregarProveedor = new javax.swing.JMenuItem();
-        JMIvistaProveedor = new javax.swing.JMenuItem();
         MenuClientes = new javax.swing.JMenu();
         jMIagregarCliente = new javax.swing.JMenuItem();
         JMIvistaCliente = new javax.swing.JMenuItem();
+        MenuProveedor = new javax.swing.JMenu();
+        jMIagregarProveedor = new javax.swing.JMenuItem();
+        JMIvistaProveedor = new javax.swing.JMenuItem();
+        menuanimales = new javax.swing.JMenu();
+        jMIagregarAnimal = new javax.swing.JMenuItem();
+        jMIvisualizarAnimal = new javax.swing.JMenuItem();
+        menualimento = new javax.swing.JMenu();
+        jMIagregarAlimento = new javax.swing.JMenuItem();
+        jMIcrudAlimento = new javax.swing.JMenuItem();
         MenuDieta = new javax.swing.JMenu();
         jMIAgregarDieta = new javax.swing.JMenuItem();
         jMIVisualizarDietas = new javax.swing.JMenuItem();
         MenuHabitad = new javax.swing.JMenu();
         jMIAgregarHabitat = new javax.swing.JMenuItem();
         jMIVisualizarHabitat = new javax.swing.JMenuItem();
+        MenuTicket = new javax.swing.JMenu();
+        MIventaTickets = new javax.swing.JMenuItem();
+        MIActualizarPrecio = new javax.swing.JMenuItem();
+        jMIvisualizarPrecios = new javax.swing.JMenuItem();
         MenuFactura = new javax.swing.JMenu();
         MIconsultaFacturas = new javax.swing.JMenuItem();
 
@@ -128,7 +128,6 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         jlblNombrePP.setText("Nombre usuario");
 
         jlblFotoPP.setBackground(new java.awt.Color(72, 56, 56));
-        jlblFotoPP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario.png"))); // NOI18N
         jlblFotoPP.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jlblFotoPP.setOpaque(true);
 
@@ -299,20 +298,31 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(MenuPersonal);
 
-        menualimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plato.png"))); // NOI18N
-        menualimento.setText("Alimento");
+        MenuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
+        MenuClientes.setText("Cliente");
 
-        jMIagregarAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIagregarAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anadiendo.png"))); // NOI18N
-        jMIagregarAlimento.setText("Agregar alimento");
-        menualimento.add(jMIagregarAlimento);
+        jMIagregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
+        jMIagregarCliente.setText("Agregar cliente");
+        MenuClientes.add(jMIagregarCliente);
 
-        jMIcrudAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMIcrudAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
-        jMIcrudAlimento.setText("Visualizar registro");
-        menualimento.add(jMIcrudAlimento);
+        JMIvistaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        JMIvistaCliente.setText("Visualizar registro");
+        MenuClientes.add(JMIvistaCliente);
 
-        barramenus.add(menualimento);
+        barramenus.add(MenuClientes);
+
+        MenuProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
+        MenuProveedor.setText("Proveedor");
+
+        jMIagregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
+        jMIagregarProveedor.setText("Agregar proveedor");
+        MenuProveedor.add(jMIagregarProveedor);
+
+        JMIvistaProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        JMIvistaProveedor.setText("´Visualizar registro");
+        MenuProveedor.add(JMIvistaProveedor);
+
+        barramenus.add(MenuProveedor);
 
         menuanimales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/leon (2).png"))); // NOI18N
         menuanimales.setText("Animales");
@@ -329,48 +339,20 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
 
         barramenus.add(menuanimales);
 
-        MenuTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
-        MenuTicket.setText("Tickets");
+        menualimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plato.png"))); // NOI18N
+        menualimento.setText("Alimento");
 
-        MIventaTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
-        MIventaTickets.setText("Venta de Tickets");
-        MenuTicket.add(MIventaTickets);
+        jMIagregarAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIagregarAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/anadiendo.png"))); // NOI18N
+        jMIagregarAlimento.setText("Agregar alimento");
+        menualimento.add(jMIagregarAlimento);
 
-        MIActualizarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
-        MIActualizarPrecio.setText("Actualizar Precio");
-        MenuTicket.add(MIActualizarPrecio);
+        jMIcrudAlimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMIcrudAlimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIcrudAlimento.setText("Visualizar registro");
+        menualimento.add(jMIcrudAlimento);
 
-        jMIvisualizarPrecios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
-        jMIvisualizarPrecios.setText("Visualizar Precios");
-        MenuTicket.add(jMIvisualizarPrecios);
-
-        barramenus.add(MenuTicket);
-
-        MenuProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/repartidor.png"))); // NOI18N
-        MenuProveedor.setText("Proveedor");
-
-        jMIagregarProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
-        jMIagregarProveedor.setText("Agregar proveedor");
-        MenuProveedor.add(jMIagregarProveedor);
-
-        JMIvistaProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
-        JMIvistaProveedor.setText("´Visualizar registro");
-        MenuProveedor.add(JMIvistaProveedor);
-
-        barramenus.add(MenuProveedor);
-
-        MenuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
-        MenuClientes.setText("Cliente");
-
-        jMIagregarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario (2).png"))); // NOI18N
-        jMIagregarCliente.setText("Agregar cliente");
-        MenuClientes.add(jMIagregarCliente);
-
-        JMIvistaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
-        JMIvistaCliente.setText("Visualizar registro");
-        MenuClientes.add(JMIvistaCliente);
-
-        barramenus.add(MenuClientes);
+        barramenus.add(menualimento);
 
         MenuDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dieta.png"))); // NOI18N
         MenuDieta.setText("Dieta");
@@ -397,6 +379,23 @@ public class viewPantallaPrincipal extends javax.swing.JFrame {
         MenuHabitad.add(jMIVisualizarHabitat);
 
         barramenus.add(MenuHabitad);
+
+        MenuTicket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
+        MenuTicket.setText("Tickets");
+
+        MIventaTickets.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
+        MIventaTickets.setText("Venta de Tickets");
+        MenuTicket.add(MIventaTickets);
+
+        MIActualizarPrecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket.png"))); // NOI18N
+        MIActualizarPrecio.setText("Actualizar Precio");
+        MenuTicket.add(MIActualizarPrecio);
+
+        jMIvisualizarPrecios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ver.png"))); // NOI18N
+        jMIvisualizarPrecios.setText("Visualizar Precios");
+        MenuTicket.add(jMIvisualizarPrecios);
+
+        barramenus.add(MenuTicket);
 
         MenuFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ticket (2).png"))); // NOI18N
         MenuFactura.setText("Factura");

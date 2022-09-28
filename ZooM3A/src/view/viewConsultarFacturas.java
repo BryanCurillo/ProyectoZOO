@@ -42,13 +42,15 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jSeparator2 = new javax.swing.JToolBar.Separator();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        jBtnImprimir = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
         jBtnBuscar = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
         txtBuscar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JToolBar.Separator();
+        jBtnImprimir = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JToolBar.Separator();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        jBtnImprimirReporte = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(144, 183, 125));
@@ -110,15 +112,6 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         jToolBar1.setBorder(null);
         jToolBar1.add(jSeparator2);
         jToolBar1.add(jSeparator3);
-
-        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
-        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documento.png"))); // NOI18N
-        jBtnImprimir.setText("VER DETALLE");
-        jBtnImprimir.setBorder(null);
-        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator4);
 
         jBtnBuscar.setBackground(new java.awt.Color(210, 215, 159));
@@ -135,7 +128,27 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
         jToolBar1.add(jSeparator5);
+
+        jBtnImprimir.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/documento.png"))); // NOI18N
+        jBtnImprimir.setText("VER DETALLE");
+        jBtnImprimir.setBorder(null);
+        jBtnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnImprimir);
         jToolBar1.add(jSeparator7);
+        jToolBar1.add(jSeparator8);
+
+        jBtnImprimirReporte.setBackground(new java.awt.Color(210, 215, 159));
+        jBtnImprimirReporte.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnImprimirReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imprimir.png"))); // NOI18N
+        jBtnImprimirReporte.setText("IMPRIMIR REPORTE");
+        jBtnImprimirReporte.setBorder(null);
+        jBtnImprimirReporte.setFocusable(false);
+        jBtnImprimirReporte.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnImprimirReporte.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jBtnImprimirReporte);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 115, 930, 50));
 
@@ -155,6 +168,7 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnBuscar;
     private javax.swing.JButton jBtnImprimir;
+    private javax.swing.JButton jBtnImprimirReporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -166,6 +180,7 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JTable jTblFactura;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextField txtBuscar;
@@ -289,6 +304,14 @@ public class viewConsultarFacturas extends javax.swing.JInternalFrame {
 
     public void setTxtBuscar(JTextField txtBuscar) {
         this.txtBuscar = txtBuscar;
+    }
+
+    public JButton getjBtnImprimirReporte() {
+        return jBtnImprimirReporte;
+    }
+
+    public void setjBtnImprimirReporte(JButton jBtnImprimirReporte) {
+        this.jBtnImprimirReporte = jBtnImprimirReporte;
     }
 
 

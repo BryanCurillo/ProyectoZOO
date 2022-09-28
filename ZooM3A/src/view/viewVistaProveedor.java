@@ -138,7 +138,6 @@ public class viewVistaProveedor extends javax.swing.JInternalFrame {
         jToolBar1.add(jBtnBuscar);
         jToolBar1.add(jSeparator7);
 
-        txtBuscar.setEditable(false);
         txtBuscar.setBackground(new java.awt.Color(183, 211, 223));
         txtBuscar.setToolTipText("PUEDE BUSCAR MEDIANTE CEDULA, NOMBRE, APELLIDO O USUARIO");
         jToolBar1.add(txtBuscar);
