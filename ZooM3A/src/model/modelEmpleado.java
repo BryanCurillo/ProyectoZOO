@@ -282,6 +282,7 @@ public class modelEmpleado extends Empleado {
                 + "or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "or p.per_telefono like '%" + busqueda + "%' "
                 + "or lower(e.emp_usuario) like '%" + busqueda + "%' "
+                + "or lower(e.emp_genero) like '%" + busqueda + "%' "
                 + "or lower(r.rol_nombre) like '%" + busqueda + "%' "
                 + "OR to_char(e.emp_fechanacimiento,'DD-MM-YYYY')  LIKE  '%" + busqueda + "%' "
                 + "OR to_char(p.per_fecha_registro,'DD-MM-YYYY') LIKE  '%" + busqueda + "%'  ) ";

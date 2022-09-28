@@ -111,7 +111,7 @@ public class ModelFactura extends factura {
         return listaFacturas;
     }
 
-    public List<factura> getFacturasBuscar(String cedula) {
+    public List<factura> getFacturasBuscar(String busqueda) {
         List<factura> listaFacturas = new ArrayList<>();
 
         String sql = "Select enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
@@ -122,7 +122,12 @@ public class ModelFactura extends factura {
                 + "	join persona per on (cli.cli_cedula=per.per_cedula)  "
                 + "	join fac_detalle det on (enca.enca_id = det.det_idenca)  "
                 + "	join fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
-                + "			where  cli.cli_cedula like '%" + cedula + "%'  "
+                + "			where  cli.cli_cedula like '%" + busqueda + "%'  "
+                + "     or lower(per.per_nombre) like  '%" + busqueda + "%'  "
+                + "							or lower(per.per_apellido) like '%" + busqueda + "%'  "
+                + "                			or per.per_telefono like '%" + busqueda + "%'  "
+                + "                			or lower(cli.cli_direccion) like '%" + busqueda + "%'  "
+                + "                			OR to_char(per.per_fecha_registro,'DD-MM-YYYY') LIKE  '%" + busqueda + "%'  "
                 + "	group by det.det_idenca,  "
                 + "				enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
                 + "				pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total,  "

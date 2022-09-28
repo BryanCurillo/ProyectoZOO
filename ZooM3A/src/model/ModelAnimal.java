@@ -203,7 +203,8 @@ public class ModelAnimal extends Animales {
                 + "  or lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "
                 + "  or lower(h.hab_tipo) like '%" + busqueda + "%' "
-                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' )";
+                + "  or lower(h.hab_ubicacion) like '%" + busqueda + "%' "
+                + "  OR to_char(a.ani_fechanacimiento,'DD-MM-YYYY') LIKE  '%" + busqueda + "%'  )";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
         try {
