@@ -179,7 +179,10 @@ public class ControllerVistaCliente {
 
             JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
             JasperViewer jv = new JasperViewer(jp, false);
-            jv.setVisible(true);
+            if (vistaCli.getjTblCliente().getRowCount() != 0) {
+                jv.setVisible(true);
+
+            }
         } catch (JRException ex) {
             java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

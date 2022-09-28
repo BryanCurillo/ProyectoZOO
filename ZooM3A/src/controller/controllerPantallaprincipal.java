@@ -112,7 +112,8 @@ public class controllerPantallaprincipal {
                 dtcr.setIcon(icono);
                 vista.getJlblFotoPP().setIcon(icono);
             } else {
-                ImageIcon iconoUsuario = new ImageIcon("src\\imagenes\\usuario.png");
+                ImageIcon iconoUsuario = new ImageIcon(getClass().getResource("/imagenes/usuario.png"));
+//                ImageIcon iconoUsuario = new ImageIcon("src\\imagenes\\usuario.png");
                 vista.getJlblFotoPP().setIcon(iconoUsuario);
             }
             rol = emp.getApellido();

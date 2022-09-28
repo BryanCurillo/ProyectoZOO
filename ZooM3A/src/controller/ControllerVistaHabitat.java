@@ -6,12 +6,21 @@ package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import model.ModelHabitad;
 import javax.swing.table.DefaultTableModel;
 import model.Habitat;
+import model.modelPGconexion;
 import model.modelZoologo;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.viewPantallaPrincipal;
 import view.viewRegistroHabitad;
 import view.viewVistaHabitats;
@@ -53,6 +62,7 @@ public class ControllerVistaHabitat {
         vistaHab.getBtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaHab.getBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaHab.getBtnEliminar().addActionListener(l -> eliminarAlimento());
+        vistaHab.getjBtnImprimir().addActionListener(l -> imprimeReporte());
         vistaHab.getTxtbuscar().addKeyListener(busquedaIncren);
     }
 
@@ -143,6 +153,28 @@ public class ControllerVistaHabitat {
                     JOptionPane.showMessageDialog(vistaHab, "No se pudo eliminar el alimento");
                 }
             }
+        }
+    }
+
+    private void imprimeReporte() {
+        //Instanciamos la conexion proyecto
+        modelPGconexion con = new modelPGconexion();
+
+        JasperReport jr;
+        try {
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteHabitat.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+
+            parametros.put("titulo", "REPORTE DE HABITAT");
+            parametros.put("busqueda", vistaHab.getTxtbuscar().getText().toLowerCase());
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
+            JasperViewer jv = new JasperViewer(jp, false);
+            if (vistaHab.getjTblHabitat().getRowCount() != 0) {
+                jv.setVisible(true);
+            }
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 }

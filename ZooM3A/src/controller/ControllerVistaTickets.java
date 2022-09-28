@@ -49,7 +49,7 @@ public class ControllerVistaTickets {
     }
 
     public void iniciarControl() {
-        vvt.getjBtnImprimir().addActionListener(l->imprimeReporte());
+        vvt.getjBtnImprimir().addActionListener(l -> imprimeReporte());
     }
 
     public void cargarDatos() {
@@ -86,7 +86,10 @@ public class ControllerVistaTickets {
 
             JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
             JasperViewer jv = new JasperViewer(jp, false);
-            jv.setVisible(true);
+            if (vvt.getjTblTickets().getRowCount() != 0) {
+                jv.setVisible(true);
+
+            }
         } catch (JRException ex) {
             java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

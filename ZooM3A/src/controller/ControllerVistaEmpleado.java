@@ -222,13 +222,16 @@ public class ControllerVistaEmpleado {
         try {
             jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReportePersonal.jasper"));
             Map<String, Object> parametros = new HashMap<String, Object>();
-            System.out.println("busqueda= "+vistaE.getTxtBuscar().getText().toLowerCase());
-            parametros.put("titulo", "REPORTE DE CLIENTES");
+
+            parametros.put("titulo", "REPORTE DE PERSONAL");
             parametros.put("busqueda", vistaE.getTxtBuscar().getText().toLowerCase());
 
             JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
             JasperViewer jv = new JasperViewer(jp, false);
-            jv.setVisible(true);
+            if (vistaE.getjTblEmpleado().getRowCount() != 0) {
+                jv.setVisible(true);
+
+            }
         } catch (JRException ex) {
             java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

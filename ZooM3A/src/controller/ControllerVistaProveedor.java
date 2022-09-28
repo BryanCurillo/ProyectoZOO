@@ -8,7 +8,9 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import view.viewVistaProveedor;
 import model.modelProveedor;
@@ -17,6 +19,13 @@ import javax.swing.JLabel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import model.Proveedor;
+import model.modelPGconexion;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.viewPantallaPrincipal;
 import view.viewRegistrarProveedor;
 
@@ -56,7 +65,7 @@ public class ControllerVistaProveedor {
         vistaProv.getJbtnAgregar().addActionListener(l -> abrirRegistro(1));
         vistaProv.getjBtnModificar().addActionListener(l -> abrirRegistro(2));
         vistaProv.getjBtnElimina().addActionListener(l -> eliminarEmpleado());
-//        vistaProv.getjBtnActualizar().addActionListener(l -> cargarDatos(1));
+        vistaProv.getjBtnImprimir().addActionListener(l -> imprimeReporte());
         vistaProv.getTxtBuscar().addKeyListener(busquedaIncren);
     }
 
@@ -145,6 +154,29 @@ public class ControllerVistaProveedor {
                     JOptionPane.showMessageDialog(vistaProv, "No se pudo eliminar al Proveedor");
                 }
             }
+        }
+    }
+
+    private void imprimeReporte() {
+        //Instanciamos la conexion proyecto
+        modelPGconexion con = new modelPGconexion();
+
+        JasperReport jr;
+        try {
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteProveedor.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+
+            parametros.put("titulo", "REPORTE DE PROVEEDORES");
+            parametros.put("busqueda", vistaProv.getTxtBuscar().getText().toLowerCase());
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
+            JasperViewer jv = new JasperViewer(jp, false);
+            if (vistaProv.getjTblProveedor().getRowCount() != 0) {
+                jv.setVisible(true);
+
+            }
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 }

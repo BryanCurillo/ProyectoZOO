@@ -8,7 +8,9 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,6 +21,13 @@ import javax.swing.table.DefaultTableModel;
 import model.Animales;
 import model.modelCuidador;
 import model.ModelHabitad;
+import model.modelPGconexion;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import view.viewPantallaPrincipal;
 import view.viewRegistroAlimento;
 import view.viewRegistroAnimal;
@@ -39,7 +48,7 @@ public class ControllerVistaAnimal {
     int i = 0;
 
     DefaultTableModel estructuraTabla;
-    SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat formatofecha = new SimpleDateFormat("dd-MM-yyyy");
 
     public ControllerVistaAnimal() {
     }
@@ -53,7 +62,7 @@ public class ControllerVistaAnimal {
         this.vistaP = vistaP;
         this.vistaAni = vistaAni;
         this.modeloAni = modeloAni;
-        
+
         cargarDatos(1);
         vistaAni.setVisible(true);
     }
@@ -128,7 +137,7 @@ public class ControllerVistaAnimal {
             vistaAni.getjTblAnimal().setValueAt(emp.getNombreAnimal(), i, 1);
             vistaAni.getjTblAnimal().setValueAt(emp.getGeneroAnimal(), i, 2);
             vistaAni.getjTblAnimal().setValueAt(emp.getEspecieAnimal(), i, 3);
-            vistaAni.getjTblAnimal().setValueAt(emp.getFecha_nacimientoAnimal(), i, 4);
+            vistaAni.getjTblAnimal().setValueAt(formatofecha.format(emp.getFecha_nacimientoAnimal()), i, 4);
             vistaAni.getjTblAnimal().setValueAt(emp.getTipoHabitat(), i, 5);
             vistaAni.getjTblAnimal().setValueAt(emp.getNombreCuidador(), i, 6);
             Image foto = emp.getFoto();
@@ -164,6 +173,29 @@ public class ControllerVistaAnimal {
                     JOptionPane.showMessageDialog(vistaAni, "No se pudo eliminar el alimento");
                 }
             }
+        }
+    }
+
+    private void imprimeReporte() {
+        //Instanciamos la conexion proyecto
+        modelPGconexion con = new modelPGconexion();
+
+        JasperReport jr;
+        try {
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/view/reportes/ReporteAnimales.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+
+            parametros.put("titulo", "REPORTE DE ANIMALES");
+            parametros.put("busqueda", vistaAni.getTxtbuscarAnimal().getText().toLowerCase());
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getCon());//llena el reporte con datos.
+            JasperViewer jv = new JasperViewer(jp, false);
+            if (vistaAni.getjTblAnimal().getRowCount() != 0) {
+                jv.setVisible(true);
+
+            }
+        } catch (JRException ex) {
+            java.util.logging.Logger.getLogger(ControllerVistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 }
