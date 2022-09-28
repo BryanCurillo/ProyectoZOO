@@ -20,10 +20,10 @@ public class modelPGconexion {
 
     String cadenaConexion = "jdbc:postgresql://localhost:5432/ZOO";
     String pgUsuario = "postgres";
-    String pgPassword = "Bryan.2002";
+    String pgPassword = "a";
     Connection con;
 
-     public modelPGconexion() {
+    public modelPGconexion() {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException ex) {
@@ -73,7 +73,6 @@ public class modelPGconexion {
     public void setCon(Connection con) {
         this.con = con;
     }
-
 
 }//final de clase
 
