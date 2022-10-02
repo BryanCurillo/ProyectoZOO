@@ -86,7 +86,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE EL NOMBRE"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -121,7 +121,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE EL APELLIDO"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -156,7 +156,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE EL CORREO"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -188,7 +188,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE EL TELEFONO"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -223,7 +223,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA DIRECCION"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -302,7 +302,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Himalaya" size="24" style="1"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CONTRASE&#xd1;A"/>
+            <Property name="toolTipText" type="java.lang.String" value="INGRESE LA CEDULA"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

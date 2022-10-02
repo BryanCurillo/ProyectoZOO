@@ -80,7 +80,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txtnombre.setBackground(new java.awt.Color(255, 253, 227));
         txtnombre.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txtnombre.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtnombre.setToolTipText("INGRESE EL NOMBRE");
         txtnombre.setBorder(null);
         jPanel1.add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 240, 30));
 
@@ -91,7 +91,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txtapellido.setBackground(new java.awt.Color(255, 253, 227));
         txtapellido.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txtapellido.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtapellido.setToolTipText("INGRESE EL APELLIDO");
         txtapellido.setBorder(null);
         jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 240, 30));
 
@@ -102,7 +102,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txtcorreo.setBackground(new java.awt.Color(255, 253, 227));
         txtcorreo.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txtcorreo.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtcorreo.setToolTipText("INGRESE EL CORREO");
         txtcorreo.setBorder(null);
         jPanel1.add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 240, 30));
 
@@ -112,7 +112,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txttelefono.setBackground(new java.awt.Color(255, 253, 227));
         txttelefono.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txttelefono.setToolTipText("INGRESE LA CONTRASEÑA");
+        txttelefono.setToolTipText("INGRESE EL TELEFONO");
         txttelefono.setBorder(null);
         jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 240, 30));
 
@@ -123,7 +123,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txtdireccion.setBackground(new java.awt.Color(255, 253, 227));
         txtdireccion.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txtdireccion.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtdireccion.setToolTipText("INGRESE LA DIRECCION");
         txtdireccion.setBorder(null);
         jPanel1.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 240, 30));
 
@@ -148,7 +148,7 @@ public class viewRegistrarCliente extends javax.swing.JInternalFrame {
 
         txtcedula.setBackground(new java.awt.Color(255, 253, 227));
         txtcedula.setFont(new java.awt.Font("Microsoft Himalaya", 1, 24)); // NOI18N
-        txtcedula.setToolTipText("INGRESE LA CONTRASEÑA");
+        txtcedula.setToolTipText("INGRESE LA CEDULA");
         txtcedula.setBorder(null);
         jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 240, 30));
 
