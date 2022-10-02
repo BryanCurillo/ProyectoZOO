@@ -168,7 +168,10 @@ public class ControllerRegistrarAnimal {
                 vistaRegAni.getLblFotoAnimal().setIcon(icono);
                 vistaRegAni.getLblFotoAnimal().updateUI();
             } catch (IOException ex) {
-                java.util.logging.Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(vistaP, "El archivo de imagen esta corrupto","Ha ocurrido un error",2);
+//                Logger.getLogger(ControllerRegistroEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NullPointerException n) {
+                JOptionPane.showMessageDialog(vistaP, "El archivo de imagen esta corrupto","Ha ocurrido un error",2);
             }
         }
     }
