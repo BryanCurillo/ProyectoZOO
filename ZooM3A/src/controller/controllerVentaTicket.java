@@ -194,10 +194,10 @@ public class controllerVentaTicket {
                 imprimeFactura(idEncabezado);
                 datosInicial();
 
-            } else {
+            } 
+        }else {
                 JOptionPane.showMessageDialog(vistaVenta, "No se a realizado ninguna compra");
             }
-        }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     KeyListener buscarcliente = new KeyListener() {
