@@ -32,7 +32,7 @@ public class modelLogin extends Empleado {
 
     public List<rol> getroles() {
         List<rol> listaRoles = new ArrayList<>();
-        String sql = "select rol_id, rol_nombre from rol";
+        String sql = "select rol_id, rol_nombre from public.rol";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -55,7 +55,7 @@ public class modelLogin extends Empleado {
     public boolean comprobarLogin(String usuario, String contrasena) {
         boolean ban = false;
         int count = 0;
-        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "' and emp_estado=true";
+        String sql = "select count(*) from public.empleado where emp_usuario='" + usuario + "' and emp_contraseña='" + contrasena + "' and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
 
         try {
@@ -79,7 +79,7 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarUsuario(String usuario) {
-        String sql = "select count(*) from empleado where emp_usuario='" + usuario + "'and emp_estado=true";
+        String sql = "select count(*) from public.empleado where emp_usuario='" + usuario + "'and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         boolean ban = false;
         int count = 0;
@@ -103,7 +103,7 @@ public class modelLogin extends Empleado {
     }
 
     public boolean comprobarContrasena(String contrasena) {
-        String sql = "select count(*) from empleado where  emp_contraseña='" + contrasena + "'and emp_estado=true";
+        String sql = "select count(*) from public.empleado where  emp_contraseña='" + contrasena + "'and emp_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         modelEmpleado empleado = new modelEmpleado();
         boolean ban = false;

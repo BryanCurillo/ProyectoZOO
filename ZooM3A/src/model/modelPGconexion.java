@@ -18,12 +18,12 @@ import java.util.logging.Logger;
  */
 public class modelPGconexion {
 
-    String cadenaConexion = "jdbc:postgresql://localhost:5432/ZOO";
-    String pgUsuario = "postgres";
-    String pgPassword = "Bryan.2002";
+    String cadenaConexion = "jdbc:postgresql://ec2-52-207-15-147.compute-1.amazonaws.com:5432/du449t85n90nm";
+    String pgUsuario = "wwhdeaqqhtjjli";
+    String pgPassword = "b481f5326508b8c3465d7273454fbe1789f3388c98554b31e4431bff905828da";
     Connection con;
 
-     public modelPGconexion() {
+    public modelPGconexion() {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException ex) {
@@ -73,7 +73,6 @@ public class modelPGconexion {
     public void setCon(Connection con) {
         this.con = con;
     }
-
 
 }//final de clase
 

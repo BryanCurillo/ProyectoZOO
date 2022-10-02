@@ -47,7 +47,7 @@ public class ModelAnimal extends Animales {
 
     public boolean setAnimal() {
         String sql;
-        sql = "INSERT INTO animal(ani_nombre, ani_genero, ani_especie, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
+        sql = "INSERT INTO public.animal(ani_nombre, ani_genero, ani_especie, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
         sql += "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         try {
 
@@ -71,7 +71,7 @@ public class ModelAnimal extends Animales {
 
     public boolean setFotoAnimal() {
         String sql;
-        sql = "INSERT INTO animal(ani_nombre, ani_genero, ani_especie, ani_foto, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
+        sql = "INSERT INTO public.animal(ani_nombre, ani_genero, ani_especie, ani_foto, ani_fechaingreso, ani_fechanacimiento, ani_estado, ani_idhabitad, ani_idcuidador)";
         sql += "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
 
@@ -96,7 +96,7 @@ public class ModelAnimal extends Animales {
 
     public boolean updateAnimal() {
         String sql;
-        sql = "UPDATE animal SET ani_nombre='" + getNombreAnimal() + "', ani_genero='" + getGeneroAnimal() + "', ani_especie='" + getEspecieAnimal() + "', "
+        sql = "UPDATE public.animal SET ani_nombre='" + getNombreAnimal() + "', ani_genero='" + getGeneroAnimal() + "', ani_especie='" + getEspecieAnimal() + "', "
                 + "ani_fechaingreso='" + getFecha_ingresoAnimal() + "', ani_fechanacimiento='" + getFecha_nacimientoAnimal() + "', "
                 + "ani_idhabitad=" + getIdhabitadAnimal() + ", ani_idcuidador=" + getIdcuidadorAnimal()
                 + "where ani_id=" + getIdAnimal();
@@ -105,7 +105,7 @@ public class ModelAnimal extends Animales {
 
     public boolean updateFotoAnimal() {
         String sql;
-        sql = "UPDATE animal SET ani_nombre=?, ani_genero=?, ani_especie=?, "
+        sql = "UPDATE public.animal SET ani_nombre=?, ani_genero=?, ani_especie=?, "
                 + "ani_foto=?, ani_fechaingreso=?, ani_fechanacimiento=?, "
                 + "ani_idhabitad=?, ani_idcuidador=?"
                 + "where ani_id=" + getIdAnimal();
@@ -131,7 +131,7 @@ public class ModelAnimal extends Animales {
 
     public boolean deleteAnimal(int id) {
         String sql;
-        sql = "UPDATE animal SET ani_estado=false "
+        sql = "UPDATE public.animal SET ani_estado=false "
                 + "WHERE ani_id=" + id;
         return mpgc.accion(sql);
     }
@@ -142,10 +142,10 @@ public class ModelAnimal extends Animales {
         String sql = "select a.ani_id, a.ani_nombre, a.ani_genero, a.ani_especie,a.ani_foto, "//1-6
                 + "     a.ani_fechaingreso, a.ani_fechanacimiento, a.ani_estado, a.ani_idhabitad, a.ani_idcuidador,  "//7-11
                 + "	c.cui_tiposangre,(p.per_nombre||' '||p.per_apellido)as nombre,h.hab_ubicacion,h.hab_tipo  "//12-15
-                + "from animal a join habitad h on (a.ani_idhabitad=h.hab_id)  "
-                + "join cuidador c on (c.cui_id=a.ani_idcuidador)  "
-                + "join empleado e on(e.emp_id=c.cui_idempleado)  "
-                + "join persona p on (p.per_cedula=e.emp_cedula)  "
+                + "from public.animal a join public.habitad h on (a.ani_idhabitad=h.hab_id)  "
+                + "join public.cuidador c on (c.cui_id=a.ani_idcuidador)  "
+                + "join public.empleado e on(e.emp_id=c.cui_idempleado)  "
+                + "join public.persona p on (p.per_cedula=e.emp_cedula)  "
                 + "where a.ani_estado=true  ";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
@@ -192,10 +192,10 @@ public class ModelAnimal extends Animales {
         String sql = "select a.ani_id, a.ani_nombre, a.ani_genero, a.ani_especie, a.ani_foto, "//1-6
                 + "     a.ani_fechaingreso, a.ani_fechanacimiento, a.ani_estado, a.ani_idhabitad, a.ani_idcuidador,  "//7-11
                 + "	c.cui_tiposangre,(p.per_nombre||' '||p.per_apellido)as nombre,h.hab_ubicacion,h.hab_tipo  "//12-15
-                + "from animal a join habitad h on (a.ani_idhabitad=h.hab_id)  "
-                + "join cuidador c on (c.cui_id=a.ani_idcuidador)  "
-                + "join empleado e on(e.emp_id=c.cui_idempleado)  "
-                + "join persona p on (p.per_cedula=e.emp_cedula)  "
+                + "from public.animal a join public.habitad h on (a.ani_idhabitad=h.hab_id)  "
+                + "join public.cuidador c on (c.cui_id=a.ani_idcuidador)  "
+                + "join public.empleado e on(e.emp_id=c.cui_idempleado)  "
+                + "join public.persona p on (p.per_cedula=e.emp_cedula)  "
                 + "where a.ani_estado=true  "
                 + "  and (lower(a.ani_nombre) like '%" + busqueda + "%' "
                 + "  or lower(a.ani_genero) like '%" + busqueda + "%' "
@@ -249,7 +249,7 @@ public class ModelAnimal extends Animales {
         List<Animales> listaAnimales = new ArrayList<>();
 
         String sql = "select ani_id, ani_nombre,ani_especie  "
-                + " from animal where ani_estado=true"
+                + " from public.animal where ani_estado=true"
                 + "  and lower(ani_nombre) like '%" + busqueda + "%' "
                 + "  or lower(ani_especie) like '%" + busqueda + "%' ";
         ResultSet rs = mpgc.consulta(sql);

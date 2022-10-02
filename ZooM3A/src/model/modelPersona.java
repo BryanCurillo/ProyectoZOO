@@ -26,7 +26,7 @@ public class modelPersona extends Persona {
     }
 
     public boolean setPersona() {
-        String sql = "INSERT INTO persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo,per_telefono,per_estado)"
+        String sql = "INSERT INTO public.persona (per_cedula, per_nombre, per_apellido, per_fecha_registro, per_correo,per_telefono,per_estado)"
                 + "values('" + getCedula() + "','" + getNombre() + "','" + getApellido() + "','" + getFechaRegistro() + "','"+ getCorreo() + "','"+  getTelefono() + "'," + isEstadoPer() + ")";
         System.out.println("persona");
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
@@ -34,7 +34,7 @@ public class modelPersona extends Persona {
 
     public boolean updatePersona() {
         String sql;
-        sql = "UPDATE persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "',per_telefono='" + getTelefono() + "'"
+        sql = "UPDATE public.persona SET per_nombre='" + getNombre() + "', per_apellido='" + getApellido() + "',per_correo='" + getCorreo() + "',per_telefono='" + getTelefono() + "'"
                 + "WHERE per_cedula='" + getCedula() + "'";
         return mpgc.accion(sql);
     }
@@ -43,7 +43,7 @@ public class modelPersona extends Persona {
         int cant = 0;
         boolean ban = true;
 
-        String sql = "select count(*) from persona where per_cedula= '" + cedula + "'";
+        String sql = "select count(*) from public.persona where per_cedula= '" + cedula + "'";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
