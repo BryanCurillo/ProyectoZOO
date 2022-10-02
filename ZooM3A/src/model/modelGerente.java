@@ -26,26 +26,26 @@ public class modelGerente extends Gerente {
     }
 
     public boolean setGerente() {
-        String sql = "INSERT INTO gerente (ger_titulo, ger_idempleado,ger_estado)"
+        String sql = "INSERT INTO public.gerente (ger_titulo, ger_idempleado,ger_estado)"
                 + "values('" + getTitulo() + "'," + getIdEmpleado() + "," + isEstadoGer() + ");";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateGerente(String cedula) {
         String sql;
-        sql = "UPDATE gerente SET ger_titulo='" + getTitulo() + "'"
+        sql = "UPDATE public.gerente SET ger_titulo='" + getTitulo() + "'"
                 + "WHERE ger_idempleado=" + me.obtenerIdEmp(cedula);
         return mpgc.accion(sql);
     }
 
     public boolean deleteGerente(int codigo) {
-        String sql = "UPDATE gerente SET ger_estado=false where ger_idempleado=" + codigo;
+        String sql = "UPDATE public.gerente SET ger_estado=false where ger_idempleado=" + codigo;
         return mpgc.accion(sql);
     }
 
     public String obtenerDatosRol(int codigo) {
         String DatoRol = "";
-        String sql = "select ger_titulo from gerente where ger_idempleado=" + codigo;
+        String sql = "select ger_titulo from public.gerente where ger_idempleado=" + codigo;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

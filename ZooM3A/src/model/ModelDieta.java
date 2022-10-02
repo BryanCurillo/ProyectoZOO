@@ -24,8 +24,8 @@ public class ModelDieta extends Dieta {
         String sql = "select d.die_id,d.die_horario,d.die_porcion,d.die_idalimento,d.die_idanimal,d.die_estado,  "
                 + "		al.ali_nombre, al.ali_descripcion,  "
                 + "		a.ani_nombre,a.ani_especie  "
-                + "from dieta d join alimento al on (d.die_idalimento=al.ali_id)  "
-                + "join animal a on (a.ani_id=d.die_idanimal)  "
+                + "from public.dieta d join public.alimento al on (d.die_idalimento=al.ali_id)  "
+                + "join public.animal a on (a.ani_id=d.die_idanimal)  "
                 + "where d.die_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -59,14 +59,14 @@ public class ModelDieta extends Dieta {
     }
 
     public boolean setDieta() {
-        String sql = "INSERT INTO dieta(die_horario, die_porcion, die_idalimento,die_idanimal,die_estado)"
+        String sql = "INSERT INTO public.dieta(die_horario, die_porcion, die_idalimento,die_idanimal,die_estado)"
                 + "VALUES ('" + getDie_horario() + "', " + getDie_porcion() + ", " + getDie_idAlimento() + ", " + getDie_idAnimal() + "," + isDie_estado() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateDieta() {
         String sql;
-        sql = "UPDATE dieta "
+        sql = "UPDATE public.dieta "
                 + "	SET die_horario='" + getDie_horario() + "', die_porcion='" + getDie_porcion() + "',die_idalimento=" + getDie_idAlimento() + ",die_idanimal=" + getDie_idAnimal()
                 + "	WHERE die_id = " + getDie_id();
         return mpgc.accion(sql);
@@ -74,7 +74,7 @@ public class ModelDieta extends Dieta {
 
     public boolean deleteDieta(int id) {
         String sql;
-        sql = "UPDATE SET die_estado=false "
+        sql = "UPDATE public.dieta SET die_estado=false "
                 + "WHERE die_id=" + id;
         System.out.println(sql);
         return mpgc.accion(sql);
@@ -85,8 +85,8 @@ public class ModelDieta extends Dieta {
         String sql = "select d.die_id,d.die_horario,d.die_porcion,d.die_idalimento,d.die_idanimal,d.die_estado,  "
                 + "		al.ali_nombre, al.ali_descripcion,  "
                 + "		a.ani_nombre,a.ani_especie  "
-                + "from dieta d join alimento al on (d.die_idalimento=al.ali_id)  "
-                + "join animal a on (a.ani_id=d.die_idanimal)  "
+                + "from public.dieta d join public.alimento al on (d.die_idalimento=al.ali_id)  "
+                + "join public.animal a on (a.ani_id=d.die_idanimal)  "
                 + "where d.die_estado=true  "
                 + "and (lower(d.die_horario) like '%" + busqueda + "%' "
                 + "or lower(a.ani_nombre) like '%" + busqueda + "%' "

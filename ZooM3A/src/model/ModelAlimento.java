@@ -21,7 +21,7 @@ public class ModelAlimento extends Alimento {
 
     public List<Alimento> getAlimento() {
         List<Alimento> listaAlimentos = new ArrayList<>();
-        String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
+        String sql = "select * from public.alimento a join public.proveedor p on (p.pro_id=a.ali_idproveedor)"
                 + "  where ali_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -55,14 +55,14 @@ public class ModelAlimento extends Alimento {
     }
 
     public boolean setAlimento() {
-        String sql = "INSERT INTO alimento(ali_nombre,  ali_precio,ali_descripcion, ali_idproveedor, ali_estado)"
+        String sql = "INSERT INTO public.alimento(ali_nombre,  ali_precio,ali_descripcion, ali_idproveedor, ali_estado)"
                 + "VALUES ('" + getNombreAli() + "', " + getPrecioAli() + ", '" + getDescripcionAli() + "', " + getIdproveedor() + "," + isEstadoAli() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean updateAlimento() {
         String sql;
-        sql = "UPDATE alimento "
+        sql = "UPDATE public.alimento "
                 + "	SET ali_nombre='" + getNombreAli() + "', ali_precio=" + getPrecioAli() + ",ali_descripcion='" + getDescripcionAli() + "', ali_idproveedor=" + getIdalimento() + ", ali_estado=" + isEstadoAli()
                 + "	WHERE ali_id = " + getIdalimento();
         return mpgc.accion(sql);
@@ -70,7 +70,7 @@ public class ModelAlimento extends Alimento {
 
     public boolean deleteAlimento(int id) {
         String sql;
-        sql = "UPDATE alimento SET ali_estado=false "
+        sql = "UPDATE public.alimento SET ali_estado=false "
                 + "WHERE ali_id=" + id;
         System.out.println(sql);
         return mpgc.accion(sql);
@@ -78,7 +78,7 @@ public class ModelAlimento extends Alimento {
 
     public List<Alimento> busquedaincremental(String busqueda) {
         List<Alimento> listaAlimento = new ArrayList<>();
-        String sql = "select * from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
+        String sql = "select * from public.alimento a join public.proveedor p on (p.pro_id=a.ali_idproveedor)"
                 + "  where ali_estado=true "
                 + "  and (p.pro_telefono like '%" + busqueda + "%' "
                 //                + "  or p.pro_id=" + busqueda
@@ -120,7 +120,7 @@ public class ModelAlimento extends Alimento {
     public List<Alimento> busquedaincrementalDlg(String busqueda) {
         List<Alimento> listaAlimento = new ArrayList<>();
         String sql = "select a.ali_id,a.ali_nombre,a.ali_precio,p.pro_nombre,a.ali_descripcion "
-                + "  from alimento a join proveedor p on (p.pro_id=a.ali_idproveedor)"
+                + "  from public.alimento a join public.proveedor p on (p.pro_id=a.ali_idproveedor)"
                 + "  where ali_estado=true "
                 + "  or lower(p.pro_nombre) like '%" + busqueda + "%' "
                 + "  or lower(a.ali_descripcion) like '%" + busqueda + "%' "

@@ -21,7 +21,7 @@ public class ModelCliente extends Cliente {
 
     public List<Cliente> getClientes() {
         List<Cliente> listaClientes = new ArrayList<>();
-        String sql = "SELECT * FROM cliente c, persona p "
+        String sql = "SELECT * FROM public.cliente c, public.persona p "
                 + "where c.cli_cedula = p.per_cedula and c.cli_estado=true ";
         ResultSet rs = mpgc.consulta(sql);
         try {
@@ -53,8 +53,8 @@ public class ModelCliente extends Cliente {
 
     public List<Cliente> getClientesFac(String cedula) {
         List<Cliente> listaClientes = new ArrayList<>();
-        String sql = "select * from cliente c "
-                + "join persona p on(p.per_cedula=c.cli_cedula) "
+        String sql = "select * from public.cliente c "
+                + "join public.persona p on(p.per_cedula=c.cli_cedula) "
                 + "where c.cli_estado=true "
                 + "and "
                 + "c.cli_cedula ='" + cedula + "' ";
@@ -87,7 +87,7 @@ public class ModelCliente extends Cliente {
     }
 
     public boolean setCliente() {
-        String sql = "INSERT INTO cliente(cli_direccion,  cli_cedula,cli_estado)"
+        String sql = "INSERT INTO public.cliente(cli_direccion,  cli_cedula,cli_estado)"
                 + "VALUES ('" + getCli_direccion() + "', '" + getCli_cedula() + "', " + isCli_estado() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
@@ -95,7 +95,7 @@ public class ModelCliente extends Cliente {
     public boolean updateCliente() {
         String sql;
         System.out.println(getCli_cedula());
-        sql = "UPDATE cliente "
+        sql = "UPDATE public.cliente "
                 + "	SET cli_direccion='" + getCli_direccion() + "', cli_cedula='" + getCli_cedula() + "', cli_estado=" + isCli_estado()
                 + "	WHERE cli_cedula = '" + getCli_cedula() + "'";
         return mpgc.accion(sql);
@@ -103,7 +103,7 @@ public class ModelCliente extends Cliente {
 
     public boolean deleteCliente(String cedula) {
         String sql;
-        sql = "UPDATE cliente SET cli_estado=false "
+        sql = "UPDATE public.cliente SET cli_estado=false "
                 + "WHERE cli_cedula='" + cedula + "'";
         System.out.println(sql);
         return mpgc.accion(sql);
@@ -111,8 +111,8 @@ public class ModelCliente extends Cliente {
 
     public List<Cliente> busquedaincremental(String busqueda) {
         List<Cliente> listaClientes = new ArrayList<>();
-        String sql = "select * from cliente c "
-                + "join persona p on(p.per_cedula=c.cli_cedula) "
+        String sql = "select * from public.cliente c "
+                + "join public.persona p on(p.per_cedula=c.cli_cedula) "
                 + "where c.cli_estado=true "
                 + "and "
                 + "(p.per_cedula like '%" + busqueda + "%' "

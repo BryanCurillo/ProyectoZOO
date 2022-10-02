@@ -31,26 +31,26 @@ public class modelZoologo extends Zoologo {
 
     public boolean setZoologo() {
 //        System.out.println("ID ZOOLOGO="+is);
-        String sql = "INSERT INTO zoologo (zol_rama, zol_idempleado,zol_estado)"
+        String sql = "INSERT INTO public.zoologo (zol_rama, zol_idempleado,zol_estado)"
                 + "values('" + getRama() + "'," + getIdEmpleadoZoo() + "," + isEstadoZol()+ ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean deleteZoologo(int codigo) {
-        String sql = "UPDATE zoologo SET zol_estado=false where zol_idempleado=" + codigo;
+        String sql = "UPDATE public.zoologo SET zol_estado=false where zol_idempleado=" + codigo;
         return mpgc.accion(sql);
     }
 
     public boolean updateZoologo(String cedula) {
         String sql;
-        sql = "UPDATE zoologo SET zol_rama='" + getRama() + "'"
+        sql = "UPDATE public.zoologo SET zol_rama='" + getRama() + "'"
                 + "WHERE zol_idempleado=" + me.obtenerIdEmp(cedula);
         return mpgc.accion(sql);
     }
 
     public String obtenerDatosRol(int codigo) {
         String DatoRol = "";
-        String sql = "select zol_rama from zoologo where zol_idempleado=" + codigo;
+        String sql = "select zol_rama from public.zoologo where zol_idempleado=" + codigo;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -70,8 +70,8 @@ public class modelZoologo extends Zoologo {
     public List<Zoologo> busquedaincremental(String busqueda) {
         List<Zoologo> listaZoologo = new ArrayList<>();
         String sql = "select z.zol_id,(p.per_nombre||' '||p.per_apellido) as nombre ,z.zol_rama"
-                + " from zoologo z join empleado e on(e.emp_id=z.zol_idempleado)"
-                + " join persona p on (e.emp_cedula=p.per_cedula)"
+                + " from public.zoologo z join public.empleado e on(e.emp_id=z.zol_idempleado)"
+                + " join public.persona p on (e.emp_cedula=p.per_cedula)"
                 + " where z.zol_estado=true and e.emp_estado=true and p.per_estado=true "
                 + "  and (lower(p.per_nombre) like '%" + busqueda + "%' "
                 + "  or lower(p.per_apellido) like '%" + busqueda + "%' "

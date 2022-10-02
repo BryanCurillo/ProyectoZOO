@@ -21,7 +21,7 @@ public class ModelTickets extends Tickets {
 
     public List<Tickets> getTickets() {
         List<Tickets> listaTickets = new ArrayList<>();
-        String sql = "select tic_id, tic_categoria, tic_precio from ticket "
+        String sql = "select tic_id, tic_categoria, tic_precio from public.ticket "
                 + "  order by tic_id";
         System.out.println("");
         ResultSet rs = mpgc.consulta(sql);
@@ -47,7 +47,7 @@ public class ModelTickets extends Tickets {
         public List<Tickets> getTicketsPrecio() {
         List<Tickets> listaTickets = new ArrayList<>();
         String sql = "select tic_id, tic_categoria, tic_precio "
-                + "from ticket where tic_id="+getTic_id();
+                + "from public.ticket where tic_id="+getTic_id();
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -72,7 +72,7 @@ public class ModelTickets extends Tickets {
     public boolean updateTicket() {
         String sql;
 //        System.out.println("nuevo="+getTic_precio());
-        sql = "update ticket set tic_precio = " + getTic_precio() + " where tic_id = " + getTic_id();
+        sql = "update public.ticket set tic_precio = " + getTic_precio() + " where tic_id = " + getTic_id();
         return mpgc.accion(sql);
     }
 }

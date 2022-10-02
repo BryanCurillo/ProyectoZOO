@@ -21,26 +21,26 @@ public class ModelFactura extends factura {
     modelPGconexion mpgc = new modelPGconexion();
 
     public boolean setEncabezado() {
-        String sql = "INSERT INTO fac_encabezado(enca_fecha, enca_idcliente)  "
+        String sql = "INSERT INTO public.fac_encabezado(enca_fecha, enca_idcliente)  "
                 + "  VALUES ('" + getEnca_fecha() + "', " + getEnca_idCliente() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean setDetalle() {
-        String sql = "INSERT INTO fac_detalle(det_cantidad, det_total, det_idenca, det_idticket)  "
+        String sql = "INSERT INTO public.fac_detalle(det_cantidad, det_total, det_idenca, det_idticket)  "
                 + "  VALUES (" + getDet_cantidad() + ", " + getDet_total() + ", " + getDet_idenca() + ", " + getDet_idticket() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean setPie() {
-        String sql = "INSERT INTO fac_pie(pie_subtotal, pie_descuento, pie_total, pie_idenca)"
+        String sql = "INSERT INTO public.fac_pie(pie_subtotal, pie_descuento, pie_total, pie_idenca)"
                 + "VALUES (" + getPie_subTotal() + ", " + getPie_descuento() + ", " + getPie_TOTAL() + ", " + getPie_idEnca() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public int obtenerIdEncabezado() {
         int idEnca = 0;
-        String sql = "select max(enca_id) from fac_encabezado";
+        String sql = "select max(enca_id) from public.fac_encabezado";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -64,10 +64,10 @@ public class ModelFactura extends factura {
                 + "		cli.cli_id, cli.cli_cedula, (per.per_nombre||' '||per.per_apellido) as nombre, per.per_telefono, per.per_correo, cli.cli_direccion,  "
                 + "		count(*) as Items, sum(det.det_cantidad) as cantidadTotal  ,sum(det.det_total) as sumaBoletos,  "
                 + "		pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total  "
-                + "	from fac_encabezado enca join cliente cli on (enca.enca_idcliente = cli.cli_id)  "
-                + "	join persona per on (cli.cli_cedula=per.per_cedula)  "
-                + "	join fac_detalle det on (enca.enca_id = det.det_idenca)  "
-                + "	join fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
+                + "	from public.fac_encabezado enca join public.cliente cli on (enca.enca_idcliente = cli.cli_id)  "
+                + "	join public.persona per on (cli.cli_cedula=per.per_cedula)  "
+                + "	join public.fac_detalle det on (enca.enca_id = det.det_idenca)  "
+                + "	join public.fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
                 + "	group by det.det_idenca,  "
                 + "				enca.enca_id,enca.enca_fecha,enca.enca_idcliente,  "
                 + "				pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total,  "
@@ -118,10 +118,10 @@ public class ModelFactura extends factura {
                 + "		cli.cli_id, cli.cli_cedula, (per.per_nombre||' '||per.per_apellido) as nombre, per.per_telefono, per.per_correo, cli.cli_direccion,  "
                 + "		count(*) as Items, sum(det.det_cantidad) as cantidadTotal  ,sum(det.det_total) as sumaBoletos,  "
                 + "		pie.pie_id,pie.pie_subtotal, pie.pie_descuento, pie.pie_total  "
-                + "	from fac_encabezado enca join cliente cli on (enca.enca_idcliente = cli.cli_id)  "
-                + "	join persona per on (cli.cli_cedula=per.per_cedula)  "
-                + "	join fac_detalle det on (enca.enca_id = det.det_idenca)  "
-                + "	join fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
+                + "	from public.fac_encabezado enca join public.cliente cli on (enca.enca_idcliente = cli.cli_id)  "
+                + "	join public.persona per on (cli.cli_cedula=per.per_cedula)  "
+                + "	join public.fac_detalle det on (enca.enca_id = det.det_idenca)  "
+                + "	join public.fac_pie pie on (enca.enca_id = pie.pie_idenca)  "
                 + "			where  cli.cli_cedula like '%" + busqueda + "%'  "
                 + "     or lower(per.per_nombre) like  '%" + busqueda + "%'  "
                 + "							or lower(per.per_apellido) like '%" + busqueda + "%'  "

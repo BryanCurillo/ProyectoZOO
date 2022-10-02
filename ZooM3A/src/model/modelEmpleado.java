@@ -38,14 +38,14 @@ public class modelEmpleado extends Empleado {
     }
 
     public boolean setEmpleado() {
-        String sql = "INSERT INTO empleado(emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)"
+        String sql = "INSERT INTO public.empleado(emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)"
                 + "VALUES ('" + getFechanacimiento() + "', '" + getRol() + "', '" + getGenero() + "', '" + getUsuario() + "', '" + getContraseña() + "', '" + getCedula() + "', " + isEstadoEmp() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean setFotoEmpleado() {
         String sql;
-        sql = "INSERT INTO empleado(emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)";
+        sql = "INSERT INTO public.empleado(emp_foto, emp_fechanacimiento, emp_rol, emp_genero, emp_usuario, emp_contraseña, emp_cedula,emp_estado)";
         sql += "VALUES(?,?,?,?,?,?,?,?)";
         try {
 
@@ -68,7 +68,7 @@ public class modelEmpleado extends Empleado {
 
     public boolean updateEmpleado() {
         String sql;
-        sql = "UPDATE empleado SET emp_fechanacimiento='" + getFechanacimiento() + "', "
+        sql = "UPDATE public.empleado SET emp_fechanacimiento='" + getFechanacimiento() + "', "
                 + "emp_rol=" + getRol() + ", emp_genero='" + getGenero() + "', emp_usuario='" + getUsuario() + "', emp_contraseña='" + getContraseña() + "' "
                 + "WHERE emp_cedula='" + getCedula() + "'";
         return mpgc.accion(sql);
@@ -76,7 +76,7 @@ public class modelEmpleado extends Empleado {
 
     public boolean updateFotoEmpleado() {
         String sql;
-        sql = "UPDATE empleado SET emp_foto=?, emp_fechanacimiento=?, "
+        sql = "UPDATE public.empleado SET emp_foto=?, emp_fechanacimiento=?, "
                 + "emp_rol=?, emp_genero=?, emp_usuario=?, emp_contraseña=? "
                 + "WHERE emp_cedula='" + getCedula() + "'";
 //        sql += "VALUES(?,?,?,?,?,?,?,?,?)";
@@ -119,7 +119,7 @@ public class modelEmpleado extends Empleado {
 
     public List<rol> getroles() {
         List<rol> listaRoles = new ArrayList<>();
-        String sql = "select rol_id, rol_nombre from rol";
+        String sql = "select rol_id, rol_nombre from public.rol";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -141,7 +141,7 @@ public class modelEmpleado extends Empleado {
 
     public int obtenerIdEmp(String cedula) {
         int codigo = 0;
-        String sql = "select emp_id from empleado where emp_cedula = '" + cedula + "'";
+        String sql = "select emp_id from public.empleado where emp_cedula = '" + cedula + "'";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -160,7 +160,7 @@ public class modelEmpleado extends Empleado {
 
     public String obtenerRol(int codigo) {
         String rol = "";
-        String sql = "select rol_nombre from rol where rol_id=" + codigo;
+        String sql = "select rol_nombre from public.rol where rol_id=" + codigo;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -193,8 +193,8 @@ public class modelEmpleado extends Empleado {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
         String sql = "select (p.per_nombre||' '|| p.per_apellido) as nombre,p.per_cedula, r.rol_nombre, e.emp_foto  "
-                + "  from empleado e join persona p on(e.emp_cedula=p.per_cedula) "
-                + "  join rol r on (r.rol_id=emp_rol) "
+                + "  from public.empleado e join public.persona p on(e.emp_cedula=p.per_cedula) "
+                + "  join public.rol r on (r.rol_id=emp_rol) "
                 + "  where e.emp_usuario = '" + usuario + "' and e.emp_contraseña = '" + contrasena + "'";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
@@ -228,7 +228,7 @@ public class modelEmpleado extends Empleado {
     public List<Empleado> getempleado() {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
-        String sql = "select * from persona p join empleado e on(p.per_cedula= e.emp_cedula) "
+        String sql = "select * from public.persona p join public.empleado e on(p.per_cedula= e.emp_cedula) "
                 + "  where e.emp_estado=true  and p.per_estado=true ";
         ResultSet rs = mpgc.consulta(sql);
         byte[] bytea;
@@ -273,9 +273,9 @@ public class modelEmpleado extends Empleado {
     public List<Empleado> busquedaIncrementalPersona(String busqueda) {
         List<Empleado> listaEmpleado = new ArrayList<>();
 
-        String sql = "select * from persona p "
-                + "join empleado e on(p.per_cedula=e.emp_cedula) "
-                + "join rol r on(e.emp_rol=r.rol_id) "
+        String sql = "select * from public.persona p "
+                + "join public.empleado e on(p.per_cedula=e.emp_cedula) "
+                + "join public.rol r on(e.emp_rol=r.rol_id) "
                 + "where e.emp_estado=true and p.per_estado=true "
                 + "and (p.per_cedula like '%" + busqueda + "%' "
                 + "or lower(p.per_nombre) like '%" + busqueda + "%' "

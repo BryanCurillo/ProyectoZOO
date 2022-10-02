@@ -27,7 +27,7 @@ public class modelProveedor extends Proveedor {
     }
 
     public boolean setProveedor() {
-        String sql = "INSERT INTO proveedor(pro_ciudad, pro_nombre, pro_telefono,pro_estado)"
+        String sql = "INSERT INTO public.proveedor(pro_ciudad, pro_nombre, pro_telefono,pro_estado)"
                 + "VALUES ('" + getCiudad_pro() + "','" + getNombre_pro() + "', '" + getTelefono() + "'," + isEstadoProv() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
@@ -35,7 +35,7 @@ public class modelProveedor extends Proveedor {
     public boolean updateProveedor() {
         System.out.println("sql=" + getId_proveedor());
         String sql;
-        sql = "UPDATE proveedor SET pro_ciudad='" + getCiudad_pro() + "', pro_nombre='" + getNombre_pro() + "', "
+        sql = "UPDATE public.proveedor SET pro_ciudad='" + getCiudad_pro() + "', pro_nombre='" + getNombre_pro() + "', "
                 + "pro_telefono='" + getTelefono() + "', pro_estado=" + isEstadoProv()
                 + " WHERE pro_id=" + getId_proveedor();
         return mpgc.accion(sql);
@@ -43,7 +43,7 @@ public class modelProveedor extends Proveedor {
 
     public boolean deleteProveedor(int id) {
         String sql;
-        sql = "UPDATE proveedor SET pro_estado=false "
+        sql = "UPDATE public.proveedor SET pro_estado=false "
                 + "WHERE pro_id=" + id;
         System.out.println(sql);
         return mpgc.accion(sql);
@@ -51,7 +51,7 @@ public class modelProveedor extends Proveedor {
 
     public List<Proveedor> getProveedor() {
         List<Proveedor> listaProveedores = new ArrayList<>();
-        String sql = "SELECT * FROM proveedor where pro_estado=true";
+        String sql = "SELECT * FROM public.proveedor where pro_estado=true";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -76,7 +76,7 @@ public class modelProveedor extends Proveedor {
 
     public List<Proveedor> busquedaIncrementalProveedor(String busqueda) {
         List<Proveedor> listaProveedores = new ArrayList<>();
-        String sql = "select * from proveedor "
+        String sql = "select * from public.proveedor "
                 + "where pro_estado=true "
                 + "and (lower(pro_ciudad) like '%" + busqueda + "%' "
                 + "or lower(pro_nombre) like '%" + busqueda + "%' "
@@ -105,7 +105,7 @@ public class modelProveedor extends Proveedor {
 
     public List<Proveedor> getProveedorXid(int id) {
         List<Proveedor> listaProveedores = new ArrayList<>();
-        String sql = "SELECT * FROM proveedor where pro_estado=true and pro_id="+id;
+        String sql = "SELECT * FROM public.proveedor where pro_estado=true and pro_id="+id;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {
@@ -132,7 +132,7 @@ public class modelProveedor extends Proveedor {
         int cant = 0;
         boolean ban = true;
 
-        String sql = "	select count(*) from proveedor where pro_nombre='" + nombre + "' and pro_ciudad='" + ciudad + "'";
+        String sql = "	select count(*) from public.proveedor where pro_nombre='" + nombre + "' and pro_ciudad='" + ciudad + "'";
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

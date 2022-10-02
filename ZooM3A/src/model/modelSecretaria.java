@@ -26,26 +26,26 @@ public class modelSecretaria extends Secretaria {
     }
 
     public boolean setSecretaria() {
-        String sql = "INSERT INTO secretaria (sec_experiencia, sec_idempleado,sec_estado)"
+        String sql = "INSERT INTO public.secretaria (sec_experiencia, sec_idempleado,sec_estado)"
                 + "values(" + getExperiencia() + "," + getIdEmpleado() + "," + isEstadoSec() + ")";
         return mpgc.accion(sql);//EJECUTAMOS EN INSERT
     }
 
     public boolean deleteSecretaria(int codigo) {
-        String sql = "UPDATE secretaria SET sec_estado=false where sec_idempleado=" + codigo;
+        String sql = "UPDATE public.secretaria SET sec_estado=false where sec_idempleado=" + codigo;
         return mpgc.accion(sql);
     }
 
     public boolean updateSecretaria(String cedula) {
         String sql;
-        sql = "UPDATE secretaria SET sec_experiencia=" + getExperiencia()
+        sql = "UPDATE public.secretaria SET sec_experiencia=" + getExperiencia()
                 + "WHERE sec_idempleado=" + me.obtenerIdEmp(cedula);
         return mpgc.accion(sql);
     }
 
     public int obtenerDatosRol(int codigo) {
         int DatoRol = 0;
-        String sql = "select sec_experiencia from secretaria where sec_idempleado=" + codigo;
+        String sql = "select sec_experiencia from public.secretaria where sec_idempleado=" + codigo;
         ResultSet rs = mpgc.consulta(sql);
         try {
             while (rs.next()) {

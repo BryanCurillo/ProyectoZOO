@@ -18,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class modelPGconexion {
 
-    String cadenaConexion = "jdbc:postgresql://ec2-34-231-42-166.compute-1.amazonaws.com:5432/daomovp8q1k5om";
-    String pgUsuario = "mtiwgvcsnodxdy";
-    String pgPassword = "dc59e138ce1b6f9853d05ce1c3a7a08bd9c0decdcbd55e9c835fe303130f508d";
+    String cadenaConexion = "jdbc:postgresql://ec2-52-207-15-147.compute-1.amazonaws.com:5432/du449t85n90nm";
+    String pgUsuario = "wwhdeaqqhtjjli";
+    String pgPassword = "b481f5326508b8c3465d7273454fbe1789f3388c98554b31e4431bff905828da";
     Connection con;
 
     public modelPGconexion() {
